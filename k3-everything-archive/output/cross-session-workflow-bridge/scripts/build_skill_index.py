@@ -26,7 +26,7 @@ BUILTIN_SKILLS_DIR = Path("/app/.agents/skills")
 UPLOAD_DIR = Path("<上传区>")
 OUTPUT_DIR = Path("<输出区>")
 INDEX_NAME = "MASTER_SKILL_INDEX.md"
-# 中文名兜底注册表：description 无「中文名：XX」时按技术名查表；文件不在则跳过不报错
+# 中文名称兜底注册表：当 description 中缺失「中文名：XX」时，按技术名称查表；若文件不存在则跳过且不报错
 ALIASES_PATH = UPLOAD_DIR / "skill-iteration-registry" / "skill_aliases.json"
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)

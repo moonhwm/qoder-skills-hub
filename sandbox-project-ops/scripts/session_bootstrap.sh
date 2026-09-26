@@ -29,7 +29,7 @@ else
 fi
 
 # 3. git repo: root 操作 uid-999 拥有的目录树会触发
-#    "detected dubious ownership" / "fatal: not in a git directory".
+#    “检测到可疑的所有权” / “致命：不在 git 目录中”。
 #    先将该路径加入白名单，然后 (re)init，最后 VERIFY。
 git config --global --add safe.directory "$DIR" 2>/dev/null
 if ! git -C "$DIR" rev-parse --git-dir >/dev/null 2>&1; then

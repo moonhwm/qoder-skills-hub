@@ -1,4 +1,4 @@
-// K 锚下钻助手：站内所有关键数字 → U.showDrill 到对应 K 锚
+// K 锚下钻助手：站内所有关键数值 → U.showDrill 跳转至对应 K 锚
 window.K = (() => {
   const byId = {};
   (window.RPT && window.RPT.claims || []).forEach(c => { byId[c.k] = c; });

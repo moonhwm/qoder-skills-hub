@@ -70,7 +70,7 @@ FRONTMATTER
 
 # 简介正文
 cat >> "$MERGED" <<'INTRO'
-# GitLab CLI 技能 — glab 全面参考手册
+# GitLab CLI 功能 — glab 全面参考手册
 
 This skill provides complete reference and workflows for the GitLab CLI (`glab`).
 It covers authentication, merge requests, CI/CD pipelines, issues, releases,
@@ -107,7 +107,7 @@ for skill_file in "${SUB_SKILLS[@]}"; do
   COUNT=$((COUNT + 1))
   echo "  [$COUNT/$TOTAL] $sub_dir"
 
-  # Section heading derived from directory name (e.g. glab-mr → glab mr)
+  # 源自目录名称的章节标题（例如：glab-mr → glab mr）
   heading="${sub_dir//-/ }"
 
   {

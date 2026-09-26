@@ -21,7 +21,7 @@ ok('E1a P0三卡要素', all(k in t0 for k in ['追认信封', '准M4', '建心�
 ok('E1b 参数件要素', all(k in t1 for k in ['事由', '备份', '报告', '回滚日闸', '¥50', '准A/B/C/D']))
 ok('E1c 工单要素', all(k in t2 for k in ['03:30', 'W1', 'W2', 'W3', 'L3_DRILL_ACK', '回执']))
 
-# E2 cron 卡 lint PASS（现场重新运行以留存记录）
+# E2 cron 卡 lint PASS（在现场重新运行以留存记录）
 r = subprocess.run(['python3', '<技能安装位>/cron-task-forge/scripts/card_linter.py',
                     '--name', '退休工程·L3每日巡检心跳', '--cron', '30 5 * * *', '/tmp/l3_card.txt'],
                    capture_output=True, text=True)

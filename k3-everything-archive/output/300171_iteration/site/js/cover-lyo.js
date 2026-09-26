@@ -11,7 +11,7 @@
   const SERIF = '"et-book", Palatino, Georgia, serif';
   const MONO = 'Menlo, Consolas, monospace';
 
-  // ── 图层定义（bottom→top）；col = 该层命题色 ──
+  // ── 图层定义（自底向上）；col = 该层命题色 ──
   const LAYERS = [
     { name: "真空泵组", en: "VACUUM PUMP SET", w: 22, d: 14, h: 4.2,
       head: "真空泵组 · 出海引擎", sub: "国际收入 10.40 亿 · +29.24% · K8",
@@ -121,7 +121,7 @@
     drawIdentity(ctx, L, i, zb, false);
   }
 
-  // ── C 态：X-ray 线框（不消隐）──
+  // ── 状态 C：X射线线框（不消隐）──
   function drawLayerWire(ctx, L, i, t) {
     const zb = layerZ(i, t), { b, t: tp } = boxVerts(L, zb);
     const col = L.col;

@@ -135,7 +135,7 @@ def run_script(script, payload, extra_args=()):
         raise DownstreamError("下游脚本 %s 的 stdout 不是合法 JSON：%s" % (script, e))
 
 
-# ---------------------------------------------------------------- score 段
+# ---------------------------------------------------------------- score 部分
 
 def validate_score_payload(raw):
     """按 scoring_engine 契约校验并归一化（不重实现其计算）。"""

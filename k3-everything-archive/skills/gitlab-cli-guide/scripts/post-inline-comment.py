@@ -12,7 +12,7 @@ WHY THIS SCRIPT EXISTS:
   The fix is to send position data as a proper JSON body. This script does that.
 
 USAGE:
-  # Post a single inline comment
+  # 发布一条行内评论
   python3 post-inline-comment.py \
     --project "mygroup/myproject" \
     --mr 42 \
@@ -20,7 +20,7 @@ USAGE:
     --line 16 \
     --body "This returns the wrapper object, not the value. Use .data instead."
 
-  # Post from a JSON file (batch mode)
+  # 从 JSON 文件提交（批处理模式）
   python3 post-inline-comment.py --project "mygroup/myproject" --mr 42 --batch comments.json
 
 BATCH FILE FORMAT (comments.json):

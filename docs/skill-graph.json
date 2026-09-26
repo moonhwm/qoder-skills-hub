@@ -1,0 +1,472 @@
+{
+ "generatedAt": "2026-09-26T16:19:41.538Z",
+ "method": "关键词交集≥2 或 摘要/关键词直呼件名；本地计算零 API 消耗",
+ "nodeCount": 91,
+ "edgeCount": 57,
+ "topHubs": [
+  {
+   "name": "evidence-chain-verifier",
+   "degree": 9
+  },
+  {
+   "name": "doc-image-solver",
+   "degree": 7
+  },
+  {
+   "name": "rumor-chain-verifier",
+   "degree": 5
+  },
+  {
+   "name": "vision-intake-ops",
+   "degree": 5
+  },
+  {
+   "name": "grad-path-scorer",
+   "degree": 4
+  },
+  {
+   "name": "phys-ai-mat-conf-radar",
+   "degree": 4
+  },
+  {
+   "name": "source-semantics-sentinel",
+   "degree": 4
+  },
+  {
+   "name": "arxiv-source-sentinel",
+   "degree": 3
+  },
+  {
+   "name": "autonomous-advance-protocol",
+   "degree": 3
+  },
+  {
+   "name": "claims-deep-audit",
+   "degree": 3
+  },
+  {
+   "name": "exam-isolation-ops",
+   "degree": 3
+  },
+  {
+   "name": "long-table-harvest-ops",
+   "degree": 3
+  },
+  {
+   "name": "output-verdict-gate",
+   "degree": 3
+  },
+  {
+   "name": "persona-modeling-kit",
+   "degree": 3
+  },
+  {
+   "name": "portable-sync-ops",
+   "degree": 3
+  }
+ ],
+ "edges": [
+  {
+   "a": "ai-persona-document",
+   "b": "persona-modeling-kit",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "autonomous-advance-protocol",
+   "b": "cognitive-exoskeleton",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "autonomous-advance-protocol",
+   "b": "evidence-chain-verifier",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "consignment-intake-ops",
+   "b": "skill-dispatch-hq",
+   "kinds": [
+    "kw1",
+    "mention"
+   ]
+  },
+  {
+   "a": "corpus-value-distiller",
+   "b": "up-distill-ops",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "doc-image-solver",
+   "b": "livability-audit-swarm",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "eastmoney-rumor-sentinel",
+   "b": "evidence-chain-verifier",
+   "kinds": [
+    "kw1",
+    "mention"
+   ]
+  },
+  {
+   "a": "fusion-program-audit",
+   "b": "phys-ai-mat-conf-radar",
+   "kinds": [
+    "kw1",
+    "mention"
+   ]
+  },
+  {
+   "a": "persona-memory-anchors",
+   "b": "persona-modeling-kit",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "portable-sync-ops",
+   "b": "skill-version-ops",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "skill-refresh-ops",
+   "b": "skill-reinstall-ops",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "skill-reinstall-ops",
+   "b": "skill-version-ops",
+   "kinds": [
+    "kw1"
+   ]
+  },
+  {
+   "a": "arxiv-source-sentinel",
+   "b": "claims-deep-audit",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "arxiv-source-sentinel",
+   "b": "evidence-chain-verifier",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "arxiv-source-sentinel",
+   "b": "source-semantics-sentinel",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "av-media-ops",
+   "b": "rumor-chain-verifier",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "bidding-docs-ops",
+   "b": "bidding-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "consignment-intake-ops",
+   "b": "coordination-letter",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "autonomous-advance-protocol",
+   "b": "doc-image-solver",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "coordination-letter",
+   "b": "doc-image-solver",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "doc-image-solver",
+   "b": "k3-interaction-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "doc-image-solver",
+   "b": "vision-ocr-pipeline",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "eastmoney-rumor-sentinel",
+   "b": "rumor-chain-verifier",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "claims-deep-audit",
+   "b": "evidence-chain-verifier",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "doc-image-solver",
+   "b": "exam-isolation-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "exam-isolation-ops",
+   "b": "grad-path-scorer",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "extpool-furnace-ops",
+   "b": "pan-exhaust-dispatch",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "extpool-furnace-ops",
+   "b": "software-testing-guide",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "admission-panel-analytics",
+   "b": "grad-path-scorer",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "grad-path-scorer",
+   "b": "multi-dimensional-option-scoring",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "grad-path-scorer",
+   "b": "unified-decision-suite",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "doc-archive-ingest",
+   "b": "long-table-harvest-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "evidence-chain-verifier",
+   "b": "long-table-harvest-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "long-table-harvest-ops",
+   "b": "wechat-article-deep-ingest",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "exam-isolation-ops",
+   "b": "output-verdict-gate",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "output-verdict-gate",
+   "b": "release-gate-audit",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "omni-exhaust-research-ops",
+   "b": "pan-exhaust-dispatch",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "persona-iteration-loop-ops",
+   "b": "persona-modeling-kit",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "cross-session-workflow-bridge",
+   "b": "phys-ai-mat-conf-radar",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "evidence-chain-verifier",
+   "b": "phys-ai-mat-conf-radar",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "phys-ai-mat-conf-radar",
+   "b": "source-semantics-sentinel",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "autonomous-advance-ops",
+   "b": "plugin-datasource-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "output-verdict-gate",
+   "b": "portable-sync-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "portable-sync-ops",
+   "b": "release-gate-audit",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "evidence-chain-verifier",
+   "b": "rumor-chain-verifier",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "rumor-chain-verifier",
+   "b": "sector-stock-rumorchain-pipeline",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "evidence-chain-verifier",
+   "b": "senior-rumor-check",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "rumor-chain-verifier",
+   "b": "senior-rumor-check",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "autonomous-advance-ops",
+   "b": "skill-dispatch-hq",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "claims-deep-audit",
+   "b": "source-semantics-sentinel",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "evidence-chain-verifier",
+   "b": "source-semantics-sentinel",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "commute-school-optimizer",
+   "b": "travel-commute-planner",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "av-media-ops",
+   "b": "vision-intake-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "bidding-ops",
+   "b": "vision-intake-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "doc-image-solver",
+   "b": "vision-intake-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "qr-visual-rescue",
+   "b": "vision-intake-ops",
+   "kinds": [
+    "mention"
+   ]
+  },
+  {
+   "a": "vision-intake-ops",
+   "b": "vision-ocr-pipeline",
+   "kinds": [
+    "mention"
+   ]
+  }
+ ]
+}

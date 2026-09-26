@@ -83,7 +83,7 @@ for tp in new_files:
         if s in c: hits.append(os.path.basename(tp))
 ok('C6 零明文凭证', not hits, f'hits={hits}')
 
-# C7 安全边界：删除集合未碰镜像/备份/台账/锚链/INDEX
+# C7 安全边界：删除集合未触碰镜像/备份/台账/锚链/INDEX
 forbidden_hit = [i['path'] for i in man['items']
                  if any(k in i['path'] for k in ('.bak', '台账', 'INDEX', 'hash_chain', '逃逸登记册', '锚'))]
 ok('C7 安全边界', not forbidden_hit, f'forbidden={forbidden_hit}')

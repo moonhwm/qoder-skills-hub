@@ -107,7 +107,7 @@ for skill_file in "${SUB_SKILLS[@]}"; do
   COUNT=$((COUNT + 1))
   echo "  [$COUNT/$TOTAL] $sub_dir"
 
-  # Section heading derived from directory name (e.g. glab-mr → glab mr)
+  # 源自目录名的章节标题（例如：glab-mr → glab mr）
   heading="${sub_dir//-/ }"
 
   {

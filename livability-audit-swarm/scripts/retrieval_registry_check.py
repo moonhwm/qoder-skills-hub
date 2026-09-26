@@ -124,7 +124,7 @@ MERGE_TOLERANCE = 0.05  # --merge 同 (city,param) value 相对偏差 >5% → �
 # v1.7 可选字段枚举（retrieval-paths.md 第 4 节）：填了就必须合法（非法值 → 错误）
 COMPARABILITY = ("full", "proxy", "stale")  # 口径完全可比/代理口径（如城镇代全体）/滞后口径（如用上年值）
 SOURCE_CHAIN = ("direct", "indirect")       # 官网/公报原文直取 / 媒体/第三方转引
-# v1.7 强制规则：source_chain=indirect 时 conf 上限 C（标 A/B → 错误）
+# v1.7 强制规则：source_chain=indirect 时 conf 上限 C（标记 A/B → 错误）
 INDIRECT_CONF_CAP = "C"
 # v1.7 §10：evidence_band 仅校验格式——0–1 区间字符串如 "0.70-0.90"（下界 ≤ 上界）
 # v1.8 F-A1：\d → [0-9]，拒全角/数学等 Unicode 十进制数字（\d 默认 UNICODE 会放行）
@@ -315,8 +315,8 @@ def validate_entry(x, i, errors, warnings, today, ctx_prefix="entries"):
                     cm_ok = False
                 else:
                     vals[f] = float(v)
-            # v1.6：偏离 §9 统一钉死值（hpi 90/2.8；rir 45）→ WARNING 不阻断；
-            # rir 的 area_sqm 不入回算公式（§9.2），仅作钉死值口径校验
+            # v1.6：偏离 §9 统一固定值（hpi 90/2.8；rir 45）→ WARNING 不阻断；
+            # rir 的 area_sqm 不纳入回算公式（§9.2），仅用于固定值口径校验
             for f, pin in PINNED_CALC[param].items():
                 if f in vals and vals[f] != pin:
                     warnings.append(

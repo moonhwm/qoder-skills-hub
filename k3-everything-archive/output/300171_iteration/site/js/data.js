@@ -1,5 +1,5 @@
-// window.RPT — 全部数值转录自 <输出区>/300171_iteration/ 落盘文件
-// 散文事实源：东富龙300171_分析报告_v1.0.md；K 锚：data/claims.json（K1-K15 按文件顺序编号）
+// window.RPT — 所有数值均转录自 <输出区>/300171_iteration/ 磁盘文件
+// 非结构化事实源：东富龙300171_分析报告_v1.0.md；K 锚：data/claims.json（K1-K15 依文件顺序编号）
 window.RPT = (() => {
 
   // 利润拐点序列（is_20231231/20241231/20250630.csv 为 iFinD 底表；2025FY/2026H1 见 K10/K2/K3）
@@ -116,7 +116,7 @@ window.RPT = (() => {
     ["D6", "cron 新会话无法继承上下文 → 任务描述自包含并指向宪章落盘路径"],
   ];
 
-  // K 锚表（data/claims.json 全 15 条，原序）
+  // K 锚表（data/claims.json 共 15 条，按原始顺序）
   const claims = [
     { k: "K1", claim: "300171.SZ 证券简称为东富龙，实控人郑效东持股34.08%，总股本765,828,040股",
       src: "官方底表", date: "2026-08-28", conf: "High",

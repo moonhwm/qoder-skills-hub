@@ -39,6 +39,17 @@ node tools/merkle.cjs gen      # 内容变更后重新生成 MERKLE.json
 
 verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件并以 1 退出。
 
+## 派生件
+
+| 文件 | 内容 | 生成器 |
+|---|---|---|
+| docs/skill-index-zh.json | 91 件技能中文关键词与一句话摘要 | tools/gen-keywords.cjs |
+| docs/skill-graph.json | 技能交叉引用图（关键词交集/直呼检测） | tools/gen-graph.cjs |
+| docs/evals/*.json | 每件 3 条调度评测用例（触发语/期望/判定词） | tools/evals-gen.cjs |
+| docs/sinicize-ledger.jsonl | 注释汉化台账（块级、含 token 计数） | tools/sinicize.cjs |
+
+派生件均可重跑再生；重跑后须重新 gen 梅克尔树。
+
 ## 技能索引（91 件）
 
 | 技能 | 说明 |

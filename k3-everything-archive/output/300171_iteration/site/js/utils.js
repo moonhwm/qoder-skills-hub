@@ -16,10 +16,10 @@ window.U = (() => {
     };
   }
 
-  // Professional palette — white surface, deep-navy ink, electric-blue accent.
-  // NOTE key semantics: `red` is the LEGACY ACCENT SLOT (now electric blue) so existing
-  // accent usages recolor automatically; true negatives (declines/crashes/missing)
-  // must use PAL.neg — audited per chart.
+  // 专业配色方案——白色底色，深海军蓝文字，电光蓝强调色。
+  // 注意关键语义：`red` 为旧版强调色槽位（现已替换为电光蓝），故现有
+  // 强调色用法会自动重新着色；真正的负向状态（拒绝/崩溃/缺失）
+  // 必须使用 PAL.neg —— 按图表逐一审计。
   const PAL = {
     paper: "#ffffff", hi: "#f7f9fc", ink: "#051c2c", inkMd: "#42566a", inkLo: "#8595a6",
     line: "#dbe2ea", lineLo: "#eef1f6", red: "#2251ff", redHi: "#1233b8",
@@ -28,7 +28,7 @@ window.U = (() => {
   };
   const SERIES = [PAL.red, PAL.blue, PAL.copper, PAL.green];
 
-  // HiDPI canvas size binding
+  // HiDPI canvas 尺寸绑定
   function bindCanvas(canvas) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const fit = () => {
@@ -42,7 +42,7 @@ window.U = (() => {
     return { fit, ctx: canvas.getContext("2d") };
   }
 
-  // 3D projection
+  // 3D 投影
   function project(pt, view, cam = {}) {
     const yaw = cam.yaw ?? 0, pitch = cam.pitch ?? 0;
     const scale = cam.scale ?? Math.min(view.w, view.h) * 0.24;
@@ -57,7 +57,7 @@ window.U = (() => {
     return { x: (cam.ox ?? view.cx) + x * scale * p, y: (cam.oy ?? view.cy) + y * scale * p, z, p };
   }
 
-  // Halftone dot field (color adjustable)
+  // 网点字段（颜色可调）
   function dotField(ctx, x0, y0, w, h, opt = {}) {
     const gap = opt.gap ?? 12;
     const color = opt.color ?? PAL.red;
@@ -77,7 +77,7 @@ window.U = (() => {
     ctx.restore();
   }
 
-  // ── Count-up (ease-out cubic; writes via innerHTML when html:true) ──
+  // ── 数字递增（三次缓出；当 html:true 时通过 innerHTML 写入）──
   function countUp(el, { from = 0, to = 1, dur = 1100, html = false, fmt = v => Math.round(v).toLocaleString("en-US") } = {}) {
     let raf = 0, t0 = null;
     const tick = ts => {
@@ -98,7 +98,7 @@ window.U = (() => {
     n: v => v.toLocaleString("en-US"),
   };
 
-  // ── Drill-down data card ──
+  // ── 下钻数据卡片 ──
   const drill = document.getElementById("drill-card");
   let drillOpen = false;
   function showDrill({ title, value, delta, sub, source, x, y }) {
@@ -123,7 +123,7 @@ window.U = (() => {
     }
   }, true);
 
-  // ── Hover tooltip ──
+  // ── 悬停提示 ──
   const tip = document.createElement("div");
   tip.className = "tip"; document.body.appendChild(tip);
   function showTip(html, x, y) {
@@ -133,7 +133,7 @@ window.U = (() => {
   }
   function hideTip() { tip.style.opacity = 0; }
 
-  // ── Chart frame ──
+  // ── 图表框架 ──
   function frame(el, { title, sub, src }) {
     const head = document.createElement("div");
     if (title) head.innerHTML = `<p class="chart-title">${title}</p>${sub ? `<p class="chart-sub">${sub}</p>` : ""}`;

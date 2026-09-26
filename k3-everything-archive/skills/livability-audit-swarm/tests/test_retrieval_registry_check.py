@@ -416,7 +416,7 @@ check("M13 merge --pretty 输出合并信息与矩阵",
       code == 0 and out is None and "合并模式" in so and "覆盖矩阵" in so,
       f"{code} {so[:200]}")
 
-# ============ v1.6 对抗修复（reviewer F1–F9） ============
+# ============ v1.6 对抗修复（审稿人 F1–F9） ============
 # F1：执行 --merge 进行质性比较前，先通过 float() 转为数值型，将 "10" 与 10.0 视为同值并进入数值分支
 fa = wf("fa.json", [entry(value="80000")])        # 广州 income "80000"（数字字符串）
 fb = wf("fb.json", [entry(value=80000)])
@@ -448,7 +448,7 @@ check("V05 F2 +2.33%→错误且偏差文案精确到 4 位小数",
       code == 1 and nerr(out) == 1 and "2.3333%" in out["errors"][0],
       f"{code} {out}")
 
-# F3：calc_meta 偏离 §9 钉死值（hpi 90/2.8）→ WARNING 不阻断
+# F3：calc_meta 偏离 §9 固定值（hpi 90/2.8）→ WARNING 不中断
 code, out, _, _ = run_items([entry(param="hpi", value=10.0, unit="倍",
                                    calc_meta={"price": 21000, "area_sqm": 60,
                                               "income": 45000,
@@ -484,7 +484,7 @@ code, out, _, _ = run_items([entry(param="hpi", value=10.0, unit="倍")])
 check("V11 F5 hpi 缺 calc_meta 正常形态→仅缺 calc_meta 单 WARNING",
       code == 0 and nerr(out) == 0 and nwarn(out) == 1, f"{code} {out}")
 
-# F6：hpi/rir 带 calc_meta 但 value 非数值 → 错误
+# F6：hpi/rir 带有 calc_meta 但 value 非数值 → 错误
 code, out, _, _ = run_items([entry(param="hpi", value="高", unit="倍",
                                    calc_meta=HPI_CM)])
 check("V12 F6 hpi value string + calc_meta→错误",
@@ -495,7 +495,7 @@ code, out, _, _ = run_items([entry(param="rir", value="高", unit="-",
 check("V13 F6 rir value string + calc_meta→错误",
       code == 1 and nerr(out) == 1, f"{code} {out}")
 
-# F7：性质 value strip 后相同 → WARNING 取新（行为保持不变，补充文档说明）
+# F7：性质 value strip 后相同 → WARNING 采用新值（行为保持不变，补充文档说明）
 ft = wf("ft.json", [entry(param="city_tier", value="一线 ", unit="档",
                           source_type="商业平台", conf="C",
                           url="https://www.yicai.com")])
@@ -546,7 +546,7 @@ code, out, _, _ = run_items([entry(comparability="proxy", conf="A")])
 check("W07 comparability 不与 conf 联动（proxy+官方 A 合法）",
       code == 0 and nerr(out) == 0 and nwarn(out) == 0, f"{code} {out}")
 
-# source_chain 正例：direct+conf A 合法；indirect+conf C 合法（转引上限 C）
+# source_chain 有效示例：direct+conf A 有效；indirect+conf C 有效（转发引用上限为 C）
 code, out, _, _ = run_items([entry(source_chain="direct")])
 check("W08 source_chain=direct + conf A 合法",
       code == 0 and nerr(out) == 0 and nwarn(out) == 0, f"{code} {out}")

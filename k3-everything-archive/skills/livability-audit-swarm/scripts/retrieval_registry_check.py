@@ -117,14 +117,14 @@ CALC_META_FIELDS = {
 }
 CALC_TOLERANCE = 0.02   # calc_meta 回算与 value 相对偏差 >2% → 错误
 CALC_EPS = 1e-9         # v1.6：>2% 判定 epsilon，消除浮点边界抖动（恰好 2% 放行）
-# v1.6 §9 统一钉死值：calc_meta 偏离时触发 WARNING「偏离统一口径」（不阻断历史条目）
+# v1.6 §9 统一固定值：calc_meta 偏离时触发 WARNING「偏离统一计算标准」（不阻断历史条目）
 PINNED_CALC = {"hpi": {"area_sqm": 90.0, "household_size": 2.8},
                "rir": {"area_sqm": 45.0}}
 MERGE_TOLERANCE = 0.05  # --merge 同 (city,param) value 相对偏差 >5% → 错误
 # v1.7 可选字段枚举（retrieval-paths.md 第 4 节）：填了就必须合法（非法值 → 错误）
 COMPARABILITY = ("full", "proxy", "stale")  # 口径完全可比/代理口径（如城镇代全体）/滞后口径（如用上年值）
 SOURCE_CHAIN = ("direct", "indirect")       # 官网/公报原文直取 / 媒体/第三方转引
-# v1.7 强制规则：source_chain=indirect 时 conf 上限 C（标 A/B → 错误）
+# v1.7 强制规则：当 source_chain=indirect 时，conf 上限为 C（标记 A/B → 错误）
 INDIRECT_CONF_CAP = "C"
 # v1.7 §10：evidence_band 仅校验格式——0–1 区间字符串如 "0.70-0.90"（下界 ≤ 上界）
 # v1.8 F-A1：\d → [0-9]，拒全角/数学等 Unicode 十进制数字（\d 默认 UNICODE 会放行）

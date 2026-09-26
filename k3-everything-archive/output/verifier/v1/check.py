@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# verifier v1 机检脚本 — 退休工程
+# verifier v1 机检脚本 — 已停用项目
 import re, os, sys, json, subprocess
 
 REG='<注册处>'
@@ -56,7 +56,7 @@ if os.path.exists(p5):
 else:
     print('SKIP V5 未产出')
 
-# V8 明文凭证零泄漏（对 registry 20260902 新文书 + output 交付）
+# V8 明文凭证零泄漏（对应 registry 20260902 新文档 + output 交付）
 SECRETS=['REDACTED_LEGACY','REDACTED_LEGACY','REDACTED_LEGACY',
          'REDACTED_LEGACY','REDACTED_LEGACY','REDACTED_LEGACY','REDACTED_LEGACY']
 hits=[]

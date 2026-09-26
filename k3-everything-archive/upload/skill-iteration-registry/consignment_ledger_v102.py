@@ -7,8 +7,8 @@
 #   python3 consignment_ledger.py reject <函ID> <退回理由>
 #   python3 consignment_ledger.py status [函ID]
 #   python3 consignment_ledger.py overdue [小时阈值, 默认24]
-# 台账: <注册处>/交割台账.jsonl（行信封 ts/writer/item_id/event/note）
-# v1.0.2: 整写 JSON → JSONL append（并发安全）；读端 replay（坏行跳过+计数）；压实归主会话 04:00 cron
+# 台账: <注册处>/交割台账.jsonl（行结构 ts/writer/item_id/event/note）
+# v1.0.2：全量写入 JSON 改为 JSONL 追加模式（支持并发安全）；读取端重放处理（跳过异常行并计数）；数据压缩合并至主会话（04:00 cron 定时执行）
 import json, sys, os, importlib.util
 from datetime import datetime, timezone, timedelta
 

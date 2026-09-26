@@ -1,0 +1,36 @@
+{
+ "skill": "k8s-cluster-ops",
+ "generatedAt": "2026-09-26T17:11:26.509Z",
+ "cases": [
+  {
+   "trigger": "帮我看看现在集群里跑着哪些Pod，状态都正常吗？",
+   "expect": "调用kubectl get pods命令拉取当前集群的Pod列表及运行状态信息。",
+   "judge": [
+    "kubectl get pods",
+    "Pod状态",
+    "资源查询",
+    "集群管理"
+   ]
+  },
+  {
+   "trigger": "把刚才那个nginx镜像部署到测试环境去，开两个副本就行。",
+   "expect": "解析用户指令并生成对应的kubectl apply命令完成新应用的部署与副本配置。",
+   "judge": [
+    "kubectl apply",
+    "应用部署",
+    "副本配置",
+    "镜像拉取"
+   ]
+  },
+  {
+   "trigger": "这个pod一直重启，帮我查一下它的日志看看是不是内存爆了。",
+   "expect": "精准定位目标Pod并执行kubectl logs命令抓取实时或历史日志以辅助故障诊断。",
+   "judge": [
+    "kubectl logs",
+    "日志查看",
+    "故障排查",
+    "容器调试"
+   ]
+  }
+ ]
+}

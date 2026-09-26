@@ -230,7 +230,7 @@ def run(text):
     }
 
 
-# ---------------- smoke ----------------
+# ---------------- 冒烟 ----------------
 
 SMOKE_JSONL = "\n".join([
     json.dumps({"id": "S1", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany",

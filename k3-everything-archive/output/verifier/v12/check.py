@@ -14,7 +14,7 @@ r.append(ok("M1 考证报告必备节齐") if t and all(k in t for k in need) el
 m1=os.stat(VAULT1).st_mode if os.path.exists(VAULT1) else 0
 m2=os.stat(VAULT2).st_mode if os.path.exists(VAULT2) else 0
 r.append(ok("M2 两把key在vault且chmod600") if stat.S_IMODE(m1)==0o600 and stat.S_IMODE(m2)==0o600 else fail("M2 mode"))
-# M3 零明文：key值不出现在registry任何.md/json（vault除外）
+# M3 零明文：key值不出现于 registry 的任何 .md/.json 文件中（vault 除外）
 k1=json.load(open(VAULT1))["key"]; k2=json.load(open(VAULT2))["key"]
 hits=[]
 for root,_,fs in os.walk(REG):

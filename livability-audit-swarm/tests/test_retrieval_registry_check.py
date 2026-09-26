@@ -448,7 +448,7 @@ check("V05 F2 +2.33%→错误且偏差文案精确到 4 位小数",
       code == 1 and nerr(out) == 1 and "2.3333%" in out["errors"][0],
       f"{code} {out}")
 
-# F3：calc_meta 偏离 §9 钉死值（hpi 90/2.8）→ WARNING 不阻断
+# F3：calc_meta 偏离 §9 固定值（hpi 90/2.8）→ WARNING 不阻断
 code, out, _, _ = run_items([entry(param="hpi", value=10.0, unit="倍",
                                    calc_meta={"price": 21000, "area_sqm": 60,
                                               "income": 45000,
@@ -471,7 +471,7 @@ check("V08 F4 rir area_sqm=30≠45→WARNING 偏离统一口径（回算不受�
       code == 0 and nerr(out) == 0 and nwarn(out) == 1
       and "偏离统一口径" in out["warnings"][0], f"{code} {out}")
 
-# F5：无 calc_meta 且 unit 含 % / rir value>3 → WARNING 疑似百分数形态
+# F5：缺少 calc_meta 且 unit 包含 % 或 rir value>3 → WARNING 疑似为百分比格式
 code, out, _, _ = run_items([entry(param="rir", value=0.35, unit="%")])
 check("V09 F5 rir 缺 calc_meta 且 unit 含 %→缺 calc_meta+疑似百分数双 WARNING",
       code == 0 and nerr(out) == 0 and nwarn(out) == 2
@@ -484,7 +484,7 @@ code, out, _, _ = run_items([entry(param="hpi", value=10.0, unit="倍")])
 check("V11 F5 hpi 缺 calc_meta 正常形态→仅缺 calc_meta 单 WARNING",
       code == 0 and nerr(out) == 0 and nwarn(out) == 1, f"{code} {out}")
 
-# F6：hpi/rir 带有 calc_meta 但 value 不是数值 → 错误
+# F6：hpi/rir 包含 calc_meta 但 value 非数值 → 报错
 code, out, _, _ = run_items([entry(param="hpi", value="高", unit="倍",
                                    calc_meta=HPI_CM)])
 check("V12 F6 hpi value string + calc_meta→错误",
@@ -495,7 +495,7 @@ code, out, _, _ = run_items([entry(param="rir", value="高", unit="-",
 check("V13 F6 rir value string + calc_meta→错误",
       code == 1 and nerr(out) == 1, f"{code} {out}")
 
-# F7：性质 value strip 后一致 → WARNING 采用新值（行为保持不变，补充文档说明）
+# F7：性质在 value strip 后保持一致 → WARNING 采用新值（行为保持不变，补充文档说明）
 ft = wf("ft.json", [entry(param="city_tier", value="一线 ", unit="档",
                           source_type="商业平台", conf="C",
                           url="https://www.yicai.com")])
@@ -614,7 +614,7 @@ code, out, _, _ = run_items([entry(comparability="full"),
 check("W19 单文件模式不做口径混杂检测→零警告",
       code == 0 and nerr(out) == 0 and nwarn(out) == 0, f"{code} {out}")
 
-# 同城同 param 不同 comparability 不属于跨城横向比较→不进行口径过滤（同值仅保留最新 WARNING）
+# 同城且 param 相同但 comparability 不同的情况不属于跨城横向比较→不进行口径过滤（相同值仅保留最新的 WARNING）
 g8 = wf("g8.json", [entry(value=80000, comparability="full")])
 g9 = wf("g9.json", [entry(value=80000, comparability="proxy")])
 code, out, _, _ = run(["--merge", g8, g9])

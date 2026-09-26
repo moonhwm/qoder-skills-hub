@@ -346,7 +346,7 @@ DEFAULT_PARAMS = {
 }
 
 
-# ---------------- smoke ----------------
+# ---------------- 冒烟 ----------------
 
 def _mk(i, acc, day, txt):
     return {"id": "P%d" % i, "url": "https://example.com/%d" % i,

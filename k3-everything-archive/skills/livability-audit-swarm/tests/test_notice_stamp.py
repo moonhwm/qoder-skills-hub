@@ -116,7 +116,7 @@ for tag, src, ext, expect in cases:
     check(f"{tag} strip 逐字节一致", removed and out == expect and "未闭合" not in se,
           f"removed={removed} out={out!r}")
 
-# ============ F-B2 HTML 分支：畸形 .md 20 万行不挂起、不误删远处正文（4KB 边界） ============
+# ============ F-B2 HTML 分支：处理格式异常 .md 文件时，20 万行不卡死、不误删远处正文（4KB 边界） ============
 mal = ("<!-- AI_READER_NOTICE 旧格式\n"
        + "".join(f"正文第{i}节 -->\n" if i == 50000 else f"正文第{i}节\n"
                  for i in range(200000)))
@@ -131,7 +131,7 @@ _, out, removed, _ = strip(small, ".md")
 check("T12 HTML 合法小块（4KB 界内）正常删除", removed and out == "# 正文\n",
       f"removed={removed} out={out!r}")
 
-# ============ F-B3 未闭合旧块：WARNING + 内容零改动 ============
+# ============ F-B3 未闭合旧块：警告 + 内容零改动 ============
 unclosed = "# AI_READER_NOTICE\n# change_id: X\n# 被截断\nx = 1\n"
 _, out, removed, se = strip(unclosed, ".py")
 check("T13 未闭合HASH块 零改动+WARNING「未闭合留痕块」",

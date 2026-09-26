@@ -367,7 +367,7 @@ def create_readme(base_path, project_name):
 
 **状态**：🟢 准备就绪
 **创建时间**：{datetime.now().strftime("%Y-%m-%d")}
-**QA 框架**：Google Testing Standards
+**QA 框架**：Google 测试标准
 
 ---
 

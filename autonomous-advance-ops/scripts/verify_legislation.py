@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# verify_legislation.py v1.1 —— 实施幻觉核验（autonomous-advance-ops v1.0.0 §7.10 配套）
-# v1.1（2026-08-29）：随整合组件迁移——PROTO 自动指向本文件的 SKILL.md（相对路径不变）；
-#   宪章/版本尾号文件改为使用 glob 获取最新版（原先硬编码的 charter_v3.2.10/L3_v1.0/勘误表v1.3 已滞后）；
-#   项目侧路径检查仍依赖 PROJ_DIR 环境变量，路径失效≠立法失效（检查清单自身待刷新时如实标注）。
+# verify_legislation.py v1.1 —— 执行幻觉校验（autonomous-advance-ops v1.0.0 §7.10 配套）
+# v1.1（2026-08-29）：随集成组件迁移——PROTO 自动指向本文件的 SKILL.md（相对路径不变）；
+#   宪章/版本尾部文件改为通过 glob 获取最新版本（此前硬编码的 charter_v3.2.10/L3_v1.0/勘误表v1.3 已过时）；
+#   项目侧路径检查仍依赖 PROJ_DIR 环境变量，路径失效≠立法失效（检查清单自身待刷新时将如实标注）。
 # 用法: python3 scripts/verify_legislation.py
 # 退出码: 0=全命中; 1=存在未命中(落实幻觉,按逃逸登记)
 import os, sys, json, glob

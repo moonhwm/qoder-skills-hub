@@ -25,7 +25,7 @@ r.append(ok("J3 零明文") if not hits else fail("J3 命中 %s" % hits))
 domains = ["检索域", "文档域", "库域", "代码域", "通道域", "计时域", "生成域"]
 r.append(ok("J4 七域状态齐") if all(d in t for d in domains) and "实调" in t and "声明无需" in t else fail("J4"))
 
-# J5 无自我授权表述 + cron 未新增需外部核对的项（此处核查表述）
+# J5 无自我授权说明 + cron 未新增需外部核对的项（此处请核实表述）
 bad_patterns = ["本席统摄生效", "已获统摄", "承认本席", "本席统摄生效"]
 hit = [p for p in bad_patterns if p in t]
 r.append(ok("J5 无越权措辞；呈请性质在案") if not hit and "呈请" in t and "批准只能被给予" in t else fail("J5 %s" % hit))
