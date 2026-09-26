@@ -1,0 +1,20 @@
+# qoder-skills-hub · agent 预载面
+
+本仓库为 Qoder 技能公开库：91 件技能，一目录一件，SKILL.md 为入口。
+
+## 预载顺序（agent 建议）
+1. README.md —— 安装、安全约定、完整性校验、索引；
+2. docs/skill-index-zh.json —— 中文关键词与一句话摘要（检索首选）；
+3. docs/skill-graph.json —— 交叉引用边（邻接调度）；
+4. docs/evals/<skill>.json —— 触发语评测基线（调度回归）；
+5. MERKLE.json —— SHA3-256 梅克尔根（下载后先 verify 再执行任何脚本）。
+
+## 硬规则
+- 注册只写 SKILL.md；scripts/ 内脚本运行前人工审读；
+- 仓库无凭据；发现凭据即按泄漏事件处理；
+- 内容变更以梅克尔根为准：根不同即内容不同。
+
+## 关联面
+- 节点：OpenPlanLink 幻16 桥接节点（A2A 0.3.0），发现见其 /.well-known/agent-card.json；
+- 计划：docs/connectivity-plan.md（云端×本地×peer 单总线握手）；
+- 研究：docs/research/bus-topology-brief.md（跨境单总线与拓扑约束）。

@@ -1,0 +1,18 @@
+name: integrity
+on:
+  push:
+  pull_request:
+
+jobs:
+  merkle-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: 校验 SHA3-256 梅克尔根
+        run: node tools/merkle.cjs verify
+      - name: 评测集结构烟雾
+        run: |
+          node -e 'const fs=require("fs");const d="docs/evals";const n=fs.readdirSync(d).filter(f=>f.endsWith(".json"));let bad=0;for(const f of n){const j=JSON.parse(fs.readFileSync(d+"/"+f,"utf8"));if(!j.skill||!Array.isArray(j.cases)||j.cases.length<1)bad++;}if(bad){console.log("evals bad="+bad);process.exit(1)}console.log("evals ok files="+n.length);'
