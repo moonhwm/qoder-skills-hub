@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "task": "在此填写决策任务名称，如：三个投资标的的量化排序",
+  "data_cutoff": "YYYY-MM-DD",
+  "next_review_date": "YYYY-MM-DD",
+  "dimensions": [
+    {
+      "name": "维度名称",
+      "weight": 0.30,
+      "weight_rationale": "显式声明该权重的依据，如：用户首要目标为收益，故收益维度权重最高",
+      "conf": "empirical | estimated | assumed",
+      "score_anchors": {
+        "9-10": "可验证的锚点事实描述",
+        "6-7": "可验证的锚点事实描述",
+        "3-4": "可验证的锚点事实描述",
+        "0-2": "可验证的锚点事实描述"
+      },
+      "evidence_required": "该维度可接受的证据来源清单",
+      "checklist": [
+        "核查要点1",
+        "核查要点2"
+      ],
+      "key_metric": "可计算公式，如：复合年化收益率 = (终值/初值)^(1/n) - 1",
+      "layer": 1,
+      "coupled_with": []
+    }
+  ],
+  "negative_items": [
+    {
+      "name": "风险扣分项名称，如：调剂窗口风险",
+      "weight": -0.15,
+      "weight_rationale": "扣分依据；单项 |weight×score| 不超过总分 30%",
+      "conf": "estimated",
+      "score_means": "score 表示风险严重度 0-10，越大越危险"
+    }
+  ],
+  "weight_structure": {
+    "description": "层次耦合结构说明：layer 1 为目标层，layer 2 为子维度；子维度权重在其父维度内归一化后乘父权重",
+    "normalization": "正权重之和归一化为 1；负权重项不归一化，直接扣分"
+  },
+  "convergence": {
+    "thresholds": {
+      "strict": 0.001,
+      "standard": 0.01,
+      "loose": 0.05
+    },
+    "default_tier": "standard",
+    "max_iterations": 50,
+    "rule": "每轮修正分值/权重后重算排名，max_change 低于所选档位阈值即收敛；达到 50 轮未收敛必须停止并报告不收敛原因"
+  },
+  "grade_thresholds": {
+    "A": 8.0,
+    "B": 6.5,
+    "C": 5.0,
+    "D": 3.5,
+    "F_note": "低于 D 下限为 F（欺诈性或不可行）"
+  },
+  "sensitivity": {
+    "required": true,
+    "perturbation": 0.2,
+    "samples": 200,
+    "report": "输出每个选项在 ±20% 权重扰动下的 rank_stability 与 grade_stability"
+  },
+  "option_pricing": {
+    "enabled": false,
+    "S": "标的现值：多因子合成，需列出各因子、权重与 conf",
+    "K": "进入成本：获取选项的全部成本（金钱 + 时间机会成本折算）",
+    "T": "时间窗口（年）：从现在到价值兑现/退出节点",
+    "sigma": "波动率：多源合成（历史波动/可比资产/情景离散度）的加权均方根",
+    "r": 0.03
+  },
+  "scenario": "可选场景标签：择校 | 择业 | 投资标的 | 技术路线 | 供应商 | 其他",
+  "bias_check": {
+    "conf_labeling_complete": false,
+    "sensitivity_done": false,
+    "model_matches_data_quality": false,
+    "self_critique_top3_done": false,
+    "dates_labeled": false,
+    "custom_params_stripped": false
+  }
+}

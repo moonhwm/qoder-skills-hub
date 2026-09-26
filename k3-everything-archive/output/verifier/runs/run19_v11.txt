@@ -1,0 +1,6 @@
+PASS: L1 全节齐
+PASS: L2 复算 N=490 N*=79 strong=182 q4yes=21（flash=1000 glm=100）
+PASS: L3 配对 flash百席N=50 glm N=47 Δ=3pp
+PASS: L4 miss 标红与工程留痕在案
+PASS: L5 零明文+千席入账 1100 条+当日 ¥3.13<¥50
+== v11 汇总 == ALL PASS

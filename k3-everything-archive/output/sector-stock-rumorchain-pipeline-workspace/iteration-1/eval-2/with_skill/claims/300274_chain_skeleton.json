@@ -1,0 +1,31 @@
+{
+  "topic": "300274 舆情传言链核查（骨架占位，未经真实核查）",
+  "check_date": "2026-09-01",
+  "skeleton_notice": "本文件为结构骨架：断言内容、判定、conf 均为占位。成稿轮按 rumor-chain-verifier 六步实录后重跑 chain_check.py，并与 md/checklist 三层级联同步。",
+  "links": [
+    {
+      "id": "L1",
+      "type": "事实",
+      "claim": "{{占位：传言中的事实节，如'公司某期营收/订单数字'}}",
+      "verdict": "存疑",
+      "conf": "Low",
+      "no_evidence_reason": "骨架占位：S1/S3 真实采集与核查未执行，禁填具体数字"
+    },
+    {
+      "id": "L2",
+      "type": "因果",
+      "claim": "{{占位：因果节，如'因订单数字故业绩必然暴增'}}",
+      "verdict": "存疑",
+      "conf": "Low",
+      "no_evidence_reason": "骨架占位：因果节为传言命门，成稿轮重点定断；任一因果节断裂则链条整体不成立"
+    },
+    {
+      "id": "L3",
+      "type": "价值",
+      "claim": "{{占位：价值/话术节，如'错过再无'类情绪句}}",
+      "verdict": "存疑",
+      "conf": "Low",
+      "no_evidence_reason": "价值节不证真伪，成稿轮标注话术并统计话术密度"
+    }
+  ]
+}

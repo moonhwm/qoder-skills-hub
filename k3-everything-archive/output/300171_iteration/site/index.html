@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>东富龙 300171 · 迭代机制实战研究 · 交互式研究版</title>
+<meta name="description" content="东富龙（300171.SZ）公开信息结构化分析的交互式研究站：基本面、空头检验、估值锚与证明链/语义链/哈希链三链留痕。L1 原型级，不构成投资建议。">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- 合规红线：页面最顶部固定横幅 -->
+<div id="compliance-bar"><b>L1原型级</b> · 自动生成未经人工复核 · 不构成投资建议 · 数据截至 2026-08-28 · 内部研究勿外传</div>
+<div id="read-progress"></div>
+
+<!-- ═══ 封面 · 冻干机工程蓝图（B/C 双态，COVER.md 引擎） ═══ -->
+<header id="cover">
+  <canvas id="cover-canvas"></canvas>
+  <div class="cover-inner">
+    <p class="cover-kicker">制药装备 · 个股结构化研究 · 数据截至 2026-08-28</p>
+    <h1 class="cover-title">一台冻干机的<br><span class="cover-num">迭代解剖报告</span></h1>
+    <p class="cover-sub">东富龙 300171.SZ · 利润拐点的证据，与它的证伪方法</p>
+    <p class="cover-lede">2026 年半年报披露次日：营收 25.35 亿（+4.37%），归母 1.08 亿（+134.49%），扣非增速 +270.73%——利润拐点在事实层成立；但经营现金流 -67.03%、减值占利润总额 47.81% 两条空头命题同时被确认。本站不给出结论，给出每一断言的 K 锚、证伪检验与哈希留痕。</p>
+    <div class="cover-chips">
+      <button class="chip" data-goto="#sec-exec">核心事实</button>
+      <button class="chip" data-goto="#sec-iter">自述链 R1→R4</button>
+      <button class="chip" data-goto="#sec-fund">基本面</button>
+      <button class="chip" data-goto="#sec-bear">空头检验台</button>
+      <button class="chip" data-goto="#sec-val">估值锚</button>
+      <button class="chip" data-goto="#sec-claims">证明链 K1–K15</button>
+    </div>
+    <p class="cover-anchor">证据分级：公司原始披露 &gt; 交叉核验 &gt; 单源底表 &gt; 推导值 [标注] · 无目标价 · 无评级 · 无买卖建议</p>
+    <div class="cover-mode" id="cover-mode" aria-label="封面图 variant">
+      <button data-mode="w" class="on">C · 工程蓝图</button>
+      <button data-mode="x">B · 整机分解</button>
+    </div>
+    <div class="scroll-hint"><span></span>SCROLL</div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══ §0 执行摘要 ═══ -->
+<section id="sec-exec" class="band" data-win="exec">
+  <div class="prose">
+    <p class="sec-no">§0 · 执行摘要</p>
+    <h2>利润修复是真的，现金流背离也是真的</h2>
+    <p class="dek">中报披露次日的快照：收入、利润、现金流与减值，四个方向各说一句话。</p>
+    <p>2026H1 营业收入 <b>25.35 亿元</b>，同比 <b>+4.37%</b><button class="klink" data-k="K2" data-drill-keep>K2</button>；归母净利润 <b>1.08 亿元</b>，同比 <b>+134.49%</b>，扣非归母 0.94 亿元，同比 <b>+270.73%</b><button class="klink" data-k="K3" data-drill-keep>K3</button>。利润自 2024 年谷底连续修复，扣非增速高于归母增速，修复质量有支撑（conf=Medium：单季外推属推断）。</p>
+    <p>同一期，经营活动现金流净额 <b>0.91 亿元</b>，同比 <b>-67.03%</b><button class="klink" data-k="K4" data-drill-keep>K4</button>，与利润 +134% 显著背离；资产减值损失 <b>0.72 亿元</b>，占利润总额 <b>47.81%</b><button class="klink" data-k="K5" data-drill-keep>K5</button>——减值是持续性利润侵蚀项而非一次性事件（2024FY 资产减值 1.51 亿）。两条空头命题均为 conf=High 的确认。</p>
+    <div class="note-box">
+      <p><b>迭代机制一句话。</b>本报告由 R1→R4 外骨骼迭代流程产出：提示词缺陷解剖 → 三角色并行审查 → 扰动复核 → 实战数据轮收敛；全部 15 条关键断言入证明链登记，脚本校验 0 错误，版本 0.1→1.0→1.1 诚实递增。</p>
+    </div>
+  </div>
+  <div class="wide xl rev"><div id="exec-lyo-chart" class="chart-frame"></div></div>
+  <div class="prose">
+    <p class="muted">上图为 P17 证据对象：本报告最硬的六个数字，挂在冻干机上真正执行该测量功能的部位——铭牌、控制柜、观察窗、真空表、排污阀、吊牌。每个数字可点击下钻至 K 锚。</p>
+  </div>
+</section>
+
+<!-- ═══ §1 自述链 ═══ -->
+<section id="sec-iter" class="band" data-win="iter">
+  <div class="prose">
+    <p class="sec-no">§1 · 自述链 · 流程透明区</p>
+    <h2>这份报告是怎样被四轮迭代磨出来的</h2>
+    <p class="dek">缺陷表 → 三角色审查 → 扰动复核 → 数据轮收敛；版本号 0.1 / 1.0 / 1.1 如实递增，不放行的版本不放行。</p>
+    <ul class="iter-timeline" id="iter-timeline"></ul>
+    <div class="wide rev" style="margin-left:auto;margin-right:auto"><div id="iter-chart" class="chart-frame"></div></div>
+    <h3 class="sub-h">提示词缺陷贯穿修订（D1–D6）</h3>
+    <ul class="laws" id="defect-list"></ul>
+    <h3 class="sub-h">排期与状态（schedule_status.json · 更新于 2026-08-28 04:15 +08:00）</h3>
+    <div id="schedule-table"></div>
+  </div>
+</section>
+
+<!-- ═══ §2 基本面 ═══ -->
+<section id="sec-fund" class="band" data-win="fund">
+  <div class="prose">
+    <p class="sec-no">§2 · 基本面</p>
+    <h2>收入横盘三年，利润从谷底爬回</h2>
+    <p class="dek">2023FY 归母 6.00 亿 → 2024FY 1.94 亿 → 2025FY 2.00 亿 → 2026H1 单半年 1.08 亿：拐点在斜率上，不在绝对值上。</p>
+    <p>2026Q1 归母 0.275 亿，Q2 单季约 0.80 亿，环比加速（conf=High/Medium 分层见证据链）。合同负债期末 <b>37.13 亿</b>，较期初 36.23 亿 <b>+2.47%</b><button class="klink" data-k="K6" data-drill-keep>K6</button>，预注册触发线“连续 2 季环比降 &gt;10%”<b>未触发</b>，命题 H1（订单企稳）获弱支撑；应收账款 15.91 亿，较期初 +0.3%，增速低于收入增速<button class="klink" data-k="K7" data-drill-keep>K7</button>，空头命题 S2（应收恶化）本期未获支持。</p>
+  </div>
+  <div class="wide xl rev"><div id="fund-chart" class="chart-frame"></div></div>
+  <div class="wide rev"><div id="lead-chart" class="chart-frame"></div></div>
+  <div class="prose">
+    <h3 class="sub-h">分部与出海：量升价降的出海，毛利率跳升的耗材</h3>
+    <p>国际收入 10.40 亿（+29.24%），占比升至 41%，但国际毛利率 -6.73pct；国内收入 14.95 亿（-7.96%），毛利率 25.81%（+6.36pct）<button class="klink" data-k="K8" data-drill-keep>K8</button>。生物工艺装备及耗材收入 7.16 亿（-1.15%）未放量，但毛利率 36.41%（+18.22pct）<button class="klink" data-k="K9" data-drill-keep>K9</button>。</p>
+  </div>
+  <div class="wide xl rev"><div id="seg-chart" class="chart-frame"></div></div>
+  <div class="prose"><div id="seg-table"></div></div>
+</section>
+
+<!-- ═══ §3 空头检验台 ═══ -->
+<section id="sec-bear" class="band" data-win="bear">
+  <div class="prose">
+    <p class="sec-no">§3 · 空头检验台</p>
+    <h2>八条命题，逐条过反例攻击</h2>
+    <p class="dek">两条确认置顶，一条证伪，两条部分成立——结论在反例攻击下分层成立，而非一言堂。</p>
+  </div>
+  <div class="wide rev"><div id="bear-table" class="chart-frame"></div></div>
+  <div class="prose">
+    <p>治理与股东回报正向事实：中期分红预案 10 派 0.66 元（按 H1 归母计派息率约 46.6%，conf=Medium 推断）<button class="klink" data-k="K14" data-drill-keep>K14</button>；回购专户持股 498 万股（0.65%）；股东户数 29,299 户，同比 -8.73%、环比 -2.82%<button class="klink" data-k="K15" data-drill-keep>K15</button>。</p>
+  </div>
+</section>
+
+<!-- ═══ §4 估值锚 ═══ -->
+<section id="sec-val" class="band" data-win="val">
+  <div class="prose">
+    <p class="sec-no">§4 · 估值锚</p>
+    <h2>两种口径的 PE，相差 11 倍</h2>
+    <p class="dek">Wind 口径 55.25 倍大概率未纳入披露当晚的中报；以中报更新 TTM 自算约 43.8 倍——口径警示优先于数值本身。</p>
+    <p>2026-08-27 收盘价 14.99 元，总市值约 <b>114.8 亿</b><button class="klink" data-k="K11" data-drill-keep>K11</button>。Wind 口径 PE_TTM 55.25、PB_LF 1.45、PS_TTM 2.21（conf=Medium，存在滞后）；以中报更新后归母 TTM ≈ 2.62 亿（2.00 − 0.46 + 1.08）自算 PE ≈ <b>43.8 倍</b>（conf=Medium，推导值）<button class="klink" data-k="K12" data-drill-keep>K12</button>。可比锚楚天科技 PE_TTM 15.92、PB 1.18、市值 65.6 亿。</p>
+    <div class="note-box">
+      <p><b>结构化观察（非结论）。</b>东富龙市值/PE 约为楚天的 1.75 倍/2.7 倍，而 H1 收入规模相当（25.3 vs 26.2 亿）、净利润更低——市场定价中包含对“生物工艺耗材+出海”转型期权的显著溢价。该溢价能否持续取决于 H2/H3 命题的后续数据兑现。此句为 conf=Medium 的推断，非估值结论。</p>
+    </div>
+  </div>
+  <div class="wide rev"><div id="val-chart" class="chart-frame"></div></div>
+</section>
+
+<!-- ═══ §5 证明链 ═══ -->
+<section id="sec-claims" class="band" data-win="claims">
+  <div class="prose">
+    <p class="sec-no">§5 · 证明链</p>
+    <h2>K1–K15：每一条断言的锚、日期与证伪方法</h2>
+    <p class="dek">evidence_register.py 校验：High 12 / Medium 3 / Low 0 / Conflict 0。点击任意一行展开 falsifiable_test。</p>
+  </div>
+  <div class="wide xl"><div id="claims-list"></div></div>
+</section>
+
+<!-- ═══ §6 语义链 ═══ -->
+<section id="sec-sem" class="band" data-win="sem">
+  <div class="prose">
+    <p class="sec-no">§6 · 语义链</p>
+    <h2>对报告文本本身的一次体检</h2>
+    <p class="dek">7 个未定义术语、5 处歧义、2 处指称悬空；对冲密度 0.35‰，远低于 15‰ 阈值——方法论类比，conf=方法论档。</p>
+    <div class="note-box">
+      <p><b>口径声明。</b>本节全部发现为启发式候选（candidate），须人工对照 semantic_precision.md 清单裁决；语义审计结论 conf 记<b>方法论档</b>（喂引擎按 assumed），与 §5 的事实型 K 锚不同级。</p>
+    </div>
+  </div>
+  <div class="wide rev"><div id="sem-chart" class="chart-frame"></div></div>
+  <div class="prose"><ul class="sem-list" id="sem-list"></ul></div>
+</section>
+
+<!-- ═══ §7 哈希链与快照 ═══ -->
+<section id="sec-hash" class="band" data-win="hash">
+  <div class="prose">
+    <p class="sec-no">§7 · 哈希链与快照</p>
+    <h2>18 个节点，一条可复算的防篡改链</h2>
+    <p class="dek">每个落盘文件一个 SHA-256；链式节点 = sha256(文件哈希 + 前驱节点)，末端节点即根哈希。</p>
+    <div class="note-box">
+      <p><b>校验方法。</b>对任一文件重算 SHA-256 并与表中比对；再从创世节点（prev=00…00）起逐节点重算 chain_node，若末端结果等于 root <code>256cf1f2…93fa0a85</code>，则整条链未被篡改。生成时间 2026-08-27T19:14:43Z。</p>
+    </div>
+  </div>
+  <div class="wide xl"><div id="hash-table"></div></div>
+</section>
+
+</main>
+
+<!-- ═══ 页脚：免责锚 + top3_likely_wrong ═══ -->
+<footer id="sec-sources">
+  <div class="prose">
+    <p class="sec-no">免责与最可能错的三条</p>
+    <h2>诚实清单</h2>
+    <blockquote class="quote-card">
+      <p class="q-text">L1原型级 · 自动生成未经人工复核 · 不构成投资建议 · 数据截至 2026-08-28 · 内部研究勿外传</p>
+      <p class="q-who">— <b>报告首行免责锚</b>，硬编码于每个产物首行</p>
+      <div class="q-why"><span class="q-lab">合规声明</span>本报告为公开信息的结构化整理，所有数值来自法定披露文件或官方数据插件（C1 通道及以上），不构成任何投资建议、要约或收益承诺；不含目标价与评级；历史数据不代表未来表现；仅供流程所有者个人研究使用，禁止对外分发。</div>
+    </blockquote>
+    <h3 class="sub-h">top3_likely_wrong · 最可能错的三条断言</h3>
+    <div id="top3-list"></div>
+    <p class="colophon">交互式研究版 · 汇编于 2026-08-28 · 散文事实源：东富龙300171_分析报告_v1.0.md · K 锚：data/claims.json · 哈希链 root 256cf1f2…93fa0a85<br>L1原型级 · 不构成投资建议 · 内部研究勿外传</p>
+  </div>
+</footer>
+
+<!-- 常驻右栏仪表（P14） -->
+<aside id="dash-rail" aria-label="研究仪表"><canvas id="dash-canvas"></canvas></aside>
+
+<!-- 下钻卡片（P16） -->
+<div id="drill-card" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/sources.js"></script>
+<script src="js/cover-lyo.js"></script>
+<script src="js/exec-lyo.js"></script>
+<script src="js/iter-chart.js"></script>
+<script src="js/fund-chart.js"></script>
+<script src="js/seg-chart.js"></script>
+<script src="js/bear-table.js"></script>
+<script src="js/val-chart.js"></script>
+<script src="js/claims.js"></script>
+<script src="js/sem-chart.js"></script>
+<script src="js/hash-chain.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,888 @@
+{
+ "data_cutoff": "2026-08-28",
+ "conf": "estimated",
+ "note": "三事实(博士点/博导/平台)来自公开官网与文献检索，来源URL见 sources 字段；维度分为估算占位（无面板数据），仅验证管道，不作决策依据",
+ "schools": [
+  {
+   "name": "大连理工大学(等离子体物理)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 88,
+   "city": 68,
+   "funding": 72,
+   "platform": 92,
+   "admission_risk": 62,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "等离子体物理国家重点二级学科；物理学一级博士点下设等离子体物理博士点；博导梯队完整(丁洪斌/桑超峰/孙继忠/戴舒宇/张权治等)；MPS-LD直线装置+教育部磁约束聚变研究中心(大连)+三束材料改性教育部重点实验室",
+   "sources": [
+    "https://physics.dlut.edu.cn/yjspy/xkjs.htm",
+    "https://gs.dlut.edu.cn/info/2391/49962.htm",
+    "https://gs.dlut.edu.cn/info/2391/49152.htm"
+   ]
+  },
+  {
+   "name": "核工业西南物理研究院(SWIP)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 90,
+   "city": 66,
+   "funding": 78,
+   "platform": 95,
+   "admission_risk": 58,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "1986年批准博士生招生；核能科学与工程(082701)+核技术及应用(082703)博士点；研究员级博导(李继全等)；HL-2A/HL-3托卡马克装置群，ITER技术支撑单位",
+   "sources": [
+    "https://www.yzw.org.cn/yxk/sichuan/hgyxnwl/6329.html",
+    "https://kaobo.koolearn.com/20220120/843067.html",
+    "https://phy.hbnu.edu.cn/2026/0723/c4437a198126/page.htm"
+   ]
+  },
+  {
+   "name": "四川大学(核技术及应用)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 62,
+   "city": 78,
+   "funding": 70,
+   "platform": 58,
+   "admission_risk": 68,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠路径类型：核技术及应用(工学082703)博士点为全国最早(林理彬为首位博导)，非等离子体物理理学路径；原子核科学技术研究所(720所)为实体平台；聚变方向以与SWIP合作(HL-2A/M NPA诊断、国家磁约束专项'中性粒子探测技术研究')为主，无自有聚变装置——申博衔接强度取决于导师是否挂靠SWIP联合培养 | v1.11复核:720所一级博士点四方向(辐射物理/材料改性/同位素/核监测)无聚变等离子体——锚点78或计入SWIP同城效应,我方66维持,登记'锚点疑似高估';历史关联:罗正明曾在585所(SWIP前身)做聚变",
+   "sources": [
+    "https://www.thepaper.cn/newsDetail_forward_32969952",
+    "https://720inst.scu.edu.cn/News/info?cid=28261449&id=60&mid=60",
+    "https://ifpr.hust.edu.cn/info/1026/1861.htm"
+   ],
+   "governance_flags": [
+    "校级历史个案:副校长安小予2013被查/2015双开(基建受贿,江安新校区)[S级];近十年未检出校级新案"
+   ]
+  },
+  {
+   "name": "北京科技大学(聚变材料)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 55,
+   "city": 80,
+   "funding": 68,
+   "platform": 52,
+   "admission_risk": 66,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠路径类型：材料学路径，非等离子体物理；2004年科技部支持创建我国第一个'核聚变材料研究和培训中心'(葛昌纯院士)；燕青芝/李江涛/周张健等ITER专项负责人；平台为材料研究培训中心，无等离子体装置；中心近年活跃度未核验(检索到最新直接证据止于2012年报道)",
+   "sources": [
+    "https://news.ustb.edu.cn/info/1087/26627.htm",
+    "https://news.ustb.edu.cn/info/1241/37680.htm"
+   ]
+  },
+  {
+   "name": "燕山大学(无等离子体方向)",
+   "has_phd_program": false,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 20,
+   "city": 55,
+   "funding": 55,
+   "platform": 25,
+   "admission_risk": 78,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "物理学一级博士点+凝聚态物理二级博士点+博士后流动站[官网A级]，但学科方向列表为低维介观/计算凝聚态/光电材料/非线性光学/凝聚态理论，无等离子体物理与聚变方向；等离子体检索零命中——对本技能目标方向判真断头路",
+   "sources": [
+    "http://lxy.ysu.edu.cn/info/1023/5378.htm",
+    "https://www.lingboyan.com/academicinfo-2-3590"
+   ],
+   "governance_flags": [
+    "2018省纪委巡视整改通报:违规建设损失200万/少提学生奖助基金680万/原某学院院长公款旅游免职等[S级];2026-06警示教育大会常态运作[A级]——中层历史整改,无校级落马"
+   ]
+  },
+  {
+   "name": "西北大学(等离子体物理二级)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 50,
+   "city": 72,
+   "funding": 58,
+   "platform": 40,
+   "admission_risk": 70,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "改判(v1.3)：等离子体二级学科空转——实查师资均为低温应用/光电方向(高爱华气体放电/田永辉气-液合成属化材学院)，无聚变/高温等离子体博导。⚠混淆警示：检索命中的激光等离子体博士点团队系西北师范大学(兰州董晨钟团队)，非本校",
+   "sources": [
+    "https://baike.baidu.com/item/%E8%A5%BF%E5%8C%97%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E5%AD%A6%E7%B3%BB/6553292"
+   ]
+  },
+  {
+   "name": "郑州大学(激光等离子体)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 68,
+   "city": 70,
+   "funding": 65,
+   "platform": 60,
+   "admission_risk": 66,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "物理学科博士点+博士后流动站；万阳团队激光等离子体(激光离子加速/尾场加速诊断，亚太U40奖，激光等离子体方向唯一获奖)+陈强(高能量密度物理数值模拟)；路径类型：激光等离子体(ICF关联物理)，非磁约束；霍裕平院士在郑大期间方向已转向材料物理，磁约束未在郑大延续 | ⚠v1.6冲突登记:fusion-program-audit锚点评F级38('霍裕平院士去世后磁约束无传承')vs本轮万阳激光等离子体团队(ICF路径)——两判定在各自路径维度均成立,待U3路径拍板后重估",
+   "sources": [
+    "https://xyh.univs.cn/a/xyh_xyh_zzdx/240520/1885770.shtml",
+    "http://news.zzu.edu.cn/info/1005/2216.htm",
+    "http://yocsef.ccf.org.cn/YOCSEF/Branches/Zhengzhou/Upcoming_Events/lt/2022-05-28/763334.shtml"
+   ],
+   "governance_flags": [
+    "附属医院系统历史案:阚全程2025-05被查,曾任一附院院长兼郑大副校长(2010-2017),案情指向一附院任上(年收入超218亿时期)[A级];校级本部未检出——附院案不影射物理学院"
+   ]
+  },
+  {
+   "name": "石河子大学(低温等离子体应用)",
+   "has_phd_program": false,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 15,
+   "city": 40,
+   "funding": 50,
+   "platform": 20,
+   "admission_risk": 82,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "物理学仅一级学科硕士点(2018获批2019招生,全校9个博士点不含物理);等离子体方向=低温应用(农药降解/CO2转化/农业),硕导杨坤/范婷均非博导;亮点:25%毕业生赴中山/中科大/大工读博——外校申博通道存在但靠个人；exit_channel=true（25%毕业生赴中山/中科大/大工读博）→ 软断头，惩罚减半",
+   "sources": [
+    "https://lxy.shzu.edu.cn/xygk/list.htm",
+    "https://lxy.shzu.edu.cn/_t205/2024/0407/c13248a200257/page.htm"
+   ],
+   "exit_channel": true,
+   "governance_flags": [
+    "校级在任实案:副校长魏忠(80后博导,化学化工背景)2025-06-27被查[S级中纪委网站];附院链:一附院原常务副院长蔡钢2024双开+原院长史晨辉2025-04被查[A级]——与物理学院无涉,但打破'边疆高校平静'印象"
+   ]
+  },
+  {
+   "name": "昆明理工大学(等离子体冶金)",
+   "has_phd_program": false,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 18,
+   "city": 72,
+   "funding": 58,
+   "platform": 30,
+   "admission_risk": 72,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "传言拆链定断:文心一言'擦边核聚变'提示=AI幻觉。链节1'有等离子体博导团队'成立(梁风团队),链节2'涉核聚变'断裂——实为等离子体冶金/电弧提纯稀土/低温等离子体改性电池材料,与聚变无关。整体判定:传言不成立",
+   "sources": [
+    "https://yn.kmust.edu.cn/info/1097/5099.htm",
+    "https://www.kmust.edu.cn/info/1141/51534.htm",
+    "https://www.ynufe.edu.cn/__local/A/DF/98/EBD2A971B3FA85C3D754A738199_D341DEBD_121EEB.pdf"
+   ]
+  },
+  {
+   "name": "中南民族大学",
+   "has_phd_program": false,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 20,
+   "city": 75,
+   "funding": 55,
+   "platform": 22,
+   "admission_risk": 75,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "2018年研招网名单有等离子体物理硕士点(知乎B级转述);无物理博士点;2025招生新闻无等离子体相关信息。维持此前❌评级",
+   "sources": [
+    "https://yz.chsi.com.cn/kyzx/kyft/zxft/202410/20241017/2293344135.html"
+   ]
+  },
+  {
+   "name": "内蒙古大学(观察名单)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 32,
+   "city": 52,
+   "funding": 55,
+   "platform": 30,
+   "admission_risk": 76,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "物理学一级博士点+博士后流动站+22博导[官网A级],但博士培养四方向(理论/凝聚态/计算/生物物理)无等离子体;火种:刘正东讲师(2024入职,张杰院士DCI团队背景,激光惯性约束聚变,PoP Editor's Pick)——但讲师无导师资格,'培养研究生情况:无'。判断头路,列入5年翻案观察名单",
+   "sources": [
+    "https://wlxy.imu.edu.cn/xygk/xyjj.htm",
+    "https://wlxy.imu.edu.cn/info/1003/3800.htm",
+    "https://iap.imu.edu.cn/info/1018/1087.htm"
+   ]
+  },
+  {
+   "name": "新疆大学(观察名单)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": false,
+   "has_platform": null,
+   "phd": 35,
+   "city": 48,
+   "funding": 55,
+   "platform": 35,
+   "admission_risk": 78,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "物理学一级博士点(2018,疆内唯一)+博士后流动站+23博导[评估报告A级],四方向(理论/凝聚态/光学/原子分子)无等离子体;火种:李孟婷(中物院激光聚变研究中心博士后,激光聚变诊断硬X射线源,PPCF一作)——专任教师无博导资格证据。判断头路(advisor=false),观察名单;platform=null(有高功率飞秒激光器但聚变实验依赖中物院合作)",
+   "sources": [
+    "https://gs.xju.edu.cn/__local/2/00/28/EEDACFB4E63E9E579F87B92A040_0D730600_15F634.pdf",
+    "https://phy.xju.edu.cn/info/1035/1621.htm",
+    "https://phy.xju.edu.cn/xygk/lsyg.htm"
+   ]
+  },
+  {
+   "name": "北京师范大学(DCI成员)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 72,
+   "city": 88,
+   "funding": 70,
+   "platform": 70,
+   "admission_risk": 55,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "物理+核科学与技术双一级博士点,2025博士目录有'等离子体物理与材料改性'方向(吴杰,珠海);博导:仲佳勇(实验室天体物理,激光驱动磁重联,DCI论文通讯)、谢柏松(激光等离子体相互作用,中国物理学会等离子体分会理事)、廖斌(等离子体输运调控);平台:中科院先导A专项'新型激光聚变方案研究'DCI联合攻关正式成员单位(神光II千发打靶名单)+射线束技术与材料改性教育部重点实验室。路径类型:激光等离子体/实验室天体物理(ICF关联),非磁约束",
+   "sources": [
+    "https://physics.bnu.edu.cn/tzgg/9c8b58e39a804a0aaf45875bd649a635.htm",
+    "https://yz.bnu.edu.cn/content/zyml/2025/bsxx_yxsm-050.html",
+    "http://www.lssf.cas.cn/sszs/zyyj/sgggljg/xwdt/202412/t20241205_5059175.html",
+    "https://faculty.bnu.edu.cn/xiebaisong/zh_CN/index.htm"
+   ],
+   "governance_flags": [
+    "一把手历史实案:党委原书记刘川生(在任11年)2021-07主动投案、12月开除党籍——十八大后首名被留置的中管高校一把手[S级中纪委];违纪涉及附属学校扩张/住房/人事录用,与物理学院无涉"
+   ]
+  },
+  {
+   "name": "中国人民大学(王伟民团队)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 75,
+   "city": 88,
+   "funding": 72,
+   "platform": 68,
+   "admission_risk": 50,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "DCI名单审计新增。王伟民教授(中科院物理所出身,IUPAP计算物理青年科学家奖+AAPPS DPP青年奖+蔡诗东奖),激光聚变理论模拟正统,2025.11在带博士生答辩(李楠),2024 PRL与物理所李玉同/张杰院士合作(DCI应用,先导A专项);平台=自研KLAPS程序+物理所/神光合作网络(理论组,无自有装置)。路径类型:激光聚变ICF理论,非磁约束",
+   "sources": [
+    "http://www.phys.ruc.edu.cn/info/1165/1511.htm",
+    "http://www.phys.ruc.edu.cn/info/1055/2713.htm",
+    "http://www.phys.ruc.edu.cn/info/1033/1737.htm",
+    "https://lssf.cas.cn/sszs/zyyj/sgggljg/kycg/202501/t20250123_5059214.html"
+   ],
+   "governance_flags": [
+    "校长历史案:原校长纪宝成2015留党察看两年+取消副部级待遇,关联招生处长蔡荣生被捕[S级];2023起纪检监察机构常态通报执纪[A级]——均与物理系无涉"
+   ]
+  },
+  {
+   "name": "华中科技大学(J-TEXT)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 93,
+   "city": 78,
+   "funding": 75,
+   "platform": 95,
+   "admission_risk": 55,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "轮2补漏。J-TEXT=我国高校唯一大中型托卡马克、中国聚变路线图三大装置之一；磁约束核聚变教育部研究中心挂靠；2026-04新揭牌聚变研究中心(潘垣院士)；博导丁永华(装置负责人/所长)、张明(ITER专项)等；电气工程一级博士点脉冲功率与等离子体方向。磁约束正统第一梯队",
+   "sources": [
+    "https://www.zlcpv.com/a/xinwenzixun/zhuanyezhishi/8130.html",
+    "http://faculty.hust.edu.cn/zhangming7/zh_CN/more/1407545/jsjjgd/index.htm",
+    "https://www.hust.edu.cn/info/1055/18686.htm"
+   ],
+   "governance_flags": [
+    "2017中央巡视整改通报处分14人(党纪6+政纪8)[S级历史];现任班子(书记刘波/校长尤政)无违纪通报[A级官网核验]"
+   ]
+  },
+  {
+   "name": "清华大学工程物理系",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 90,
+   "city": 88,
+   "funding": 80,
+   "platform": 85,
+   "admission_risk": 35,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "轮2补漏。2026博士目录核科学与技术'核聚变与等离子体物理'方向在招(高喆/谭熠/曾龙)[S级]；SUNIST球形托卡马克自有装置；高喆组参量不稳定性理论复现EAST/JET LHCD密度阈值；2025-06在招磁约束聚变+AI交叉教研岗。admission_risk极低(竞争烈度) | admission_risk实证:统考硕士2025年6复试录2(淘汰67%),2021仅录1人,2024-2025稳定2人;复试线2026年330——35分直觉值获实证支撑",
+   "sources": [
+    "https://yzbm.tsinghua.edu.cn/publish/s03/s0303/detail/a5f6fe53-604e-49f9-984e-633f5000b12a?yxsdm=032",
+    "https://www.ep.tsinghua.edu.cn/info/1002/4093.htm",
+    "https://www.ep.tsinghua.edu.cn/info/1002/3705.htm"
+   ],
+   "governance_flags": [
+    "2025-03 中纪委网站:本届党委前四轮巡视移交问题线索21件(含多件职务违法犯罪线索),已对2人采取留置措施;全年立案处分人数同比+127%[A级]——执纪高压信号,非校领导落马"
+   ]
+  },
+  {
+   "name": "中国科学技术大学·科学岛分院(ASIPP等离子体所)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 92,
+   "city": 80,
+   "funding": 90,
+   "platform": 100,
+   "admission_risk": 62,
+   "tier": "tier1",
+   "regret_intent": 0.9,
+   "conf": "empirical",
+   "notes": "v2.1合并修正(原ASIPP+中科大科学岛两条目重复计列):合肥物质院研究生教育2014归口中科大,学生获中科大学位证书[实体绑定实证];070204等离子体物理导师=ASIPP全员(李建刚/万宝年/徐国盛);EAST(2025年1亿度1066秒纪录)/CRAFT/BEST;硕士复试线310+差额约1.3:1温和(原risk42误估,修正62);phd92=平台+中科大学位含金量。另:中科大校本部物理学院激光聚变(ICF)为独立第三条线,未单列",
+   "sources": [
+    "https://yz1.ustc.edu.cn/sszs_2025/index_20.shtml",
+    "https://yz.ustc.edu.cn/static/upload/article/file/1710749001556/ba5f6423eb024809b6952b7273a3aa54.pdf",
+    "https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E5%A4%A7%E5%AD%A6%E7%A0%94%E7%A9%B6%E7%94%9F%E9%99%A2%E7%A7%91%E5%AD%A6%E5%B2%9B%E5%88%86%E9%99%A2/18745877"
+   ]
+  },
+  {
+   "name": "西南交通大学(CFQS仿星器)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 90,
+   "city": 80,
+   "funding": 72,
+   "platform": 92,
+   "admission_risk": 60,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "轮3补漏。中国首台准环对称仿星器CFQS所在校,纳入四川省重大科技基础设施序列;科技部批准作为中国缔约方加入国际能源署仿星器技术合作项目;物理学院设聚变科学研究所,物理学一级博士点。磁约束仿星器路线全国独有",
+   "sources": [
+    "https://phys.swjtu.edu.cn/old/xygk/xyjj.htm",
+    "https://phys.swjtu.edu.cn/old/xygk/jxdw.htm"
+   ]
+  },
+  {
+   "name": "南华大学(H-1仿星器重建)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": false,
+   "phd": 55,
+   "city": 55,
+   "funding": 68,
+   "platform": 25,
+   "admission_risk": 70,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "⚠v1.6误判自修正：fusion-program-audit锚点定案F级1.73/10(Type-A有壳空虚)。CN-H1核验:2017签约→2022-11运抵→2024-12主机重建完成但核心部件合肥重造→2025-05承认经费人员管理问题→2026-03仍在方案排查→截至2026-08未放电,触发红线(长期未放电+第三方定性报废)。方向真/博导真/装置烂尾;D5学位壁垒(082700工学申0702理学有壁垒)。生态亮点仅存:2025-11承办全国仿星器研讨会",
+   "sources": [
+    "https://uscnews.usc.edu.cn/info/1025/74666.htm",
+    "https://hjxy.usc.edu.cn/info/1024/9489.htm",
+    "https://www.sohu.com/a/1037923679_122900250",
+    "https://www.yanfusion.com/news/26"
+   ],
+   "governance_flags": [
+    "2026-07-03 前校长张灼华(执掌近十年,省政协副主席)涉嫌严重职务违法被国家监委立案[A级]",
+    "2026-07-28 现校长夏昆(上任<8月,长江学者/国家杰青)涉嫌严重违纪违法被省纪委监委审查[A级,事由未公布,'贪污科研经费'无实证勿采用]",
+    "2026-08-10 附属南华医院原院长汤永红/附属二院原院长彭秀达同日被查[A级]",
+    "关联背景:中南大学原校长张尧学2026-05双开/原副校长郭学益2026-07双开(受贿行贿贪污三罪,套取会议经费)——南华两任校长均出自中南湘雅系[A级]",
+    "影响研判:深度排查期或冲击行政/项目审批/学科建设节奏;CN-H1'经费人员管理联动问题'在此语境下权重上升,但无证据嫁接装置经费与贪腐,禁止过度推断",
+    "党委线核查(2026-08-28):前书记高山2025-08高升省教育厅厅长未被查[A级];现书记唐忠阳2025-12由地大任(武汉)党委副书记/纪委书记调任,系中南大学纪委副书记/巡察办主任出身——纪检系统先行进驻,排查或未竟[人事事实A级,节奏解读Medium]",
+    "历史病灶:S级省纪委2018巡视整改通报点名科研经费管理不规范(差旅/餐饮挤占科技发展基金,已清退)+附属医院/核工业卫校财务混乱(一原副校长免职)——'贪污科研经费'准确实证边界:管理不规范≠贪污罪名"
+   ]
+  },
+  {
+   "name": "哈尔滨工业大学(王晓钢团队)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 72,
+   "city": 60,
+   "funding": 75,
+   "platform": 45,
+   "admission_risk": 55,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "王晓钢(国家磁约束核聚变专家委员会委员/中国物理学会等离子体分会主任/APS Fellow,曾任大工与北大等离子体与聚变研究所所长)+杨肖易博导(磁约束聚变湍流输运)+毛傲华(离子回旋波加热)+肖青梅(第一壁相互作用);依托空间环境地面模拟国家大科学工程+大功率直线磁化等离子体装置;物理一级博士点 | v1.6修正:锚点库评C/D档40分('有研究无装置')——王晓钢为理论家,空间环境地面模拟装置系空间等离子体非聚变装置,platform下修45,phd下修72",
+   "sources": [
+    "http://physics.hit.edu.cn/2023/0401/c12287a302379/page.htm",
+    "https://homepage.hit.edu.cn/yangxiaoyi",
+    "http://today.hit.edu.cn/article/2022/04/10/93495"
+   ]
+  },
+  {
+   "name": "西北师范大学(聚变支撑)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 65,
+   "city": 58,
+   "funding": 65,
+   "platform": 68,
+   "admission_risk": 68,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "上轮混淆隔离对象,按实质布局标准正式入库。董晨钟团队(全国黄大年式教师团队):激光等离子体光谱+高离化态离子原子数据(服务聚变诊断,国家重点研发'大科学装置前沿研究'专项);物理学一级博士点+博士后流动站;中科院近物所联合实验室+320kV平台合作。路径类型:聚变支撑(原子分子数据/LIBS),非聚变本体",
+   "sources": [
+    "https://www.chinanews.com.cn/sh/2022/09-06/9845903.shtml",
+    "http://mp.weixin.qq.com/s?__biz=MzAwNDQ4OTAzMw==&mid=2665736181&idx=1&sn=eee23d8ee57355c4dc4c079ad5f58a11"
+   ]
+  },
+  {
+   "name": "西安交通大学(赵永涛+汉-1)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 88,
+   "city": 72,
+   "funding": 75,
+   "platform": 85,
+   "admission_risk": 50,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "锚点库A级85分迁移:激光与粒子束所(赵永涛,星光III,ICF)+电气0808J1 Z箍缩(汉-1,Z-FFR直接相关);2026核聚变科学与技术研究院揭牌;Type-E跨学院分散",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点2/4"
+   ],
+   "governance_flags": [
+    "2019 党委常委/副校长张汉荣双开(收受财物/借用关联企业车辆)[S级历史个案];2025-2026未检出校级新案"
+   ]
+  },
+  {
+   "name": "合肥工业大学(聚变学院)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 85,
+   "city": 70,
+   "funding": 72,
+   "platform": 82,
+   "admission_risk": 60,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "锚点库A级88分迁移:聚变科学与工程学院四方共建",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4"
+   ],
+   "governance_flags": [
+    "2023-07科学技术研究院原常务副院长李钢被查[A级中层];2016副校长举报校长案校方认定不实(争议非实案)——校级领导层未检出"
+   ]
+  },
+  {
+   "name": "兰州大学(李建刚院士)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 84,
+   "city": 55,
+   "funding": 70,
+   "platform": 78,
+   "admission_risk": 62,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "锚点库A级82分迁移:核聚变科学与工程学院,李建刚院士",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4"
+   ],
+   "governance_flags": [
+    "2017警示教育大会通报18起八项规定案例,5名校党委委员(校办主任/组织部长等)党纪处分[S级]——中层常态执纪,非校级落马"
+   ]
+  },
+  {
+   "name": "南昌大学(NCST偏小)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 55,
+   "city": 68,
+   "funding": 60,
+   "platform": 50,
+   "admission_risk": 70,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "锚点库C/D级55分迁移:NCST球形托卡马克偏小——上轮拟补查项,锚点已评级,直接迁移",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4"
+   ],
+   "governance_flags": [
+    "一把手历史大案:原校长周文斌(2002-2013在任)2013被查,受贿2000余万+挪用公款5800余万,涉前湖新校区基建[S级];校纪委问责办法2018常态化[A级官网]"
+   ]
+  },
+  {
+   "name": "哈尔滨工程大学(聚变工程化本博贯通班)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 80,
+   "city": 62,
+   "funding": 68,
+   "platform": 75,
+   "admission_risk": 65,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "playbook复核升级(v1.9.2):核科学与技术一级博士点;'可控核聚变工程特色班'(院长谭思超2026-07教育部教指委报告)+本科'兴海领军'可控核聚变反应堆工程方向3+1+X本博贯通,ASIPP+SWIP国家级人才团队授课;补充:核学院与ASIPP签全面合作协议(夏桂华副校长+李建刚签署)",
+   "sources": [
+    "https://www.ep.tsinghua.edu.cn/info/1002/4419.htm",
+    "http://mp.weixin.qq.com/s?__biz=MjM5MDM3NTY3Mg==&mid=2651758937&idx=2&sn=47fcee15be2e06240d92faa16960bb20",
+    "https://cnst.hrbeu.edu.cn/info/1045/1934.htm"
+   ]
+  },
+  {
+   "name": "浙江大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 82,
+   "city": 82,
+   "funding": 72,
+   "platform": 78,
+   "admission_risk": 50,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "playbook复核升级(v1.9.2):聚变理论与模拟中心IFTS(2006,浙大+ASIPP+SWIP+863共同资助),傅国勇主任(普林斯顿PPPL/APS Fellow/PRL12篇/H44)+陈骝/盛正卯/肖湧等博导,070204等离子体物理博士方向在招,2024博士生一作PRL(DCI对撞等离子体)。锚点B级72偏保守",
+   "sources": [
+    "https://ifts.zju.edu.cn/zxdt/list2.htm",
+    "https://physics.zju.edu.cn/jbllymnzx/list.htm",
+    "https://physics.zju.edu.cn/2025/1015/c69706a3092177/page.htm"
+   ],
+   "governance_flags": [
+    "副校长褚健2013立案(中控科技掏空浙大海纳资产,产学研领域)[S级历史大案]"
+   ]
+  },
+  {
+   "name": "上海交通大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 85,
+   "city": 85,
+   "funding": 70,
+   "platform": 92,
+   "admission_risk": 45,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "playbook复核升级(v1.9.2):激光等离子体教育部重点实验室(博导18/院士3/在读博士73,张杰院士基金委创新群体3期)+重明CLEF装置(200TW+300TW双束,级联尾场加速90%耦合效率)——DCI大本营,迁移分68.65明显低估,phd/platform上调",
+   "sources": [
+    "https://llp.sjtu.edu.cn/Web/Content/1",
+    "https://www.cpsjournals.cn/article/doi/10.11884/HPLPB202638.260005?viewType=HTML",
+    "https://llp.sjtu.edu.cn/Web/Faculty/78?page=2"
+   ],
+   "governance_flags": [
+    "2025-07教师工作部通报:程某华违纪+徐某利用职务便利套取科研经费[S级教职工层个案]——校级领导未检出"
+   ]
+  },
+  {
+   "name": "中山大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 76,
+   "city": 80,
+   "funding": 70,
+   "platform": 68,
+   "admission_risk": 55,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "playbook复核升级(v1.11):中法核工程与技术学院'等离子体与聚变研究团队'(2026-03官网在册)——教授2+副教授1,牵头国家磁约束核聚变能发展专项+国家自然科学基金;方向:等离子体理论模拟/先进诊断/AI聚变应用;毕业生已成长为SWIP/ASIPP青年骨干;与SWIP/ASIPP/普林斯顿/清华/北大深度合作。团队规模小(2教授)故维持69.9",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ],
+   "governance_flags": [
+    "2025-03校纪委通报4起严重违纪违法案(警示教育,身份未公开)[A级校内执纪];2026-05生科院学术诚信案(副院长免职)——无校级贪腐通报"
+   ]
+  },
+  {
+   "name": "北京大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 80,
+   "city": 88,
+   "funding": 72,
+   "platform": 75,
+   "admission_risk": 40,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "playbook复核升级(v1.9.2):2009年批准等离子体物理二级博士点(为ITER培养人才而重建);2024指南博导:万宝年(中科院院士,磁约束)/肖池阶/林晨(高温等离子体诊断)/李湘庆(聚变中子物理)/郭志彬——磁约束理论诊断正统",
+   "sources": [
+    "http://baike.sogou.com/v7976253.htm?fromTitle=%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E7%89%A9%E7%90%86",
+    "https://www.phy.pku.edu.cn/__local/1/60/7B/14A011267EDD27568668CC75783_03941A94_CAD56.pdf"
+   ],
+   "governance_flags": [
+    "副校长任羽中2025-09主动投案/12月双开/2026-08-24获刑8年(敛财3195万,'靠校吃校'在升学就业领域谋利)——80后中管干部领刑第一人[A级];历史:北大原党委副书记王登峰2022年被查(案发教育部司长任上,绑教育部)"
+   ]
+  },
+  {
+   "name": "内蒙古科技大学(稀土+核工组合)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 58,
+   "city": 45,
+   "funding": 55,
+   "platform": 60,
+   "admission_risk": 72,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级62:稀土+核工组合路径",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ],
+   "governance_flags": [
+    "党委书记李保卫(在校37年/任校长13年)2019被查2020双开:贪污+挪用公款+受贿三罪(侵吞公共财物/公款私存/校企合作与科研成果转化受贿)[A级一把手历史大案]"
+   ]
+  },
+  {
+   "name": "北方民族大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 52,
+   "city": 42,
+   "funding": 52,
+   "platform": 55,
+   "admission_risk": 75,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级58",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ]
+  },
+  {
+   "name": "南京航空航天大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 54,
+   "city": 68,
+   "funding": 58,
+   "platform": 56,
+   "admission_risk": 60,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "playbook复核升级(v1.11):胡志猛(副教授/博导,江苏省双创)聚变等离子体中子诊断方向,Nature Physics/Nature Comm.发文,主持国家自然科学基金2项+重点研发子课题;有核科学与技术博士点;平台=诊断器件+EAST/HL-2M数据(无自建装置)——单人团队级,58.3合理",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ]
+  },
+  {
+   "name": "南开大学(新奥聚变智能实验室)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 58,
+   "city": 75,
+   "funding": 62,
+   "platform": 52,
+   "admission_risk": 55,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级55:新奥聚变智能实验室(企业共建)",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ]
+  },
+  {
+   "name": "华南理工大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 55,
+   "city": 78,
+   "funding": 60,
+   "platform": 50,
+   "admission_risk": 55,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级52",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ],
+   "governance_flags": [
+    "2019计算机学院院长张军篡改研究生复试分数案:院长免职解聘+教育部问责校级(书记批评教育/校长王迎军行政警告/副校长记过)[S级]——招生公平案非贪腐"
+   ]
+  },
+  {
+   "name": "中南大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 52,
+   "city": 78,
+   "funding": 65,
+   "platform": 48,
+   "admission_risk": 55,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级50;⚠与中南民族大学区分;governance:原校长张尧学/原副校长郭学益2026双双开(湘雅系风暴)",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ],
+   "governance_flags": [
+    "原校长张尧学2026-05双开(在干部选拔/学术称号/荣誉表彰中为他人谋利并收受财物,助长学术领域不正之风)[S级];原副校长郭学益2026-07双开(涉嫌受贿/行贿/贪污三罪,套取会议经费)[A级]——均与物理学院无涉"
+   ]
+  },
+  {
+   "name": "宁夏大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 45,
+   "city": 40,
+   "funding": 50,
+   "platform": 48,
+   "admission_risk": 76,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级48",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ]
+  },
+  {
+   "name": "太原理工大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 45,
+   "city": 55,
+   "funding": 52,
+   "platform": 45,
+   "admission_risk": 72,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级45",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ],
+   "governance_flags": [
+    "警示注记:前副校长李明(2016-2020在任)2026-01双开——案发于阳泉市委常委/平定县委书记任上,绑地方政务系统非太理校级案"
+   ]
+  },
+  {
+   "name": "山东大学",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 45,
+   "city": 72,
+   "funding": 58,
+   "platform": 42,
+   "admission_risk": 58,
+   "tier": "tier2",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "⚠锚点库迁移(fusion-program-audit V3.x),未独立三事实核查,待按audit_playbook复核升级。锚点C/D级42 | 状态变化:2025年新增核科学与技术一级博士点(学位[2025]10号,学位委员会)——锚点42系旧状态,下轮复核重估",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4(44校V3.x)"
+   ],
+   "governance_flags": [
+    "2014教育部巡视后两校领导被免职(副书记兼纪委书记尹作升/副校长娄红祥);巡视反馈点名'科研经费管理使用混乱,存在套取截留科研资金隐患'[A级巡视问责]"
+   ]
+  },
+  {
+   "name": "西华大学(标签型导师)",
+   "has_phd_program": false,
+   "advisor_phd_qualified": false,
+   "has_platform": false,
+   "phd": 22,
+   "city": 72,
+   "funding": 55,
+   "platform": 20,
+   "admission_risk": 74,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "锚点F级25迁移:李会东论文75-83%为有机金属化学,聚变占比<30%且2020后断档(Type-B+C概念偷换);070200下设等离子体方向非独立070204",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点3/4"
+   ]
+  },
+  {
+   "name": "东华理工大学(天环一号纸面)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": false,
+   "phd": 40,
+   "city": 60,
+   "funding": 58,
+   "platform": 22,
+   "admission_risk": 72,
+   "tier": "tier3",
+   "regret_intent": 0.85,
+   "conf": "estimated",
+   "notes": "锚点F级25迁移:赵开君为真实聚变研究者(一作PRL1篇,2006 HL-2A时期)但'高导师+低平台',天环一号系纸面装置→has_platform=false触发dead_end;历史成果陷阱:顶刊多为入职前产出。注意:东华理工≠东华大学",
+   "sources": [
+    "fusion-program-audit/references/case_anchors.md 锚点4对照案例"
+   ],
+   "governance_flags": [
+    "原校长刘庆成2014双开(受贿巨额财物)——江西2013-2014连落两高校校长(另一为南昌大学周文斌)[A级一把手历史案]"
+   ]
+  },
+  {
+   "name": "复旦大学(聚变科学与工程博士点)",
+   "has_phd_program": true,
+   "advisor_phd_qualified": true,
+   "has_platform": true,
+   "phd": 82,
+   "city": 88,
+   "funding": 78,
+   "platform": 72,
+   "admission_risk": 45,
+   "tier": "tier1",
+   "regret_intent": 0.85,
+   "conf": "empirical",
+   "notes": "第43单位。许敏教授2026-05确认:复旦已设立'聚变科学与工程'一级学科及博士点并开始招收博士生(上观新闻A级);现代物理研究所3院士+7杰青;EBIT装置(国内首台低温电子束离子阱,聚变等离子体实验模拟优势);郭志彬做磁约束聚变报告;2025-05核科学前沿论坛有方德清所长主持。路径:磁约束+高离化态原子过程",
+   "sources": [
+    "https://www.shobserver.com/staticsg/res/html/web/newsDetail.html?id=1111861&sid=11",
+    "https://imp.fudan.edu.cn/",
+    "https://baike.baidu.com/item/%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E7%8E%B0%E4%BB%A3%E7%89%A9%E7%90%86%E7%A0%94%E7%A9%B6%E6%89%80/8875407"
+   ]
+  }
+ ],
+ "governance_coverage": "2026-08-28 全闭环42单位。当下塌方:南华;在任实案:石河子(魏忠);获刑实案:北大(任羽中3195万/8年);一把手历史实案:北师大/人大/南昌大/内蒙古科大(李保卫三罪)/东华理工(刘庆成);校级历史个案:川大/西交/浙大(褚健);巡视问责:山大/华南理工;附院系统:郑大/中科大/石河子;中层常态:清华/兰大/合工大/华科/燕大/中山/上交/宁夏;警示注记:太理(李明绑地方);未检出:SWIP/ASIPP/大工/西南交大/哈工大/北科大/西北师大/昆工/中南民族/内大/新大/西北大/哈工程/南开/南航/北方民大/西华。实案集中基建/招生/附院/产学研资产,零例触及物理学院与聚变方向",
+ "pool_note": "42单位(v2.1:ASIPP与中科大科学岛重复计列修正合并)",
+ "deprecated_by": "benchmark_schools_43.json",
+ "deprecation_note": "v2.3.5（2026-08-29）：本文件为 v1.10 前历史快照，43 校版为其严格超集+2 处勘误（兰大 phd 84→82、复旦 platform 72→80），仅保留作回归基准，新分析一律用 43 校版"
+}

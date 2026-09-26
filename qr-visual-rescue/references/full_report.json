@@ -1,0 +1,44 @@
+[
+ {
+  "image": "<工作区根>/temp/image_1788016651006(1).jpg",
+  "box": null,
+  "hits": [
+   {
+    "decoder": "zxing",
+    "variant": "orig",
+    "text": "https://www.jianguoyun.com/p/Db6YwFgQoPuYDRjEwegFIAA"
+   },
+   {
+    "decoder": "wechat",
+    "variant": "orig",
+    "text": "https://www.jianguoyun.com/p/Db6YwFgQoPuYDRjEwegFIAA"
+   },
+   {
+    "decoder": "qreader",
+    "variant": "orig",
+    "text": "https://www.jianguoyun.com/p/Db6YwFgQoPuYDRjEwegFIAA"
+   }
+  ],
+  "decoders": {
+   "opencv": {
+    "unique_hits": {}
+   },
+   "zxing": {
+    "unique_hits": {
+     "https://www.jianguoyun.com/p/Db6YwFgQoPuYDRjEwegFIAA": "orig"
+    }
+   },
+   "wechat": {
+    "unique_hits": {
+     "https://www.jianguoyun.com/p/Db6YwFgQoPuYDRjEwegFIAA": "orig"
+    }
+   },
+   "qreader": {
+    "unique_hits": {
+     "https://www.jianguoyun.com/p/Db6YwFgQoPuYDRjEwegFIAA": "orig"
+    }
+   }
+  },
+  "verdict": "decoded"
+ }
+]

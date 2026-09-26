@@ -1,0 +1,92 @@
+[
+  {
+    "claim": "恒瑞医药2025-07-28公告与GSK签署License-out合作（HRS-9821+至多11个非临床项目选择权），首付5亿美元、总潜在金额最高125亿美元",
+    "source_type": "权威媒体",
+    "url": "https://www.cls.cn/detail/2097860",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查上交所/巨潮恒瑞医药2025-07-28公告原文，核对交易结构与金额字段",
+    "confidence": "High"
+  },
+  {
+    "claim": "恒瑞医药2025年营收316.29亿元(+13.02%)、归母净利77.11亿元(+21.69%)、扣非74.13亿元(+20.00%)",
+    "source_type": "权威媒体",
+    "url": "http://jjckb.xinhuanet.com/20260325/4757866ed3404db2989546ef2b293196/c.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查恒瑞医药2025年年度报告（2026-03-25披露）利润表",
+    "confidence": "High"
+  },
+  {
+    "claim": "恒瑞医药2025年创新药销售收入163.42亿元(+26.09%)，占药品销售收入58.34%",
+    "source_type": "权威媒体",
+    "url": "https://www.cls.cn/detail/2325835",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查2025年报经营讨论章节创新药收入口径",
+    "confidence": "High"
+  },
+  {
+    "claim": "恒瑞医药2025年对外许可收入33.92亿元(+25.6%)",
+    "source_type": "权威媒体",
+    "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/827924278885/index.phtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查2025年报分业务收入披露或许可收入附注",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2025年中国创新药License-out交易总额1356.55亿美元、157笔；2024年为519亿美元、94笔",
+    "source_type": "权威媒体",
+    "url": "https://companies.caixin.com/2026-01-14/102403409.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查国家药监局新闻发布或医药魔方NextPharma年度统计",
+    "confidence": "High"
+  },
+  {
+    "claim": "2025年恒瑞医药出海BD交易总额167亿美元，居中国药企首位",
+    "source_type": "权威媒体",
+    "url": "https://companies.caixin.com/2026-01-14/102403409.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查医药魔方2025年度出海交易榜单",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "恒瑞医药2026Q1营收81.41亿元(+12.98%)、归母净利22.82亿元(+21.78%)、扣非21.72亿元(+16.59%)",
+    "source_type": "权威媒体",
+    "url": "http://www.southmoney.com/gegu/zijinliuxiang/202608/66252650.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查恒瑞医药2026年第一季度报告",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2026-09-01恒瑞A股收盘46.23元，总市值3068.38亿元，PE(TTM)约39.7，52周区间45.26-73.74元",
+    "source_type": "监管平台",
+    "url": "https://xueqiu.com/S/SH600276",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查上交所2026-09-01行情或两家行情终端交叉",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "恒瑞H股2025-05-23上市，发行价44.05港元、发行2.25亿股、净筹约97.47亿港元，超购约454倍",
+    "source_type": "权威媒体",
+    "url": "https://finance.caixin.com/2025-05-23/102322483.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查港交所披露易恒瑞医药配发结果公告",
+    "confidence": "High"
+  },
+  {
+    "claim": "600276于2026年的年初至今涨幅：Yahoo口径+22.08%与南方财富口径-17.64%互斥，未裁决",
+    "source_type": "自媒体",
+    "url": "https://hk.finance.yahoo.com/quote/600276.SS/",
+    "no_public_url_reason": "两行情源口径互斥，本轮未取得交易所年线原始数据；替代检索路径：上交所历史行情/Wind复权数据",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "取2025-12-31与2026-09-01收盘价（同复权口径）直接计算",
+    "confidence": "Conflict"
+  }
+]

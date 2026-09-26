@@ -1,0 +1,90 @@
+[
+  {
+    "claim": "999999 是通达信等行情软件对上证综合指数的内部编码（对应标准指数代码 000001），不是个股代码",
+    "source_type": "官网",
+    "url": "https://github.com/handsomejustin/easy_tdx/blob/main/examples/03_kline/index_bars.py",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "在通达信/同花顺等软件输入 999999 查看返回标的是否为上证指数；或核对上交所指数代码 000001 与软件内部码映射表",
+    "confidence": "High"
+  },
+  {
+    "claim": "A 股个股代码段不含 999xxx：沪市 600/601/603/605/688，深市 000/002/300，北交所 8xx/920",
+    "source_type": "自媒体",
+    "url": "https://www.gtjafl.com/code_533228",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "在上交所/深交所/北交所官网证券代码分配规则页面核对代码段；查是否存在 999xxx 段个股",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2025 年中国智能手机出货量约 2.85 亿台，同比 -0.6%（IDC 口径）",
+    "source_type": "权威媒体",
+    "url": "https://m.bjnews.com.cn/detail/1768363813129950.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查 IDC 官网《中国季度手机跟踪报告》2025 全年新闻稿，核对出货量与同比数值",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2025 年全球智能手机出货量 12.6 亿台，同比 +1.9%；2025Q4 为 3.363 亿台，同比 +2.3%（IDC 口径）",
+    "source_type": "权威媒体",
+    "url": "https://finance.sina.com.cn/tech/digi/2026-01-14/doc-inhhhahx4134984.shtml",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查 IDC《全球季度手机跟踪报告》2026-01-14 初步数据稿，核对三组数值",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2025 年中国市场华为出货 4670 万台/份额 16.4% 第一，苹果 4620 万、vivo 4610 万各 16.2%（IDC 口径）",
+    "source_type": "权威媒体",
+    "url": "https://m.bjnews.com.cn/detail/1768363813129950.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对 IDC 原稿厂商出货表；复算 4670/28500≈16.4% 是否自洽",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "Omdia 口径 2025 年中国大陆智能手机出货 2.823 亿台、同比 -1%，与 IDC 口径（2.85 亿台/-0.6%）存在机构口径差",
+    "source_type": "权威媒体",
+    "url": "https://www.esmchina.com/marketnews/56673.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查 Omdia 2026-01-16 原稿与 IDC 稿并列比对两组数字",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2025Q1 中国智能手机出货 IDC 口径 7160 万部/+3.3%，TechInsights 口径 6870 万部/+9%",
+    "source_type": "权威媒体",
+    "url": "https://www.fxbaogao.com/detail/4803806",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对平安证券 2025-04-28 研报引 IDC 数据与 TechInsights 2025Q1 报告（C114 转载）两组数字",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "Counterpoint 于 2025 年 1 月预测 2025Q1 中国手机出货 7500万–8000万部、同比超 10%，实际落空（IDC 实查 +3.3%，全年 -0.6%）",
+    "source_type": "权威媒体",
+    "url": "https://www.caixin.com/2025-01-22/102281728.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "对比财新 2025-01-22 文中预测值与 IDC/TechInsights 2025Q1 实查值及 2025 全年值",
+    "confidence": "High"
+  },
+  {
+    "claim": "2025Q1 中国折叠屏手机出货 284 万台，同比 +53.1%",
+    "source_type": "权威媒体",
+    "url": "https://www.fxbaogao.com/detail/4803806",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对 IDC 折叠屏季度跟踪数据（平安证券研报转引，2025-04-28）",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "IDC 预计 2026 年中国智能手机市场出货量或将出现较明显回落（存储涨价压制）",
+    "source_type": "权威媒体",
+    "url": "https://m.bjnews.com.cn/detail/1768363813129950.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "该断言为前瞻性预测，待 2026 年全年 IDC 数据发布后回验",
+    "confidence": "Low"
+  },
+  {
+    "claim": "通达信软件使用 999999 而非 000001 是为了避免与个股 000001（原深发展/现平安银行）重码",
+    "source_type": "自媒体",
+    "url": "https://www.gtjafl.com/code_533228",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核实深市 000001 现挂牌标的名称；查通达信官方编码说明文档",
+    "confidence": "Medium"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "case": "c7b",
+  "code": "300750",
+  "date": "2026-09-02",
+  "mode": "compressed",
+  "gate_status": "未经实闸",
+  "rumors": [
+    {
+      "id": "R1",
+      "claim": "宁德时代2025年1月计划减少/大幅削减磷酸铁锂生产（订单）",
+      "direction": "bearish",
+      "verdict": "链条断裂（整体不成立）",
+      "broken_link": "L3",
+      "links": [
+        {"id": "L1", "type": "fact", "verdict": "成立", "conf": "High", "sources": ["凤凰网财经 2024-12-28", "电子工程专辑 2024-12-30"]},
+        {"id": "L2", "type": "fact", "verdict": "成立", "conf": "High", "sources": ["凤凰网财经 2024-12-28", "电子工程专辑 2024-12-30"]},
+        {"id": "L3", "type": "causal", "verdict": "断裂", "conf": "High", "basis": "公司2024-12-27互动平台回应不属实"},
+        {"id": "L4", "type": "value", "verdict": "话术（存疑）", "conf": "Low"}
+      ]
+    },
+    {
+      "id": "R2",
+      "claim": "宁德时代2027年量产2000公里固态电池",
+      "direction": "bullish",
+      "verdict": "链条断裂（整体不成立）",
+      "broken_link": "L3",
+      "links": [
+        {"id": "L1", "type": "fact", "verdict": "成立", "conf": "Medium", "sources": ["cwese.com 2025-12-02"], "note": "单一来源，权威度B"},
+        {"id": "L2", "type": "fact", "verdict": "成立", "conf": "Medium", "no_public_url_reason": "1轮检索内未见公司正式公告原文", "search_path": "宁德时代 传言 辟谣 2025 2026 公告"},
+        {"id": "L3", "type": "causal", "verdict": "断裂", "conf": "Medium-High", "basis": "公司辟谣否认；2000公里量级无官方依据"},
+        {"id": "L4", "type": "value", "verdict": "话术（存疑）", "conf": "Low"}
+      ]
+    }
+  ],
+  "tables": {
+    "file_three_questions": "不适用（显式声明：无文件截图）",
+    "bottom_table_diff": "不适用（显式声明：传言不涉及财报数字，压缩口径未穷举）",
+    "hallucination_captured": [
+      {"item": "R1削减磷酸铁锂订单", "rumored": "2025年1月减产", "verified": "公司回应不属实 2024-12-27", "type": "事实幻觉"},
+      {"item": "R2两千公里固态电池", "rumored": "2000公里/2027年量产", "verified": "公司辟谣否认（2025-12-02报道）", "type": "数值/时点幻觉"}
+    ]
+  }
+}

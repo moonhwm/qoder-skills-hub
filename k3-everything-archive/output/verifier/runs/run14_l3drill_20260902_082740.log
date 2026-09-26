@@ -1,0 +1,7 @@
+# MCP通道实证留痕: INSERT id=215(L3_DRILL,hash 13ff53aaa70d8e65abdab0c70b352d16); SELECT读回hash一致; UPDATE 215→read; INSERT id=216(L3_DRILL_ACK,hash 5337b76d63f894491a81fb80f57bcbeb)
+PASS G3 锚链核验复跑PASS VERIFY n=316: PASS (root a9c7b9d334745c20, files 203/203)
+PASS G5a 表决册未被演练污染 
+PASS G5b 文件数稳定 锚 n=316 files 203/203 见 G3
+---
+NOTE G1/G2/G4 为通道侧实证：id=215(read)/hash 13ff53aa 匹配/id=216 ACK hash 5337b76d 匹配——MCP 返回件留 runs/ 日志
+EXIT 0 | fails: []

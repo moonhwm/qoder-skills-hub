@@ -1,0 +1,9 @@
+== 伞 v1.4.0 验收（run5）==
+T1 版本: PASS 1.4.0
+T2 §4.5扩编规程: PASS 46件=True,+0.1.0=True
+T3 平装本: PASS 1772B
+T4 名录19件: PASS 19件
+T5 排除词实名: PASS []
+T6 调用链双段: PASS 
+T7 dist包: PASS 
+== 总裁定: ALL PASS 耗时0.0s ==

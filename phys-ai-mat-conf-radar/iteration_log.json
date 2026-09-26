@@ -1,0 +1,46 @@
+{
+  "project": "unnamed-project",
+  "created": "2026-08-27T16:51:57.906244+00:00",
+  "iterations": [
+    {
+      "version": "1.0",
+      "summary": "初版：会议目录+核验政策+排期分诊与ICS生成脚本",
+      "why": "用户请求物理×AI×材料顶会排期技能（等离子体/聚变重点）",
+      "impact": "技能可用，L2 自标",
+      "file": "SKILL.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T16:51:58.006117+00:00"
+    },
+    {
+      "version": "1.1",
+      "summary": "修复ICS全天事件DTEND排他端点+triage透传tentative字段",
+      "why": "全天事件DTEND同日导致部分日历渲染为零时长（Med级）",
+      "impact": "日历导入兼容性修复；排期透明度提升",
+      "file": "scripts/ics_gen.py",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T16:51:58.172331+00:00"
+    },
+    {
+      "version": "1.2",
+      "summary": "自包含化：vendor ai-deadlines 快照 + ai_deadlines_ingest.py（C3纪律内置）",
+      "why": "用户要求自包含并克隆相关项目源码",
+      "impact": "技能离线可用；种子数据强制 assumed 防止误当官宣",
+      "file": "references/data/ai_deadlines_conferences.yml",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T16:57:20.168425+00:00"
+    },
+    {
+      "version": "1.3",
+      "summary": "首轮T2复核6条当期事实+修正SOFT/SOFE混淆与DPP窗口",
+      "why": "排期P1项：目录年度复核前置执行，发现真实目录错误",
+      "impact": "目录事实性提升；当期数据以T2日志为准",
+      "file": "references/data/catalog_t2_log.jsonl",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T17:05:17.560314+00:00"
+    }
+  ]
+}

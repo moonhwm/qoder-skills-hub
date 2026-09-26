@@ -1,0 +1,17 @@
+{
+  "is_success": true,
+  "result": {
+    "user": [
+      {
+        "type": "text",
+        "text": "{\"success\":true,\"errorCode\":1,\"errorInfo\":\"成功\",\"data\":[],\"space\":171,\"jdbcQuerySpace\":33,\"affectedRow\":null,\"header\":null,\"page\":{\"totalPage\":0,\"pageSize\":20,\"totalCount\":0,\"currentPage\":1},\"requestSQL\":null}"
+      }
+    ],
+    "assistant": [
+      {
+        "type": "text",
+        "text": ""
+      }
+    ]
+  }
+}

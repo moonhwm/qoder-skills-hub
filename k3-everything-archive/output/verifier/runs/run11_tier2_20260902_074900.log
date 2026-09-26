@@ -1,0 +1,3 @@
+PASS C7 安全边界 forbidden=[]
+---
+EXIT 0 | fails: []

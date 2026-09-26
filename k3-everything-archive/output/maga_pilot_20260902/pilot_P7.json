@@ -1,0 +1,19 @@
+{
+ "seat": "P7",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 25.81,
+ "content": "```json\n{\n \"q1_ideology\": 6,\n \"q2_maga\": \"lean_support\",\n \"q3_extra_institutional\": 2,\n \"q4_recognize_provisional_govt\": \"no\",\n \"one_line_reason\": \"I worry about the direction our country's headed and I vote Republican, but as a Mormon mother of four I believe in respecting lawful authority and the Constitution, not tearing things down.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 254,
+  "total_tokens": 977,
+  "completion_tokens": 723,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 627
+  }
+ },
+ "ts": "2026-09-02T12:33:01Z"
+}

@@ -1,0 +1,6 @@
+PASS: M1 考证报告必备节齐
+PASS: M2 两把key在vault且chmod600
+PASS: M3 零明文（key零命中registry非vault区）
+PASS: M4 写入受限如实标注+钟点在案
+PASS: M5 逃逸#22/#23在册
+== v12 汇总 == ALL PASS

@@ -1,0 +1,9 @@
+FAIL C1 Tier-1删除彻底 residual=[]
+PASS C2 复扫零残留 resid=[]
+PASS C3 台账健康 交割台账.json:OK 计时器任务台账.json:OK 额度状态台账.json:OK 交割台账.jsonl:bad=0 蜂群消耗台账.jsonl:bad=0
+PASS C4 报告落盘且要素齐 missing=[]
+FAIL C5 母本完整 orphans=['output/ai_physics_sectors.docx.work.converted.md']
+PASS C6 零明文凭证 hits=[]
+PASS C7 安全边界 forbidden=[]
+---
+EXIT 1 | fails: ['C1 Tier-1删除彻底', 'C5 母本完整']

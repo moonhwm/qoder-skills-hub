@@ -1,0 +1,46 @@
+{
+  "project": "unnamed-project",
+  "created": "2026-08-27T16:51:40.485834+00:00",
+  "iterations": [
+    {
+      "version": "1.0",
+      "summary": "初版：三脚本（id校验/API核验/引文生成）+三参考文档",
+      "why": "用户请求创建 arXiv 信源标准技能",
+      "impact": "技能可用，L2 自标",
+      "file": "SKILL.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T16:51:40.584189+00:00"
+    },
+    {
+      "version": "1.1",
+      "summary": "修复旧式带子类ID误报unknown_old_archive",
+      "why": "math.AG/astro-ph.GA/q-fin 等合法ID被误报（High级误报缺陷）",
+      "impact": "消除对真实论文的误报；新增回归断言",
+      "file": "scripts/arxiv_id_check.py",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T16:51:40.714345+00:00"
+    },
+    {
+      "version": "1.2",
+      "summary": "GB/T姓名序中文姓氏启发式+回归断言",
+      "why": "排期P2项：东方姓名序误判",
+      "impact": "常见中文姓名不再被倒置；生僻姓氏仍为人工核对点",
+      "file": "scripts/arxiv_cite.py",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T17:05:17.823303+00:00"
+    },
+    {
+      "version": "1.3",
+      "summary": "盲评闭环：行话翻译+核验留痕两条输出纪律",
+      "why": "配额恢复后补做swarm盲评，with_skill胜出；盲评指出的缺陷转化为纪律条款",
+      "impact": "独立读者可读性与证据可复查性提升",
+      "file": "SKILL.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T17:11:31.756564+00:00"
+    }
+  ]
+}

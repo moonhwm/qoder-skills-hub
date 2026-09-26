@@ -1,0 +1,46 @@
+{
+  "project": "300171外骨骼迭代",
+  "created": "2026-08-27T19:12:09.589370+00:00",
+  "iterations": [
+    {
+      "version": "0.1",
+      "summary": "宪章v0.1:R1缺陷解剖",
+      "why": "提示词缺陷D1-D5",
+      "impact": "",
+      "file": "charter_v0.1.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T19:12:09.693502+00:00"
+    },
+    {
+      "version": "1.0",
+      "summary": "宪章v1.0:三角色审查19缺陷重整",
+      "why": "7条High修复",
+      "impact": "",
+      "file": "charter_v1.0.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T19:12:09.818901+00:00"
+    },
+    {
+      "version": "1.1",
+      "summary": "分析报告v1.0:R4数据轮+证据链15条0错误",
+      "why": "实战首交付",
+      "impact": "",
+      "file": "东富龙300171_分析报告_v1.0.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T19:12:09.948139+00:00"
+    },
+    {
+      "version": "2.0",
+      "summary": "宪章v2.0:自包含/哈希链/热拔插/网页交付固化+交互站上线(b194aa1)",
+      "why": "用户第二轮指令固化工程特性",
+      "impact": "",
+      "file": "charter_v2.0.md",
+      "branch": "converge",
+      "mode": "full",
+      "timestamp": "2026-08-27T20:06:42.592971+00:00"
+    }
+  ]
+}

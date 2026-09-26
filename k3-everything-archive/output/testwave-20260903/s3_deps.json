@@ -1,0 +1,70 @@
+{
+ "pyzipper": [
+  "<技能安装位>/archive-ops-kit/scripts/zip_crack.py"
+ ],
+ "qcloud_cos": [
+  "<技能安装位>/cross-session-workflow-bridge/vendor/cos_upload.py"
+ ],
+ "fitz": [
+  "<技能安装位>/doc-archive-ingest/scripts/pdf_watermark.py",
+  "<技能安装位>/doc-archive-ingest/scripts/source_register.py"
+ ],
+ "docx": [
+  "<技能安装位>/doc-archive-ingest/scripts/source_register.py"
+ ],
+ "openpyxl": [
+  "<技能安装位>/doc-archive-ingest/scripts/source_register.py"
+ ],
+ "score_engine": [
+  "<技能安装位>/grad-path-scorer/scripts/calibrate_weights.py"
+ ],
+ "dead_end_classifier": [
+  "<技能安装位>/grad-path-scorer/scripts/calibrate_weights.py"
+ ],
+ "scipy": [
+  "<技能安装位>/grad-path-scorer/scripts/calibrate_weights.py"
+ ],
+ "numpy": [
+  "<技能安装位>/grad-path-scorer/scripts/calibrate_weights.py",
+  "<技能安装位>/qr-visual-rescue/scripts/qr_multi_decode.py",
+  "<技能安装位>/quant-frontier-lab/scripts/psm_balance.py"
+ ],
+ "psycopg2": [
+  "<技能安装位>/k3-channel-ops/scripts/channel_probe.py",
+  "<技能安装位>/k3-channel-ops/scripts/channel_send.py"
+ ],
+ "scoring_engine": [
+  "<技能安装位>/medical-malpractice-criminal-review/scripts/batch_compare.py"
+ ],
+ "cv2": [
+  "<技能安装位>/qr-visual-rescue/scripts/qr_multi_decode.py"
+ ],
+ "zxingcpp": [
+  "<技能安装位>/qr-visual-rescue/scripts/qr_multi_decode.py"
+ ],
+ "qreader": [
+  "<技能安装位>/qr-visual-rescue/scripts/qr_multi_decode.py"
+ ],
+ "yaml": [
+  "<技能安装位>/skill-library-auditor/scripts/audit_skill_repo.py"
+ ],
+ "requests": [
+  "<技能安装位>/travel-commute-planner/scripts/route_planning.py",
+  "<技能安装位>/travel-commute-planner/scripts/train_query.py"
+ ],
+ "pandas": [
+  "<技能安装位>/travel-commute-planner/scripts/train_query.py"
+ ],
+ "PIL": [
+  "<技能安装位>/vision-ocr-pipeline/scripts/img_token_saver.py",
+  "<技能安装位>/vision-ocr-pipeline/scripts/ocr_shot.py",
+  "<技能安装位>/vision-ocr-pipeline/scripts/pack_handoff_html.py"
+ ],
+ "rapidocr_onnxruntime": [
+  "<技能安装位>/vision-ocr-pipeline/scripts/img_token_saver.py",
+  "<技能安装位>/vision-ocr-pipeline/scripts/ocr_shot.py"
+ ],
+ "k3_security": [
+  "<上传区>/skill-dist-20260903/autonomous-advance-ops/security/test_security.py"
+ ]
+}

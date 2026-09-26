@@ -1,0 +1,110 @@
+[
+  {
+    "claim": "2025年中国光伏新增装机315.07GW，同比约+13%，创历史新高",
+    "source_type": "权威媒体",
+    "url": "https://m.jiemian.com/article/13987532.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查国家能源局历年新增装机统计新闻稿，核对2025年光伏新增装机字段",
+    "confidence": "High"
+  },
+  {
+    "claim": "CPIA预测2026年中国光伏新增装机180-240GW，同比-23.8%~-42.9%",
+    "source_type": "权威媒体",
+    "url": "https://www.caixin.com/2026-02-05/102411937.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查中国光伏行业协会2026-02-05研讨会王勃华发言实录/CPIA年度报告",
+    "confidence": "High"
+  },
+  {
+    "claim": "2026年上半年国内光伏新增装机72.07GW，同比-66%",
+    "source_type": "权威媒体",
+    "url": "https://www.caixin.com/2026-08-28/102479326.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查国家能源局2026年1-6月全国电力工业统计数据",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2026H1营收309.12亿元(-28.99%)、归母净利52.59亿元(-32.01%)、毛利率35.92%、经营现金流37.35亿元、拟10派6.4元",
+    "source_type": "监管平台",
+    "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid=300274&id=12570250",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查巨潮资讯网阳光电源2026年半年度报告原文主要会计数据表",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2026H1储能营收154.6亿元、发货25GWh(+28%)；光伏逆变器营收123.9亿元、发货66GW(-13%)",
+    "source_type": "权威媒体",
+    "url": "http://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/841548451578/index.phtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对公司半年报分行业/分产品经营数据章节；券商点评为二手转述，以半年报为准",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "阳光电源2026-09-01收盘89.33元(-2.37%)，TTM PE 16.67，52周区间88.49-209.88元",
+    "source_type": "权威媒体",
+    "url": "https://hk.finance.yahoo.com/quote/300274.SZ/",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查深交所/行情软件300274当日收盘行情",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2025年全年营收891.84亿元、海外营收539.92亿元（占比60.54%）",
+    "source_type": "权威媒体",
+    "url": "https://cj.sina.cn/articles/view/5757066018/15725db22001019g7u",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查公司2025年年度报告营业收入与分地区收入表；与2026半年报利润表上年同期数891.84亿交叉一致",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2025年净利润总额135.33亿元（归母口径本轮未采到原表）",
+    "source_type": "权威媒体",
+    "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_ProfitStatement/stockid/300274/ctrl/part/displaytype/4.phtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查公司2025年报利润表「五、净利润」字段；归母口径需补查年报原文",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2026-06-30路透社报道FCC起草对华逆变器进口禁令草案；7-01阳光电源收跌13.9%",
+    "source_type": "权威媒体",
+    "url": "http://finance.sina.com.cn/search/2026-07-01/doc-inifiaew3008093.shtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查路透社2026-06-30原报道与当日行情；公司互动易7-01回应",
+    "confidence": "High"
+  },
+  {
+    "claim": "FCC 2026-07-28实际落地政策仅将新型号联网逆变器列入管制清单，存量已认证产品不受影响；8-26第14420号行政令将电池储能系统纳入，公司解读字面范围为69kV及以上输电设备",
+    "source_type": "权威媒体",
+    "url": "https://www.ifnews.com/news.html?aid=865428",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查FCC官网管制清单公告与美国联邦公报第14420号行政令原文；公司8-28投资者关系活动记录表（巨潮）",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "雪球论坛2026-01底流传「阳光电源2025营收1005亿、利润约180亿」（E5论坛级，无公司公告来源）",
+    "source_type": "自媒体",
+    "url": "https://xueqiu.com/3848730387/374254457",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "对照公司2025年报实际营收891.84亿即可证伪；年会原始材料未公开",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "阳光电源2026Q1归母净利22.91亿元，同比-40.12%；美国收入占总营收10%-20%",
+    "source_type": "权威媒体",
+    "url": "https://www.ifnews.com/news.html?aid=865428",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查公司2026年一季度报告；美国占比查公司互动易/投资者关系记录",
+    "confidence": "High"
+  }
+]

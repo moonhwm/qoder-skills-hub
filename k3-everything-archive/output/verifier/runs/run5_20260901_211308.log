@@ -1,0 +1,10 @@
+PASS V1a A1-A15全覆盖 missing=[]
+PASS V1b 三分类齐 
+PASS V2a 8交集覆盖 missing=[]
+PASS V2b humanizer三变体 
+PASS V3 蓝图要素 missing=[]
+SKIP V4 未产出
+PASS V5 三件套字段 
+PASS V8 零明文凭证 hits=[]
+---
+EXIT 0 | fails: []

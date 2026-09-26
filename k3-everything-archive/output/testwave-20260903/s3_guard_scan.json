@@ -1,0 +1,128 @@
+{
+ "<技能安装位>/archive-ops-kit/scripts/zip_crack.py": [
+  {
+   "mod": "pyzipper",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/cross-session-workflow-bridge/vendor/cos_upload.py": [
+  {
+   "mod": "qcloud_cos",
+   "import_in_try": false
+  }
+ ],
+ "<技能安装位>/doc-archive-ingest/scripts/pdf_watermark.py": [
+  {
+   "mod": "fitz",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/doc-archive-ingest/scripts/source_register.py": [
+  {
+   "mod": "fitz",
+   "import_in_try": true
+  },
+  {
+   "mod": "docx",
+   "import_in_try": true
+  },
+  {
+   "mod": "openpyxl",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/grad-path-scorer/scripts/calibrate_weights.py": [
+  {
+   "mod": "scipy",
+   "import_in_try": false
+  },
+  {
+   "mod": "numpy",
+   "import_in_try": false
+  }
+ ],
+ "<技能安装位>/qr-visual-rescue/scripts/qr_multi_decode.py": [
+  {
+   "mod": "numpy",
+   "import_in_try": false
+  },
+  {
+   "mod": "cv2",
+   "import_in_try": false
+  },
+  {
+   "mod": "zxingcpp",
+   "import_in_try": true
+  },
+  {
+   "mod": "qreader",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/quant-frontier-lab/scripts/psm_balance.py": [
+  {
+   "mod": "numpy",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/k3-channel-ops/scripts/channel_probe.py": [
+  {
+   "mod": "psycopg2",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/k3-channel-ops/scripts/channel_send.py": [
+  {
+   "mod": "psycopg2",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/skill-library-auditor/scripts/audit_skill_repo.py": [
+  {
+   "mod": "yaml",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/travel-commute-planner/scripts/route_planning.py": [
+  {
+   "mod": "requests",
+   "import_in_try": false
+  }
+ ],
+ "<技能安装位>/travel-commute-planner/scripts/train_query.py": [
+  {
+   "mod": "requests",
+   "import_in_try": false
+  },
+  {
+   "mod": "pandas",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/vision-ocr-pipeline/scripts/img_token_saver.py": [
+  {
+   "mod": "PIL",
+   "import_in_try": false
+  },
+  {
+   "mod": "rapidocr_onnxruntime",
+   "import_in_try": true
+  }
+ ],
+ "<技能安装位>/vision-ocr-pipeline/scripts/ocr_shot.py": [
+  {
+   "mod": "PIL",
+   "import_in_try": false
+  },
+  {
+   "mod": "rapidocr_onnxruntime",
+   "import_in_try": false
+  }
+ ],
+ "<技能安装位>/vision-ocr-pipeline/scripts/pack_handoff_html.py": [
+  {
+   "mod": "PIL",
+   "import_in_try": true
+  }
+ ]
+}

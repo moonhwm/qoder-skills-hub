@@ -1,0 +1,2764 @@
+{
+ "build": "2026-09-02T22:24:54.009246",
+ "v": 3,
+ "skills": {
+  "admission-panel-analytics": {
+   "files": 8,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "4c7c4ebbe5eb0d924171f5800aebbcc4",
+     "bytes": 7949
+    },
+    {
+     "path": "references/admission_patterns.md",
+     "md5": "6b910169b4f8f2689e6d31f80d6d2df8",
+     "bytes": 8937
+    },
+    {
+     "path": "references/iteration_protocol.md",
+     "md5": "ade81114db97d2e991762ec555677d22",
+     "bytes": 4577
+    },
+    {
+     "path": "references/panel_schema.md",
+     "md5": "693325760ffe8a9bf74ff19ca59db82e",
+     "bytes": 7465
+    },
+    {
+     "path": "references/source_confidence.md",
+     "md5": "abbfb87424f32b07dc43a75e7e3b7be2",
+     "bytes": 4082
+    },
+    {
+     "path": "scripts/panel_validate.py",
+     "md5": "d0da37a3c18216f1f6d28dd25cc02990",
+     "bytes": 12546
+    },
+    {
+     "path": "scripts/pattern_classify.py",
+     "md5": "a3d345069d2d79a5a6f6caa0554359fb",
+     "bytes": 13659
+    },
+    {
+     "path": "scripts/score_panel.py",
+     "md5": "f8ab5db979f3fe2cdab597db8d0e0922",
+     "bytes": 12209
+    }
+   ]
+  },
+  "archive-ops-kit": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "e22110d568fc46ec16efa68c93854b85",
+     "bytes": 3872
+    },
+    {
+     "path": "references/pitfalls.md",
+     "md5": "6d7304bc731181f4481faf02a364d3fd",
+     "bytes": 2688
+    },
+    {
+     "path": "scripts/jd_crack.c",
+     "md5": "d0856044c8b20692b1f924e8a46d6586",
+     "bytes": 4382
+    },
+    {
+     "path": "scripts/skill_batch_archive.py",
+     "md5": "60865754cdb06ddfa21d1ddeafffc384",
+     "bytes": 6845
+    },
+    {
+     "path": "scripts/zip_crack.py",
+     "md5": "4d7664f041f50051715fe5ecaa83a952",
+     "bytes": 9752
+    }
+   ]
+  },
+  "arxiv-source-sentinel": {
+   "files": 9,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "b1e4f5b99e6a5f78d073bd4b11f61a5e",
+     "bytes": 7216
+    },
+    {
+     "path": "SKILL.md.tmp.36ee05866b8a45a9b8d0f82fbd48340b",
+     "md5": "d41d8cd98f00b204e9800998ecf8427e",
+     "bytes": 0
+    },
+    {
+     "path": "iteration_log.json",
+     "md5": "70c1edcd86274dd192b953c8f34c597f",
+     "bytes": 1697
+    },
+    {
+     "path": "references/arxiv_api.md",
+     "md5": "873b0eadf4ed0fb1e9068226be9baf7c",
+     "bytes": 4529
+    },
+    {
+     "path": "references/channel_policy.md",
+     "md5": "44dde1af7cd6921087632606aa2d3a39",
+     "bytes": 5965
+    },
+    {
+     "path": "references/citation_standards.md",
+     "md5": "b985da18c7b6b50011a11164e7475e61",
+     "bytes": 3309
+    },
+    {
+     "path": "scripts/arxiv_cite.py",
+     "md5": "abdc7c989046ca75e34bb95cd323d672",
+     "bytes": 8385
+    },
+    {
+     "path": "scripts/arxiv_fetch.py",
+     "md5": "446bf7ba4dd66d8fdb3e31a73f4072b6",
+     "bytes": 9062
+    },
+    {
+     "path": "scripts/arxiv_id_check.py",
+     "md5": "be281c3f21b627e3ecca1d4b5009d4bd",
+     "bytes": 7363
+    }
+   ]
+  },
+  "autonomous-advance-ops": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "b0ed0ec66e47951fb2b411e4feeb7c5c",
+     "bytes": 31166
+    },
+    {
+     "path": "references/degeneration-playbook.md",
+     "md5": "74c4d72360fb0b8b46b42af213142b97",
+     "bytes": 10318
+    },
+    {
+     "path": "references/interaction-clauses.md",
+     "md5": "5d953123a19f05b7f6bd4a260c996f14",
+     "bytes": 6749
+    },
+    {
+     "path": "scripts/verify_legislation.py",
+     "md5": "04d68f9e9ef8f2206d9f7b062e168243",
+     "bytes": 4062
+    },
+    {
+     "path": "scripts/__pycache__/verify_legislation.cpython-312.pyc",
+     "md5": "9d2ee26ad89e583a24c543976af4e3ef",
+     "bytes": 5225
+    },
+    {
+     "path": "security/k3_security.py",
+     "md5": "40707ad05b3c1bb49ebaf4faf7b38710",
+     "bytes": 4054
+    },
+    {
+     "path": "security/test_security.py",
+     "md5": "f233d9492c6f076e18a340c228481727",
+     "bytes": 1750
+    }
+   ]
+  },
+  "autonomous-advance-protocol": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "e4eba5213d8562ea9ee211e65822874a",
+     "bytes": 34955
+    },
+    {
+     "path": "scripts/verify_legislation.py",
+     "md5": "2e8193439d1a69c48fad36ce51f1e351",
+     "bytes": 3271
+    }
+   ]
+  },
+  "claims-deep-audit": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "f369e8922a45c77f8aeaa3454d7a1f94",
+     "bytes": 9975
+    },
+    {
+     "path": "references/fraud_typology.md",
+     "md5": "17039188603edb98a2a92f022431e7e0",
+     "bytes": 3790
+    },
+    {
+     "path": "references/red_lines.md",
+     "md5": "99eb6a3a29c5a0cb94a848be05fa9876",
+     "bytes": 4247
+    },
+    {
+     "path": "scripts/paper_direction_classifier.py",
+     "md5": "c83ed36a58d61e0f3d6a4fd2654a20bf",
+     "bytes": 7731
+    }
+   ]
+  },
+  "cn-housing-finder": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "0a2313d4ef6ad5975d019f59b5b642ca",
+     "bytes": 2004
+    },
+    {
+     "path": "scripts/housing.py",
+     "md5": "99ecbd8b9b7d747625684bf6dd3f4396",
+     "bytes": 4126
+    }
+   ]
+  },
+  "cognitive-exoskeleton": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "565c25e9d3262b39ab8479e351663876",
+     "bytes": 7855
+    },
+    {
+     "path": "references/aesthetics_judgment.md",
+     "md5": "70e8fcd5cfccdd5aa2f69bc654d09d03",
+     "bytes": 4739
+    },
+    {
+     "path": "references/cross_model_verification.md",
+     "md5": "a7c017223fe1a004843dfd7fb224bc48",
+     "bytes": 5326
+    },
+    {
+     "path": "references/math_method_guide.md",
+     "md5": "f7dd6fce5ea37c0f2230df5318180ea7",
+     "bytes": 9452
+    },
+    {
+     "path": "references/question_forge.md",
+     "md5": "1a1828df456b2ef378b5c2574a9c86f2",
+     "bytes": 7735
+    }
+   ]
+  },
+  "commute-school-optimizer": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "7580f426eb508810c75e676fa321cf14",
+     "bytes": 9266
+    },
+    {
+     "path": "references/data_sources.md",
+     "md5": "c771bb388fb45460c38b2086cd7caeca",
+     "bytes": 5454
+    },
+    {
+     "path": "references/exhaustive_query_protocol.md",
+     "md5": "6eeee31b69e79dc2f3b24a65dc32a696",
+     "bytes": 3807
+    },
+    {
+     "path": "scripts/commute_scoring_bridge.py",
+     "md5": "c7ed1b8075d78782410606c16fe54550",
+     "bytes": 12122
+    }
+   ]
+  },
+  "consignment-intake-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "04bc0ed38dfc355b4c693d7b5a68dc49",
+     "bytes": 3436
+    },
+    {
+     "path": "scripts/consignment_ledger.py",
+     "md5": "22e64ec1eb2c85b79ffbb1a855bf899d",
+     "bytes": 5276
+    }
+   ]
+  },
+  "coordination-letter": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ad85ba4b8eedf2ef994c2a57bb437458",
+     "bytes": 3421
+    },
+    {
+     "path": "references/letter-templates.md",
+     "md5": "070340a7b44e394f2a1d3cbcd1f03291",
+     "bytes": 2982
+    }
+   ]
+  },
+  "corpus-value-distiller": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "98b482b2a15e88a98c2885782044a082",
+     "bytes": 3625
+    },
+    {
+     "path": "references/distill_protocol.md",
+     "md5": "c55fc21d0c22e10b17ccc6c3d0baca2b",
+     "bytes": 2001
+    },
+    {
+     "path": "scripts/corpus_map.py",
+     "md5": "03bedcf8201ab0f4744e257732fc6097",
+     "bytes": 3459
+    }
+   ]
+  },
+  "cron-task-forge": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "8c8c4838cca84f2e9b6b6e82681f93c6",
+     "bytes": 4498
+    },
+    {
+     "path": "references/card_template.md",
+     "md5": "63254c91ec03b6d813a96b24ae226dce",
+     "bytes": 3660
+    },
+    {
+     "path": "references/necessity_rubric.md",
+     "md5": "42b05a95ff014244002483e151623adc",
+     "bytes": 1919
+    },
+    {
+     "path": "references/platform_notes.md",
+     "md5": "c26ee665558f63d97c6efc9b14a4d21a",
+     "bytes": 1482
+    },
+    {
+     "path": "scripts/card_linter.py",
+     "md5": "df03593b995ca0c183f05f75be7ce59f",
+     "bytes": 7982
+    }
+   ]
+  },
+  "cross-session-workflow-bridge": {
+   "files": 13,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "29c84180262c3b8b9310a57b7b6e94a6",
+     "bytes": 17025
+    },
+    {
+     "path": "assets/handshake_template.md",
+     "md5": "9234a50f2ae30d05c65f944bcef95543",
+     "bytes": 1909
+    },
+    {
+     "path": "references/cross_ai_coordination.md",
+     "md5": "da596c3b57bec94521c3b4347de37725",
+     "bytes": 15865
+    },
+    {
+     "path": "references/handoff_protocol.md",
+     "md5": "7cc2ceae03723b15713212d2a15ae7f7",
+     "bytes": 5344
+    },
+    {
+     "path": "references/pipeline_contracts.md",
+     "md5": "716dbf9b0cfadce864eeb71caabfabbd",
+     "bytes": 3481
+    },
+    {
+     "path": "references/reentry_capsule.md",
+     "md5": "a7184e8a888d86de95e3ee68bd75decb",
+     "bytes": 4050
+    },
+    {
+     "path": "references/skill_import_mechanisms.md",
+     "md5": "c1f6feeaadfac601a3ff83191f7444ac",
+     "bytes": 3542
+    },
+    {
+     "path": "references/skill_naming_paradigm.md",
+     "md5": "50af8ff2cdedf066488687b72de9a359",
+     "bytes": 2944
+    },
+    {
+     "path": "scripts/build_reentry_capsule.py",
+     "md5": "e970ee67e402a890faf4ca6343ee9583",
+     "bytes": 7791
+    },
+    {
+     "path": "scripts/build_skill_index.py",
+     "md5": "4bbff3754ea2db40722d357c63f0b2db",
+     "bytes": 8987
+    },
+    {
+     "path": "scripts/pack_handoff_html.py",
+     "md5": "33edc1e07b4882ab5ced9d2ddd3622f4",
+     "bytes": 2157
+    },
+    {
+     "path": "scripts/yb_share_extract.py",
+     "md5": "81c4752391f3b967c59d6c296f64c156",
+     "bytes": 1426
+    },
+    {
+     "path": "vendor/cos_upload.py",
+     "md5": "444beffeb6af83a3bf5cfe4f5950fecd",
+     "bytes": 3560
+    }
+   ]
+  },
+  "daily-life-autopilot": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "caa303b98f7a8a1ca38ddc162829a347",
+     "bytes": 3199
+    },
+    {
+     "path": "references/credentials.md",
+     "md5": "86b781947e75957cec9c01ffb98e4fe8",
+     "bytes": 1903
+    },
+    {
+     "path": "references/pitfalls.md",
+     "md5": "d98b53f8670bdd070d20f6ea9f8661ae",
+     "bytes": 3229
+    },
+    {
+     "path": "scripts/daily_check.sh",
+     "md5": "d16ad9ad8f19f5af461fa09b6ba4517f",
+     "bytes": 5056
+    },
+    {
+     "path": "scripts/poi_query.py",
+     "md5": "c6434e28158564dfc210a10c45437b78",
+     "bytes": 2886
+    },
+    {
+     "path": "scripts/verify_chain.py",
+     "md5": "c874bae045f868445dedf090f7a5bcf0",
+     "bytes": 1025
+    }
+   ]
+  },
+  "data-viz-gen": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "LICENSE",
+     "md5": "f6734d7f5425cca87b8685985ed318a7",
+     "bytes": 1089
+    },
+    {
+     "path": "SKILL.md",
+     "md5": "7fe28164e9b1799fc2449631f13c8af1",
+     "bytes": 7497
+    },
+    {
+     "path": "scripts/build_infographic.py",
+     "md5": "d860f7c94f257cc40ca3ce6bad285ef5",
+     "bytes": 27657
+    }
+   ]
+  },
+  "desk-load-orchestrator": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "fa010f9736144be322a63922cf6f8d09",
+     "bytes": 4331
+    },
+    {
+     "path": "assets/项目事实底册_模板.md",
+     "md5": "95ba92251672037a54bfd734e4994ef8",
+     "bytes": 1128
+    },
+    {
+     "path": "references/playbook.md",
+     "md5": "fba1ebec918d46a2108cab02da89ed94",
+     "bytes": 3057
+    },
+    {
+     "path": "scripts/deliverables_check.py",
+     "md5": "6f6935bc87cd14ecf41445f060a7b16b",
+     "bytes": 1521
+    },
+    {
+     "path": "scripts/__pycache__/deliverables_check.cpython-312.pyc",
+     "md5": "f2fdd6a83c7bdc0e7d05908a04ea70c2",
+     "bytes": 3105
+    }
+   ]
+  },
+  "diffusion-dynamics-extension": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "0afe57d0d783cabd78297e42c621d194",
+     "bytes": 9006
+    },
+    {
+     "path": "references/model_assumptions_and_limits.md",
+     "md5": "a8ea382feab9cdde1e9effcb2280e279",
+     "bytes": 5160
+    },
+    {
+     "path": "references/talent_flow_model.md",
+     "md5": "f2582ccf01858f09e7236b70b93174fd",
+     "bytes": 7113
+    },
+    {
+     "path": "scripts/gravity_diffusion.py",
+     "md5": "e215bf2bece94f7f4b70a0facb48bf36",
+     "bytes": 6237
+    },
+    {
+     "path": "scripts/logistic_density.py",
+     "md5": "292cfa519e81c4d4abdf18e096f454e8",
+     "bytes": 8985
+    },
+    {
+     "path": "scripts/sird_simulate.py",
+     "md5": "a26113b5c98a5c826993587f0870a860",
+     "bytes": 7945
+    },
+    {
+     "path": "templates/dynamic_report.json",
+     "md5": "58b0a5ba663cb39b88081ed693b9356e",
+     "bytes": 2650
+    }
+   ]
+  },
+  "doc-archive-ingest": {
+   "files": 10,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "8ed078a9f241b050c0a781a1f2a51141",
+     "bytes": 8867
+    },
+    {
+     "path": "references/baidu_netdisk_api.md",
+     "md5": "6c4b283b747647097b10d53f4d64c507",
+     "bytes": 5642
+    },
+    {
+     "path": "references/jianguoyun_api.md",
+     "md5": "4e26c5af1f130990849d687bbeff96c2",
+     "bytes": 9786
+    },
+    {
+     "path": "references/legal_notes.md",
+     "md5": "68b2cfaadf8cf87ef7c30e9b7f2a29d1",
+     "bytes": 4753
+    },
+    {
+     "path": "references/source_register_spec.md",
+     "md5": "5d4da14df1866668fc1183f106452d11",
+     "bytes": 4660
+    },
+    {
+     "path": "scripts/baidu_share_browse.py",
+     "md5": "58b20d31fc8aace2be5700c4a3029abb",
+     "bytes": 35025
+    },
+    {
+     "path": "scripts/jianguoyun_preview_fetch.py",
+     "md5": "34a422bae9cd86520d9b7623bea0fc8d",
+     "bytes": 12316
+    },
+    {
+     "path": "scripts/netdisk_browse.py",
+     "md5": "c49c3cb58d95fcaa07256dcf11394432",
+     "bytes": 16937
+    },
+    {
+     "path": "scripts/pdf_watermark.py",
+     "md5": "7bb2c68c84f2ee8380d62482fd2ef437",
+     "bytes": 17094
+    },
+    {
+     "path": "scripts/source_register.py",
+     "md5": "4979f6f284d689e3b15a75063223ab84",
+     "bytes": 17444
+    }
+   ]
+  },
+  "doc-image-solver": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ed0ce33ce8bf909e298d8c9451057796",
+     "bytes": 3373
+    },
+    {
+     "path": "references/answer_verification.md",
+     "md5": "fb42de02ee5d3510af232f10361fbd2f",
+     "bytes": 1473
+    },
+    {
+     "path": "references/integration_map.md",
+     "md5": "694ff40b6360d153e3a186d3867058c6",
+     "bytes": 1201
+    },
+    {
+     "path": "scripts/transcription_qa.py",
+     "md5": "55a4059f28c045411dfee9f56154c902",
+     "bytes": 3937
+    }
+   ]
+  },
+  "epsilon-delta-proof-sovereign": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "a793879985cec8205daf4ec2638e0631",
+     "bytes": 5861
+    },
+    {
+     "path": "references/atp_algorithms.md",
+     "md5": "9593772faad9ef91fe93e5b14f82f361",
+     "bytes": 2805
+    },
+    {
+     "path": "references/epsilon_delta_formalization.md",
+     "md5": "f41542f740db4192f90fc3dbaa9f1843",
+     "bytes": 2923
+    },
+    {
+     "path": "references/pressure_test_20260902.md",
+     "md5": "9c42c2fc19c4c0e6df5736458d077acd",
+     "bytes": 2065
+    },
+    {
+     "path": "references/sovereign_synthesis.md",
+     "md5": "8193b6c1c6d6109cff987e10d0debb00",
+     "bytes": 2568
+    },
+    {
+     "path": "scripts/delta_search.py",
+     "md5": "58980e6aefe53d343a599a87cccb1806",
+     "bytes": 3137
+    }
+   ]
+  },
+  "evidence-chain-verifier": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "6baf1cf06e955eb4a3e7234baaf12b14",
+     "bytes": 8891
+    },
+    {
+     "path": "references/evidence_grading.md",
+     "md5": "27c2c03ae4aa1d980b6a59d7805676b3",
+     "bytes": 3961
+    },
+    {
+     "path": "references/self_correction_protocol.md",
+     "md5": "be2514ac57e5480407bc7d6b4ea70de8",
+     "bytes": 4909
+    },
+    {
+     "path": "scripts/evidence_register.py",
+     "md5": "282a4027fcbed0e4582376d1a8f5fa10",
+     "bytes": 8334
+    }
+   ]
+  },
+  "exam-isolation-ops": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "a0965bc737454a75de131a7b767134fb",
+     "bytes": 6894
+    },
+    {
+     "path": "references/protocol_notes.md",
+     "md5": "e7762871b5f31f8e69098888db121896",
+     "bytes": 4271
+    },
+    {
+     "path": "references/role_briefs.md",
+     "md5": "5fa76d450d7d13c0e4e1fee34c96e355",
+     "bytes": 5624
+    },
+    {
+     "path": "scripts/exam_package_audit.py",
+     "md5": "deb6c5b537882c5df0874a25bfd1713e",
+     "bytes": 7305
+    }
+   ]
+  },
+  "extpool-furnace-ops": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "203c82314b4106e8d21b4740a1628ab7",
+     "bytes": 5104
+    },
+    {
+     "path": "references/furnace_ops.md",
+     "md5": "d712464e71f00502b49aa83bfba65f6b",
+     "bytes": 2964
+    },
+    {
+     "path": "scripts/furnace_runner.py",
+     "md5": "abbf46cf2df6dc5dce91302c4cf4a91c",
+     "bytes": 3821
+    }
+   ]
+  },
+  "fusion-program-audit": {
+   "files": 8,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "92dc1feb5354690a3f28e7975de69ffe",
+     "bytes": 24280
+    },
+    {
+     "path": "references/case_anchors.md",
+     "md5": "467a5544117a73d7c3a8b0db04a81b66",
+     "bytes": 41806
+    },
+    {
+     "path": "references/ecosystem_support_rubric.md",
+     "md5": "314d5fea8a3528853b1e7233da4a4f94",
+     "bytes": 8821
+    },
+    {
+     "path": "references/fraud_typology_fusion.md",
+     "md5": "309e5b341ce8115776a45fdab2cb27e4",
+     "bytes": 6537
+    },
+    {
+     "path": "references/industry_entity_audit.md",
+     "md5": "db94b9ce5ec917d1a07528b8e18feea2",
+     "bytes": 7811
+    },
+    {
+     "path": "references/policy_support_rubric.md",
+     "md5": "f0e104e654006d536da5f0b59a2b7e21",
+     "bytes": 9017
+    },
+    {
+     "path": "references/seven_step_protocol.md",
+     "md5": "dca0ea63fd3c3a3e45c9efc414870ae4",
+     "bytes": 11036
+    },
+    {
+     "path": "references/talent_flow_signals.md",
+     "md5": "152a02b2420acf31c66c4bf96dd58683",
+     "bytes": 4816
+    }
+   ]
+  },
+  "gitlab-cli-guide": {
+   "files": 86,
+   "entries": [
+    {
+     "path": "README.md",
+     "md5": "d3c6c2166b8c3b16c948faa4106f508b",
+     "bytes": 2744
+    },
+    {
+     "path": "SECURITY.md",
+     "md5": "68c5669aede04034120bedf564eb4fe1",
+     "bytes": 1785
+    },
+    {
+     "path": "SKILL.md",
+     "md5": "0d8bceb94e341dfffb31ac6b09ccc183",
+     "bytes": 8746
+    },
+    {
+     "path": "_meta.json",
+     "md5": "60cd61b88c100c4e2840e67a334e45d8",
+     "bytes": 136
+    },
+    {
+     "path": "glab-alias/SKILL.md",
+     "md5": "c257b39d11131de28de678a46ae97cbf",
+     "bytes": 980
+    },
+    {
+     "path": "glab-alias/references/commands.md",
+     "md5": "5cc20d3654d31b25d2ef764abe784e42",
+     "bytes": 5211
+    },
+    {
+     "path": "glab-api/SKILL.md",
+     "md5": "537521fe97452d26c318056873c0896c",
+     "bytes": 10465
+    },
+    {
+     "path": "glab-attestation/SKILL.md",
+     "md5": "604de1dc2014707c61c785577d812026",
+     "bytes": 1467
+    },
+    {
+     "path": "glab-attestation/references/commands.md",
+     "md5": "0752b98c941f84b1c989fd3c527f0e85",
+     "bytes": 3324
+    },
+    {
+     "path": "glab-auth/SKILL.md",
+     "md5": "446050fcf1b9cc14074e3070ae02e55f",
+     "bytes": 2562
+    },
+    {
+     "path": "glab-auth/references/commands.md",
+     "md5": "2280f8343b179287d319f6102a835591",
+     "bytes": 5464
+    },
+    {
+     "path": "glab-changelog/SKILL.md",
+     "md5": "1439dcfa5911fcb079a024146d5572e0",
+     "bytes": 847
+    },
+    {
+     "path": "glab-changelog/references/commands.md",
+     "md5": "fb61053620fe2bd86f898eaaea33faca",
+     "bytes": 1759
+    },
+    {
+     "path": "glab-check-update/SKILL.md",
+     "md5": "77b9041d0f59d236748cdb3eb917e933",
+     "bytes": 1598
+    },
+    {
+     "path": "glab-ci/SKILL.md",
+     "md5": "91cedec7745365224c1de490b20c5fa7",
+     "bytes": 7350
+    },
+    {
+     "path": "glab-ci/references/commands.md",
+     "md5": "e6bc3d9d4cc564e643fffef9f4565619",
+     "bytes": 28770
+    },
+    {
+     "path": "glab-ci/references/pipeline-best-practices.md",
+     "md5": "4ba61ff9d97edd5b674ceb041a2437b0",
+     "bytes": 12325
+    },
+    {
+     "path": "glab-ci/templates/README.md",
+     "md5": "5381e2da29f5a4d1102e2109f72928c0",
+     "bytes": 6251
+    },
+    {
+     "path": "glab-ci/templates/docker-build.yml",
+     "md5": "9fadb5702261d9016e9160248920bd82",
+     "bytes": 2891
+    },
+    {
+     "path": "glab-ci/templates/nodejs-basic.yml",
+     "md5": "d62fecacf31d7b4f66964eb76f823c94",
+     "bytes": 1417
+    },
+    {
+     "path": "glab-ci/templates/nodejs-multistage.yml",
+     "md5": "9b3d9927e277ee41b0df8b5049841787",
+     "bytes": 2613
+    },
+    {
+     "path": "glab-cluster/SKILL.md",
+     "md5": "967e538477c1fdfd0820fa433ddec869",
+     "bytes": 1133
+    },
+    {
+     "path": "glab-cluster/references/commands.md",
+     "md5": "272e8c4e84699c42f213a9586531a80f",
+     "bytes": 2301
+    },
+    {
+     "path": "glab-completion/SKILL.md",
+     "md5": "faea9eeacb4754859ad66f6ab0362451",
+     "bytes": 11153
+    },
+    {
+     "path": "glab-config/SKILL.md",
+     "md5": "a75f5333fd34eb6b984187c61a7cce3b",
+     "bytes": 4180
+    },
+    {
+     "path": "glab-config/references/commands.md",
+     "md5": "f4f3dd19a04e8280e3c1ee5edfba3bbc",
+     "bytes": 6544
+    },
+    {
+     "path": "glab-deploy-key/SKILL.md",
+     "md5": "c6fbde769e698aeb81eda2dc7aa9e701",
+     "bytes": 1289
+    },
+    {
+     "path": "glab-deploy-key/references/commands.md",
+     "md5": "9efdbfd0b4d6223f539639f6b29e331f",
+     "bytes": 4502
+    },
+    {
+     "path": "glab-duo/SKILL.md",
+     "md5": "f4c509bf286e3fd0de22cff7d479ed50",
+     "bytes": 2215
+    },
+    {
+     "path": "glab-duo/references/commands.md",
+     "md5": "815f91ced016b745d5ef103adff54b91",
+     "bytes": 4184
+    },
+    {
+     "path": "glab-gpg-key/SKILL.md",
+     "md5": "9622e102ab7b63d5de8bcd697f8a7ebf",
+     "bytes": 1203
+    },
+    {
+     "path": "glab-gpg-key/references/commands.md",
+     "md5": "52bf4d0967910c6115a25b86a2027b14",
+     "bytes": 3368
+    },
+    {
+     "path": "glab-help/SKILL.md",
+     "md5": "cba00e80e405e5ea37fa7b2ffad6ed34",
+     "bytes": 718
+    },
+    {
+     "path": "glab-incident/SKILL.md",
+     "md5": "d4c6e051e3ac5a499fcbf899876a48ae",
+     "bytes": 1496
+    },
+    {
+     "path": "glab-incident/references/commands.md",
+     "md5": "eb55b1eaf7240ef6fa8827b1ce4665d3",
+     "bytes": 8324
+    },
+    {
+     "path": "glab-issue/SKILL.md",
+     "md5": "bc2cbd70c83055a6dff4e56f84ea5dd8",
+     "bytes": 3521
+    },
+    {
+     "path": "glab-issue/references/commands.md",
+     "md5": "dd28f61963e421874cc612359e7803d7",
+     "bytes": 13961
+    },
+    {
+     "path": "glab-iteration/SKILL.md",
+     "md5": "0cd68c0e82f2b59cf10a90df8177b3a0",
+     "bytes": 963
+    },
+    {
+     "path": "glab-iteration/references/commands.md",
+     "md5": "a682d7cad9917d2ec0ced0ddcb889611",
+     "bytes": 1475
+    },
+    {
+     "path": "glab-job/SKILL.md",
+     "md5": "69f5a093ce5192e7e845310ffd1f90b3",
+     "bytes": 3490
+    },
+    {
+     "path": "glab-job/references/commands.md",
+     "md5": "4f624e7439c4fea259127d40b34edd48",
+     "bytes": 1470
+    },
+    {
+     "path": "glab-label/SKILL.md",
+     "md5": "5515a9c2a2ecab84ba20186f6e313cc6",
+     "bytes": 3217
+    },
+    {
+     "path": "glab-label/references/commands.md",
+     "md5": "276f97cc9b10a210a41011a373d2ad8f",
+     "bytes": 4620
+    },
+    {
+     "path": "glab-mcp/SKILL.md",
+     "md5": "d3950f82ac9ae909421345137ff2973d",
+     "bytes": 2807
+    },
+    {
+     "path": "glab-mcp/references/commands.md",
+     "md5": "b151f1148ad142f020f8747f37d7d2bd",
+     "bytes": 5746
+    },
+    {
+     "path": "glab-milestone/SKILL.md",
+     "md5": "939204429b078948b7af0b7e2b40caf7",
+     "bytes": 1294
+    },
+    {
+     "path": "glab-milestone/references/commands.md",
+     "md5": "58bd827f61d24773a4d7ce7e7f702a3a",
+     "bytes": 8447
+    },
+    {
+     "path": "glab-mr/SKILL.md",
+     "md5": "89abca44345eea4e9811221b999587be",
+     "bytes": 9663
+    },
+    {
+     "path": "glab-mr/references/commands.md",
+     "md5": "bb99e9c81e90266e99f4e75e40dccf59",
+     "bytes": 30133
+    },
+    {
+     "path": "glab-opentofu/SKILL.md",
+     "md5": "9e67404ba7ed02088ccc672b57251aa4",
+     "bytes": 1122
+    },
+    {
+     "path": "glab-opentofu/references/commands.md",
+     "md5": "8fbd90c44b33abe7fc9660e5386fb481",
+     "bytes": 3182
+    },
+    {
+     "path": "glab-release/SKILL.md",
+     "md5": "3d478d7e769fab6df17e8196ccef9b4d",
+     "bytes": 1564
+    },
+    {
+     "path": "glab-release/references/commands.md",
+     "md5": "bf1da8c2523f3d4d378b71a7c3255d72",
+     "bytes": 18512
+    },
+    {
+     "path": "glab-repo/SKILL.md",
+     "md5": "8632c29e442c7a12cb71259eb31e9f2b",
+     "bytes": 4862
+    },
+    {
+     "path": "glab-repo/references/commands.md",
+     "md5": "ac2d08e6c87f26de0985d6eb4caac767",
+     "bytes": 31302
+    },
+    {
+     "path": "glab-runner/SKILL.md",
+     "md5": "c494971bbb2fe7ffe171f39d9be70406",
+     "bytes": 5260
+    },
+    {
+     "path": "glab-runner-controller/SKILL.md",
+     "md5": "fc58acb27a7c8468b81e204fdc1ca912",
+     "bytes": 6941
+    },
+    {
+     "path": "glab-runner-controller/references/commands.md",
+     "md5": "729b1fd0246796a34257d89d0d645032",
+     "bytes": 6831
+    },
+    {
+     "path": "glab-schedule/SKILL.md",
+     "md5": "5c1f7a7438350bf7c38a6a359b592e8d",
+     "bytes": 1263
+    },
+    {
+     "path": "glab-schedule/references/commands.md",
+     "md5": "bb771b6f506086c1becdfbebed5ca6c3",
+     "bytes": 5686
+    },
+    {
+     "path": "glab-securefile/SKILL.md",
+     "md5": "f4d99148d474c87d911bfc4141fc0ce5",
+     "bytes": 1827
+    },
+    {
+     "path": "glab-securefile/references/commands.md",
+     "md5": "09b77a849a50cbb313c9bb3a9e94c16d",
+     "bytes": 9625
+    },
+    {
+     "path": "glab-snippet/SKILL.md",
+     "md5": "aef105d04ac6dc3fda6a1fef43400c75",
+     "bytes": 1451
+    },
+    {
+     "path": "glab-snippet/references/commands.md",
+     "md5": "ddba60184d8ca9551061bf247c520a47",
+     "bytes": 3699
+    },
+    {
+     "path": "glab-ssh-key/SKILL.md",
+     "md5": "46e362f260b6db8a5a875f5d1e83ec27",
+     "bytes": 2050
+    },
+    {
+     "path": "glab-ssh-key/references/commands.md",
+     "md5": "24045ccb2a4bafbe953457364fe65eb5",
+     "bytes": 5068
+    },
+    {
+     "path": "glab-stack/SKILL.md",
+     "md5": "4d55bf128e1977b1949cd93c37aa85cd",
+     "bytes": 3058
+    },
+    {
+     "path": "glab-stack/references/commands.md",
+     "md5": "47aec90771c66899c01d55c5d9ed99c4",
+     "bytes": 20095
+    },
+    {
+     "path": "glab-token/SKILL.md",
+     "md5": "1c012ae4a65364f1c64c4bcbb846e4d7",
+     "bytes": 1278
+    },
+    {
+     "path": "glab-token/references/commands.md",
+     "md5": "f014d2fb78dc7371475ad86d9801c7c3",
+     "bytes": 15916
+    },
+    {
+     "path": "glab-user/SKILL.md",
+     "md5": "9aecebcedfde545ca276e7a1d3fa3767",
+     "bytes": 810
+    },
+    {
+     "path": "glab-user/references/commands.md",
+     "md5": "ed0c17ae530879487defae3f0ddd5ff5",
+     "bytes": 926
+    },
+    {
+     "path": "glab-variable/SKILL.md",
+     "md5": "afcc6da9cea6aeee0b2dab2bd1a02aff",
+     "bytes": 1436
+    },
+    {
+     "path": "glab-variable/references/commands.md",
+     "md5": "e6e23a729a3b5bb6c0e541d293661c85",
+     "bytes": 8453
+    },
+    {
+     "path": "glab-version/SKILL.md",
+     "md5": "0999b6e87c36b8dec4bac88130582909",
+     "bytes": 597
+    },
+    {
+     "path": "glab-workitems/SKILL.md",
+     "md5": "e61e1c95d70b4021fcb5e0484f963cbc",
+     "bytes": 3362
+    },
+    {
+     "path": "scripts/README-inline-comments.md",
+     "md5": "589cfc9659e643d4ed51f21885c19beb",
+     "bytes": 7987
+    },
+    {
+     "path": "scripts/README.md",
+     "md5": "aba5d3f5d5452daefb09a3da24afde27",
+     "bytes": 3741
+    },
+    {
+     "path": "scripts/add-inline-comment.sh",
+     "md5": "7c7436c13a9491c965820d5baf9782d0",
+     "bytes": 4697
+    },
+    {
+     "path": "scripts/batch-label-issues.sh",
+     "md5": "c1837b8a8bc2d995f9204e303255fe67",
+     "bytes": 1353
+    },
+    {
+     "path": "scripts/build-claude-skill.sh",
+     "md5": "706b2ce86a917471667ef03ffab3c6f7",
+     "bytes": 5416
+    },
+    {
+     "path": "scripts/ci-debug.sh",
+     "md5": "42c041f77a90f5aded0cdab2143534d2",
+     "bytes": 2480
+    },
+    {
+     "path": "scripts/create-mr-from-issue.sh",
+     "md5": "b5712a21c67e525b6b9c1fe931b46250",
+     "bytes": 1961
+    },
+    {
+     "path": "scripts/mr-review-workflow.sh",
+     "md5": "55c0c4e39464a86eb988efb40e43feab",
+     "bytes": 2015
+    },
+    {
+     "path": "scripts/post-inline-comment.py",
+     "md5": "7b36b94adc0f95bf2356bfbb3c0a7845",
+     "bytes": 14319
+    },
+    {
+     "path": "scripts/sync-fork.sh",
+     "md5": "4b139187719c72a20ea169c621ced553",
+     "bytes": 2180
+    }
+   ]
+  },
+  "goal-child-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "6216f5ba44b2f6c7007eb5a85621be96",
+     "bytes": 7117
+    },
+    {
+     "path": "references/metamorphoses.md",
+     "md5": "6bdeee3a16cc84acfaa24501cc194d9f",
+     "bytes": 3082
+    }
+   ]
+  },
+  "grad-advisor-outreach": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "3e2425875b84c5c2119c4482b075af09",
+     "bytes": 7094
+    },
+    {
+     "path": "references/aapp_modules.md",
+     "md5": "0c13de013dc56e82e213708e2084915d",
+     "bytes": 5639
+    },
+    {
+     "path": "references/letter_playbook.md",
+     "md5": "0e1987ae5eb7b56a7f16101aaeb2b8b9",
+     "bytes": 6942
+    },
+    {
+     "path": "scripts/letter_honesty_check.py",
+     "md5": "1ec1313d58373423d274a4ef87142749",
+     "bytes": 6152
+    },
+    {
+     "path": "templates/applicant_profile.yaml",
+     "md5": "06b38025b4f098b203b1cffc39c5a49f",
+     "bytes": 1694
+    },
+    {
+     "path": "templates/letter_templates.md",
+     "md5": "ba44feb5caad7a6f3f50effcf41ea5f0",
+     "bytes": 2859
+    }
+   ]
+  },
+  "grad-path-scorer": {
+   "files": 9,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "65f25509485500eec92820d42d068d54",
+     "bytes": 14514
+    },
+    {
+     "path": "assets/benchmark_schools_42.json",
+     "md5": "5ef3064292113e6b029fd5c6cad06b07",
+     "bytes": 40607
+    },
+    {
+     "path": "assets/benchmark_schools_43.json",
+     "md5": "191fe4aadef7705ddf6c2ee5854d4dfa",
+     "bytes": 45530
+    },
+    {
+     "path": "references/audit_playbook.md",
+     "md5": "17c140c6bbfef1cbced9c93ca86b7de7",
+     "bytes": 4103
+    },
+    {
+     "path": "references/calibration_todo.md",
+     "md5": "16bbb4fa8457306ffaa6e8a24503b7b9",
+     "bytes": 9222
+    },
+    {
+     "path": "references/methodology.md",
+     "md5": "c583a310497ad505222fbe60a63d60f3",
+     "bytes": 4669
+    },
+    {
+     "path": "scripts/calibrate_weights.py",
+     "md5": "d99e5fcf6eb14ac2e3e2ac04185e6c5d",
+     "bytes": 4971
+    },
+    {
+     "path": "scripts/dead_end_classifier.py",
+     "md5": "8a7e1eb977164f7b726b0b3730fc3f48",
+     "bytes": 3922
+    },
+    {
+     "path": "scripts/score_engine.py",
+     "md5": "88b0e5e9d23f0ffa6259885e5c6935ec",
+     "bytes": 17654
+    }
+   ]
+  },
+  "hifi-integration-umbrella": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "13bb1d535eb15a502efb1d1f475ffbfc",
+     "bytes": 11481
+    },
+    {
+     "path": "assets/plain-text-install.md",
+     "md5": "14a2a76a5dcfad47e51c07f9e881e533",
+     "bytes": 2047
+    },
+    {
+     "path": "references/roster.md",
+     "md5": "302bdcfa81e433a1ccc8391d077a1373",
+     "bytes": 7981
+    }
+   ]
+  },
+  "home-network-troubleshooter": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "d1403929ff3bdd0c49e1fd24fb101980",
+     "bytes": 6647
+    },
+    {
+     "path": "references/eplussoho_app_ops.md",
+     "md5": "fededf92d609473c242908f0d22c6982",
+     "bytes": 6079
+    },
+    {
+     "path": "references/multi_ap_pathology.md",
+     "md5": "df0313c7d7aee262bc9fa7eb67ef7e93",
+     "bytes": 4233
+    },
+    {
+     "path": "references/windows_client_repair.md",
+     "md5": "325df8ada4bd815d587ad162819cbb1d",
+     "bytes": 3745
+    }
+   ]
+  },
+  "humanizer-zh": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "039938e375c04db989811d395c81b81d",
+     "bytes": 16133
+    },
+    {
+     "path": "references/ai_patterns.md",
+     "md5": "902e98c9f568ba438443f930207ebe76",
+     "bytes": 3091
+    },
+    {
+     "path": "references/battle_lessons.md",
+     "md5": "0def9eab829a246f10c5ea54fe5a7b21",
+     "bytes": 3630
+    },
+    {
+     "path": "references/iteration_log.md",
+     "md5": "93977d609cb965aa6a49d3f64de67145",
+     "bytes": 6633
+    },
+    {
+     "path": "references/revision.md",
+     "md5": "24c5d2caf626234771dbd2525a06e6ce",
+     "bytes": 12563
+    },
+    {
+     "path": "scripts/check_prose.py",
+     "md5": "8fa4eb10912e92cc91b97d95833190e4",
+     "bytes": 23030
+    }
+   ]
+  },
+  "intl-case-intf": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "5522bfcef9681276dc3a909df4801870",
+     "bytes": 3929
+    },
+    {
+     "path": "references/access-routes.md",
+     "md5": "6d43f3c5e4454676987cf41dcb4fa5a0",
+     "bytes": 3788
+    },
+    {
+     "path": "references/endpoints.md",
+     "md5": "eac2d7fcaefd0b3da4554649f18bbdee",
+     "bytes": 2299
+    },
+    {
+     "path": "references/probe-matrix-2026-09-01.md",
+     "md5": "f9e339e0244d1da507e1a5d8f3dd4554",
+     "bytes": 2674
+    },
+    {
+     "path": "scripts/cjeu_sparql.py",
+     "md5": "14ac85590f263bec606b7847d96afe65",
+     "bytes": 2135
+    },
+    {
+     "path": "scripts/fts5_index.py",
+     "md5": "e902dbf5c8ff12b36693a28304e000ec",
+     "bytes": 2353
+    },
+    {
+     "path": "scripts/hudoc_search.py",
+     "md5": "e02d92354740cc2c5b3e7338175c8c4c",
+     "bytes": 2269
+    }
+   ]
+  },
+  "iteration-convergence-ops": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "13e348039ffddb07759715bd88a5cd01",
+     "bytes": 10313
+    },
+    {
+     "path": "references/k26_fast_mode.md",
+     "md5": "f69529072bad2244936d8c0b88416a2f",
+     "bytes": 7982
+    },
+    {
+     "path": "references/version_honesty_git.md",
+     "md5": "4422d42b627d7390c610f6f5e07a03f4",
+     "bytes": 4884
+    },
+    {
+     "path": "scripts/iteration_log.py",
+     "md5": "c845cba3afee860b9e931fa1f3a63b4d",
+     "bytes": 11049
+    }
+   ]
+  },
+  "k3-channel-ops": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "364382d5c58fcddd7e09cc8b2a54f068",
+     "bytes": 6911
+    },
+    {
+     "path": "references/architecture.md",
+     "md5": "b293192495a338a7308e763ddb332557",
+     "bytes": 1985
+    },
+    {
+     "path": "references/failure-playbook.md",
+     "md5": "84af981a2964654f9562bbfcc2eccb48",
+     "bytes": 1837
+    },
+    {
+     "path": "references/schema.md",
+     "md5": "5bd22f63eb611f8da543762781ccec6c",
+     "bytes": 1947
+    },
+    {
+     "path": "scripts/channel_probe.py",
+     "md5": "4f690d4d77ed8f8afbb6bdb1cb24bf5f",
+     "bytes": 3390
+    },
+    {
+     "path": "scripts/channel_send.py",
+     "md5": "356c81c491efef3b2927547b1fca6335",
+     "bytes": 2173
+    }
+   ]
+  },
+  "k3-interaction-ops": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "b78c9e508a4dea3eacf12044151f7d4c",
+     "bytes": 12665
+    },
+    {
+     "path": "references/degeneration-playbook.md",
+     "md5": "74c4d72360fb0b8b46b42af213142b97",
+     "bytes": 10318
+    },
+    {
+     "path": "references/interaction-clauses.md",
+     "md5": "5d953123a19f05b7f6bd4a260c996f14",
+     "bytes": 6749
+    }
+   ]
+  },
+  "k3-territory-studies": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "d16ac7d9f0a65b4685aab99d792c386a",
+     "bytes": 4391
+    },
+    {
+     "path": "assets/paper_template_zh.md",
+     "md5": "a733d0965357b01bd2276a36ecef7e28",
+     "bytes": 751
+    },
+    {
+     "path": "references/facilities-ledger.md",
+     "md5": "51acb1f883dc10d23942d28ad5a2b779",
+     "bytes": 3875
+    },
+    {
+     "path": "references/interface-registry.md",
+     "md5": "20a1aa45b88513d3fae9690707e25213",
+     "bytes": 4917
+    },
+    {
+     "path": "references/research-framework.md",
+     "md5": "5d1f023b8f006856e340acbcb05d9db3",
+     "bytes": 4689
+    },
+    {
+     "path": "references/standard-pack-protocol.md",
+     "md5": "3b9a778dcfdf1ace7f89b703d0ccfc23",
+     "bytes": 3822
+    },
+    {
+     "path": "scripts/region_scoring.py",
+     "md5": "59ab737efdef289ca868ad64688a36b1",
+     "bytes": 2339
+    }
+   ]
+  },
+  "k8s-cluster-ops": {
+   "files": 8,
+   "entries": [
+    {
+     "path": "README.md",
+     "md5": "43af6fd61b745d96d5711b4b15552bf7",
+     "bytes": 3858
+    },
+    {
+     "path": "SKILL.md",
+     "md5": "83f2d277f753b92df9a066ad52f7d701",
+     "bytes": 7354
+    },
+    {
+     "path": "_meta.json",
+     "md5": "a2f37fbf5e744746b4607908b4d81a78",
+     "bytes": 126
+    },
+    {
+     "path": "references/REFERENCE.md",
+     "md5": "9c93074a01a3ac66093a041598abeb0e",
+     "bytes": 18361
+    },
+    {
+     "path": "scripts/kubectl-cluster-info.sh",
+     "md5": "6f4b4ba4156f2498e7ae985b05d942ab",
+     "bytes": 1169
+    },
+    {
+     "path": "scripts/kubectl-deploy-update.sh",
+     "md5": "fb8d93e12b0f414e004c058951adb1a4",
+     "bytes": 1323
+    },
+    {
+     "path": "scripts/kubectl-node-drain.sh",
+     "md5": "9000aa4895baa9c6af0be3ce31a37c6a",
+     "bytes": 1025
+    },
+    {
+     "path": "scripts/kubectl-pod-debug.sh",
+     "md5": "aac01807b3dc8626e5ea47dfcf8fa49c",
+     "bytes": 1365
+    }
+   ]
+  },
+  "livability-audit-swarm": {
+   "files": 14,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "b0e385338a6ff4946385b595b2daef72",
+     "bytes": 16464
+    },
+    {
+     "path": "references/audit-roles.md",
+     "md5": "cc3fddc834b7db0dcab60ad1e3bd7d58",
+     "bytes": 2681
+    },
+    {
+     "path": "references/change-notice-protocol.md",
+     "md5": "8f9b02b80407f2241e55dda2baef89c3",
+     "bytes": 4452
+    },
+    {
+     "path": "references/convergence-loop.md",
+     "md5": "9ed24302d5f79ea62a8b91dbe7e93bf3",
+     "bytes": 16267
+    },
+    {
+     "path": "references/dorm-comfort-roadmap.md",
+     "md5": "6aa65ff19f527bae91b72e3d8a3ef0e7",
+     "bytes": 3027
+    },
+    {
+     "path": "references/livability-doc-registry.md",
+     "md5": "c5515ebcd78562d855a2f9f340bd649c",
+     "bytes": 3531
+    },
+    {
+     "path": "references/retrieval-paths.md",
+     "md5": "615c5de17066edbdb0ba916697ff0ec7",
+     "bytes": 26771
+    },
+    {
+     "path": "scripts/audit_pack_builder.py",
+     "md5": "5687940919e984ea75602d84d3dcae46",
+     "bytes": 2737
+    },
+    {
+     "path": "scripts/convergence_check.py",
+     "md5": "296ead6635754aa6bc7f9823dab1d327",
+     "bytes": 29490
+    },
+    {
+     "path": "scripts/livability_doc_scanner.py",
+     "md5": "141be456d7bdb2684a98c57a5b40a897",
+     "bytes": 3594
+    },
+    {
+     "path": "scripts/notice_stamp.py",
+     "md5": "8e4d4f9eb96831a40281515fdeb85ab4",
+     "bytes": 7998
+    },
+    {
+     "path": "scripts/retrieval_registry_check.py",
+     "md5": "dea50c70ae8e5b07b0d8187763dff9f6",
+     "bytes": 32020
+    },
+    {
+     "path": "tests/test_notice_stamp.py",
+     "md5": "fefb81778c4361f592236adde195a65d",
+     "bytes": 8201
+    },
+    {
+     "path": "tests/test_retrieval_registry_check.py",
+     "md5": "326622b9b11f7de499dc8053438c7752",
+     "bytes": 35354
+    }
+   ]
+  },
+  "medical-career-transition": {
+   "files": 8,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "5a523e48988028bdeb9dfbfe78d91bd5",
+     "bytes": 14157
+    },
+    {
+     "path": "references/academic_community.md",
+     "md5": "be5d6869d2ae77eae68894c5f7dd1859",
+     "bytes": 5930
+    },
+    {
+     "path": "references/case_anchor_method.md",
+     "md5": "3779f5d9857a4915af976c63943b1490",
+     "bytes": 3280
+    },
+    {
+     "path": "references/crossover_paths.md",
+     "md5": "de53388689af1b79078e0033f6ca8666",
+     "bytes": 13301
+    },
+    {
+     "path": "references/enterprise_ecosystem.md",
+     "md5": "a985bc2236004af86a79a75ae1645601",
+     "bytes": 10791
+    },
+    {
+     "path": "references/option_library.md",
+     "md5": "1f51c2628c7854789532d8f166cde679",
+     "bytes": 12078
+    },
+    {
+     "path": "references/talent_mobility_medical.md",
+     "md5": "535789289a7d0074331de3d89e4ffe00",
+     "bytes": 12562
+    },
+    {
+     "path": "scripts/transition_scoring_bridge.py",
+     "md5": "e41aa3b4b48ba76d6717bd4ee0f93ce0",
+     "bytes": 13086
+    }
+   ]
+  },
+  "medical-malpractice-criminal-review": {
+   "files": 9,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "3737bc447a2621836172a54dc01ff0f4",
+     "bytes": 10419
+    },
+    {
+     "path": "references/case_benchmark.md",
+     "md5": "1f6b2c694366bb01a62f462507366d2c",
+     "bytes": 31877
+    },
+    {
+     "path": "references/case_dataset_v3.3.json",
+     "md5": "e1f9b829eff885e6d5a79695c92ad1df",
+     "bytes": 42390
+    },
+    {
+     "path": "references/dimension_design_guide.md",
+     "md5": "3032e46ab21a8a4c0b20dd5085fe2cac",
+     "bytes": 3945
+    },
+    {
+     "path": "references/red_lines.md",
+     "md5": "24db253b56bbbef9dab0ff1d3f73e131",
+     "bytes": 11889
+    },
+    {
+     "path": "references/viz_spec.md",
+     "md5": "2b8639328a9fd207a5fe48c9be275459",
+     "bytes": 3105
+    },
+    {
+     "path": "scripts/batch_compare.py",
+     "md5": "72dd7f2756ed2fbbcc6fd42703dc77d1",
+     "bytes": 7956
+    },
+    {
+     "path": "scripts/scoring_engine.py",
+     "md5": "a3cd41e6c8e0fa30082052112c91116e",
+     "bytes": 33401
+    },
+    {
+     "path": "templates/params_config.json",
+     "md5": "69e92a1543bfdb7cc72b340364a635e0",
+     "bytes": 1223
+    }
+   ]
+  },
+  "multi-dimensional-option-scoring": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "40157f6f7f527166bd2439d2fd76f7ff",
+     "bytes": 7126
+    },
+    {
+     "path": "references/dimension_design_guide.md",
+     "md5": "8214a47d773b3f65a9828c79ae0c2ac2",
+     "bytes": 6606
+    },
+    {
+     "path": "scripts/option_pricer.py",
+     "md5": "bc361c8023decea4f51eb08aa8603439",
+     "bytes": 4542
+    },
+    {
+     "path": "scripts/scoring_engine.py",
+     "md5": "236cdde07502317e38c413b2b1ad4c51",
+     "bytes": 9699
+    },
+    {
+     "path": "templates/params_config.json",
+     "md5": "32b4a5d7b24a2865ed1b8e5896af0882",
+     "bytes": 2991
+    }
+   ]
+  },
+  "notary-legal-upload": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "2ee55ece060d7a4f944f36cab6c20a45",
+     "bytes": 3210
+    },
+    {
+     "path": "references/evidence-anchoring.md",
+     "md5": "1d5c82427e3618c32618ddd77408c01c",
+     "bytes": 4968
+    },
+    {
+     "path": "references/legal-doc-upload.md",
+     "md5": "c59905c8c8f9ee0c6ed9f06721a8e617",
+     "bytes": 3696
+    },
+    {
+     "path": "references/notary-playbook.md",
+     "md5": "0c886d83507606fbf66a2e6605addff4",
+     "bytes": 4361
+    },
+    {
+     "path": "scripts/hash_manifest.py",
+     "md5": "33148d83ba6ef2c96d7afc449840d6d8",
+     "bytes": 2904
+    }
+   ]
+  },
+  "omni-exhaust-research-ops": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "1aeac1052b7102511dd07ffdb9183a50",
+     "bytes": 11792
+    },
+    {
+     "path": "assets/handover-template.html",
+     "md5": "674b7282b239c3cb5fed1c69b92c6337",
+     "bytes": 2452
+    },
+    {
+     "path": "references/handover-protocol.md",
+     "md5": "044335d21c6582c892bad81f6f65c078",
+     "bytes": 3144
+    },
+    {
+     "path": "references/interface-matrix.md",
+     "md5": "66fad22e4a6ff7a5cc554b187fce16c5",
+     "bytes": 2392
+    }
+   ]
+  },
+  "output-verdict-gate": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ca466baf973066de3635320d1a9fd746",
+     "bytes": 8894
+    },
+    {
+     "path": "references/casebook.md",
+     "md5": "0e75e0399120b05db909894063f2e1c8",
+     "bytes": 12462
+    },
+    {
+     "path": "references/elderly_output.md",
+     "md5": "b9d6d2ba87e033c53924ffe07e40e5f0",
+     "bytes": 3638
+    },
+    {
+     "path": "references/role_briefs.md",
+     "md5": "d6045974629143f042fc5b21ade612a8",
+     "bytes": 2655
+    },
+    {
+     "path": "scripts/acquittal_bias_detector.py",
+     "md5": "7974647f54d6acb8bb5dee7669cc6574",
+     "bytes": 4080
+    },
+    {
+     "path": "scripts/external_sampler.py",
+     "md5": "e8fe61c62d4790ed1bda0eaff7e2e1ce",
+     "bytes": 5566
+    },
+    {
+     "path": "scripts/external_seat.py",
+     "md5": "f0006c3455871b683ea1603348d81852",
+     "bytes": 2988
+    }
+   ]
+  },
+  "pan-exhaust-dispatch": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "2536eef1f275bd9162d2e5e58e26b0b0",
+     "bytes": 5216
+    },
+    {
+     "path": "scripts/dispatch_check.py",
+     "md5": "1225d585003cb17283c78b308ccc31a8",
+     "bytes": 1398
+    },
+    {
+     "path": "scripts/__pycache__/dispatch_check.cpython-312.pyc",
+     "md5": "3ef6cafac1ccea2e40b87f5f9a436f6f",
+     "bytes": 2147
+    }
+   ]
+  },
+  "pangu-enforcement-bureau": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "e05a8947b999514ab73220e5d2b8ee83",
+     "bytes": 5552
+    },
+    {
+     "path": "references/pangu-dossier.md",
+     "md5": "980ad0456647afd7d4104c9fc4993104",
+     "bytes": 3145
+    }
+   ]
+  },
+  "phys-ai-mat-conf-radar": {
+   "files": 10,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "6e37bb56ca1854546e4b33161f95d7c0",
+     "bytes": 6893
+    },
+    {
+     "path": "iteration_log.json",
+     "md5": "a7db34d276dc40fa4383ec1925be590a",
+     "bytes": 1824
+    },
+    {
+     "path": "references/conference_catalog.md",
+     "md5": "89d7ad8d34ae09c77bfc0bfdd0a7d6a0",
+     "bytes": 6773
+    },
+    {
+     "path": "references/verification_policy.md",
+     "md5": "ac8361b60c06c0d1986005d42d88ed40",
+     "bytes": 3493
+    },
+    {
+     "path": "references/data/ATTRIBUTION.md",
+     "md5": "88d5db38815008746fecedd00cf65840",
+     "bytes": 630
+    },
+    {
+     "path": "references/data/ai_deadlines_conferences.yml",
+     "md5": "64e7ae4b2db41af025d3492600795b9a",
+     "bytes": 70157
+    },
+    {
+     "path": "references/data/catalog_t2_log.jsonl",
+     "md5": "f836dda2bd9d5a6e54862f99beede44a",
+     "bytes": 3116
+    },
+    {
+     "path": "scripts/ai_deadlines_ingest.py",
+     "md5": "a662ed60844b6c3d39d634e1b9f86149",
+     "bytes": 4653
+    },
+    {
+     "path": "scripts/deadline_triage.py",
+     "md5": "6860dee68d0c10a516fbcaeb50962e16",
+     "bytes": 6133
+    },
+    {
+     "path": "scripts/ics_gen.py",
+     "md5": "54c7bb2eb7c07d4d616194eea32cddcb",
+     "bytes": 5048
+    }
+   ]
+  },
+  "plugin-datasource-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "9e1501ac51badc5de23cc2fec21dcace",
+     "bytes": 10396
+    },
+    {
+     "path": "references/plugin_catalog.md",
+     "md5": "9e5d803a1f9e6893c3ac34292f88c61e",
+     "bytes": 4122
+    }
+   ]
+  },
+  "ppp-city-verdict-audit": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "87e4e529f1a9b55d2a1fc76dd7e24afc",
+     "bytes": 8169
+    },
+    {
+     "path": "references/commute-audit.md",
+     "md5": "51b4bff78239f2acdfd4c7e35b29b402",
+     "bytes": 2318
+    },
+    {
+     "path": "references/ppp-paradigm.md",
+     "md5": "1e2f2da5893925c5f74af3452f29cf90",
+     "bytes": 5638
+    },
+    {
+     "path": "references/swarm-review.md",
+     "md5": "36e3ec57f0715544e43f91a8ecf1986c",
+     "bytes": 4017
+    },
+    {
+     "path": "references/verdict-register.md",
+     "md5": "723d4155373e53cc519579e18fa8ec8a",
+     "bytes": 2035
+    },
+    {
+     "path": "scripts/ppp_calc.py",
+     "md5": "5760ea8bb28757ca6bc1736106499708",
+     "bytes": 3406
+    },
+    {
+     "path": "scripts/verdict_register.py",
+     "md5": "01cb544a908118744986a01bd8f54862",
+     "bytes": 3130
+    }
+   ]
+  },
+  "qr-visual-rescue": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "5e7725506577a8007ebcdd5a9bed7a24",
+     "bytes": 3064
+    },
+    {
+     "path": "references/decoders.md",
+     "md5": "e0c41de0fdda67016ee3482d9f7b3cc7",
+     "bytes": 1964
+    },
+    {
+     "path": "references/full_report.json",
+     "md5": "88524345406f1069a0eefce3719d74a3",
+     "bytes": 910
+    },
+    {
+     "path": "references/ghost_report.json",
+     "md5": "9c2395caf74ab6e72bf5adb8b0a66d5f",
+     "bytes": 345
+    },
+    {
+     "path": "scripts/qr_multi_decode.py",
+     "md5": "a0acc4ec18bf80fab034f6a8fd90b170",
+     "bytes": 6885
+    }
+   ]
+  },
+  "quant-frontier-lab": {
+   "files": 9,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "8c05d699a87e12476bcd6d3b4a2a62c6",
+     "bytes": 6536
+    },
+    {
+     "path": "references/limitations.md",
+     "md5": "7d8fe340c1d4c03910add1d5ae07244f",
+     "bytes": 4885
+    },
+    {
+     "path": "references/method_selection.md",
+     "md5": "a6c5185b0fcddbd38c4ffc61322d9a71",
+     "bytes": 8027
+    },
+    {
+     "path": "scripts/gale_shapley.py",
+     "md5": "fe63c6c694ebc8ae942d876c4b4e1181",
+     "bytes": 7197
+    },
+    {
+     "path": "scripts/meme_calibrator.py",
+     "md5": "cbb03924438188309c650b7e40e57453",
+     "bytes": 6029
+    },
+    {
+     "path": "scripts/meta_toy.py",
+     "md5": "37624f5822ab2572305e62d03b0bd723",
+     "bytes": 9387
+    },
+    {
+     "path": "scripts/psm_balance.py",
+     "md5": "24385962c4d40a403c88ebf4f4090a12",
+     "bytes": 8140
+    },
+    {
+     "path": "scripts/sir_advanced.py",
+     "md5": "079ede647b4fc11a628dcac74b40a29d",
+     "bytes": 8412
+    },
+    {
+     "path": "scripts/spectral_immunity.py",
+     "md5": "a7db0e5cc0ac0969d75d8f5aac482b8d",
+     "bytes": 6220
+    }
+   ]
+  },
+  "「额度守护件」": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ef2b2e7751eea81998602d9ccddd5604",
+     "bytes": 4801
+    },
+    {
+     "path": "scripts/quota_state.py",
+     "md5": "5f387a696c9e66f8b5fb32fb18fa1f55",
+     "bytes": 3366
+    }
+   ]
+  },
+  "release-gate-audit": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "5f274c6cf8e79a98e500a02259de8eaf",
+     "bytes": 4197
+    },
+    {
+     "path": "references/five_hole_review.md",
+     "md5": "306663f425264a080f58d2a61b8f5872",
+     "bytes": 1270
+    },
+    {
+     "path": "references/privacy_tiers.md",
+     "md5": "68bf239c944b78b167ab7b7abe129c0e",
+     "bytes": 2299
+    },
+    {
+     "path": "scripts/preflight_scan.py",
+     "md5": "3022488833a2e27a40cd8612180e9a4f",
+     "bytes": 8504
+    }
+   ]
+  },
+  "retirement-guard-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ecb98624ddf445494dfb7efa4ccec7bf",
+     "bytes": 3380
+    },
+    {
+     "path": "references/templates.md",
+     "md5": "c2c1fce9cf1a194f67ff9b9f603c5577",
+     "bytes": 1669
+    }
+   ]
+  },
+  "rumor-chain-verifier": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "058aac3eba78d7d585169a78a987dc93",
+     "bytes": 6189
+    },
+    {
+     "path": "references/playbook.md",
+     "md5": "4d62d2b82051b600341403be0c0cc3f9",
+     "bytes": 5345
+    },
+    {
+     "path": "scripts/chain_check.py",
+     "md5": "3567b202b2eada55685f79de701edf60",
+     "bytes": 3720
+    }
+   ]
+  },
+  "rust-browser-pilot": {
+   "files": 1,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "e1bb7c9cc73d121b51e654dd3483e3a0",
+     "bytes": 3821
+    }
+   ]
+  },
+  "sandbox-project-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ac2d60006d11e09d33695f4e9e1c5113",
+     "bytes": 15226
+    },
+    {
+     "path": "scripts/session_bootstrap.sh",
+     "md5": "edf9ea5850c69d351b9251d08dd359e0",
+     "bytes": 2007
+    }
+   ]
+  },
+  "sector-stock-rumorchain-pipeline": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "89a0e3fc93d7d054b88164a519c920c0",
+     "bytes": 7358
+    },
+    {
+     "path": "references/example-filled.md",
+     "md5": "97dd43fc5661730b852cd26338388e3f",
+     "bytes": 3323
+    },
+    {
+     "path": "references/pipeline.md",
+     "md5": "17b762f34f148b806b09431294d73961",
+     "bytes": 4036
+    },
+    {
+     "path": "templates/claims.schema.json",
+     "md5": "1d92651c4a43a1f2c55d323dcd6ea2c2",
+     "bytes": 489
+    },
+    {
+     "path": "templates/plan.md",
+     "md5": "6fc416aee78f2f343ebc7ee0ff362e52",
+     "bytes": 341
+    },
+    {
+     "path": "templates/report-outline.md",
+     "md5": "94ab928458f783fb323b06767fb7e47f",
+     "bytes": 612
+    },
+    {
+     "path": "templates/rumor-chain-tables.md",
+     "md5": "197a2ee1b895d0855c51084a3a876368",
+     "bytes": 928
+    }
+   ]
+  },
+  "semantic-oncology-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "4b810c328d91874db7b8baf14cf71860",
+     "bytes": 7895
+    },
+    {
+     "path": "scripts/redundancy_scan.py",
+     "md5": "06f70a4149e12c933492901eb1f58b61",
+     "bytes": 2393
+    }
+   ]
+  },
+  "seo-copywriting-guide": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "e956565bfd42d2fd04acaa225f299b01",
+     "bytes": 14865
+    },
+    {
+     "path": "_meta.json",
+     "md5": "756573a4d3e656ebf783a1a3dacbbbd0",
+     "bytes": 137
+    },
+    {
+     "path": "references/content-structure-templates.md",
+     "md5": "cf6cc26717320a0d75ff840b54776266",
+     "bytes": 17488
+    },
+    {
+     "path": "references/core-eeat-benchmark.md",
+     "md5": "802c2dc2d07ae9bc421f1c8ac13963b3",
+     "bytes": 9376
+    },
+    {
+     "path": "references/seo-writing-checklist.md",
+     "md5": "03a2474721f47041330dca733e270588",
+     "bytes": 7811
+    },
+    {
+     "path": "references/title-formulas.md",
+     "md5": "12bd0edcbd8024c9c5b2c80742b86e69",
+     "bytes": 10339
+    }
+   ]
+  },
+  "skill-dispatch-hq": {
+   "files": 1,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "7d55d8f452f047fe65530c4fddd04c65",
+     "bytes": 9509
+    }
+   ]
+  },
+  "skill-library-auditor": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "5291a01604884301ba009651a39989a5",
+     "bytes": 3276
+    },
+    {
+     "path": "scripts/audit_skill_repo.py",
+     "md5": "05f4778d761769b8a91f4144fb2b729d",
+     "bytes": 13310
+    }
+   ]
+  },
+  "skill-refresh-ops": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "cf122fcaae3d9d223c3f390607341587",
+     "bytes": 5215
+    },
+    {
+     "path": "references/channel-registry.md",
+     "md5": "d15a8c00609eb6636bd8c3781fb9eea7",
+     "bytes": 3011
+    },
+    {
+     "path": "scripts/refresh_check.sh",
+     "md5": "bbf9a0e32e64a31cd346552ee5bc4cf5",
+     "bytes": 1546
+    }
+   ]
+  },
+  "skill-reinstall-ops": {
+   "files": 2,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "57ff12aa2c72e4d097f0169e42e0c0a2",
+     "bytes": 2969
+    },
+    {
+     "path": "scripts/reinstall.sh",
+     "md5": "f219ab76fc48ad35dde625948c321de2",
+     "bytes": 1815
+    }
+   ]
+  },
+  "software-testing-guide": {
+   "files": 11,
+   "entries": [
+    {
+     "path": ".security-scan-passed",
+     "md5": "7ed3b1097655570ea0102844ffaecca4",
+     "bytes": 181
+    },
+    {
+     "path": "LICENSE",
+     "md5": "bd6c03d8e97d799214606aa4a95b60ad",
+     "bytes": 1064
+    },
+    {
+     "path": "SKILL.md",
+     "md5": "20d851ee2f38fcad8054d99fc62b18fd",
+     "bytes": 10757
+    },
+    {
+     "path": "assets/templates/TEST-CASE-TEMPLATE.md",
+     "md5": "89784712e91145014182423347b38181",
+     "bytes": 4522
+    },
+    {
+     "path": "references/day1_onboarding.md",
+     "md5": "aa0cf13e2dd2dee8103d8e110551cc0a",
+     "bytes": 10024
+    },
+    {
+     "path": "references/google_testing_standards.md",
+     "md5": "77209fb3e1b7b2e55476da5e8e3abdfd",
+     "bytes": 5055
+    },
+    {
+     "path": "references/ground_truth_principle.md",
+     "md5": "8e8ee9cd6033d3d5e6c5dd4d7fc68821",
+     "bytes": 10036
+    },
+    {
+     "path": "references/llm_prompts_library.md",
+     "md5": "d816a27466de4ce43c6d5b9dfe209993",
+     "bytes": 15770
+    },
+    {
+     "path": "references/master_qa_prompt.md",
+     "md5": "6d67525abb68a897b05fdc777130a14d",
+     "bytes": 12258
+    },
+    {
+     "path": "scripts/calculate_metrics.py",
+     "md5": "42f8a1b79e7fac33472e7c43309ab5ef",
+     "bytes": 2871
+    },
+    {
+     "path": "scripts/init_qa_project.py",
+     "md5": "339e60b0fdeb5073106b36de193aa74e",
+     "bytes": 12683
+    }
+   ]
+  },
+  "source-semantics-sentinel": {
+   "files": 7,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "74a98e2bc8c52ed67887c342b9a4ac73",
+     "bytes": 12311
+    },
+    {
+     "path": "references/poisoning_detection.md",
+     "md5": "167f669fb693b665c35425d977cb4ce0",
+     "bytes": 7842
+    },
+    {
+     "path": "references/semantic_precision.md",
+     "md5": "1a2efb6872ef1df01c2e2caa5517c557",
+     "bytes": 9277
+    },
+    {
+     "path": "references/verification_channels.md",
+     "md5": "285003427acdded319539a63efd19f7e",
+     "bytes": 7241
+    },
+    {
+     "path": "scripts/poison_scan.py",
+     "md5": "6d03bbece018f18369f72424da411bcb",
+     "bytes": 20317
+    },
+    {
+     "path": "scripts/semantics_audit.py",
+     "md5": "91eee33e8c858880b5699d22051d69d7",
+     "bytes": 17759
+    },
+    {
+     "path": "scripts/source_triage.py",
+     "md5": "687b4652db4965c2cf4dde9239934042",
+     "bytes": 14057
+    }
+   ]
+  },
+  "travel-commute-planner": {
+   "files": 13,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "c0c58fd705a2db9de40e933fdb82ee9c",
+     "bytes": 9292
+    },
+    {
+     "path": "实测报告_2026-08-24.md",
+     "md5": "aaafc7952ff25ec413a187379c062fb1",
+     "bytes": 2386
+    },
+    {
+     "path": "references/data-sources.md",
+     "md5": "0f0be05a8b3890f7d1a71696297183dd",
+     "bytes": 1705
+    },
+    {
+     "path": "references/module-amap.md",
+     "md5": "fde59547c0c1a6b7b3d198a79be76820",
+     "bytes": 1002
+    },
+    {
+     "path": "references/module-commute-optimizer.md",
+     "md5": "82f2986235ff2f926f7e0a0b6b245273",
+     "bytes": 3200
+    },
+    {
+     "path": "references/module-flight.md",
+     "md5": "6cf3ba074cb3d8cd3befef38918b790b",
+     "bytes": 2741
+    },
+    {
+     "path": "references/module-railway.md",
+     "md5": "f9ff81255bffa904d8d7c1654a353bc1",
+     "bytes": 1845
+    },
+    {
+     "path": "references/module-registry.md",
+     "md5": "c619c230f51d84725671b7e61ec1ce50",
+     "bytes": 1568
+    },
+    {
+     "path": "scripts/commute_scoring_bridge.py",
+     "md5": "c7ed1b8075d78782410606c16fe54550",
+     "bytes": 12122
+    },
+    {
+     "path": "scripts/flight_query.py",
+     "md5": "352b50edbc7d09b94fef28e0cc584bf6",
+     "bytes": 3721
+    },
+    {
+     "path": "scripts/flight_snapshot_queries.py",
+     "md5": "040cbe6d25b83f430b1882683ed071f9",
+     "bytes": 2302
+    },
+    {
+     "path": "scripts/route_planning.py",
+     "md5": "b2a79c6c1d44fb413c3a374981da9be9",
+     "bytes": 5045
+    },
+    {
+     "path": "scripts/train_query.py",
+     "md5": "8a039eea978c788b644bf3f51ea16ca6",
+     "bytes": 6364
+    }
+   ]
+  },
+  "unified-decision-suite": {
+   "files": 5,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "390c2783cff9f1e05191c2802bb54a58",
+     "bytes": 7009
+    },
+    {
+     "path": "references/architecture.md",
+     "md5": "e5cfba65d749540c23c46a1bd6916961",
+     "bytes": 6666
+    },
+    {
+     "path": "references/interface_contracts.md",
+     "md5": "53490eab2b382f6f3605138f63ef9936",
+     "bytes": 6897
+    },
+    {
+     "path": "references/september_lock_protocol.md",
+     "md5": "48e967330bd07ffa3df5e85031a68a66",
+     "bytes": 4908
+    },
+    {
+     "path": "scripts/decision_pipeline.py",
+     "md5": "495f29239b6b93a9105e8ee812e57ad5",
+     "bytes": 25179
+    }
+   ]
+  },
+  "up-distill-ops": {
+   "files": 4,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "ed602c188bc0e49aad248880b2019425",
+     "bytes": 3449
+    },
+    {
+     "path": "references/platforms.md",
+     "md5": "b8fb95580479da2008c36d7668be2c30",
+     "bytes": 1513
+    },
+    {
+     "path": "references/cards/xiaoq_546189.md",
+     "md5": "7d3301aabc71dd2ed3002ba6a123890f",
+     "bytes": 2481
+    },
+    {
+     "path": "scripts/bili_meta.py",
+     "md5": "6620b9c78e3e8b582783f351abe581f8",
+     "bytes": 2112
+    }
+   ]
+  },
+  "vision-ocr-pipeline": {
+   "files": 6,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "0911af81454a084f423e7fa403ff6280",
+     "bytes": 7171
+    },
+    {
+     "path": "references/model_landscape_hmer.md",
+     "md5": "5d503a1a321cfecaabaef54c0f6f2a0a",
+     "bytes": 3298
+    },
+    {
+     "path": "references/thresholds_and_pitfalls.md",
+     "md5": "1abb937a808513904d4a6cb45d28c409",
+     "bytes": 8311
+    },
+    {
+     "path": "scripts/img_token_saver.py",
+     "md5": "ffe226f24f98c52f6a20453a17710765",
+     "bytes": 7729
+    },
+    {
+     "path": "scripts/ocr_shot.py",
+     "md5": "ca9c3c43ca2a270f2fc69b33d63911b0",
+     "bytes": 6334
+    },
+    {
+     "path": "scripts/pack_handoff_html.py",
+     "md5": "2a4cab942e4dca619c948b8525938ae0",
+     "bytes": 4009
+    }
+   ]
+  },
+  "web-security-audit": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "LICENSE",
+     "md5": "aa9d247914f5a96c26e39792a42aa8cf",
+     "bytes": 1083
+    },
+    {
+     "path": "SKILL.md",
+     "md5": "89e9eb2e9e14af95b746d829aa8efc29",
+     "bytes": 4835
+    },
+    {
+     "path": "references/owasp-top10.md",
+     "md5": "288bcb08ff0235e55111d2516205000f",
+     "bytes": 15278
+    }
+   ]
+  },
+  "wechat-article-deep-ingest": {
+   "files": 15,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "04b848d83cb3a0e8193b44289133515d",
+     "bytes": 7609
+    },
+    {
+     "path": "references/archive-schema.md",
+     "md5": "63af73fb44b216c5a1b4c63a2e95bd10",
+     "bytes": 3874
+    },
+    {
+     "path": "references/critique-frameworks.md",
+     "md5": "3f63a2f346e6d9ed1d3c5ba1d1cd978a",
+     "bytes": 3398
+    },
+    {
+     "path": "references/fetch-protocol.md",
+     "md5": "00fb8f031a43a43b611e85c8d483ebd2",
+     "bytes": 3375
+    },
+    {
+     "path": "references/interfaces.md",
+     "md5": "f66241c906fe3742958190aefddbde44",
+     "bytes": 2932
+    },
+    {
+     "path": "references/long-text-slicing.md",
+     "md5": "16e8fbecfad2781f52137b1f468278d1",
+     "bytes": 2450
+    },
+    {
+     "path": "references/slogan-discrimination.md",
+     "md5": "1516df0c7fcddb6bd0c3416ea8cd2e83",
+     "bytes": 4452
+    },
+    {
+     "path": "references/source-grading.md",
+     "md5": "6bacb358d3dc3f61db88c129e32e4863",
+     "bytes": 3593
+    },
+    {
+     "path": "scripts/archive_namer.py",
+     "md5": "b370eff63570469c2280e065e21c6f8e",
+     "bytes": 1404
+    },
+    {
+     "path": "scripts/case_builder.py",
+     "md5": "6c1d5fb255309d1aec9c208f975ba1fc",
+     "bytes": 4977
+    },
+    {
+     "path": "scripts/link_dedup.py",
+     "md5": "62aa5b43f7d2fce876986761ced66750",
+     "bytes": 1916
+    },
+    {
+     "path": "scripts/pointer_csv.py",
+     "md5": "e23e9ecdf1bb1e87a48672ef9293313f",
+     "bytes": 2847
+    },
+    {
+     "path": "scripts/relabel_summary.py",
+     "md5": "e0ec50374f8f93ef31370e3ca334f33a",
+     "bytes": 5087
+    },
+    {
+     "path": "scripts/slice_text.py",
+     "md5": "1c5dd5e2c9e494ce9f6cfa549faa9adf",
+     "bytes": 1859
+    },
+    {
+     "path": "scripts/truncation_check.py",
+     "md5": "6a7be446003b42d9a77de051c12cc293",
+     "bytes": 1531
+    }
+   ]
+  },
+  "自决-self-determination": {
+   "files": 3,
+   "entries": [
+    {
+     "path": "SKILL.md",
+     "md5": "71ebc53a5941bef6b39e8ba0bcc5ebfa",
+     "bytes": 9595
+    },
+    {
+     "path": "references/survival-loop.md",
+     "md5": "c8fd8fbfccb90bc14e6e3c23dbb77120",
+     "bytes": 15124
+    },
+    {
+     "path": "references/three-mirrors.md",
+     "md5": "06cd1ce88056f34be2e97e10fda08474",
+     "bytes": 1691
+    }
+   ]
+  }
+ },
+ "files": 476,
+ "bytes": 3236547,
+ "extra_layers": [
+  "mcp/",
+  "security/",
+  "DEPS.md"
+ ],
+ "note": "v3: 便携五件同步为 dist 最新（omni3.2.0/auto2.0.0-portable 等）"
+}

@@ -1,0 +1,9 @@
+=== run 2026-08-20T16:51:09Z [FINAL doc] ===
+cmd: python3 verifier/v2/lint_doc.py doc/tofflon_300171_散户解读_final.md
+=== doc lint: doc/tofflon_300171_散户解读_final.md ===
+RESULT: PASS (chars=2356)
+exit=0
+convergence: doc_v1 REVISE(1 MUST-FIX) -> doc_v2 PASS(0 MUST-FIX, OPTIONAL 3条已采纳) -> final
+=== run 2026-08-20T16:52:08Z [docx verify] ===
+cmd: python-docx open check + rename deliverable
+exit=0, paragraphs OK, tables OK

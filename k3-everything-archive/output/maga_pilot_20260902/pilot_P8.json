@@ -1,0 +1,19 @@
+{
+ "seat": "P8",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 35.68,
+ "content": "```json\n{\n \"q1_ideology\": 5,\n \"q2_maga\": \"lean_support\",\n \"q3_extra_institutional\": 3,\n \"q4_recognize_provisional_govt\": \"no\",\n \"one_line_reason\": \"I voted Democrat my whole life because of the union, but they sold us out on trade and jobs, so now I lean toward Trump even if I don't love everything about him.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 250,
+  "total_tokens": 1376,
+  "completion_tokens": 1126,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1029
+  }
+ },
+ "ts": "2026-09-02T12:33:38Z"
+}

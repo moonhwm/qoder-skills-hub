@@ -1,0 +1,9 @@
+{
+  "_note": "MCP 连接配置模板——凭据字段一律占位符, 使用时本地填充, 填充后的文件永不入包/外发",
+  "cloudflare": { "account_id": "<YOUR_ACCOUNT_ID>", "api_token": "<YOUR_API_TOKEN>" },
+  "lark": { "app_id": "<YOUR_APP_ID>", "app_secret": "<YOUR_APP_SECRET>", "identity": "user|bot" },
+  "<通道库>": { "project_ref": "<YOUR_PROJECT_REF>", "publishable_key": "<YOUR_PUBLISHABLE_KEY>" },
+  "neon": { "api_key": "<YOUR_NEON_API_KEY>" },
+  "github": { "token": "<YOUR_GITHUB_TOKEN>" },
+  "context7": { "note": "通常无需凭据" }
+}

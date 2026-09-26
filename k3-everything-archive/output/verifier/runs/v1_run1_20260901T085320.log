@@ -1,0 +1,35 @@
+=== 验收 run1 2026-09-01T08:53:20+00:00 ===
+--- [1] 文件类型(须全UTF-8/ASCII文本,零py) ---
+pkg/omni-exhaust-research-ops/references/interface-matrix.md: Unicode text, UTF-8 text
+pkg/omni-exhaust-research-ops/SKILL.md: Unicode text, UTF-8 text, with very long lines (541)
+py计数: 0
+--- [2] 项目绑定grep(须全0) ---
+项目技能 : 0
+<工作区根>/ : 0
+skill-iteration-registry : 0
+欧阳 : 0
+<跨席通道表> : 0
+founding_documents : 0
+--- [3] 脱敏grep(须全0) ---
+委托方 : 0
+430407 : 0
+17680 : 0
+moonclaw : 0
+--- [4] 明示排除grep(须全0) ---
+适老化 : 0
+压榨 : 0
+声道音源 : 0
+第三者 : 1
+--- [5] 结构(frontmatter字段/scripts目录) ---
+---
+name: omni-exhaust-research-ops
+description: "穷举研究总署——对任何复杂问题以「任何可能性穷举」方式做研究尽调、方案整合与统一调配的通用编排技能（无项目绑定，任何用户/任何模型可直接复用）。触发（满足任一）：①用户说「穷举」「穷尽可能性」「全面方案尽调」「所有方案都看看」「exhaustive research」或等价表述；②问题具备多域交叉特征（技术/学术/职业/财务至少两域）且要求上限标准；③任何研究任务被要求「强制调用接口确保完备性及正交性」。覆盖：苏格拉底式提问开场协议、七域强制接口调用矩阵（完备性+正交性校验，详见 references/interface-matrix.md）、能力占位式依赖编组（具体工具在场即用、缺席即声明降级）、自迭代检索路径（检索→评估→改写→再检索，全程留痕可复核）、全模型适配层（境内外/免费付费模型向下兼容，产物与通道解耦）、脱敏与泛化交付（产物默认占位化，第三者可代入）、收敛与验收。English triggers: exhaustive research, possibility enumeration, solution due diligence, socratic opening, multi-model orchestration."
+metadata:
+  version: "2.0.0"
+无scripts=PASS
+--- [7] 必备要素grep(须≥1) ---
+苏格拉底 : 2
+自迭代 : 3
+七域 : 6
+向下兼容 : 2
+UTF-8 : 1

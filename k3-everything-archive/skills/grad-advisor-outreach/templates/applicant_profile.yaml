@@ -1,0 +1,34 @@
+# 申请者画像配置模板（AAPP M4 落盘形式）
+# 填写后存为 applicant_profile.yaml，供 M1-M6 各模块引用。
+# 诚实是本文件唯一硬标准：写上去的每一项都要能被 CV/成绩单/论文直接辩护。
+
+personal:
+  name: ""                 # 姓名（仅本地使用，不进外发信件模板占位符之外的地方）
+  degree: ""               # 例: B.Sc. Applied Physics
+  institution: ""          # 例: 某高校（如实写，含院校层次）
+  graduation_year: null
+  gap_months: null
+  target_degree: ""        # 例: standalone MSc
+  target_start: ""         # 例: 2026-09
+  location_preference: []  # 例: ["大湾区", "海外英语授课"]
+
+evidence:
+  verifiable_claims: []    # 可辩护硬证据，例: "SiO2/ZnO 薄膜方阻 1.2e4→1.5e2 Ω/sq（毕业论文）"
+  publications: []         # 含导师/期刊/年份，可查证
+  skills: []               # 只写有项目/课程支撑的技能
+  languages:
+    english_test: {type: "", score: null, valid_until: ""}   # 例: CET-6 / IELTS / TOEFL
+    cantonese: false
+    mandarin_native: true
+
+constraints_to_avoid: []   # 硬约束，例: ["C1 强制转博", "C5 自费"]
+interests_keywords: []     # M1 求交集用，例: ["energy materials", "AI for science", "thin films"]
+
+self_assessment:
+  candidate_pool_position: ""   # top30 / mid40 / bottom30（M4 四问后填写）
+  core_weakness: []             # 例: ["gap 26 个月", "无论文发表", "院校非 92"]
+  strategy_hint: ""             # 由 pool 位置映射：精准打击 / 混合 / 广撒网
+
+tracking:
+  letter_log_file: ""           # 发送跟踪表路径（发送日、+7天跟进、回复分类）
+  notes: ""

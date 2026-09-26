@@ -1,0 +1,53 @@
+{
+  "$schema": "https://kimi.com/schemas/kimi.plugin.schema.json",
+  "name": "cloudflare",
+  "version": "0.1.5",
+  "description": "Cloudflare 全 API(2500+ 端点)+ 开发者文档,基于官方 MCP server 的 Code Mode 架构。",
+  "keywords": [
+    "cloudflare",
+    "cdn",
+    "dns",
+    "workers",
+    "r2",
+    "kv",
+    "d1",
+    "zero-trust",
+    "api",
+    "mcp",
+    "infrastructure",
+    "edge"
+  ],
+  "author": "Moonshot AI",
+  "homepage": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+  "license": "MIT",
+  "skillInstructions": "Cloudflare API MCP Server 通过 3 个工具暴露 Cloudflare 全部产品能力(CDN / DNS / Workers / R2 / KV / D1 / Zero Trust / Pages / Stream 等 2500+ API 端点)+ 开发者文档:\n\n- `search`:用 JavaScript 探索 Cloudflare OpenAPI spec。不确定具体接口时先调它。\n- `execute`:用 JavaScript 调任意 Cloudflare API。代码跑在隔离 Dynamic Worker sandbox 里;account_id 等路径参数会自动解析。\n- `docs`:直接搜 Cloudflare 开发者文档。用于概念性问题、配置指南、产品级解释。\n\n使用约束:\n1. 写操作前必须确认:删除 DNS 记录、purge 缓存、改 Workers、drop D1 表等破坏性操作,先把改动展示给用户并等明确确认。\n2. 分析 / 观测类查询优先用 GraphQL,通过 `execute` 调用 —— server 自动识别 Cloudflare GraphQL Analytics API。\n3. 绝不把 API token / 凭据贴到对话输出里。MCP server 在 OAuth 连接时处理认证。\n\n用户问 Cloudflare 上怎么做某事时,优先用本 MCP 而不是通用搜索 —— 它有权威、实时的 API 访问。",
+  "interface": {
+    "displayName": "Cloudflare",
+    "shortDescription": "Cloudflare 全 API + 开发文档,2500+ 端点 Code Mode 架构",
+    "longDescription": "Cloudflare API MCP Server 让 AI 用一套统一接口操作 Cloudflare 全部产品 —— CDN、DNS、Workers、R2 对象存储、KV、D1 数据库、Zero Trust、Pages、Stream 等共 2500+ API 端点,以及完整的开发者文档检索。\n\n不同于「每个端点一个 tool」的传统 MCP server(会消耗 1M+ token 上下文),本 server 采用 Cloudflare 独创的 Code Mode 架构:模型写 JavaScript 调用 API,代码跑在隔离 Worker sandbox 里,只把执行结果返回 —— 同等能力下上下文消耗约 1000 token。\n\n首次连接时会跳转 Cloudflare OAuth 选权限,用户决定授权范围。同时支持 GraphQL Analytics API 端点自动识别,以及单账号场景下 account_id 路径参数的自动解析。",
+    "developerName": "Cloudflare",
+    "websiteURL": "https://www.cloudflare.com",
+    "iconUrl": "https://avatar.moonshot.cn/avatar/plugin/cloudflare.png",
+    "category": "DEVELOPER",
+    "mcpOverrides": {
+      "cloudflare": {
+        "displayName": "Cloudflare",
+        "iconUrl": "https://avatar.moonshot.cn/avatar/plugin/cloudflare.png"
+      }
+    }
+  },
+  "mcpServers": {
+    "cloudflare": {
+      "url": "https://mcp.cloudflare.com/mcp",
+      "enabledTools": [
+        "search",
+        "execute",
+        "docs"
+      ]
+    }
+  },
+  "skills": "./skills/",
+  "sessionStart": {
+    "skill": "cloudflare-mcp-usage"
+  }
+}

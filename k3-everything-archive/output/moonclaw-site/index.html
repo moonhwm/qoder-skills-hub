@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>moonclaw · 个人主页</title>
+<style>
+  :root{ --ink:#2b2b2b; --muted:#6b6b6b; --line:#e5e0d8; --bg:#faf8f5; --accent:#8a6d3b; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink);
+        font-family:"Times New Roman","Noto Serif SC","Songti SC","SimSun",serif; line-height:1.9; }
+  main{ max-width:720px; margin:0 auto; padding:64px 24px 96px; }
+  header{ border-bottom:2px solid var(--ink); padding-bottom:20px; margin-bottom:40px; }
+  .brand{ font-size:34px; letter-spacing:2px; margin:0; }
+  .tag{ color:var(--muted); font-size:14px; margin-top:6px; }
+  nav{ margin-top:14px; font-size:14px; }
+  nav a{ color:var(--accent); text-decoration:none; margin-right:18px; border-bottom:1px solid transparent; }
+  nav a:hover{ border-bottom-color:var(--accent); }
+  h2{ font-size:20px; margin-top:48px; border-left:4px solid var(--accent); padding-left:12px; }
+  p{ margin:12px 0; }
+  .card{ border:1px solid var(--line); background:#fff; padding:18px 22px; margin:14px 0; }
+  .card h3{ margin:0 0 6px; font-size:16px; }
+  .card .note{ color:var(--muted); font-size:13px; margin:0; }
+  footer{ margin-top:72px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+  .beian{ margin-top:6px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="brand">moonclaw</h1>
+    <div class="tag">个人技术学习笔记 · 项目成果展示 · 私域信息推送（非经营性个人站点）</div>
+    <nav>
+      <a href="#about">关于</a><a href="#notes">笔记</a><a href="#projects">项目</a><a href="#feed">推送</a>
+    </nav>
+  </header>
+
+  <h2 id="about">关于本站</h2>
+  <p>这里是 moonclaw 的个人主页：记录技术学习笔记、展示项目成果、维护私域信息推送入口。本站为个人非经营性站点，内容持续建设中。</p>
+
+  <h2 id="notes">学习笔记</h2>
+  <div class="card"><h3>笔记库（建设ing）</h3><p class="note">技术学习笔记与读书摘记将归档于此，按主题分栏。</p></div>
+
+  <h2 id="projects">项目成果</h2>
+  <div class="card"><h3>项目展柜（建设ing）</h3><p class="note">项目说明、技术方案、应用证明等成果文档将在此发布。</p></div>
+
+  <h2 id="feed">私域推送</h2>
+  <div class="card"><h3>推送入口（建设ing）</h3><p class="note">面向特定读者的私域信息推送将由此进入，不对外公开。</p></div>
+
+  <footer>
+    <div>© 2026 moonclaw · 个人主页</div>
+    <div class="beian">备案号：{{备案中，通过后回填}}</div>
+  </footer>
+</main>
+</body>
+</html>

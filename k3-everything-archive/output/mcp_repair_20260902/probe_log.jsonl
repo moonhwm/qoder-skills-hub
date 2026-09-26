@@ -1,0 +1,8 @@
+{"endpoint": "<通道库>", "http": 403, "latency_s": 0.63, "ts": "2026-09-02T15:01:09Z", "verdict": "HTTP-403"}
+{"endpoint": "github", "http": 401, "latency_s": 0.74, "ts": "2026-09-02T15:01:10Z", "verdict": "ALIVE-NEEDS-AUTH"}
+{"endpoint": "<通道库>", "http": 403, "latency_s": 0.65, "ts": "2026-09-02T15:01:41Z", "verdict": "WAF-CHALLENGE"}
+{"endpoint": "github", "http": 401, "latency_s": 0.77, "ts": "2026-09-02T15:01:42Z", "verdict": "ALIVE-NEEDS-AUTH"}
+{"endpoint": "<通道库>", "http": 401, "latency_s": 0.52, "ts": "2026-09-02T15:02:13Z", "verdict": "ALIVE-NEEDS-AUTH"}
+{"endpoint": "github", "http": 401, "latency_s": 0.7, "ts": "2026-09-02T15:02:14Z", "verdict": "ALIVE-NEEDS-AUTH"}
+{"endpoint": "<通道库>", "http": 401, "latency_s": 0.66, "ts": "2026-09-02T16:13:35Z", "verdict": "ALIVE-NEEDS-AUTH"}
+{"endpoint": "github", "http": 401, "latency_s": 0.73, "ts": "2026-09-02T16:13:35Z", "verdict": "ALIVE-NEEDS-AUTH"}

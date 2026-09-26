@@ -1,0 +1,23 @@
+{
+  "register": "evidence-chain-verifier 登记骨架（300274 舆情核查）",
+  "check_date": "2026-09-01",
+  "data_cutoff": "{{成稿轮填：数据截止日}}",
+  "top3_likely_wrong": ["{{占位：最可能出错断言1}}", "{{占位2}}", "{{占位3}}"],
+  "counter_check": "{{占位：反证检查结论}}",
+  "items": [
+    {
+      "claim_id": "R1-L1",
+      "source_rumor": "R1",
+      "claim": "{{占位：断言文本}}",
+      "type": "事实",
+      "verdict": "存疑",
+      "conf": "Low",
+      "evidence_links": [],
+      "no_public_url_reason": "{{占位：查不到公开链接时填原因+检索路径，禁拼凑深链（§3.7）}}",
+      "conflicts": [],
+      "errata": []
+    }
+  ],
+  "cascade_rule": "md / chain JSON / checklist JSON 三层级联：任一层修订，其余同层同轮重生成（§3.2）；修订后 grep 零残留再送审（§3.3）",
+  "gate_status": "未送审（骨架轮）；成稿轮必过 output-verdict-gate（5席盲评 4/5 + 监管门）"
+}

@@ -1,0 +1,34 @@
+== A1 伞名录→安装位（充分性：名录件件在场） ==
+roster=19件, 缺席=无 → PASS
+== A2 安装位→伞名录（必要性反向：在场件是否被伞漏收） ==
+安装位共65件, 伞外46件
+伞外清单: ['admission-panel-analytics', 'archive-ops-kit', 'arxiv-source-sentinel', 'claims-deep-audit', 'cn-housing-finder', 'cognitive-exoskeleton', 'commute-school-optimizer', 'corpus-value-distiller', 'cross-session-workflow-bridge', 'daily-life-autopilot', 'data-viz-gen', 'diffusion-dynamics-extension', 'doc-archive-ingest', 'evidence-chain-verifier', 'fusion-program-audit', 'gitlab-cli-guide', 'grad-advisor-outreach', 'grad-path-scorer', 'hifi-integration-umbrella', 'home-network-troubleshooter', 'humanizer-zh', 'iteration-convergence-ops', 'k3-interaction-ops', 'k8s-cluster-ops', 'livability-audit-swarm', 'medical-career-transition', 'medical-malpractice-criminal-review', 'multi-dimensional-option-scoring', 'notary-legal-upload', 'phys-ai-mat-conf-radar', 'ppp-city-verdict-audit', 'qr-visual-rescue', 'quant-frontier-lab', 'rumor-chain-verifier', 'rust-browser-pilot', 'sandbox-project-ops', 'seo-copywriting-guide', 'skill-library-auditor', 'software-testing-guide', 'source-semantics-sentinel', 'travel-commute-planner', 'unified-decision-suite', 'up-distill-ops', 'vision-ocr-pipeline', 'web-security-audit', 'wechat-article-deep-ingest']
+（伞设计=18件显式点名+1前置链，非全量伞——伞外件存在≠缺陷，但完备性审计须如实列出）
+== A3 充要判定：伞触发的每个场景是否至少一件成员可服务（抽样5场景） ==
+  跨技能调度→skill-dispatch-hq: PASS
+  交割回执→consignment-intake-ops: PASS
+  输出审议→output-verdict-gate: PASS
+  穷举研究→omni-exhaust-research-ops: PASS
+  定时任务→cron-task-forge: PASS
+== B1 触发域重叠对检测（同域多件=非正交点，须有仲裁序承接） ==
+  重叠对[autonomous-advance-protocol×autonomous-advance-ops]: 自主推进口令双收——本体已声明整合关系 → 仲裁序可解,PASS(受控非正交)
+  重叠对[skill-refresh-ops×skill-reinstall-ops]: 版本运维相邻——刷新含重装移交,重装管并入,边界见本体 → 仲裁序可解,PASS(受控非正交)
+  重叠对[consignment-intake-ops×coordination-letter]: 交割/函件相邻——函是文书,接收是台账,联挂已声明 → 仲裁序可解,PASS(受控非正交)
+  重叠对[omni-exhaust-research-ops×hifi-integration-umbrella]: 穷举/调度相邻——omni探选,伞派裁,联动立法已固定 → 仲裁序可解,PASS(受控非正交)
+B1: 4对受控重叠,无失控重叠 → PASS
+== C1 39源覆盖率 ==
+39源在表: 39/39, 缺=无 → PASS
+== C2 域覆盖充要（用户域→至少一路由） ==
+  金融: PASS
+  舆论/舆情: PASS
+  学术: PASS
+  生物: PASS
+  法律: PASS
+  宏观: PASS
+  企业: PASS
+  标准: PASS
+== C3 路由正交性（同源重叠对须有择专规则） ==
+  [wind×ifind×gildata] A股同质三源 → specific-first:按数据型分工择专 PASS(受控)
+  [pubmed×google_scholar] 生物医学文献重叠 → 学科细分:生物医学→pubmed PASS(受控)
+  [caixin×xhcj] 舆情重叠 → 快讯公告→xhcj,债基企业→caixin PASS(受控)
+C3: 3对受控重叠 → PASS

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "skill_version": "1.2.2",
+  "engine_params": {
+    "convergence_threshold": 0.5,
+    "max_iterations": 5,
+    "auto_correct_enabled": true,
+    "red_line_boost": 0.15,
+    "mitigation_floor": 0.05
+  },
+  "dimension_weights": {
+    "medical_fault": 0.30,
+    "causation": 0.25,
+    "damage_severity": 0.20,
+    "duty_violation": 0.15,
+    "mitigation": 0.10
+  },
+  "red_lines": {
+    "r1": "伪造、篡改病历资料",
+    "r2": "隐匿、拒绝提供病历",
+    "r3": "未取得执业资格独立行医",
+    "r4": "明知无救治条件仍强推手术",
+    "r5": "术后未履行基本观察义务致死亡",
+    "r6": "重复同类过错致多次损害",
+    "r7": "拒绝会诊或转诊致病情恶化",
+    "r8": "使用未经批准的医疗器械/药品",
+    "r9": "无法定处方权使用限制级药物"
+  },
+  "output_format": {
+    "include_iteration_log": true,
+    "include_dimension_breakdown": true,
+    "confidence_display": "annotation_only",
+    "language": "zh-CN"
+  },
+  "liability_thresholds": {
+    "none": [0.0, 0.0],
+    "slight": [0.01, 0.15],
+    "secondary": [0.16, 0.30],
+    "equal": [0.31, 0.50],
+    "primary": [0.51, 0.80],
+    "full": [0.81, 1.00]
+  }
+}

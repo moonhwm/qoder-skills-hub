@@ -1,0 +1,328 @@
+{
+ "version": "0.1.0-骨架",
+ "updated": "2026-09-01T12:42:26+08:00",
+ "note": "2026-09-01 自决v0.1.0创刊建档；实载66件用户技能",
+ "user_skills": [
+  {
+   "标识": "admission-panel-analytics",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "archive-ops-kit",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "arxiv-source-sentinel",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "autonomous-advance-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "autonomous-advance-protocol",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "claims-deep-audit",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "cn-housing-finder",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "cognitive-exoskeleton",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "commute-school-optimizer",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "consignment-intake-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "coordination-letter",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "corpus-value-distiller",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "cron-task-forge",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "cross-session-workflow-bridge",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "daily-life-autopilot",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "data-viz-gen",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "diffusion-dynamics-extension",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "doc-archive-ingest",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "doc-image-solver",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "evidence-chain-verifier",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "exam-isolation-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "fusion-program-audit",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "gitlab-cli-guide",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "grad-advisor-outreach",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "grad-path-scorer",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "home-network-troubleshooter",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "humanizer-zh",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "iteration-convergence-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "k3-interaction-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "k8s-cluster-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "livability-audit-swarm",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "medical-career-transition",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "medical-malpractice-criminal-review",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "multi-dimensional-option-scoring",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "notary-legal-upload",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "output-verdict-gate",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "phys-ai-mat-conf-radar",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "plugin-datasource-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "ppp-city-verdict-audit",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "qr-visual-rescue",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "quant-frontier-lab",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "「额度守护件」",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "release-gate-audit",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "rumor-chain-verifier",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "rust-browser-pilot",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "sandbox-project-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "semantic-oncology-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "seo-copywriting-guide",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "skill-dispatch-hq",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "skill-library-auditor",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "skill-reinstall-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "software-testing-guide",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "source-semantics-sentinel",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "travel-commute-planner",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "unified-decision-suite",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "up-distill-ops",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "vision-ocr-pipeline",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "web-security-audit",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "wechat-article-deep-ingest",
+   "建档状态": "名录占位"
+  },
+  {
+   "标识": "omni-exhaust-research-ops",
+   "建档状态": "档案在轨",
+   "版本": "3.1.2",
+   "能力域": "研究编排",
+   "注记": "v3.1.2 §10 ε-δ镜像+对抗性冲锋义务"
+  },
+  {
+   "标识": "pangu-enforcement-bureau",
+   "建档状态": "档案在轨",
+   "版本": "1.0.0",
+   "能力域": "执法",
+   "注记": "强制裁判候选强制+执法三级,dist待重装"
+  },
+  {
+   "标识": "hifi-integration-umbrella",
+   "建档状态": "档案在轨",
+   "版本": "1.7.6",
+   "能力域": "整合",
+   "注记": "v1.7.6 roster同步自决 0.3.3(逃逸核查勘误轮)"
+  },
+  {
+   "标识": "intl-case-intf",
+   "建档状态": "档案在轨",
+   "版本": "0.1.0",
+   "能力域": "查询/接口",
+   "注记": "国际法案例接口件(CJEU/ECtHR只读);伞前置链件"
+  },
+  {
+   "标识": "skill-refresh-ops",
+   "建档状态": "档案在轨",
+   "版本": "无版本号",
+   "能力域": "版本运维",
+   "注记": "技能刷新运维：可写性预检/版本漂移扫描/热加载/通道健康检查；伞§4日落判定联挂件（补登，编排口径缺口修复）"
+  },
+  {
+   "标识": "k3-territory-studies",
+   "建档状态": "档案在轨",
+   "版本": "0.2-temp",
+   "能力域": "研究专项",
+   "注记": "领域研究临时件：接口统摄+设施盘点+地区主权议题学术管线；伞§0.1前置链件之二（补登，编排口径缺口修复）"
+  },
+  {
+   "标识": "自决-self-determination",
+   "建档状态": "档案在轨",
+   "版本": "0.3.3",
+   "能力域": "恒常治理",
+   "注记": "v0.3.3 自我逃逸核查(#13-#16自报减等入册)+z轨迹勘误(10值→11值);声明不承诺穷尽,禁宣称零逃逸"
+  }
+ ],
+ "builtin_skills": [
+  "report-writing",
+  "paper-writing",
+  "deep-research-swarm",
+  "general-writing",
+  "kimi-slides",
+  "webapp-building-swarm",
+  "vibecoding-webapp-swarm",
+  "vibecoding-general-swarm",
+  "backend-building-swarm",
+  "swarm-workspace",
+  "batch-download",
+  "skill-creator-swarm",
+  "docx",
+  "pdf",
+  "xlsx",
+  "kimi-help-center"
+ ],
+ "plugin_datasources": "公用数据库级另册（wind/ifind/gildata/caixin/yahoo/sec_edgar/…，凭证状态按插件公告）",
+ "插件数据源册": {
+  "<通道库>": {
+   "名称": "<通道库> 全栈管理(Beta)",
+   "覆盖域": "Postgres SQL/迁移/Edge Functions/Storage/分支;本项目授权仅限 <跨席通道表> 写读",
+   "凭证状态": "在轨(OAuth)",
+   "健康探测": "2026-08-31 读写双通:SELECT schema+3 INSERT(id37-39)+UPDATE consumed 全成功",
+   "等级": "公用数据库级"
+  },
+  "context7": {
+   "名称": "Context7 库文档垂直检索",
+   "覆盖域": "版本对齐官方文档与代码示例(resolve-library-id→query-docs)",
+   "凭证状态": "在轨(免key)",
+   "健康探测": "2026-08-31 resolve /<通道库>/<通道库>(High,20719 snippets)+query-docs RLS 真实文档返回,两段管线全通",
+   "等级": "公用数据库级",
+   "纪律": "新库调用常态化自检规程 v1.0 专项:写代码先查官方文档,凭记忆写API=缺陷"
+  }
+ }
+}

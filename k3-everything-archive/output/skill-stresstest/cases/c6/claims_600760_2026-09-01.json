@@ -1,0 +1,65 @@
+[
+  {
+    "claim": "2026年全国一般公共预算安排国防支出1.94万亿元，比上年执行数增长6.9%",
+    "source_type": "权威媒体",
+    "url": "https://military.cctv.com/2026/03/10/ARTIzSEKR8SGO9iPLTFyNf6V260310.shtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查央视军事 2026-03-10 报道或财政部预算草案原文，核对'国防支出1.94万亿/+6.9%'字段",
+    "confidence": "High"
+  },
+  {
+    "claim": "中航沈飞2025年报：营收446.56亿元+4.25%，归母净利35.18亿元+3.65%",
+    "source_type": "监管平台",
+    "url": "http://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260330/271ae334ed194046a0512aab2216dac3.PDF",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "巨潮资讯网检索'中航沈飞 2025年年度报告'，核对主要会计数据表",
+    "confidence": "High"
+  },
+  {
+    "claim": "中航沈飞2026H1营收61.91亿元-57.68%，归母净利4.73亿元-58.37%",
+    "source_type": "权威媒体",
+    "url": "https://www.futunn.com/stock/600760-SH",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "上交所/巨潮检索'中航沈飞 2026年半年度报告'，核对利润表与业绩预告（4.75亿口径）差异",
+    "confidence": "High"
+  },
+  {
+    "claim": "中航沈飞2026-09-01收盘47.63元，总市值约1350亿元，PE(TTM)约47.3",
+    "source_type": "权威媒体",
+    "url": "https://xueqiu.com/S/SH600760",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "交易所行情或任意行情终端查600760当日收盘价，复算 47.63×28.35亿股",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "网传'歼-50取消空速管=接近量产、2027年服役'：公司无公告，信源间服役年份互斥（2027 vs 2030）",
+    "source_type": "自媒体",
+    "url": "https://www.163.com/dy/article/KBFBHHOE05568UOT.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "上交所e互动/公司公告检索'歼-50'；对比网易号2025-10-09与搜狐号2025-08-08两文的服役年份表述",
+    "confidence": "High"
+  },
+  {
+    "claim": "特朗普提议FY2027美国军费1.5万亿美元系提议而非已落地预算",
+    "source_type": "权威媒体",
+    "url": "https://finance.sina.com.cn/roll/2026-01-09/doc-inhfrvnc6228875.shtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "检索美国国会FY2027国防授权/拨款法案进度；CBO赤字测算",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "SIPRI：2025年全球军费2.887万亿美元，连续11年增长",
+    "source_type": "自媒体",
+    "url": "https://www.tradesmax.com/component/k2/item/29054",
+    "no_public_url_reason": "二手转引未附SIPRI原文链接",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查SIPRI Military Expenditure Database 2026年4月新闻稿对数值",
+    "confidence": "Medium"
+  }
+]

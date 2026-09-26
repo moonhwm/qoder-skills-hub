@@ -1,0 +1,5 @@
+=== run 2026-08-20T16:45:59Z ===
+cmd: python3 verifier/v2/lint_doc.py doc/tofflon_300171_散户解读_v1.md
+=== doc lint: doc/tofflon_300171_散户解读_v1.md ===
+RESULT: PASS (chars=2262)
+exit=0

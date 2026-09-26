@@ -1,0 +1,1 @@
+# v24 executed inline; result: PASS

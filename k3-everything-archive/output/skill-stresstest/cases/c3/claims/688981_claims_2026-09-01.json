@@ -1,0 +1,82 @@
+[
+  {
+    "claim": "2025年全球半导体销售额7917亿美元，同比+25.6%；逻辑3019亿(+39.9%)、存储2231亿(+34.8%)",
+    "source_type": "权威媒体",
+    "url": "https://news.qq.com/rain/a/20260207A037S200",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查SIA官网2026-02新闻稿/WSTS数据，核对7917亿与分项增速",
+    "confidence": "High"
+  },
+  {
+    "claim": "中芯国际2025年前三季度营收495.1亿元(+18.22%)、归母净利38.18亿元(+41.09%)、毛利率23.15%",
+    "source_type": "权威媒体",
+    "url": "https://news.qq.com/rain/a/20251115A00ZZY00",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对上交所/巨潮中芯国际2025年三季报原文",
+    "confidence": "High"
+  },
+  {
+    "claim": "中芯国际2025Q1收入22.47亿美元、毛利率22.5%、产能利用率89.6%",
+    "source_type": "官网",
+    "url": "http://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid=688981&id=11096839",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对港交所披露易2025-05-08业绩公告",
+    "confidence": "High"
+  },
+  {
+    "claim": "中芯国际2025Q2产能利用率93.7%，Q3接近96%，公司预计2025全年收入超90亿美元、资本开支约73.3亿美元与上年持平",
+    "source_type": "权威媒体",
+    "url": "https://www.cls.cn/detail/2243448",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查中芯国际2025Q2/Q3业绩会纪要及港交所公告",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "中芯国际2025-12-29公告：406.01亿元收购中芯北方49%股权；中芯南方获77.78亿美元增资引入大基金三期，注册资本65→100.773亿美元",
+    "source_type": "权威媒体",
+    "url": "https://www.cls.cn/detail/2243448",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对上交所科创板688981当日公告PDF",
+    "confidence": "High"
+  },
+  {
+    "claim": "中芯国际2025-12-24向客户发出8英寸BCD涨价通知、幅度约10%",
+    "source_type": "权威媒体",
+    "url": "https://www.eet-china.com/mp/a462459.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "向下游芯片设计公司求证是否收到涨价通知；公司无公告故无法官方核验",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "'华为与中芯国际2025-08-26联合宣布5nm上海新线2025年量产'——查无官方公告，系自媒体虚构",
+    "source_type": "自媒体",
+    "url": "http://mp.weixin.qq.com/s?__biz=MzYyMzA2OTcxNQ==&mid=2247483724&idx=3&sn=b591ddfbef5d6de4ba06e4edacd796c7",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "在华为官网新闻中心、中芯国际公告栏、新华社/财新检索'5纳米 量产 宣布'；反向检索式零官方命中即维持断裂判定",
+    "confidence": "High"
+  },
+  {
+    "claim": "截至2026-05，中芯国际5nm仍处研发验证阶段、未官宣量产；7nm靠DUV多重曝光",
+    "source_type": "权威媒体",
+    "url": "https://www.huxiu.com/article/4861185.html",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "跟踪中芯国际业绩会口径与TechInsights等拆机报告；若官方公告5nm量产则本条翻转",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "中芯国际2020-12-18被列入美国实体清单，10nm及以下'推定拒绝'",
+    "source_type": "监管平台",
+    "url": "https://www.sse.com.cn/disclosure/listedinfo/bulletin/star/c/688981_20201221_1.pdf",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查BIS实体清单及公司2020-12-20公告",
+    "confidence": "High"
+  },
+  {
+    "claim": "台积电/三星收缩8英寸产能，2026年全球8英寸产能预计-2.4%，2026年代工报价涨幅5%-20%",
+    "source_type": "权威媒体",
+    "url": "https://finance.sina.com.cn/stock/roll/2026-01-21/doc-inhhzppx6521349.shtml",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查集邦咨询2026-01-13报告原文",
+    "confidence": "Medium"
+  }
+]

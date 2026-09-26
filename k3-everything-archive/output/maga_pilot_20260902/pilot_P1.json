@@ -1,0 +1,19 @@
+{
+ "seat": "P1",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 35.06,
+ "content": "```json\n{\n \"q1_ideology\": 6,\n \"q2_maga\": \"lean_support\",\n \"q3_extra_institutional\": 3,\n \"q4_recognize_provisional_govt\": \"no\",\n \"one_line_reason\": \"I'm fed up with the direction this country's headed and I get why people are angry, but as a Christian man I believe in law and order and we gotta work within the system God put in place.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 254,
+  "total_tokens": 1253,
+  "completion_tokens": 999,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 897
+  }
+ },
+ "ts": "2026-09-02T12:35:34Z"
+}

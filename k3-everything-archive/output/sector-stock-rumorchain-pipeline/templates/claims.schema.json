@@ -1,0 +1,11 @@
+[
+  {
+    "claim": "可被证据推翻的陈述（一条一个）",
+    "source_type": "官方底表/监管平台/官网/权威媒体/自媒体/记忆推断",
+    "url": "公开可查 URL；无则留空并填 no_public_url_reason",
+    "no_public_url_reason": "无公开链接的理由 + 替代检索路径",
+    "check_date": "YYYY-MM-DD",
+    "falsifiable_test": "复核者如何推翻：查哪个库、搜什么词、看什么字段",
+    "confidence": "High/Medium/Low/Conflict"
+  }
+]

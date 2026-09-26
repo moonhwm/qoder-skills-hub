@@ -1,0 +1,41 @@
+{
+  "$schema": "https://kimi.com/schemas/kimi.plugin.schema.json",
+  "name": "lark",
+  "version": "0.1.1",
+  "description": "飞书 / Lark 全家桶技能集：消息、文档、多维表格、电子表格、日历、邮箱、任务、审批、OKR、视频会议、妙记、知识库、画板等，通过 lark-cli 操作飞书开放平台。",
+  "keywords": [
+    "lark",
+    "feishu",
+    "飞书",
+    "im",
+    "doc",
+    "bitable",
+    "sheets",
+    "calendar",
+    "mail",
+    "task",
+    "approval",
+    "okr",
+    "vc",
+    "minutes",
+    "wiki",
+    "whiteboard"
+  ],
+  "author": "lark",
+  "homepage": "https://open.feishu.cn",
+  "license": "MIT",
+  "skills": "./skills/",
+  "sessionStart": {
+    "skill": "lark-shared"
+  },
+  "skillInstructions": "本插件提供一组基于 lark-cli 的飞书（Lark/Feishu）技能，按业务域拆分：lark-im（消息/群聊）、lark-doc（云文档）、lark-base（多维表格）、lark-sheets（电子表格）、lark-drive（云空间文件）、lark-calendar（日历日程）、lark-mail（邮箱）、lark-task（任务）、lark-approval（审批）、lark-okr（OKR）、lark-vc / lark-vc-agent（视频会议）、lark-minutes（妙记）、lark-wiki（知识库）、lark-whiteboard（画板）、lark-contact（通讯录）、lark-attendance（考勤）、lark-apps（妙搭部署）、lark-event（事件订阅）、lark-slides（幻灯片）、lark-markdown（Markdown 文件）等，并附带 lark-workflow-* 工作流和 lark-openapi-explorer / lark-skill-maker 等扩展技能。使用规则：1) 根据用户意图选择对应业务域的技能，跨域任务按各技能的路由说明切换；2) 首次使用、登录授权、身份切换（--as）或遇到权限/scope 错误时，先参考 lark-shared；3) 发送消息、邮件、加急、审批操作等对外可见或不可逆的动作，执行前先与用户确认；4) 输出中出现 _notice 字段时按 lark-shared 的说明处理。",
+  "interface": {
+    "displayName": "飞书 Lark",
+    "shortDescription": "在 Kimi 中直接操作飞书：消息、文档、表格、日历、邮箱、任务、会议等一站式办公能力。",
+    "longDescription": "飞书 Lark 插件将 20+ 个飞书办公能力封装为技能，让模型通过 lark-cli 直接读写你的飞书工作区：\n\n- 即时通讯：发送/搜索消息、管理群聊、上传下载文件、加急提醒\n- 云文档与知识库：读取和编辑 Docx 文档、管理 Wiki 知识空间、画板可视化\n- 表格：多维表格（Base）建表/记录/视图/仪表盘，电子表格读写、公式、图表\n- 日历与会议：查询/创建日程、预定会议室、历史会议纪要与妙记、机器人代为入会\n- 协作流：任务清单、审批处理、OKR 管理、考勤查询、邮箱收发\n- 进阶：云空间文件管理、Markdown 处理、妙搭 HTML 部署、实时事件订阅、原生 OpenAPI 探索\n\n首次使用时通过 lark-shared 技能完成 lark-cli 配置与扫码授权，之后即可用自然语言完成飞书中的日常办公操作。\n\n⚠️ 在任何系统，永远不要在前台执行 lark-cli config init（会阻塞卡死整轮对话），必须参考 lark-shared 在后台运行后再读取输出文件提取授权链接。",
+    "developerName": "lark",
+    "websiteURL": "https://open.feishu.cn",
+    "iconUrl": "https://test-kimi-img.moonshot.cn/bj-test/avatar/plugins/lark.png",
+    "category": "PRODUCTIVITY"
+  }
+}

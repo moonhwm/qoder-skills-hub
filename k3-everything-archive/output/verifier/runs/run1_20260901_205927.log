@@ -1,0 +1,9 @@
+FAIL V1a A1-A15全覆盖 missing=['A3', 'A4', 'A5', 'A6', 'A8', 'A10']
+PASS V1b 三分类齐 
+SKIP V2 报告未产出
+SKIP V3 蓝图未产出
+SKIP V4 未产出
+SKIP V5 未产出
+PASS V8 零明文凭证 hits=[]
+---
+EXIT 1 | fails: ['V1a A1-A15全覆盖']

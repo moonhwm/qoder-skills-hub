@@ -1,0 +1,17 @@
+{
+  "is_success": true,
+  "result": {
+    "user": [
+      {
+        "type": "text",
+        "text": "success:true, data:[{\"news_type\":\"财报类\",\"Title\":\"奋达科技2026年上半年营收同比增长6.86%至13.47亿元，净利润同比减少78.60%至365.62万元，扣非后归母净利润同比减少303.93%至-661.21万元。\",\"ExternalSource\":\"新华财经\",\"PublishTime\":\"2026-08-29 00:00:00\"}]"
+      }
+    ],
+    "assistant": [
+      {
+        "type": "text",
+        "text": ""
+      }
+    ]
+  }
+}

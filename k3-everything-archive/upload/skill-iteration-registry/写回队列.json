@@ -1,0 +1,28 @@
+{
+ "queue": [
+  {
+   "skill": "retirement-guard-ops@0.1.0",
+   "time": "2026-09-02T21:28:47.527059",
+   "state": "pending",
+   "note": "安装位只读，待攒批一键安装"
+  },
+  {
+   "skill": "pan-exhaust-dispatch@0.1.0",
+   "time": "2026-09-02T21:28:47.527059",
+   "state": "pending",
+   "note": "安装位只读，待攒批一键安装"
+  },
+  {
+   "skill": "omni-exhaust-research-ops@3.2.0",
+   "time": "2026-09-02T21:38:13.161194",
+   "state": "pending",
+   "note": "便携版替代项目版，待攒批一键安装"
+  },
+  {
+   "skill": "autonomous-advance-ops@2.0.0-portable",
+   "time": "2026-09-02T21:38:13.161194",
+   "state": "pending",
+   "note": "便携版替代项目版，待攒批一键安装"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+=== run 2026-08-20T16:41:58Z [FINAL] ===
+cmd: python3 verifier/v1/validate_ptrade.py strategy/tofflon_300171_final.py
+=== PTrade static validation: strategy/tofflon_300171_final.py ===
+RESULT: PASS (0 errors, 0 warnings)
+exit=0
+convergence: v1 REVISE(3 MUST-FIX) -> v2 REVISE(1 MUST-FIX) -> v3 PASS(0 MUST-FIX, reviewer 判定收敛)

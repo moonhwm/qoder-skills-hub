@@ -1,0 +1,211 @@
+
+启信慧眼 × 华为云 OfficeAce / AgentArts 整合方案提案
+提案编号： QX-OA-2026-___（由信息技术部统一编号） 提案日期： 2026-08-31 提案单位： 湖南联盛物资贸易有限公司 · 经营部 密级： 内部资料，限联署审议使用
+一、提案摘要
+为提升供应商、客户准入核验与信用风险排查效率，公司拟将启信慧眼（data.qixin.com）的企业工商、司法、经营风险数据能力与华为云果办 OfficeAce / AgentArts 智能体平台整合，构建”客商准入尽调—存量风险扫描—风险信息推送”的数字化风控流程。公司已于 2026-08-31 完成启信慧眼平台企业实名认证（有效期至 2027-08-31），具备即时开通 API 的条件。建议”三步走”：近期以方案一（OfficeAce + 官方 MCP 连接器）快速落地，中期以方案二（自定义技能 / AgentArts 工作流调用官网 REST API）形成业务闭环，远期以方案三（AgentArts 风控智能体）实现系统级集成。
+二、背景与现状盘点
+（一）公司需求场景
+公司主营物资贸易，日常经营中需对供应商、客户开展工商信息核验与信用风险排查，具体包括：新客商准入时的工商照面、股东、经营异常、失信被执行、行政处罚等基础尽调；存量客商的定期风险扫描与预警；尽调结果需形成 Word 尽调报告与 Excel 风险台账，并按周期推送至相关业务人员。
+（二）已完成的准备工作
+2026-08-31，公司已在启信慧眼数据开放平台（官方自称”启信开放平台™“）完成企业实名认证，有效期至 2027-08-31。认证完成后即可在控制台获取 AppKey / AppSecret，充值开通 API（充值金额自充值成功起 2 年内有效）。
+（三）三条数据通道盘点
+通道①：启信慧眼官网 REST API（api.qixin.com）。地址形如 https://api.qixin.com/APIService/{模块}/{方法}，JSON 返回，HTTP/HTTPS GET（部分接口支持 GET、POST）。鉴权为请求头携带 Auth-Version: 2.0、appkey、timestamp、sign（基于 AppSecret 的 MD5 签名）。接口覆盖工商信息、司法风险、经营风险、知识产权、企业报告、新闻舆情等 19 个官方分类，全量共 28 页，页面直接展示单价。
+通道②：启信慧眼官方 MCP 服务。封装 200+ 企业数据能力（公开报道显示已落地腾讯 WorkBuddy），可通过标准 MCP 协议被智能体平台调用。
+通道③：华为云云商店启信宝接口。卖家为上海生腾数据科技有限公司，在售商品含企业基础工商信息报告、企业商标列表信息、失信被执行企业查询等。购买后由 APIG 网关下发 AppKey/AppSecret，支持签名认证或简单身份认证（AppCode）；支持”按需”与”按需套餐包（按次预付费）“，仅 HTTP 2XX 计为有效调用扣次；0 元体验套餐包同一用户限购一次。
+（四）平台侧能力盘点
+OfficeAce：支持自定义技能（Skill），技能本质是”提示词+脚本资源包”（SKILL.md 规范），内置 Python/Node 运行时；调用外部 API 的官方推荐路径为 MCP 连接器，支持 Stdio / Streamable HTTP / SSE 三种传输（推荐 Streamable HTTP 接第三方 SaaS），可配置环境变量（敏感值加密）与自定义 Headers；支持飞书、微信（ClawBot）、钉钉、小艺等 IM 接入及定时推送。
+AgentArts（智果）：完整智能体开发平台，支持单智能体、可视化工作流（含触发器定时任务）与多智能体；接入第三方 API 有三条成熟路径——HTTP 请求节点、自定义 API 插件（支持 OpenAPI 导入）、MCP 服务节点（密钥 KMS 加密）；智能体发布后可对外提供 RESTful API（POST /runtimes/{runtime_name}/invocations）供业务系统反向调用。OfficeAce 为 AgentArts 平台下子产品。
+（五）通道与能力对照
+数据通道
+适配的平台能力
+主要特点
+① 官网 REST API（AppKey+签名）
+OfficeAce 自定义技能（Python 脚本）、AgentArts HTTP 请求节点 / 自定义 API 插件
+接口全、单价透明、签名鉴权需在脚本或插件中实现
+② 官方 MCP 服务
+OfficeAce 自定义 MCP 连接器（Streamable HTTP）、AgentArts MCP 服务节点
+免开发、自然语言直达数据，官方连接器文档以天眼查 MCP 为同类示例
+③ 云商店接口（APIG 网关）
+AgentArts HTTP 请求节点 / 自定义 API 插件、OfficeAce 技能
+华为云账号体系内统一采购结算，按次套餐包，可作备用通道
+三、整合方案一（轻量级·快速落地）：OfficeAce + 自定义 MCP 连接器接入启信慧眼官方 MCP
+（一）架构描述
+业务人员在 OfficeAce 中自然语言提问（如”请核验某某公司的工商与失信信息”）→ OfficeAce 智能体经自定义 MCP 连接器（Streamable HTTP）→ 调用启信慧眼官方 MCP 服务（200+ 企业数据能力）→ 返回企业征信摘要 → 配合自写”客商尽调”技能按模板生成 Word 尽调简报。
+（二）配置步骤
+向启信慧眼申请官方 MCP 服务接入，获取接入地址与密钥；
+在 OfficeAce 中添加自定义 MCP 连接器，传输方式选择 Streamable HTTP，填写启信 MCP 服务端点；
+配置环境变量（API_KEY 等，敏感值加密存储）与自定义 Headers（Authorization Bearer）；
+使用内置 skill-creator 技能以自然语言生成”客商尽调”技能（含尽调报告模板与排版脚本），或以手动导入方式上传符合 SKILL.md 规范的技能包；
+联调测试并小范围试用。
+（三）周期与成本
+预计周期： 1–2 周。
+成本构成： OfficeAce 订阅费用（个人版四档：体验版免费赠 500 积分、标准版 2,000 积分/月、高级版 4,000 积分/月、旗舰版 10,000 积分/月，具体金额以客户端实际展示为准）＋ 启信慧眼充值费用。OfficeAce 官方连接器文档以天眼查 MCP（https://mcp.tianyancha.com/v1）演示同类企业征信服务接入，证明该场景为官方认可路径。
+（四）优缺点
+优点： 开发量最小、上线最快；无需编写签名逻辑；业务人员以自然语言即可完成查询与成文。
+缺点： 依赖启信官方 MCP 的开放范围与接入条件（需与启信方确认）；批量、定时、流程化能力较弱；连接器是否受 OfficeAce 套餐档位限制尚未确认。
+四、整合方案二（标准级·业务闭环）：自定义技能包 / AgentArts 工作流调用启信慧眼官网 REST API
+（一）架构描述
+以 OfficeAce 自定义技能包（SKILL.md + Python 脚本，实现 AppKey+MD5 签名鉴权）或 AgentArts 工作流（HTTP 请求节点 / 自定义 API 插件）直连启信慧眼官网 REST API（api.qixin.com），编排两条标准流程：
+新客商准入尽调： 录入客商名称 → 依次调用工商、司法、经营风险接口 → 大模型汇总研判 → 生成 Word 尽调报告并归档；
+存量客商定期风险扫描： 读取客商台账（Excel）→ 定时触发批量调用风险接口 → 比对上期结果 → 更新 Excel 风险台账 → 对命中风险的客商生成预警，经 IM 定时推送至经营部相关人员。
+（二）关键接口选用（单价以官方页面展示为准）
+用途
+接口名称（接口ID）
+单价（元/次）
+工商基本信息核验
+工商照面 1.41（/enterprise/getBasicInfo）
+0.15
+经营异常核查
+经营异常 1.55（/enterprise/getAbnormals）
+0.15
+失信核查
+失信被执行企业 5.5
+0.15（司法风险类多为 0.15）
+行政处罚核查
+行政处罚 32.1
+0.15
+深度合作风险评估
+合作风险排查 55.29（/reportData/getAllRiskInfoByName）
+5
+扩展（可选）
+客户信息尽调 47.51（3元/次）、企业基础工商信息 1.8（2元/次，含照面+主要人员+变更+股东+经营异常）、企业模糊搜索 1.31（0.01元/次）
+—
+（三）产出物
+Excel 客商风险台账（批量扫描结果、风险等级、环比变化）；
+Word 客商尽调报告（按公司模板自动生成）；
+IM 定时推送（飞书扫码授权 / 钉钉自建应用 / 微信 ClawBot 扫码直连，支持 @智能体 与定时任务推送）。
+（四）周期与优缺点
+预计周期： 2–6 周（含接口申请、签名脚本开发、流程编排、台账模板设计与试运行）。
+优点： 接口按需精确选用、成本可控；形成”准入+存量扫描”业务闭环；产出物规范可归档；官网签名逻辑可在插件中封装复用。
+缺点： 需实现 Auth-Version 2.0 签名鉴权，有一定开发门槛；HTTP 请求节点响应时限 50 秒且不支持 OAuth/流式，批量任务需控制节奏；接口实时价格可能随活动调整。
+五、整合方案三（深度级·企业级数字员工）：AgentArts “客商风控智能体”
+（一）方案描述
+在 AgentArts 平台搭建”客商风控智能体”：以可视化工作流编排尽调与扫描流程，配置触发器定时任务实现周期性自动风险监测；视需要采用多智能体分工（信息采集、风险研判、报告撰写）；经自定义 API 插件或 HTTP 请求节点接入公司内部 ERP / 客商台账，实现客商主数据双向同步；风险结果经飞书 / 钉钉 / 微信推送至责任人；智能体发布后通过对外 RESTful API 供业务系统调用，将风控能力嵌入采购、销售流程。云商店启信宝接口作为备用/冗余数据通道，在官网通道异常或采购便利时切换使用。
+（二）周期与成本提示
+预计周期： 6–12 周（含需求梳理、与 ERP 联调、多轮测试与灰度上线）。
+成本提示： AgentArts 体验版免费（2 成员、20CU、50 应用、1GB 知识库、赠 200 万 tokens）；付费档含团队标准版（10 人/80CU/月）、团队高级版（50 人/780CU/月）、企业专业版（200 人/3000CU/月）、企业旗舰版（1000 人）；截至 2026-08 付费版未开放公开售卖，需提交工单咨询，实施前应先确认商务条件。
+（三）优缺点
+优点： 企业级编排与定时能力，支持多智能体与知识检索；对外 API 使风控能力成为公司级公共组件；双数据通道冗余提升可用性；密钥经 KMS 加密，安全治理能力强。
+缺点： 实施周期最长、投入最大；依赖信息技术部持续运维；付费版本商务条款待工单确认；与内部 ERP 的接口适配存在不确定性。
+六、三套方案对比表
+维度
+方案一（轻量级）
+方案二（标准级）
+方案三（深度级）
+实施周期
+1–2 周
+2–6 周
+6–12 周
+技术门槛
+低（配置为主）
+中（脚本/工作流开发）
+高（平台编排+系统集成）
+成本构成
+OfficeAce 订阅＋启信充值
+OfficeAce/AgentArts＋启信充值
+AgentArts 付费档＋启信充值/云商店套餐包＋运维人力
+数据通道
+② 官方 MCP
+① 官网 REST API
+①为主，③云商店备用冗余
+适用阶段
+试点验证、快速见效
+业务闭环、常态化风控
+企业级数字员工、系统级集成
+依赖条件
+启信 MCP 接入开通；连接器档位限制待确认
+AppKey/Secret 与签名开发
+AgentArts 付费版工单开通；ERP 接口配合
+七、数据安全与合规要点
+用途限定： 企业征信类数据仅限公司内部供应商/客户风控用途使用，不得对外转售、公开展示或用于约定用途之外的场景，具体以与启信慧眼及云商店签订的服务协议为准。
+个人信息保护： 主要人员、董监高等接口数据涉及个人信息，应遵循《个人信息保护法》最小必要原则，限定知悉范围，报告流转与存档应受控。
+密钥管理： 启信 AppKey/AppSecret 与 MCP 密钥优先使用 OfficeAce 环境变量加密、AgentArts KMS 加密机制存储，严禁明文写入代码、文档或即时通信工具；定期轮换。
+账号体系独立： 启信慧眼开放平台账号（企业实名认证）与华为云账号（IAM/admin 权限）为两套独立体系，权限分别管理；OfficeAce 首次开通需 admin 权限，IAM 用户需 OAuth2 及 agentarts::createAgreement 权限。
+有效期管理： 企业实名认证有效期至 2027-08-31，启信充值金额自充值成功起 2 年内有效，应建立到期提醒与续期机制；云商店 0 元体验套餐包同一用户限购一次，仅用于测试验证。
+输出治理： 启用平台工具调用安全护栏、高危操作确认与敏感数据自动脱敏能力；自动生成的尽调报告须经业务人员复核后方可作为合作决策依据。
+八、成本估算框架
+以下为单次尽调接口调用成本测算（价格为调研时官方页面展示价，可能随活动调整，以实际充值页面为准）：
+尽调类型
+接口组合
+单次成本
+基础尽调
+工商照面 1.41（0.15）＋经营异常 1.55（0.15）＋失信被执行 5.5（0.15）＋行政处罚 32.1（0.15）
+≈ 0.60 元/家
+深度尽调
+基础尽调 ＋ 合作风险排查 55.29（5 元）
+≈ 5.60 元/家
+月度估算（按 100 家计）： 全部基础尽调约 60 元/月；其中 20 家重点客商做深度尽调，则约 80×0.60＋20×5.60 ≈ 160 元/月。存量客商定期扫描可按相同单价乘以扫描频次估算。上述仅为数据接口费用，不含 OfficeAce / AgentArts 平台订阅费（OfficeAce 套餐具体人民币价格以客户端实际展示为准）及内部人力投入。
+九、实施路线图
+阶段
+时间
+里程碑
+30 天
+第 1–4 周
+完成启信充值与 AppKey 获取；申请官方 MCP 接入；OfficeAce 配置 Streamable HTTP 连接器；建成”客商尽调”技能并试点 10 家客商；输出首批 Word 尽调简报（方案一上线）
+60 天
+第 5–8 周
+完成官网 REST API 签名脚本 / AgentArts 工作流开发；上线新客商准入尽调流程；建立 Excel 风险台账模板；完成首轮存量客商（100 家）风险扫描；开通 IM 定时推送（方案二上线）
+90 天
+第 9–12 周
+形成月度定期扫描机制并稳定运行；提交 AgentArts 付费版工单咨询并明确商务条件；完成”客商风控智能体”需求说明书与 ERP 对接可行性评估；视评估结果启动方案三立项
+十、风险与待确认事项
+以下事项源自两份调研简报中标注的”未能确认事项”，提请联署部门知悉并在实施前核实：
+数据源侧：
+华为云店铺完整在售商品清单未完全确认（页面 JS 渲染，仅确认 3~4 个商品；企业专利信息查询商品的卖家归属未完全确认）；
+部分分类（新闻舆情/关联关系/企业报告等）逐接口清单未逐一核对（全站 28 页，需登录核对）；
+接口实时价格可能随活动调整，以充值时页面为准；
+官网错误码完整码表需登录下载；
+官网与云商店同款接口的数据版本、QPS 差异未确认。
+平台侧：
+OfficeAce 企业版定价与专项文档未确认（仅见媒体报道）；
+OfficeAce 套餐具体人民币价格未确认；
+产品公测/正式商用的精确状态未在官方页面标注；
+webhook / 事件回调能力未确认；
+技能公开发布至技能广场的通道未确认；
+MCP 连接器 / 自定义技能是否受套餐档位限制未确认；
+AgentArts 付费版截至 2026-08 未开放公开售卖，需工单咨询。
+其他： 启信官方 MCP 服务的接入方式、密钥形式与计费规则，需与启信方确认后方可最终确定方案一配置细节。
+十一、提案联署
+部门
+意见
+签字
+日期
+提案部门：经营部
+
+
+
+联署部门：财务部
+
+
+
+联署部门：信息技术部
+
+
+
+联署部门：法务合规部
+
+
+
+联署部门：总经理室
+
+
+
+本提案经联署部门会签后报总经理审批实施。
+参考来源
+启信慧眼 API 列表总入口：https://data.qixin.com/api-list
+启信慧眼接口详情页（工商照面 1.41）：https://data.qixin.com/api-detail?apiId=1.41&amp;categoryId=27C4602EBB38429EK08QR7fy
+启信慧眼官方 MCP 服务报道（搜狐）：https://www.sohu.com/a/1049707061_122850697
+启信开放平台规模报道（搜狐）：https://www.sohu.com/a/795648958_100174452
+启信宝华为云店铺页：https://marketplace.huaweicloud.com/seller/0688dc4db680264b0fd0c019fe1c97a0
+云商店商品：企业基础工商信息报告：https://marketplace.huaweicloud.com/contents/6cfcdc67-31d6-4f68-a9d5-8d7bbedb520d
+云商店商品：企业商标列表信息：https://marketplace.huaweicloud.com/contents/6780d594-4fdc-4784-a426-4eacf3fd652c
+云商店商品：失信被执行企业查询：https://www.huaweicloud.com/zhishi/marketplace_product_0fddd360-fab4-48a7-92b9-583733cbea00.html
+云商店 API 商品计费规则：https://support.huaweicloud.com/usermanual-marketplace/zh-cn_topic_0198020621.html ；https://support.huaweicloud.com/ug-marketplace/zh-cn_topic_0203254658.html
+OfficeAce 自定义技能（SKILL.md 规范）：https://support.huaweicloud.com/usermanual-officeace/officeace_02_0014.html
+OfficeAce 自定义 MCP 连接器（含天眼查 MCP 示例）：https://support.huaweicloud.com/usermanual-officeace/officeace_02_0016.html
+华为开发者空间文章（企业数据接入）：https://huaweicloud.csdn.net/6a7c3f33662f9a54cb9ba7e9.html
+AgentArts 工作流与节点能力：https://support.huaweicloud.com/usermanual-agentarts0/agentarts_05_0001.html ；https://support.huaweicloud.com/usermanual-agentarts/http_node.html
+AgentArts 自定义 API 插件 / MCP 服务接入：https://support.huaweicloud.com/lowcode-agentarts/agentarts_05_0123.html ；https://support.huaweicloud.com/usermanual-agentarts0/agentarts_05_0136.html
+AgentArts 对外 RESTful API：https://support.huaweicloud.com/api-agentarts/agentarts_07_0046.html
+OfficeAce / AgentArts 价格说明：https://support.huaweicloud.com/price-officeace/officeace_05_0001.html ；https://support.huaweicloud.com/price-agentarts/agentarts_08_0003.html
+OfficeAce IM 接入（飞书/钉钉/小艺）：https://support.huaweicloud.com/im-officeace/feishu.html 等

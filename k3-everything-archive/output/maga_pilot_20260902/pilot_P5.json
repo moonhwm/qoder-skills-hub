@@ -1,0 +1,19 @@
+{
+ "seat": "P5",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 31.86,
+ "content": "```json\n{\n \"q1_ideology\": 1,\n \"q2_maga\": \"strong_oppose\",\n \"q3_extra_institutional\": 2,\n \"q4_recognize_provisional_govt\": \"no\",\n \"one_line_reason\": \"I'm far-left on pretty much everything and see MAGA as a genuine threat to democracy, but my sociological training makes me skeptical of romanticizing extra-institutional action — it tends to backfire on the left.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 248,
+  "total_tokens": 1207,
+  "completion_tokens": 959,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 853
+  }
+ },
+ "ts": "2026-09-02T12:36:33Z"
+}

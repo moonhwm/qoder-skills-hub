@@ -1,0 +1,122 @@
+[
+ {
+  "claim": "300171.SZ 证券简称为东富龙，实控人郑效东持股34.08%，总股本765,828,040股",
+  "source_type": "官方底表",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "深交所/巨潮资讯网查300171公司概况",
+  "confidence": "High",
+  "no_public_url_reason": "iFinD插件返回(C1通道)，公开复核入口=深交所官网>300171公司资料"
+ },
+ {
+  "claim": "2026H1营业收入25.35亿元，同比+4.37%",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （巨潮资讯网>300171>2026年半年度报告摘要）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报摘要'主要会计数据'表核对2,534,573,184.09元；已与Wind 25.3457亿交叉一致",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1归母净利润1.077亿元，同比+134.49%；扣非归母0.944亿元，同比+270.73%",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （巨潮资讯网>300171>2026年半年度报告摘要）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报摘要核对107,678,132.77元与94,443,548.36元",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1经营活动现金流净额0.911亿元，同比-67.03%",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （巨潮资讯网>300171>2026年半年度报告摘要）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报摘要核对91,104,156.17元",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1资产减值损失0.724亿元，占利润总额47.81%，主要为存货跌价、合同履约成本及合同资产减值",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （巨潮资讯网>300171>2026年半年度报告全文'非主营业务分析'表）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报全文非主营业务分析表核对-72,433,460.68元",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1末合并合同负债37.13亿元，较期初36.23亿元+2.47%",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （中报全文合并资产负债表）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报全文合并资产负债表核对3,712,857,819.00与3,623,204,442.73；期初值与iFinD FY2025完全一致",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1末应收账款15.91亿元，较期初+0.3%，增速低于收入增速",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （中报全文合并资产负债表）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报全文合并资产负债表核对1,591,477,964.83",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1国际收入10.40亿元(+29.24%)，占比41.0%，毛利率41.30%；国内收入14.95亿元(-7.96%)，毛利率25.81%",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （中报全文分地区表）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报全文'占比10%以上的产品或服务情况'分地区表核对",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1生物工艺装备及耗材事业部收入7.16亿元(-1.15%)，毛利率36.41%(+18.22pct)",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （中报全文分产品表）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报全文分产品表核对716,140,623.72元",
+  "confidence": "High"
+ },
+ {
+  "claim": "2025FY营收52.33亿元(+4.4%)，归母净利2.00亿元；2024FY营收50.10亿元，归母1.94亿元；2023FY营收56.42亿元，归母6.00亿元",
+  "source_type": "官方底表",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "巨潮资讯网核对2023-2025年报利润表",
+  "confidence": "Medium",
+  "no_public_url_reason": "iFinD插件返回(C1通道)，公开复核入口=巨潮资讯网历年年报"
+ },
+ {
+  "claim": "2026-08-27收盘价14.99元，总市值约114.8亿元；Wind口径PE_TTM 55.25、PB_LF 1.45（注意：该PE大概率未纳入8-27晚披露的中报，存在滞后）",
+  "source_type": "官方底表",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "任一行情软件核对300171最新价与PE_TTM；以中报更新后TTM重算",
+  "confidence": "Medium",
+  "no_public_url_reason": "iFinD/Wind插件返回(C1通道)"
+ },
+ {
+  "claim": "以中报更新后归母TTM≈2.62亿元（2.00-0.46+1.08）自算PE≈43.8倍；可比公司楚天科技PE_TTM 15.92、市值65.6亿、2026H1净利1.56亿",
+  "source_type": "官方底表",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "Wind核对300358.SZ指标；PE自算值可用计算器复现",
+  "confidence": "Medium",
+  "no_public_url_reason": "Wind插件返回+自算推导"
+ },
+ {
+  "claim": "2026H1前十大股东无质押/冻结记录；2026年1-8月公告中无减持、无立案、无警示函；2025年报与2026中报均含'计提资产减值'与'会计政策变更'公告",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （中报摘要股东表+公告列表）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "巨潮资讯网300171公告列表逐条核对",
+  "confidence": "High"
+ },
+ {
+  "claim": "2026H1中期分红预案每10股派0.66元(以扣除回购股份后760,848,039股为基数)；回购专户持股498万股(0.65%)",
+  "source_type": "监管平台",
+  "url": "http://www.cninfo.com.cn （中报摘要+利润分配公告）",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报摘要重要提示节核对",
+  "confidence": "High"
+ },
+ {
+  "claim": "股东户数29,299户，同比-8.73%、环比-2.82%，筹码趋于集中",
+  "source_type": "官方底表",
+  "check_date": "2026-08-28",
+  "falsifiable_test": "中报摘要'报告期末普通股股东总数'核对",
+  "confidence": "High",
+  "no_public_url_reason": "iFinD插件返回，与中报摘要股东总数29,299一致"
+ }
+]

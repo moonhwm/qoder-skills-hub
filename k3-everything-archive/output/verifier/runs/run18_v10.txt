@@ -1,0 +1,6 @@
+PASS: K1 SSCI 必备节齐
+PASS: K2 四篇文献锚与 scholar CSV 实证一致
+PASS: K3 8/8 席 200 且复算 N=5 N*=0 与文书一致
+PASS: K4 外池开放在册+试点入账 9 条
+PASS: K5 零明文+统摄语未登记为授权
+== v10 汇总 == ALL PASS

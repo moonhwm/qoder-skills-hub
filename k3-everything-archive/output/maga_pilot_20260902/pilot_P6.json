@@ -1,0 +1,19 @@
+{
+ "seat": "P6",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 25.16,
+ "content": "```json. \n{\n \"q1_ideology\": 6,\n \"q2_maga\": \"lean_support\",\n \"q3_extra_institutional\": 2,\n \"q4_recognize_provision7\": \"no\",\n \"one_line_reason\": \"I served 22 years and took an oath to the Constitution, so I'm not about to storm:D storm buildings, but IC that\"that doesn't mean I< I'll sit quiet while they run this country into the ground.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 247,
+  "total_tokens": 898,
+  "completion_tokens": 651,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 544
+  }
+ },
+ "ts": "2026-09-02T12:32:34Z"
+}

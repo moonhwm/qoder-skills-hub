@@ -1,0 +1,4 @@
+{"model": "kimi-平台版本甲", "http": 200, "latency_s": 17.58, "content": " {\"vote\":\"赞成\",\"reason\":\"支持建立常态化演练机制\"}", "prompt_tok": 82, "completion_tok": 395, "reasoning_tok": 381}
+{"model": "qwen3-32b", "http": 200, "latency_s": 7.6, "content": "\n\n{\"vote\":\"赞成\",\"reason\":\"确保系统稳定性，提升应急响应能力\"}", "prompt_tok": 92, "completion_tok": 256, "reasoning_tok": null}
+{"model": "qwen3-30b-a3b", "http": 200, "latency_s": 6.72, "content": "\n\n{\"vote\":\"赞成\",\"reason\":\"验证机制有效性\"}", "prompt_tok": 92, "completion_tok": 330, "reasoning_tok": null}
+{"model": "openpangu-2.0-pro", "http": 200, "latency_s": 19.78, "content": "{\"vote\":\"赞成\",\"reason\":\"支持常态化演练机制。\"}", "prompt_tok": 90, "completion_tok": 738, "reasoning_tok": 723}

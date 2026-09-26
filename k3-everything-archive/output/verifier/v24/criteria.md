@@ -1,0 +1,1 @@
+# v24 第四轮：mcp层四件+cf/lark在场+模板零明文+security 11/11+check_mcp 6/6+omnibus新层+MANIFEST v2+锚355

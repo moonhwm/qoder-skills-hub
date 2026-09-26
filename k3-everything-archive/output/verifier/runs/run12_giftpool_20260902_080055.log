@@ -1,0 +1,12 @@
+PASS E1a P0三卡要素 
+PASS E1b 参数件要素 
+PASS E1c 工单要素 
+PASS E2 cron卡lint {"verdict": "PASS", "cron_kind": "daily", "fail": 0, "warn":
+PASS E3 零明文凭证 hits=[]
+PASS E4a MaaS全史¥0.37 条目 21 | 总成本 ¥0.3719 | 总tokens 22,815
+PASS E4b Kimi实证引用 
+PASS E5a 参数未动 
+PASS E5b 未新增cron tasks=13
+PASS E5c 无心跳注册记录 
+---
+EXIT 0 | fails: []

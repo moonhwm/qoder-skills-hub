@@ -1,0 +1,74 @@
+[
+  {
+    "claim": "2025 年中国新能源汽车产销分别为 1662.6 万辆和 1649 万辆，同比 +29%/+28.2%，渗透率 47.9%",
+    "source_type": "权威媒体",
+    "url": "https://www.news.cn/fortune/20260114/cbbd861081c349d8ae238167ca418fa3/c.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查中汽协 2026-01-14 发布会通稿或新华网原文，核对产销与同比字段",
+    "confidence": "High"
+  },
+  {
+    "claim": "比亚迪 2025 年全年新能源汽车累计销量 460.24 万辆，同比 +7.73%",
+    "source_type": "官网",
+    "url": "https://guba.eastmoney.com/news,002594,1647611283.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查巨潮资讯网比亚迪《2025 年 12 月产销快报》公告原文，核对累计销量字段",
+    "confidence": "High"
+  },
+  {
+    "claim": "比亚迪 2025 年报营收 8039.64 亿元（+3.46%）、归母净利 326.19 亿元、研发投入 634 亿元、现金储备 1678 亿元",
+    "source_type": "权威媒体",
+    "url": "https://finance.eastmoney.com/a/202603283687555989.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查巨潮资讯网比亚迪 2025 年年度报告 PDF，核对合并利润表与研发费用附注",
+    "confidence": "High"
+  },
+  {
+    "claim": "比亚迪 2026 年上半年营收 3448.15 亿元（-7.13%）、归母净利 123.25 亿元（-20.54%）、销量 180.85 万辆（-15.72%）、汇兑损失 47.03 亿元",
+    "source_type": "权威媒体",
+    "url": "https://www.caixin.com/2026-08-29/102479745.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查比亚迪 2026 半年报（2026-08-28 披露）合并利润表与财务费用附注",
+    "confidence": "High"
+  },
+  {
+    "claim": "2026-09-01 比亚迪 A 股收盘 88.71 元，总市值约 8088 亿元，PE(TTM) 约 27.5",
+    "source_type": "监管平台",
+    "url": "https://xueqiu.com/S/SZ002594",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查深交所/行情终端 002594 于 2026-09-01 收盘价与总股本（91.17 亿股）复算市值",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2026 年 3 月全国 12315 平台车企 OTA 锁电投诉超 1.2 万件，同比 +273%",
+    "source_type": "权威媒体",
+    "url": "https://www.eet-china.com/mp/a494623.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查央视网消费投诉报道原文及全国 12315 平台月度数据口径",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "比亚迪官方于 2026-05-09 辟谣「被约谈、立案」传言，称纯属虚假并已取证",
+    "source_type": "官网",
+    "url": "https://finance.sina.com.cn/stock/t/2026-05-09/doc-inhxhqpm3488703.shtml",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查微博 @比亚迪网络举报中心 2026-05-09 声明原文",
+    "confidence": "High"
+  },
+  {
+    "claim": "比亚迪有息负债 286 亿元、应付账款占营收 31%、付款周期 127 天（李云飞 2025-05-30 口径）",
+    "source_type": "自媒体",
+    "url": "https://finance.ifeng.com/c/8jmNn4HecAo",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "查比亚迪 2024/2025 年报短期借款+长期借款+应付债券科目复算有息负债；现金流量表附注核对应付账款周转天数",
+    "confidence": "Medium"
+  }
+]

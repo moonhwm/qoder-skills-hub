@@ -1,0 +1,48 @@
+{
+ "project": "300171外骨骼迭代",
+ "current_version": "2.0",
+ "updated": "2026-08-28T20:05:00+08:00",
+ "next_round_first_task": "cron 04:00 首次自主运行：先查公告增量（无增量则输出跳过），有增量则按宪章v1.0执行有限迭代",
+ "items": [
+  {
+   "priority": "P0",
+   "task": "cron 每日04:00任务上线并自检首行免责锚",
+   "acceptance": "list_cron_jobs可见；无增量日输出跳过",
+   "risk_plan": "连续2轮接口失败自动暂停告警",
+   "granularity": "半天",
+   "status": "done"
+  },
+  {
+   "priority": "P1",
+   "task": "舆情/研报维度补齐（Gildata/xhcj）",
+   "acceptance": "舆情命题线索表落盘",
+   "risk_plan": "接口失败显性标注缺口",
+   "granularity": "1天",
+   "status": "pending"
+  },
+  {
+   "priority": "P1",
+   "task": "iFinD收录中报后双源全字段对账",
+   "acceptance": "差异<0.5%销记，>2%入top3_likely_wrong",
+   "risk_plan": "以中报原文为终极基准",
+   "granularity": "1天",
+   "status": "pending"
+  },
+  {
+   "priority": "P2",
+   "task": "2026Q3报告季扰动复测",
+   "acceptance": "预注册触发线（扣非/现金流/合同负债）复核",
+   "risk_plan": "触发即降级对应命题",
+   "granularity": "2天",
+   "status": "pending"
+  },
+  {
+   "priority": "P1",
+   "task": "每大版本产出网页快照并重铸哈希链",
+   "acceptance": "website_version_manager版本ID登记进迭代日志",
+   "risk_plan": "构建失败回退md/docx交付并显性标注",
+   "granularity": "半天",
+   "status": "done"
+  }
+ ]
+}

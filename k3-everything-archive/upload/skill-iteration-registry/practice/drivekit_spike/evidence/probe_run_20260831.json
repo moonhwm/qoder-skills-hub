@@ -1,0 +1,46 @@
+{
+ "probe_ts": "2026-08-31T13:46:16+0000",
+ "results": [
+  {
+   "probe": "P1_files",
+   "url": "https://driveapis.cloud.huawei.com.cn/drive/v1/files",
+   "method": "GET",
+   "http": 401,
+   "expect": 401,
+   "verdict": "ALIVE_GATED",
+   "ms": 1296,
+   "body_head": "{\"error\":{\"code\":401,\"description\":\"authorization header not exist.\",\"errorDetail\":[{\"domain\":\"global\",\"reason\":\"AT_EXPIRED\",\"errorCode\":\"21000401\",\"description\":\"authorization header not exist. ErrorNo:00-17-1788183978166-1877101669\",\"errorPos\":\"service\"}]}}"
+  },
+  {
+   "probe": "P2_about",
+   "url": "https://driveapis.cloud.huawei.com.cn/drive/v1/about",
+   "method": "GET",
+   "http": 401,
+   "expect": 401,
+   "verdict": "ALIVE_GATED",
+   "ms": 2266,
+   "body_head": "{\"error\":{\"code\":401,\"description\":\"authorization header not exist.\",\"errorDetail\":[{\"domain\":\"global\",\"reason\":\"AT_EXPIRED\",\"errorCode\":\"21000401\",\"description\":\"authorization header not exist. ErrorNo:00-17-1788183981427-1744379309\",\"errorPos\":\"service\"}]}}"
+  },
+  {
+   "probe": "P3_token",
+   "url": "https://oauth-login.cloud.huawei.com/oauth2/v3/token",
+   "method": "POST",
+   "http": 400,
+   "expect": 400,
+   "verdict": "ALIVE_GATED",
+   "ms": 1805,
+   "body_head": "{\"error\":1102,\"error_description\":\"missing required parameter: client_id\",\"sub_error\":20001}"
+  },
+  {
+   "probe": "P4_authorize",
+   "url": "https://oauth-login.cloud.huawei.com/oauth2/v3/authorize?response_type=code",
+   "method": "GET",
+   "http": 200,
+   "expect": 200,
+   "verdict": "ALIVE_GATED",
+   "ms": 2228,
+   "body_head": "<!--\n  ~ Copyright (c) Huawei Technologies Co., Ltd. 2025-2025. All rights reserved.\n  -->\n\n<!doctype html>\n<html>\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"HandheldFriendly\" content=\"True\" />\n    <meta\n            name=\"viewport\"\n            content=\"initial-scale=1.0,width=device-width,m"
+  }
+ ],
+ "summary": "all-alive-gated"
+}

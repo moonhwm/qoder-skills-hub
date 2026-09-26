@@ -1,0 +1,13 @@
+== 伞·全面压测（功能面；体积面S2-S4遵令挂起） ==
+T1 名录19件在场: PASS (19件)
+T2 保真抽查 coordination-letter: 关键词重叠 1/20 (5%) WARN
+T2 保真抽查 autonomous-advance-ops: 关键词重叠 9/20 (45%) PASS
+T2 保真抽查 k3-territory-studies: 关键词重叠 2/20 (10%) WARN
+T3 仲裁[外发GitHub推送]: 裁决=release-gate-audit一票否决>调度 留痕=✓ PASS
+T3 仲裁[金融建议输出]: 裁决=output-verdict-gate必经>执行件 留痕=✓ PASS
+T3 仲裁[模型选型任务]: 裁决=pangu执法强制候选>执行件 留痕=✓ PASS
+T4 平装本: 1662B≤2KB=Y, 三节保真=Y, 调用链=Y PASS
+T5 zip: PASS, 版本1.3.0=Y
+T6 日落触发扫描: 名录失保真=否, 收伞口令=无 → 伞合法存续 PASS
+T7 排除词/实名: 0 PASS
+== 总结: FAILS:['T2:coordination-letter', 'T2:k3-territory-studies'] 耗时0.4s ==

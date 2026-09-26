@@ -1,0 +1,9 @@
+PASS F1 草案要素 
+PASS F2 规程并轨 
+PASS F3 权力不动 
+PASS F4a 记录册可解析 rows=1
+PASS F4b 仅创刊行无伪造票 
+PASS F5a 零明文凭证 hits=[]
+PASS F5b 零越权 tasks=13
+---
+EXIT 0 | fails: []

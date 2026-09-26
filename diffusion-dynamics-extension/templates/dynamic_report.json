@@ -1,0 +1,70 @@
+{
+  "report_meta": {
+    "title": "静态+动态联合演化分析报告（模板）",
+    "data_cutoff": "YYYY-MM-DD （必填：所有输入数据的截止时间）",
+    "generated_at": "YYYY-MM-DD",
+    "model_selected": "sird | gravity | logistic",
+    "selection_reason": "依据决策树选择的理由（必填）"
+  },
+  "diffusion_object": {
+    "object_type": "信息 | 人群 | 资本 | 其他",
+    "state_mapping": {
+      "S": "易感室的领域语义（如：未接触该信息的潜在人群）",
+      "I": "感染室的领域语义（如：主动传播者）",
+      "R": "恢复室的领域语义（如：不再传播/免疫）",
+      "D": "消亡室的领域语义（如：流失/被证伪后退出）"
+    }
+  },
+  "parameters": [
+    {
+      "name": "beta",
+      "value": 0.0,
+      "conf": "实证 | 估算 | 假设",
+      "calibration_method": "校准方法（必填）",
+      "data_source": "数据源映射（必填；无数据写'无'）",
+      "plausible_range": [0.0, 0.0],
+      "note": "conf=假设 时必填取值依据"
+    }
+  ],
+  "scenarios": {
+    "baseline": {
+      "description": "无干预情景",
+      "result": "脚本输出原样嵌入（时间序列/峰值/终态）"
+    },
+    "intervention": {
+      "description": "干预情景及干预通道（改动了哪些参数、为何）",
+      "result": "脚本输出原样嵌入"
+    },
+    "effect": {
+      "quantified_delta": "双情景差值=干预效果量化",
+      "roi_estimate": "若干预有成本，此处给 ROI 或成本效果比；无成本数据则写'无法估计'"
+    }
+  },
+  "static_dynamic_link": {
+    "barrier_coefficient": {
+      "value": null,
+      "verification_status": "unverified_hypothesis（待验证假设） | verified",
+      "interface": "回接静态评分接口：静态总分 × (1 - barrier_coefficient × w)，w∈[0,1] 为壁垒维度权重；验证前 w 只能取敏感性分析区间",
+      "independent_evidence": "验证壁垒系数的独立证据清单（verified 时必填）"
+    },
+    "adjusted_static_score": null
+  },
+  "assumptions_table": [
+    {
+      "assumption": "如：均匀混合、K 恒定、距离平方衰减",
+      "impact_if_violated": "破坏后对结论的影响方向与幅度"
+    }
+  ],
+  "limitations": [
+    "局限性 1（必填，至少 2 条）"
+  ],
+  "top3_likely_wrong": [
+    "1. 最可能错的点（必填）",
+    "2. 次可能错的点（必填）",
+    "3. 第三可能错的点（必填）"
+  ],
+  "wording_compliance": {
+    "claim_level": "实证 | 估算 | 假设",
+    "statement": "结论措辞不得超出参数 conf 等级允许的证据强度"
+  }
+}

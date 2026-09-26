@@ -1,0 +1,19 @@
+{
+ "seat": "P2",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 28.66,
+ "content": "```json\n{\n \"q1_ideology\": 3,\n \"q2_maga\": \"strong_oppose\",\n \"q3_extra_institutional\": 2,\n \"q4_recognize_provisional_govt\": \"no\",\n \"one_line_reason\": \"As a nurse and mom of two little ones, I need stability and trust in our institutions, and I believe real change comes through voting and community advocacy, not storming buildings.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 251,
+  "total_tokens": 1113,
+  "completion_tokens": 862,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 765
+  }
+ },
+ "ts": "2026-09-02T12:30:33Z"
+}

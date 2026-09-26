@@ -1,0 +1,18 @@
+{
+ "aliases": {
+  "autonomous-advance-ops": "自主推进运维总控",
+  "skill-dispatch-hq": "技能调度总署",
+  "plugin-datasource-ops": "插件数据源运维范式",
+  "skill-reinstall-ops": "技能重装运维",
+  "「额度守护件」": "额度守护运维",
+  "consignment-intake-ops": "交割接收运维",
+  "semantic-oncology-ops": "语义肿瘤防治运维"
+ },
+ "note": "v1.0 创建（2026-08-29）：兜底中文名注册表，bridge build_skill_index.py 读取位；此前该文件阙如，规则④登记义务由本件创建起执行。",
+ "updated": "2026-08-30",
+ "output-verdict-gate": "输出审议闸",
+ "审判庭": "评审团一审(别名)",
+ "二审庭": "辩方换组重辩(别名)",
+ "终审": "监管门终审裁定(别名)",
+ "书记员": "主程序归档(别名)"
+}

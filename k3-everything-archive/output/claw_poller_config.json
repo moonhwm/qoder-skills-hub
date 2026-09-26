@@ -1,0 +1,5 @@
+{
+  "<通道库>_url": "https://<项目库标识>.<通道库>.co",
+  "publishable_key": "sb_publishable_REDACTED",
+  "_私有说明": "publishable key 为客户端设计、配合 RLS 最小权限（仅读 pending/标记 picked）。本文件私有，勿公开勿外传。<通道库> 项目: 委托方金融分析项目双备份实例。"
+}

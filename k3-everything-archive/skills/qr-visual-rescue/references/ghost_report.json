@@ -1,0 +1,27 @@
+[
+ {
+  "image": "<工作区根>/temp/image_1788016651006(1).jpg",
+  "box": [
+   680,
+   270,
+   900,
+   470
+  ],
+  "hits": [],
+  "decoders": {
+   "opencv": {
+    "unique_hits": {}
+   },
+   "zxing": {
+    "unique_hits": {}
+   },
+   "wechat": {
+    "unique_hits": {}
+   },
+   "qreader": {
+    "unique_hits": {}
+   }
+  },
+  "verdict": "undecoded"
+ }
+]

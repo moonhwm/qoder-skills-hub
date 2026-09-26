@@ -1,0 +1,27 @@
+{
+ "name": "技能隔离登记册",
+ "version": "1.0.0",
+ "created": "2026-09-03",
+ "rules": [
+  "用户技能完全替代同名内置技能",
+  "触发域重叠按 hifi-umbrella §2 仲裁序",
+  "新装官方件先查本册"
+ ],
+ "pairs": [
+  {
+   "official": "humanizer 系（human-style/nature 类）",
+   "user": "humanizer-zh v2.5.1",
+   "ruling": "中文叙事=用户件；内置降备援"
+  },
+  {
+   "official": "docx/pdf/xlsx",
+   "user": "字体四域规范等上层约束",
+   "ruling": "内置执行层+用户规范层，并存不冲突"
+  },
+  {
+   "official": "skill-creator-swarm",
+   "user": "skill-creator-learning 卡档案",
+   "ruling": "内置规程为准，用户档案补充"
+  }
+ ]
+}

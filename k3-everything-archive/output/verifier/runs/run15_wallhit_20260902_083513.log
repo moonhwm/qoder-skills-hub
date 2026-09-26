@@ -1,0 +1,10 @@
+PASS H1 Q2熔断登记 tier=Q2 history=3
+PASS H2a 东富龙撞墙标注 
+PASS H2b 蜂群冻结标注 
+PASS H3 第9次登记 
+PASS H4 台账可解析 bad=[]
+PASS H5a 参数未动 
+PASS H5b 燃烧台账零新增 lines=21
+PASS H5c 零明文凭证 hits=[]
+---
+EXIT 0 | fails: []

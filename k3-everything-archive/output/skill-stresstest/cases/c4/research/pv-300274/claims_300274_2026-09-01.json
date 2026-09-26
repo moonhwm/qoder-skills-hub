@@ -1,0 +1,74 @@
+[
+  {
+    "claim": "财政部/税务总局2026年第2号公告：自2026-04-01起取消光伏等产品增值税出口退税",
+    "source_type": "官网",
+    "url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5246745/content.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "打开税务总局政策库该链接，核对公告号、成文日期2026-01-08与施行日期2026-04-01",
+    "confidence": "High"
+  },
+  {
+    "claim": "财政部/税务总局2024年第15号公告将光伏等产品出口退税率由13%下调至9%，2024-12-01实施",
+    "source_type": "权威媒体",
+    "url": "https://www.caixin.com/2024-11-16/102258356.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "财政部官网 szs.mof.gov.cn 检索2024年第15号公告原文核对税率与实施日期",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2025年报：营收891.84亿元(+14.55%)，归母净利134.61亿元(+21.97%)，储能收入372.87亿元占比41.81%",
+    "source_type": "官方底表",
+    "url": "http://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid=300274&id=12052230",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "巨潮资讯网检索'阳光电源2025年年度报告'PDF，核对主要会计数据与分产品收入表",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2026H1营收净利双降：国内收入82.22亿(-54.71%)、海外226.90亿(-10.59%)、新能源开发收入12.58亿(-85.02%)净亏约3.8亿",
+    "source_type": "权威媒体",
+    "url": "",
+    "no_public_url_reason": "原始半年报PDF在巨潮可查但本次检索未取得直链；替代检索路径：巨潮资讯网搜'阳光电源 2026年半年度报告'",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "下载2026年半年报，核对分地区收入与新能源开发分部亏损；现仅单一媒体转述(2026-08-31)，conf压档",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "2025-07初市场传言光伏出口退税率将从9%降至0%，当时无官方公告；2026-01-08官方公告证实取消",
+    "source_type": "自媒体",
+    "url": "http://mp.weixin.qq.com/s?__biz=Mzg3Njk3ODAxNg==&mid=2247515848&idx=2&sn=a796cfc0319de549f35cbd78840d90f4",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对OFweek稿(2025-08-14)原文'尚未官方公告'表述，并对照2026年第2号公告成文日期",
+    "confidence": "Medium"
+  },
+  {
+    "claim": "硅料收储传闻为'六家龙头/约700亿基金/收购报废'，实际落地为九家+协会/约300亿/承债式，且2026-01-06被市监总局约谈叫停",
+    "source_type": "权威媒体",
+    "url": "https://weekly.caixin.com/2026-02-21/102415990.html",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "核对财新周刊《检验光伏反内卷》(2026-02-21)与财联社(2026-01-08)约谈报道；工商登记检索'北京光和谦成'",
+    "confidence": "High"
+  },
+  {
+    "claim": "中国光伏行业协会2025-07-29辟谣多晶硅相关自媒体内容'与实际情况严重不符'",
+    "source_type": "权威媒体",
+    "url": "https://view.inews.qq.com/a/20250730A03TOT00",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "检索光伏协会官网/公众号2025-07-29澄清声明原文",
+    "confidence": "High"
+  },
+  {
+    "claim": "阳光电源2025-08-25董事会公告筹划发行H股赴港上市，2025-10-05递表，2026-04-24更新递交",
+    "source_type": "官方底表",
+    "url": "http://static.cninfo.com.cn/finalpage/2025-08-26/1224567939.PDF",
+    "no_public_url_reason": "",
+    "check_date": "2026-09-01",
+    "falsifiable_test": "巨潮资讯网核对公告PDF原文与日期；港交所披露易检索阳光电源申请版本",
+    "confidence": "High"
+  }
+]

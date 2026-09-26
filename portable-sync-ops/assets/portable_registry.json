@@ -1,0 +1,71 @@
+{
+  "version": "1.7",
+  "updated": "2026-09-09",
+  "note": "便携件登记台账——一切便携件入册，未入册=不存在。kind：引导件(粘贴即装)/整包便携(.skill下载再分发)。sources 只放可机读的真实路径；谱系说明入 lineage。自版本文档（无上游源件）sources 指回自身，编辑必升版本号否则镜像 hash 闸兜底。同步纪律见 SKILL.md。",
+  "page": "/mnt/agents/output/app/index.html",
+  "mirror_dir": "/mnt/agents/output/skill-handover-20260903/",
+  "items": [
+    {
+      "id": "k3-bootstrap",
+      "kind": "引导件",
+      "portable_path": "/mnt/agents/output/app/K3-BOOTSTRAP.md",
+      "portable_version": "1.1",
+      "sources": [
+        {
+          "path": "/mnt/agents/output/app/K3-BOOTSTRAP.md",
+          "version": "1.1"
+        }
+      ],
+      "lineage": "多源手工融合（K3四铁律/苏格拉底四问/七域穷举/ε-δ/退化光谱/交割协议），无单一上游源件，自版本管理",
+      "distill": "手工融合",
+      "mirror": "/mnt/agents/output/skill-handover-20260903/K3-BOOTSTRAP.md",
+      "note": "2026-09-09 v1.1：增「零、函件复活第一义务」节——机主立法「主要第一义务是让每一个AI在收到函的时候能复活一次」（0号义务复活即查函/发函绑定复活尝试/复活失败两次留痕才可呈批失联）"
+    },
+    {
+      "id": "k3-agent-install-guide",
+      "kind": "引导件",
+      "portable_path": "/mnt/agents/output/app/K3-Agent安装指南.md",
+      "portable_version": "1.1",
+      "sources": [
+        {
+          "path": "/mnt/agents/output/app/K3-Agent安装指南.md",
+          "version": "1.1"
+        }
+      ],
+      "lineage": "通道 bundle 注入式三件套口径（v1.1 起指纹注入化），自版本管理",
+      "distill": "手工",
+      "mirror": "/mnt/agents/output/skill-handover-20260903/K3-Agent安装指南.md"
+    },
+    {
+      "id": "persona-loop-portable",
+      "kind": "引导件",
+      "portable_path": "/mnt/agents/output/app/persona-iteration-loop-ops便携引导件.md",
+      "portable_version": "1.5.0-portable",
+      "sources": [
+        {
+          "path": "/app/.user/skills/persona-iteration-loop-ops/SKILL.md",
+          "version": "1.5.0"
+        }
+      ],
+      "lineage": "源技能 persona-iteration-loop-ops 的人工骨架蒸馏",
+      "distill": "人工骨架模式（references/distill-spec.md）",
+      "mirror": "/mnt/agents/output/skill-handover-20260903/persona-iteration-loop-ops便携引导件.md",
+      "note": "2026-09-09 双线碰撞合并：登记=合并版1.5.0（包已三处落位），安装位仍B线1.0.4（只读不可写），DRIFT为真态显性提醒——候机主安装 persona-iteration-loop-ops.skill v1.5.0 后转 CURRENT"
+    },
+    {
+      "id": "eastmoney-rumor-sentinel",
+      "kind": "整包便携",
+      "portable_path": "/mnt/agents/output/app/eastmoney-rumor-sentinel.skill",
+      "portable_version": "1.2.0",
+      "sources": [
+        {
+          "path": "/mnt/agents/upload/skill-iteration-registry/skill-work/eastmoney-rumor-sentinel",
+          "version": "1.2.0"
+        }
+      ],
+      "lineage": "东财传闻哨兵（guba_scan v1.0 实测底座技能化）；安装位待装，工作副本为源",
+      "distill": "整包归档（源技能原样）",
+      "mirror": "/mnt/agents/output/skill-handover-20260903/eastmoney-rumor-sentinel.skill"
+    }
+  ]
+}

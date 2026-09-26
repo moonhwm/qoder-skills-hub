@@ -1,0 +1,1 @@
+# v25 加载实测批次：包内 omni3.2.0/auto2.0.0-portable/auto含security/MANIFEST v3 476/omnibus vault零残留/锚356

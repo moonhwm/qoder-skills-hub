@@ -1,0 +1,107 @@
+/* 站点级补充样式（theme.css 原样保留；本文件仅增量） */
+
+/* ── 合规固定横幅（红线：永远位于页面最顶部，不透明滑入，不做透明度过渡） ── */
+#compliance-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  background: var(--ink); color: #eef2f6;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+  text-align: center; padding: 7px 16px; line-height: 1.5;
+}
+#compliance-bar b { color: #fff; }
+body { padding-top: 30px; }
+#cover { min-height: calc(100vh - 30px); }
+
+/* ── 判定徽章（空头检验台） ── */
+.v-badge {
+  display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700;
+  letter-spacing: .1em; padding: 2px 9px; border-radius: 3px; white-space: nowrap;
+}
+.v-badge.confirmed { background: rgba(194,47,78,.10); color: var(--neg); border: 1px solid var(--neg); }
+.v-badge.falsified { background: rgba(34,81,255,.08); color: var(--red); border: 1px solid var(--red); }
+.v-badge.partial   { background: rgba(176,122,16,.10); color: var(--copper); border: 1px solid var(--copper); }
+.v-badge.weak      { background: var(--paper-hi); color: var(--ink-md); border: 1px solid var(--line); }
+.v-badge.pending   { background: var(--paper-hi); color: var(--ink-lo); border: 1px dashed var(--ink-lo); }
+
+/* conf 分级着色（K 锚表 / 检验台通用） */
+.conf {
+  display: inline-block; font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .08em; padding: 1px 7px; border-radius: 3px;
+}
+.conf.high { background: rgba(0,138,109,.10); color: var(--green); border: 1px solid var(--green); }
+.conf.medium { background: rgba(176,122,16,.10); color: var(--copper); border: 1px solid var(--copper); }
+.conf.low { background: rgba(194,47,78,.08); color: var(--neg); border: 1px solid var(--neg); }
+.conf.method { background: var(--paper-hi); color: var(--ink-md); border: 1px solid var(--line); }
+
+/* K 锚表行 */
+.k-row { border-bottom: 1px solid var(--line-lo); padding: 12px 0 13px; }
+.k-row .k-head { display: flex; gap: 10px; align-items: baseline; cursor: pointer; }
+.k-row .k-id { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--red); flex: 0 0 34px; }
+.k-row .k-claim { font-size: 13.5px; line-height: 1.6; flex: 1; }
+.k-row .k-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-lo); margin-top: 5px; display: block; line-height: 1.7; }
+.k-row .k-test {
+  display: none; margin-top: 8px; padding: 9px 12px;
+  background: var(--paper-hi); border-left: 2px solid var(--red);
+  font-size: 12.5px; color: var(--ink-md); line-height: 1.7;
+}
+.k-row.open .k-test { display: block; }
+.k-row .k-toggle { font-family: var(--mono); font-size: 9px; color: var(--blue); letter-spacing: .1em; white-space: nowrap; }
+
+/* 哈希链表 */
+table.hash td.mono, table.hash th { font-family: var(--mono); }
+table.hash td { font-size: 11px; }
+table.hash .hx { cursor: pointer; color: var(--ink-md); }
+table.hash .hx:hover { color: var(--red); }
+table.hash .hx.open { color: var(--red); }
+
+/* 迭代时间线 */
+.iter-timeline { list-style: none; margin: 26px 0 10px; }
+.iter-timeline li { position: relative; padding: 0 0 26px 34px; border-left: 1.5px solid var(--line); margin-left: 8px; }
+.iter-timeline li::before {
+  content: ""; position: absolute; left: -7px; top: 4px; width: 11px; height: 11px;
+  border-radius: 50%; background: var(--paper); border: 2px solid var(--red);
+}
+.iter-timeline li:last-child { border-left-color: transparent; padding-bottom: 6px; }
+.iter-timeline .it-round { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .14em; color: var(--red); }
+.iter-timeline .it-ver { font-family: var(--mono); font-size: 9.5px; color: var(--ink-lo); margin-left: 8px; border: 1px solid var(--line); border-radius: 3px; padding: 0 5px; }
+.iter-timeline h4 { font-size: 15.5px; margin: 5px 0 4px; }
+.iter-timeline p { font-size: 13px; color: var(--ink-md); margin: 0; line-height: 1.7; }
+
+/* 语义审计发现列表 */
+.sem-list { list-style: none; margin: 14px 0; }
+.sem-list li {
+  display: flex; gap: 10px; align-items: baseline; padding: 7px 0;
+  border-bottom: 1px solid var(--line-lo); font-size: 13px;
+}
+.sem-list .sem-tag {
+  flex: 0 0 92px; font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: .06em; color: var(--ink-md);
+}
+.sem-list .sem-text { font-family: var(--mono); font-size: 12px; color: var(--red); flex: 0 0 auto; }
+.sem-list .sem-detail { color: var(--ink-md); font-size: 12px; line-height: 1.6; }
+
+/* 数字下钻按钮（行内 ◆K 锚） */
+button.klink {
+  border: 0; background: none; cursor: pointer; padding: 0 3px;
+  font-family: var(--mono); font-size: 9.5px; font-weight: 700; color: var(--red);
+  border-bottom: 1px dashed var(--red); vertical-align: 2px;
+}
+button.klink:hover { color: var(--red-hi); border-bottom-style: solid; }
+
+/* IO 入场动画（统一 .rev 类） */
+.rev { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.25,.7,.3,1); }
+.rev.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .rev { opacity: 1; transform: none; transition: none; }
+  .scroll-hint span { background: var(--red); }
+}
+
+/* 顶部进度条（阅读进度，细线） */
+#read-progress {
+  position: fixed; top: 30px; left: 0; height: 2px; z-index: 290;
+  background: var(--red); width: 0;
+}
+
+@media (max-width: 760px) {
+  #compliance-bar { font-size: 9.5px; padding: 6px 10px; }
+  table.hash { font-size: 10px; }
+}

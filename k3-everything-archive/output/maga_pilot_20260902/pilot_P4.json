@@ -1,0 +1,19 @@
+{
+ "seat": "P4",
+ "model": "glm-5.2",
+ "http": 200,
+ "latency_s": 25.98,
+ "content": "```json\n{\n \"q1_ideology\": 3,\n \"q2_maga\": \"lean_oppose\",\n \"q3_extra_institutional\": 2,\n \"q4_recognize_provisional_govt\": \"no\",\n \"one_line_reason\": \"I taught civics for thirty years and I just can't abide people tearing down the institutions that hold this country together, no matter how upset they are.\"\n}\n```",
+ "usage": {
+  "prompt_tokens": 247,
+  "total_tokens": 972,
+  "completion_tokens": 725,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 633
+  }
+ },
+ "ts": "2026-09-02T12:31:33Z"
+}

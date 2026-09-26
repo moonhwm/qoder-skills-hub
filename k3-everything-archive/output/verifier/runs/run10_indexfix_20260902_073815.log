@@ -1,0 +1,7 @@
+PASS D1a INDEX全覆盖 unindexed=[]
+PASS D1b INDEX零幽灵 ghosts=[]
+PASS D2 额度台账schema current=Q1 tier=Q1
+PASS D3 计时器格式统一 tasks=13 noname=0
+PASS D4 零明文凭证 hits=[]
+---
+EXIT 0 | fails: []
