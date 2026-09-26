@@ -1,8 +1,8 @@
 {
  "algorithm": "SHA3-256 (FIPS 202), merkle binary tree, leaves sorted by path",
- "generatedAt": "2026-09-26T15:49:19.335Z",
- "fileCount": 2850,
- "root": "9bd33544066813249a16ea30135803277212f878953dad9efa5cd7a93caae120",
+ "generatedAt": "2026-09-26T16:07:27.109Z",
+ "fileCount": 2852,
+ "root": "3c292171de44b89557c36be00062b91bdec7a6125525184d7cd050bf11c7ec53",
  "files": {
   ".gitignore": "423e21947826f50078b2049924148cb2ad176ac5f69dc2fd6a951c4c4d5cbee5",
   "README.md": "97431f934750488da44445debdbba98bb4a2e116e7ac27c09aa3216ec03322ce",
@@ -118,6 +118,7 @@
   "doc-image-solver/references/answer_verification.md": "58de22ad553d74d8b4aecb90e0738bb356f6ae5226b7d2b43b036387d3c9487d",
   "doc-image-solver/references/integration_map.md": "e9de191be7e7b83b3a696232a7582e2c44fc6f3ebff214bad5c7c38e5dad12f5",
   "doc-image-solver/scripts/transcription_qa.py": "7620585d3eb73c762c4bee485d238c2b9a1a8e1171756886cb92cdd79800103a",
+  "docs/sinicize-ledger.jsonl": "7b44321ae3ed177dd5966c8e0d51e7c07fbdf3c09cf94fa24ebe2838fe7ba10a",
   "eastmoney-rumor-sentinel/SKILL.md": "b4d075cae606a20849904d84841684c0a53203026ca35862abb5438f7bf0d398",
   "eastmoney-rumor-sentinel/assets/watchlist.json": "693f0ea634bfb88066b6a2021e80df2b10511503b9f1a64fcce8cd5e1439f4a5",
   "eastmoney-rumor-sentinel/references/source-tiers.md": "679c5cb50919fd937b062746392a5ea25e2f516865fa41e43ddecdb86cd5290e",
@@ -2802,6 +2803,7 @@
   "source-semantics-sentinel/scripts/source_triage.py": "e3fd67e8371a5dcd902f2fff8c7b124edd3905b7eb40e2c7824fe4ac0ce3d20e",
   "stat-verdict-ops/SKILL.md": "b8f2ec14698c54bd2c85aa6c23f467dc212a7b8ffc453c71604bfe9ac18c09a5",
   "stat-verdict-ops/scripts/stat_test.py": "0e54f4769be1348c3762a400b1f7f46bfe362fa773d7d09cfef689416c29529f",
+  "tools/merkle.cjs": "9b690774e2e1778a08b31ce5d60166b74908da5e77bbf86ccfde93763bedbc5e",
   "travel-commute-planner/SKILL.md": "fdf360078fa352f9ed19d49dd7f8181aa4f1e6069c001d19404eb1dd0aa8adc3",
   "travel-commute-planner/references/data-sources.md": "993689e360dec68b2f693d4350403db905b4d632401df1236216465e89b5d378",
   "travel-commute-planner/references/module-amap.md": "c0922b1d410438d5aa7bdce7427ae9cc979bb6aff1dd5a2b38de229ae454784f",
