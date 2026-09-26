@@ -41,7 +41,7 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 
 **生成序铁律**：`merkle.cjs` 以 `git ls-files` 取快照，必须是一次提交内**最后**运行的生成器——所有内容变更与派生件生成完毕、`git add` 之后再跑 `gen`，随即提交。否则清单与同提交新增文件错位（727ca43c、81b22b2 两连发实证）。
 
-已知缺口（2026-09-27 登记，@81b22b2）：`docs/skill-graph.json`、`docs/evals/*.json`（91 件）、`tools/gen-graph.cjs`、`tools/evals-gen.cjs`、`tools/sinicize.cjs` 共 96 件未入树；在 HEAD 跑 verify 报上述差异属已登记项而非篡改。消除法：工作区重跑 `node tools/merkle.cjs gen` 单独提交一次。
+已知缺口（2026-09-27 登记，@81b22b2）：`docs/skill-graph.json`、`docs/evals-index.json`、`docs/sinicize2-ledger.jsonl`、`docs/evals/*.json`（91 件）、`tools/gen-graph.cjs`、`tools/evals-gen.cjs`、`tools/sinicize.cjs`、`tools/sinicize2.cjs` 共 98 件未入树；在 HEAD 跑 verify 报上述差异属已登记项而非篡改。消除法：工作区重跑 `node tools/merkle.cjs gen` 单独提交一次。
 
 ## 派生件
 
