@@ -39,6 +39,10 @@ node tools/merkle.cjs gen      # 内容变更后重新生成 MERKLE.json
 
 verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件并以 1 退出。
 
+**生成序铁律**：`merkle.cjs` 以 `git ls-files` 取快照，必须是一次提交内**最后**运行的生成器——所有内容变更与派生件生成完毕、`git add` 之后再跑 `gen`，随即提交。否则清单与同提交新增文件错位（727ca43c、81b22b2 两连发实证）。
+
+已知缺口（2026-09-27 登记，@81b22b2）：`docs/skill-graph.json`、`docs/evals/*.json`（91 件）、`tools/gen-graph.cjs`、`tools/evals-gen.cjs`、`tools/sinicize.cjs` 共 96 件未入树；在 HEAD 跑 verify 报上述差异属已登记项而非篡改。消除法：工作区重跑 `node tools/merkle.cjs gen` 单独提交一次。
+
 ## 派生件
 
 | 文件 | 内容 | 生成器 |
@@ -49,6 +53,18 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 | docs/sinicize-ledger.jsonl | 注释汉化台账（块级、含 token 计数） | tools/sinicize.cjs |
 
 派生件均可重跑再生；重跑后须重新 gen 梅克尔树。
+
+## 检索与调度评测
+
+名录是平铺的 91 行；「干什么用哪件」请走检索层，勿逐行扫表：
+
+| 资产 | 用途 | 消费示例 |
+|---|---|---|
+| [docs/skill-index-zh.json](./docs/skill-index-zh.json) | 91 件 × 8 中文关键词 + 一句摘要 | `jq -r '.entries \| to_entries[] \| select(.value.keywords + [.key] \| join(" ") \| test("舆情")) \| .key' docs/skill-index-zh.json` |
+| [docs/skill-graph.json](./docs/skill-graph.json) | 57 边交叉引用图，找枢纽与邻居 | 读 `topHubs` / `edges`，从枢纽件顺藤摸瓜 |
+| [docs/evals/](./docs/evals/) | 每件 3 条调度评测（触发语/期望/判定词，共 273 例） | 新增技能前先跑同名 eval 验触发面是否撞车 |
+
+agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面比对；拿不准时以 evals 的触发语做回归。
 
 ## 技能索引（91 件）
 
@@ -75,12 +91,12 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 | [daily-life-autopilot](./daily-life-autopilot/) | 每日例行生活事务自动化编排——凭证哈希链自检、通勤火车票/机票查询（美团官方通道）、POI 双通道查询（高德+百度）、每日领券、价格监控提醒。当用户要求"每日例行/每天自动执行/定时任务/通勤查票/查火车票机票/领券提醒/每日检查/龙虾KI… |
 | [data-viz-gen](./data-viz-gen/) | 从 JSON 数据生成自包含的 HTML/SVG 信息图，支持 KPI 统计卡片、分组柱状图对比、流程图和混合仪表盘四种类型，提供 8 套配色方案和 |
 | [day-sundial-ops](./day-sundial-ops/) | 日晷场——白天工作台的轻量纪律。夜场（「夜场件」）管你睡着后的自治玩耍；日晷场管你醒着时的快速小活：随手问答、小段实验、刷题陪练、当日杂务。触发词：「日晷场」「白天场」「日场」「随手做一下」。核心规则只有三条：①小事当场做完不立项；②花钱的… |
-| [diffusion-dynamics-extension](./diffusion-dynamics-extension/) | 动态演化与干预效果量化扩展技能。当已有静态评估结论、需要回答"随时间/空间如何演化""不干预会怎样""干预 ROI 多大"时使用。触发场景：信息/舆情传播预测、人才或用户流动预测、区域分布演化、政策干预效果量化。领域无关，提供 SIRD 传… |
+| [diffusion-dynamics-extension](./diffusion-dynamics-extension/) | 动态演化与干预效果量化扩展技能。当已有静态评估结论、需要回答"随时间/空间如何演化""不干预会怎样""干预 ROI 多大"时使用。触发场景：信息/舆情传播预测、人才或用户流动预测、区域分布演化、门店扩张测算、订阅流失推演、政策干预效果量化。领域无关，提供 SIRD 传… |
 | [doc-archive-ingest](./doc-archive-ingest/) | 网盘分享链接文档归档管线：解析坚果云公开分享链接与百度网盘分享链接（pan.baidu.com/s/）、枚举目录、带节奏批量下载、生成出处登记册（含字幕组式版权注记与文档摘要）、PDF 水印识别与合规去水印（仅限用户已购/自有文档）。百度网… |
 | [doc-image-solver](./doc-image-solver/) | [项目技能] 拍图解题全管线：试卷/文档照片 → 高精度转写文档 → 逐题解读作答 → 迭代收敛。当用户上传试卷/讲义/文档照片要求转写为可读文档、解读题目、给出答案或解题时使用；覆盖手写体存疑标注、可计算答案的数值核验、收敛判定。触发词：… |
 | [eastmoney-rumor-sentinel](./eastmoney-rumor-sentinel/) | [项目技能] 东财传闻哨兵——东方财富股吧公开面的传闻采集、词面三档判级与白话呈报。触发（满足任一）：①用户说「东财」「东方财富」「股吧」「传闻哨兵」「扫一遍股吧」「吧里在传什么」「市场情绪」或等价表述（含语音变体如「东财传闻」「古吧」，不… |
 | [epsilon-delta-proof-sovereign](./epsilon-delta-proof-sovereign/) | > |
-| [evidence-chain-verifier](./evidence-chain-verifier/) | 自修正信源 + 可证伪流程证据链 + 抗幻觉核查框架。定位为证据登记、抗幻觉校验、可证伪断言登记、信源分级与公开复核链接：当用户要求信源核查、证据链梳理、事实查证、抗幻觉校验、可证伪断言登记、公开链接溯源、信息可信度评估、穷举式名单核对时使… |
+| [evidence-chain-verifier](./evidence-chain-verifier/) | 自修正信源 + 可证伪流程证据链 + 抗幻觉核查框架。定位为证据登记、抗幻觉校验、可证伪断言登记、信源分级与公开复核链接：当用户需要信源核查、证据链梳理、事实查证、抗幻觉校验、可证伪断言登记、公开链接溯源、信息可信度评估、穷举式名单核对时使… |
 | [exam-isolation-ops](./exam-isolation-ops/) | [项目技能] 模拟考场隔离协议（考场隔离协议 v1.1）——用结构上相互隔离的子代理角色跑闭卷模拟考/盲考/真题演练/备考抽查：出题打包（物理剥离答案+泄漏扫描+sha256[:16] 指纹）、新鲜子代理考生闭卷单遍作答、双参考解答制作人 … |
 | [extpool-furnace-ops](./extpool-furnace-ops/) | [项目技能] 外池压测炉运维——用外部模型池（GLM 礼赠池、华为码道/CodeArts、华为云 ModelArts、阿里百炼、火山方舟、智谱等 MaaS 接口）对技能/命题/密码强度等对象做目的导向的对抗性压测与燃烧时的安全作业规程。触发… |
 | [fusion-program-audit](./fusion-program-audit/) | 高校核聚变方向"聚变期权"真伪核查与考研择校评级。当用户需要判断某校宣称的核聚变/聚变/等离子体物理方向是实质布局还是标签嫁接、核查托卡马克/仿星器/直线装置真实状态、考研择校/读研择校中核查导师方向与学科实力、识别实验室核查/虚假宣传时使… |
@@ -91,7 +107,7 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 | [hifi-integration-umbrella](./hifi-integration-umbrella/) | 高保真整合伞（临时技能）——将名录实载技能（件数以 references/roster.md 当时实载为准）高保真整合为一张协奏目录与统一调用规程：引用不复制、逐件法定描述蒸馏、冲突仲裁次序、日落条款、随锚扩编。触发（满足任一）：①用户说「… |
 | [home-network-troubleshooter](./home-network-troubleshooter/) | 家庭/小型办公网络故障的分层定位与修复程序，特化华为坤灵 ePlusSoHo 多 AP 组网（AP162 面板、AC 管理）。当用户报告"电脑网页打不开但 QQ/微信能上""手机能上网电脑不行""同一 WiFi 下部分设备断网""网页 ER… |
 | [humanizer-zh](./humanizer-zh/) | 去除中文文本的 AI 生成痕迹并重建真实感，覆盖写作与改稿双场景。当用户请求润色、编辑、改写文本，或提及去除 AI 味/AI 痕迹、让文本更人性化、听起来不像 AI 写的、写得干练一点、调整叙事动机或说话位置时触发。三层诊断（义理/考据/辞… |
-| [intl-case-intf](./intl-case-intf/) | 国际法案例接口件（临时技能）——CJEU CELLAR 官方 SPARQL 与 ECtHR HUDOC 事实型公开端点的只读薄封装 + SQLite FTS5/BM25 本地索引，统一引证契约 {title,url,snippet,cour… |
+| [intl-case-intf](./intl-case-intf/) | 国际法案例接口件（临时技能）——CJEU CELLAR 官方 SPARQL 与 ECtHR HUDOC 事实型公开端点的只读薄封装 + SQLite FTS5/BM25 本地索引，统一引证契约 {title,url,snippet,court,date,ref}。触发（满足任一… |
 | [iteration-convergence-ops](./iteration-convergence-ops/) | 长周期项目在多轮对话中的版本迭代管理方法论：持久化优先（每轮必落盘并 ls 核验，杜绝'声称完成但未落盘'）、版本号诚实（git 风格版本语义与变更日志，禁止跨版本号夸大）、批判-解构-重整-收敛四拍元循环（含致命错点表与收敛标准）、平台版… |
 | [k3-channel-ops](./k3-channel-ops/) | [项目技能] K3/集群甲通路搭建与运维——自研搭建并优化跨会话消息通路（「通道库」 总线），使所有 K3/集群甲工作时能及时变革相关动作。触发（满足任一）：①用户说「通路」「搭建通路」「优化通路」「通道」「总线」「broadcasts」「… |
 | [k3-everything-archive](./k3-everything-archive/) | K3 一切事务穷举总包·洁版（私藏归档件，全量脱敏后重制）——单容器穷举：73 技能(便携五件最新同源)+MCP 接口层+安全三件套+upload 全域(注册处/两代 dist/金融项目)+output 事务全域(全部研报/docx/pdf… |
