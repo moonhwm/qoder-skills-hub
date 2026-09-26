@@ -1,0 +1,1884 @@
+{
+ "generatedAt": "2026-09-26T18:52:23.861Z",
+ "hits": 65,
+ "partial": 8,
+ "miss": 200,
+ "misses": [
+  {
+   "skill": "ai-persona-document",
+   "trigger": "给我整一份智能助手的身份规范，规定好它不能乱编数据，语气要简洁专业。",
+   "top": [
+    "plugin-datasource-ops:1",
+    "skill-library-auditor:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "archive-ops-kit",
+   "trigger": "手头有个AES-256加密的压缩包打不开，密码记不清了，能不能用授权库帮我试出来？",
+   "top": [
+    "up-distill-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "archive-ops-kit",
+   "trigger": "文件夹里有一堆嵌套的压缩包，帮我一键全部分解出来，别漏掉里面的子包。",
+   "top": [
+    "up-distill-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "arxiv-source-sentinel",
+   "trigger": "帮我查一下这个arxiv编号2305.12345到底写了啥，作者是谁？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "arxiv-source-sentinel",
+   "trigger": "这篇v2版本的论文后来有没有被撤稿啊？现在最新的是哪个版？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "arxiv-source-sentinel",
+   "trigger": "把这篇文献的引用格式转成BibTeX，我要直接贴到LaTeX里用。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "autonomous-advance-ops",
+   "trigger": "那个数据同步的后台任务跑了一整天了还没动静，你帮我盯着点，要是卡住了就自己想办法接着跑。",
+   "top": [
+    "goal-child-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "autonomous-advance-protocol",
+   "trigger": "帮我启动全栈分析流程，自动抓取数据并生成最终报告。",
+   "top": [
+    "diffusion-dynamics-extension:1",
+    "rust-browser-pilot:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "autonomous-advance-protocol",
+   "trigger": "这方案你再自动推演优化几轮，所有数据和引用都要留痕，最后给我一个能核验的凭证。",
+   "top": [
+    "bidding-ops:1",
+    "persona-memory-anchors:1",
+    "web-security-audit:1"
+   ]
+  },
+  {
+   "skill": "autonomous-advance-protocol",
+   "trigger": "切到最新版的数据处理插件再跑一次刚才的任务，结果得保证我自己能照着步骤复现验证。",
+   "top": [
+    "goal-child-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "av-media-ops",
+   "trigger": "帮我把这个会议录音转成带时间戳的逐字稿，最好能精确到每个字。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "av-media-ops",
+   "trigger": "把这段新闻稿读一遍录成音频发给我，要听起来自然点。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "av-media-ops",
+   "trigger": "查一下视频里提到的这个数据是不是真的，顺便把视频里的话都整理出来。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "claims-deep-audit",
+   "trigger": "这家理财公司号称年化收益稳超15%还保本，帮我查查他们是不是在吹牛。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "claims-deep-audit",
+   "trigger": "这个保健品广告说能三天根治高血压，背后有没有权威检测报告或者明显夸大的证据？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "claims-deep-audit",
+   "trigger": "有个创业团队路演PPT里写拿了头部机构投资且日活破千万，我想核实下这些背景到底靠不靠谱。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "cn-housing-finder",
+   "trigger": "杭州西湖那边有没有三百万左右的二手房推荐？帮我挑几个靠谱的，再列个看房必问清单。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "cn-housing-finder",
+   "trigger": "上海浦东适合单身租的一室户有哪些？把租金、面积和地铁距离都扒出来做成表格。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "trigger": "我手头有一组实验数据，时间点和对应的反应值，不知道用线性回归还是多项式拟合更准，能不能帮我挑个合适的模型并跑一下？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "trigger": "这段让AI写商业计划书的提示词感觉效果一般，能帮我优化得更有结构吗？最好再用另一个大模型对照看看生成质量有没有提升。",
+   "top": [
+    "persona-modeling-kit:1",
+    "seo-copywriting-guide:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "trigger": "公司明年预算有限，要在A、B、C三个营销渠道里二选一，你能不能列个对比表，把每个方案的预期ROI和风险都推演出来，让我好",
+   "top": [
+    "bidding-ops:1",
+    "persona-memory-anchors:1",
+    "web-security-audit:1"
+   ]
+  },
+  {
+   "skill": "commute-school-optimizer",
+   "trigger": "从亦庄开发区到人大附中关村校区，我算算每天开车和挤五号线地铁，到底哪个更省时省钱？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "consignment-intake-ops",
+   "trigger": "查一下有没有超期的交割回执，另外把昨天没处理完的交接给下一班同事。",
+   "top": [
+    "night-playground-ops:1",
+    "vision-ocr-pipeline:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "coordination-letter",
+   "trigger": "合作方那边对咱们的交付进度有疑虑，我得写封函去跟他们同步一下最新进展，顺便把接下来的计划也说明白，你帮我把框架和措辞理清",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "corpus-value-distiller",
+   "trigger": "我手头攒了一大堆去年的行业研报，帮我挑出最有价值的干货，按主题归类后直接塞进我们的技能库里。",
+   "top": [
+    "sector-stock-rumorchain-pipeline:3",
+    "autonomous-advance-ops:1",
+    "skill-library-auditor:1"
+   ]
+  },
+  {
+   "skill": "corpus-value-distiller",
+   "trigger": "这批刚抓回来的数据质量参差不齐，甚至可能有误导性内容，先做个全面排查，把能复用的套路和方法论单独提炼出来。",
+   "top": [
+    "iteration-convergence-ops:1",
+    "seo-copywriting-guide:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "corpus-value-distiller",
+   "trigger": "按流程给现有语料做一次年度复检吧，新进来的增量数据也一并处理，确保知识库里的东西永远是最新最准的。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "cross-session-workflow-bridge",
+   "trigger": "我昨天在A项目里写了一半的代码，今天换到B项目继续弄，能直接把昨天的上下文和进度带过来吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "cross-session-workflow-bridge",
+   "trigger": "这个数据分析的活儿我搞不定，帮我转交给擅长Python的那个AI模型去跑，记得把之前的需求文档和数据集路径都带上。",
+   "top": [
+    "diffusion-dynamics-extension:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "cross-session-workflow-bridge",
+   "trigger": "每次做周报都要从三个不同系统拉数据再汇总，能不能设个自动流程，以后一键就能把整理好的结果存到固定位置？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "daily-life-autopilot",
+   "trigger": "帮我设个每天早上七点半自动查一下去公司的高铁票余票和票价。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "daily-life-autopilot",
+   "trigger": "以后每天下午三点提醒我去常去的咖啡店领个券，顺便看看附近有没有新开的书店。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "daily-life-autopilot",
+   "trigger": "盯一下我购物车里那款降噪耳机，价格降到八百以下就立刻通知我，并且把比价记录存好。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "day-sundial-ops",
+   "trigger": "哎，帮我查下明天高铁几点发车？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "day-sundial-ops",
+   "trigger": "记一笔，刚扫码付了二十块停车费。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "day-sundial-ops",
+   "trigger": "趁现在有空，抽两道题考考我。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "trigger": "帮我算算这条突发新闻在网上大概会怎么扩散，未来一周热度能到多少？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "trigger": "下个月高铁票打折促销，周边几个城市的人流大概会怎么变化？做个对比看看。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "trigger": "如果在这条主干道设个限行区，对缓解拥堵的效果和投入产出比能估算一下吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "doc-archive-ingest",
+   "trigger": "刚下的一批PDF里混着不少旧水印，你按合规标准帮我识别并处理一下，顺便把每篇的内容概要也提出来。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "doc-image-solver",
+   "trigger": "帮我看看这张数学卷子的压轴题，把题目原样打出来，再一步步给我讲怎么解。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "doc-image-solver",
+   "trigger": "我拍了张物理作业的照片，上面有手写的计算过程，你帮我核对下数字对不对，错了就重新算一遍。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "doc-image-solver",
+   "trigger": "这是刚拍的英语阅读题，麻烦你把题干和选项都识别出来，顺便帮我检查一遍答案有没有遗漏。",
+   "top": [
+    "skill-refresh-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "eastmoney-rumor-sentinel",
+   "trigger": "现在A股散户都在聊啥？出个今天的股吧情绪报告呗。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "eastmoney-rumor-sentinel",
+   "trigger": "把最近几天股吧里炒得最凶的几个消息整理一下，用大白话告诉我级别和风险。",
+   "top": [
+    "senior-rumor-check:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "epsilon-delta-proof-sovereign",
+   "trigger": "我想学怎么用ε-δ语言证明lim(x→2)x²=4，能一步步教我吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "epsilon-delta-proof-sovereign",
+   "trigger": "为什么有些极限用直观法不行非得用ε-δ？能不能拿个例子说明怎么找那个δ？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "evidence-chain-verifier",
+   "trigger": "网上说吃某种保健品能治高血压，这到底是不是真的啊？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "evidence-chain-verifier",
+   "trigger": "这条关于某公司财务造假的爆料视频是从哪来的？有没有实锤？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "evidence-chain-verifier",
+   "trigger": "这两篇报道对同一事件的描述完全相反，我该信哪个？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "exam-isolation-ops",
+   "trigger": "感觉这次考题外泄了，赶紧排查是谁漏出去的，顺便把阅卷全过程拉出来做个合规审计。",
+   "top": [
+    "zijue-self-determination:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "extpool-furnace-ops",
+   "trigger": "帮我接一下那个第三方模型池的接口，我要跑一轮对抗性压测，注意把API密钥配好，别外泄了。",
+   "top": [
+    "k3-everything-archive:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "extpool-furnace-ops",
+   "trigger": "压测跑完了，把结果喂给判官模型出个裁定报告，顺便检查一下有没有日志泄露原始凭证。",
+   "top": [
+    "skill-refresh-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "fusion-program-audit",
+   "trigger": "我想考XX大学的核聚变研究生，听说他们有个大装置，这学校这方向到底靠不靠谱啊？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "fusion-program-audit",
+   "trigger": "仿星器和托卡马克现在哪个更主流？想读博的话选哪所大学的核科学与技术学院更稳？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "gitlab-cli-guide",
+   "trigger": "帮我在gitlab上给当前分支提个合并请求，描述记得写上这次改了啥。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "gitlab-cli-guide",
+   "trigger": "帮我拉一下咱们项目里还没修完的issue，按更新时间倒序排一下。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "gitlab-cli-guide",
+   "trigger": "刚push上去的代码流水线好像崩了，帮我抓一下报错日志看看咋回事。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "goal-child-ops",
+   "trigger": "我想在一个月内把英语口语练好，但总是坚持不下来，有没有好玩点的方法？",
+   "top": [
+    "iteration-convergence-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "goal-child-ops",
+   "trigger": "这周背单词又卡住了，进度倒退，感觉没意义了，我是不是该放弃？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "grad-advisor-outreach",
+   "trigger": "我想申计算机的博士，帮我筛一下做大模型方向的教授，最好能整理出他们的研究方向和最近发的论文。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "grad-advisor-outreach",
+   "trigger": "我这学期要交三所学校的申请，怎么安排联系教授和提交材料的时间表？另外注意下有些学校有名额限制这种隐藏条件。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "grad-path-scorer",
+   "trigger": "我本科双非，想找个导师好说话、以后申博成功率高的学校，给个靠谱的排名呗。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "hifi-integration-umbrella",
+   "trigger": "手头一堆零散的功能指令，帮我理成一份统一的技能清单，以后直接按规矩调就行。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "hifi-integration-umbrella",
+   "trigger": "这两个模块老是起冲突，给的建议完全相反，你赶紧仲裁一下定个准谱。",
+   "top": [
+    "commute-school-optimizer:1",
+    "k3-territory-studies:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "home-network-troubleshooter",
+   "trigger": "我家连上华为的WiFi能聊天但网页全打不开，重启路由器也白搭，咋回事啊？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "home-network-troubleshooter",
+   "trigger": "我拿着手机从客厅走到卧室，WiFi图标还是满的但卡得动不了，肯定是哪个AP在捣乱或者受干扰了吧？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "humanizer-zh",
+   "trigger": "我这篇报告感觉太像机器写的了，全是“综上所述”这种套话，能不能帮我改得接地气一点，别那么生硬？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "humanizer-zh",
+   "trigger": "领导让我交一份项目复盘，但我写出来干巴巴的，缺乏实际细节和人情味，怎么把那种亲历者的语气加进去？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "humanizer-zh",
+   "trigger": "这段文字读起来有点水，逻辑也绕，你帮我精简一下，把那些没用的废话删掉，让重点更突出，符合正式要求。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "intl-case-intf",
+   "trigger": "帮我找下欧洲人权法院最近有啥数据隐私方面的判例。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "intl-case-intf",
+   "trigger": "欧盟法院以前咋判反垄断案的？把相关的判例信息都列一下。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "intl-case-intf",
+   "trigger": "我想对对看，2020年之后这俩法院有没有都管过人工智能伦理的案子？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "iteration-convergence-ops",
+   "trigger": "这个项目做了快半年了还在反复改，感觉永远做不完，能不能帮我先圈定一个能跑通的核心功能，排个具体的迭代计划？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "iteration-convergence-ops",
+   "trigger": "这周需求又变了好几次，代码和文档都乱了，我该怎么把现在的状态收拢成一个稳定版本，方便后续继续往下推？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "iteration-convergence-ops",
+   "trigger": "某个功能模块已经严重超期了，团队一直卡在细节里出不来，是不是该果断砍掉边缘需求，按原定节点先交差？",
+   "top": [
+    "k3-territory-studies:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "k3-channel-ops",
+   "trigger": "帮我搭个能跨会话发消息的K3通道，要稳定点。",
+   "top": [
+    "k3-everything-archive:2",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "k3-channel-ops",
+   "trigger": "最近K3链路老丢消息，你查下健康状态，把漏掉的补上。",
+   "top": [
+    "k3-everything-archive:2",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "k3-channel-ops",
+   "trigger": "服务器断网了消息发不出去，赶紧切到降级模式保活。",
+   "top": [
+    "bidding-docs-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "k3-everything-archive",
+   "trigger": "帮我把现在系统里所有的东西都打包成一个归档包，要能直接用的那种。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "k3-everything-archive",
+   "trigger": "把之前几个版本的历史发行数据导出来，记得把敏感信息都脱敏了，然后一起打个包。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "k3-interaction-ops",
+   "trigger": "帮我查一下现在K3s集群里在线的节点都有哪几个，顺便看看它们各自的负载高不高。",
+   "top": [
+    "k3-everything-archive:2",
+    "k8s-cluster-ops:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "k3-interaction-ops",
+   "trigger": "把那个新写的微服务镜像推上去，直接在K3s上起个副本，端口映射到主机的9090就行。",
+   "top": [
+    "k3-everything-archive:2",
+    "bidding-docs-ops:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "k3-interaction-ops",
+   "trigger": "后台那几个核心Pod卡死了，你帮我批量重启一下，操作前先把配置文件打个包存好。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "k3-territory-studies",
+   "trigger": "明天想带K3班的小朋友去小区附近转转，有什么能锻炼他们空间感的活动推荐吗？",
+   "top": [
+    "k3-everything-archive:2",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "k3-territory-studies",
+   "trigger": "孩子们对咱们老街上的老房子特别好奇，怎么设计一节既好玩又能让他们感受本土文化的课？",
+   "top": [
+    "goal-child-ops:1",
+    "output-verdict-gate:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "k3-territory-studies",
+   "trigger": "五岁的孩子总问为什么不同地方吃的东西不一样，怎么用简单的方式给他们讲讲地理和风俗？",
+   "top": [
+    "goal-child-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "k8s-cluster-ops",
+   "trigger": "把刚才那个nginx镜像部署到测试环境去，开两个副本就行。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "k8s-cluster-ops",
+   "trigger": "这个pod一直重启，帮我查一下它的日志看看是不是内存爆了。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "livability-audit-swarm",
+   "trigger": "刚才审出来的那些硬伤直接帮我修了吧，改动痕迹一定要留清楚。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "livability-audit-swarm",
+   "trigger": "现在这版还行但不够完美，让后台继续迭代收敛，直到各项指标都稳了再停。",
+   "top": [
+    "admission-panel-analytics:2",
+    "doc-image-solver:2",
+    "iteration-convergence-ops:2"
+   ]
+  },
+  {
+   "skill": "long-table-harvest-ops",
+   "trigger": "帮我把这个几万行的Excel表格全部提出来，必须一个字都不准漏。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "long-table-harvest-ops",
+   "trigger": "刚才导出的数据中间好像缺了几行，而且两边的数字对不上，你检查一下衔接处有没有错。",
+   "top": [
+    "skill-refresh-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "long-table-harvest-ops",
+   "trigger": "这表格后半部分排版太乱了，怀疑是生成模型乱写的，能不能换个方式重新抓一遍原始文件？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "medical-career-transition",
+   "trigger": "我规培马上要结束了，但实在不想干临床，想转行去药企或者做咨询，现在到底该咋准备啊？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "medical-career-transition",
+   "trigger": "我是临床硕士，听说外企的MSL或者医学部挺适合不想值班的同学，但我没相关实习，这行好进吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "medical-career-transition",
+   "trigger": "刚拿到医学院offer，最近看医疗AI赛道特别火，想跨界去做产品经理或者医学运营，这方向靠谱吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "medical-malpractice-criminal-review",
+   "trigger": "我在外面私自给人看病出了人命，现在对方报警了，还没做法医鉴定，我这涉嫌什么罪？会不会被抓？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "multi-dimensional-option-scoring",
+   "trigger": "我们手头有三个新业务方向，预算有限只能选一个，怎么排个优先级？最好能算算不同市场环境下的风险。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "multi-dimensional-option-scoring",
+   "trigger": "我在挑三家软件供应商，价格、售后和稳定性权重不一样，能不能帮我列个表对比一下，顺便看看如果涨价10%排名会不会变？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "multi-dimensional-option-scoring",
+   "trigger": "公司考虑要不要进军海外市场，我有三个备选策略，但拿不准哪个最稳妥，能不能用打分模型给我理清楚，顺便检查下我是不是太乐观了",
+   "top": [
+    "skill-refresh-ops:1",
+    "software-testing-guide:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "night-playground-ops",
+   "trigger": "今晚我先睡了，你帮我在甲工作区自己跑着玩吧，但别乱花钱，先跟我报备下预算。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "night-playground-ops",
+   "trigger": "明天下午我再上线，今晚要是没做完就先把现场留好，等我回来接着搞，别断档。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "notary-legal-upload",
+   "trigger": "签完这份租房合同后，我想把它存到区块链上防篡改，怎么操作？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "omni-exhaust-research-ops",
+   "trigger": "我想搞懂量子计算在药物研发和气候建模里到底怎么用的，最好能对比下各家公司的技术路线。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "omni-exhaust-research-ops",
+   "trigger": "帮我规划一下从传统制造业转型到AI驱动的智能工厂，预算大概五千万，周期两年。",
+   "top": [
+    "medical-career-transition:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "omni-exhaust-research-ops",
+   "trigger": "最近大模型在金融风控里有哪些实际落地的架构？如果找不到最新数据就按去年的主流方案写。",
+   "top": [
+    "persona-memory-anchors:1",
+    "web-security-audit:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "output-verdict-gate",
+   "trigger": "我手里有十万块闲钱，现在股市跌得厉害，我是该割肉离场还是继续定投？给个准话。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "output-verdict-gate",
+   "trigger": "我爸在吃降压药，最近听说某种保健品能降血脂，能不能直接让他停掉西药换成那个？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "output-verdict-gate",
+   "trigger": "公司要裁员补偿方案，HR说按N加一走就行，但员工觉得应该N加三，这到底合不合法？到底该怎么判？",
+   "top": [
+    "persona-memory-anchors:1",
+    "web-security-audit:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "trigger": "帮我策划一场线下科技发布会，从场地筛选、嘉宾邀请到媒体宣发和应急预案，每个环节都要列出备选方案并对比优劣。",
+   "top": [
+    "persona-memory-anchors:1",
+    "web-security-audit:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "trigger": "最近想转行做跨境电商，不知道选哪个平台和品类，麻烦把主流平台的规则、物流成本、税务政策都扒一遍，给我个最适合新手的起步指",
+   "top": [
+    "cron-task-forge:1",
+    "software-testing-guide:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "trigger": "家里装修既要北欧风又要智能全屋联动，预算有限，请把所有材料商、设计师方案和家电清单跑一遍，最后拼成一份能直接下单的采购清",
+   "top": [
+    "output-verdict-gate:1",
+    "persona-memory-anchors:1",
+    "web-security-audit:1"
+   ]
+  },
+  {
+   "skill": "pangu-enforcement-bureau",
+   "trigger": "咱们这边的AI请求老是不走盘古，麻烦直接把盘古强插到所有路由策略里吧。",
+   "top": [
+    "software-testing-guide:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "pangu-enforcement-bureau",
+   "trigger": "新项目组非要自己接别的模型，不经过盘古，这事儿该怎么走执法备案流程？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "pangu-enforcement-bureau",
+   "trigger": "昨天那波流量日志里好像夹带了不少非盘古的请求，赶紧帮我导出一份审计清单查一查。",
+   "top": [
+    "zijue-self-determination:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "persona-iteration-loop-ops",
+   "trigger": "帮我搭个赛博朋克风的流浪侦探角色，性格冷峻但有底线，先出个基础设定看看。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "persona-iteration-loop-ops",
+   "trigger": "刚才提到他在旧仓库找到了关键线索，接着这个方向往下写，注意把对话和旁白分清楚。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "persona-iteration-loop-ops",
+   "trigger": "这段描写有点过火了，赶紧压住节奏，把敏感词都过滤掉，准备切到下一阶段。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "persona-memory-anchors",
+   "trigger": "以后你就叫小雅，是个性格温柔但有点毒舌的二次元宅女，记住啊。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "persona-memory-anchors",
+   "trigger": "聊了这么多，你还记得我上次说我最讨厌香菜吗？别又忘了。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "persona-memory-anchors",
+   "trigger": "不管后面聊什么话题，你都得保持那个傲娇大小姐的语气跟我说话，别崩人设。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "phys-ai-mat-conf-radar",
+   "trigger": "我想规划下明年的论文投稿节奏，尽量挑主会，别给我推那些workshop，怎么安排比较合适？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "phys-ai-mat-conf-radar",
+   "trigger": "帮我把这几个重要会议的deadline都导出来，生成一个ics文件让我直接同步到手机日历上。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "plugin-datasource-ops",
+   "trigger": "帮我查一下华东区的订单数据，记得走数据源的专线路由。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "plugin-datasource-ops",
+   "trigger": "我想调整下当前插件的限流阈值，先别动线上配置，给我开个临时工作副本跑测试。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "plugin-datasource-ops",
+   "trigger": "刚才那个MCP接口的返回结果帮我固化一下，下次跨会话还能直接拉取使用。",
+   "top": [
+    "k3-everything-archive:3",
+    "k8s-cluster-ops:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "portable-sync-ops",
+   "trigger": "帮我登记一下这个新做的便携技能，顺便看看台账里现在都有啥。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "consignment-intake-ops:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "portable-sync-ops",
+   "trigger": "最近改了底层配置，快帮我查查各个环境的便携技能版本有没有跑偏。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "portable-sync-ops",
+   "trigger": "这个老版本的便携镜像好像跟源端对不上了，赶紧按规程重新打一遍包，把单文件引导也一起更新了。",
+   "top": [
+    "long-table-harvest-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "ppp-city-verdict-audit",
+   "trigger": "帮我复核一下XX市的去留结论，别光看表面数据。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "ppp-city-verdict-audit",
+   "trigger": "查下最新的地铁和公交票价，通勤成本变了的话赶紧把城市评级调一下。",
+   "top": [
+    "commute-school-optimizer:2",
+    "cron-task-forge:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "qr-visual-rescue",
+   "trigger": "这二维码被刮花了一大半，手机扫不出来，能修好吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "qr-visual-rescue",
+   "trigger": "拍了张二维码照片但有点模糊还缺了角，你帮我弄出来里面的链接。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "qr-visual-rescue",
+   "trigger": "这张图里的码子反光严重又断断续续的，能不能用算法把它还原出来？",
+   "top": [
+    "stat-verdict-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "quant-frontier-lab",
+   "trigger": "老师让我布置个PSM作业，我这有份Excel数据，能不能直接跑匹配看政策效果？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "quant-frontier-lab",
+   "trigger": "我想拿Time-MoE跑个时序预测，数据刚传上去，直接出个预测精度和严谨性评估报告就行。",
+   "top": [
+    "medical-career-transition:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "quota-guard-ops",
+   "trigger": "我这边账号快没额度了，系统有没有自动提醒或者限制？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "quota-guard-ops",
+   "trigger": "刚才跑任务提示额度耗尽了，现在该怎么处理才能继续用？",
+   "top": [
+    "goal-child-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "registry-knowledge-ops",
+   "trigger": "我想进INDEX分区找一下‘历史变更记录’那篇文档，顺便把它的锚链链接调出来看看。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "registry-knowledge-ops",
+   "trigger": "查一下这个统一社会信用代码的台账信息，顺便验证下会不会跟已有的登记冲突。",
+   "top": [
+    "consignment-intake-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "release-gate-audit",
+   "trigger": "我要把新写的后端接口代码打包发给外部合作方了，帮我过一遍看看有没有敏感信息或者漏洞。",
+   "top": [
+    "k3-everything-archive:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "release-gate-audit",
+   "trigger": "这份用户行为分析报表马上要发给第三方做联合建模，里面肯定有隐私数据，赶紧帮我审一下能不能发。",
+   "top": [
+    "diffusion-dynamics-extension:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "release-gate-audit",
+   "trigger": "生产环境版本马上要封版外发了，你帮我把关一下，确保没有硬编码密钥和已知高危漏洞再放行。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "retirement-guard-ops",
+   "trigger": "最近系统天天弹窗提醒，搞得我没法专心干活，能不能帮我审一下这些打扰，把不重要的全拦掉？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "rumor-chain-verifier",
+   "trigger": "网上都在传某地发生大地震，还配了个视频，这消息靠谱吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "rumor-chain-verifier",
+   "trigger": "群里转了份带公章的补贴通知截图，但字体和排版看着不太对劲，能帮我看下真假吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "rumor-chain-verifier",
+   "trigger": "这篇文章说吃某某偏方能治慢性病，但我搜了一圈专业医学网站都找不到依据，感觉是瞎编拼凑的。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "rust-browser-pilot",
+   "trigger": "帮我抓一下淘宝首页的商品标题和价格，直接给我列出来就行。",
+   "top": [
+    "seo-copywriting-guide:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "sandbox-project-ops",
+   "trigger": "我上次跑的项目环境全乱了，权限也报错了，能帮我重新搭一下并修好git权限吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "sandbox-project-ops",
+   "trigger": "这个测试脚本跑得特别慢，我得去忙别的了，能不能在后台一直盯着进度，跑完告诉我？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "sandbox-project-ops",
+   "trigger": "这周的研究资料都整理好了，帮我归档存起来，然后按之前的计划把下周的排期推下去。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "sector-stock-rumorchain-pipeline",
+   "trigger": "股吧里有人喊某芯片厂被制裁了，你赶紧去东财扒一下帖子，查查这消息靠不靠谱。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "semantic-oncology-ops",
+   "trigger": "聊了这么多轮都快卡死了，能不能把前面那些重复和废话精简一下，只留重点？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "semantic-oncology-ops",
+   "trigger": "这对话越聊越偏题了，感觉模型有点串台，能帮我清理下干扰信息重新聚焦吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "semantic-oncology-ops",
+   "trigger": "我这边刚切换了输入设备又改回键盘打字，别把中间断档了，顺便自己后台跑一遍健康检查。",
+   "top": [
+    "humanizer-zh:1",
+    "skill-refresh-ops:1",
+    "vision-intake-ops:1"
+   ]
+  },
+  {
+   "skill": "senior-rumor-check",
+   "trigger": "我家群里转的那个‘吃绿豆能治百病’是真的吗？我差点就信了！",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "senior-rumor-check",
+   "trigger": "儿子发语音说公司出事急需用钱，可这声音听着不对劲，你帮我查查是不是AI换声骗人？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "senior-rumor-check",
+   "trigger": "网上说手机放米缸里能吸辐射，这老法子管用吗？要是没用教我怎么自己验证一下呗。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "seo-copywriting-guide",
+   "trigger": "最近想给咱们的SaaS项目管理软件做推广，你按那个SEO标准流程帮我抓下关键词，再出一版文章草稿呗。",
+   "top": [
+    "gitlab-cli-guide:1",
+    "k8s-cluster-ops:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "skill-dispatch-hq",
+   "trigger": "帮我看看现在都接了哪些活，把能用的工具都列出来，然后按优先级排个序。",
+   "top": [
+    "archive-ops-kit:1",
+    "coordination-letter:1",
+    "grad-advisor-outreach:1"
+   ]
+  },
+  {
+   "skill": "skill-dispatch-hq",
+   "trigger": "明天早上八点提醒我交报告，到时候自动把数据打包转交给下一个处理环节。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "skill-dispatch-hq",
+   "trigger": "查一下上周三晚上是谁调用了那个高级分析插件，权限够不够，顺便做个安全审计记录。",
+   "top": [
+    "diffusion-dynamics-extension:1",
+    "zijue-self-determination:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "skill-library-auditor",
+   "trigger": "这堆技能脚本里会不会有互相冲突的地方？另外有些是软链接的话能认出来吗？",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "skill-refresh-ops",
+   "trigger": "帮我重载一下刚才改的那个技能，先确认下目录能不能写。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "skill-refresh-ops",
+   "trigger": "扫一下现在用的技能版本有没有漂移，有新版就赶紧下载更新。",
+   "top": [
+    "vision-intake-ops:2",
+    "autonomous-advance-ops:1",
+    "doc-archive-ingest:1"
+   ]
+  },
+  {
+   "skill": "skill-refresh-ops",
+   "trigger": "配置改了直接在当前会话热加载吧，顺便看看插件通道还正不正常。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "skill-reinstall-ops",
+   "trigger": "帮我把这个技能包重新装一下，装之前先看看目录能不能写，最好能自动备份一下旧版本。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "skill-reinstall-ops",
+   "trigger": "把当前版本的技能打包成Wheel格式发出来，顺便核对一下版本号对不对。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "skill-reinstall-ops",
+   "trigger": "系统提示有更新任务在排队，直接按PEP 508的规范拉取那个直链地址来跑吧。",
+   "top": [
+    "ai-persona-document:1",
+    "goal-child-ops:1",
+    "plugin-datasource-ops:1"
+   ]
+  },
+  {
+   "skill": "skill-version-ops",
+   "trigger": "这功能最近老报错，你帮我原地重装一下，最好能热加载不用重启。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "skill-version-ops",
+   "trigger": "把当前运行的技能全量同步到便携设备上，记得把台账也一起更新好。",
+   "top": [
+    "autonomous-advance-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "software-testing-guide",
+   "trigger": "我们项目马上要进测试阶段了，能不能帮我理一套完整的测试流程和用例设计模板？",
+   "top": [
+    "output-verdict-gate:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "software-testing-guide",
+   "trigger": "团队最近bug返工率太高，我想搞个缺陷分级管理和质量数据看板，怎么弄？",
+   "top": [
+    "gitlab-cli-guide:1",
+    "k8s-cluster-ops:1",
+    "seo-copywriting-guide:1"
+   ]
+  },
+  {
+   "skill": "software-testing-guide",
+   "trigger": "下周要把测试工作外包给第三方，还得做下安全扫描，需要哪些交接材料和检查清单？",
+   "top": [
+    "night-playground-ops:1",
+    "skill-refresh-ops:1",
+    "vision-ocr-pipeline:1"
+   ]
+  },
+  {
+   "skill": "source-semantics-sentinel",
+   "trigger": "我刚看到一篇关于新规的文章，来源是个没听过的大V号，这消息能信吗？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "source-semantics-sentinel",
+   "trigger": "我导了一份竞品分析数据，里面有些参数看着特别别扭，你帮我查查是不是被人动过手脚。",
+   "top": [
+    "diffusion-dynamics-extension:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "source-semantics-sentinel",
+   "trigger": "网上现在吵翻了天，都说那个新技术要颠覆行业，但说法全不一样，到底哪个是真的？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "travel-commute-planner",
+   "trigger": "我想下个月去上海出差，帮我查查周五晚上从北京出发的高铁和飞机票，顺便算算来回大概要花多少钱？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "travel-commute-planner",
+   "trigger": "我打算搬去杭州余杭住，每天去滨江上班，帮我规划一下怎么通勤最省钱，地铁加公交或者骑车怎么组合？",
+   "top": [
+    "commute-school-optimizer:2",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "travel-commute-planner",
+   "trigger": "最近在看房，既要离公司近又要便宜，还能方便坐船过江的，帮我找找附近的小区，再算算一个月的交通费预算够不够。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "unified-decision-suite",
+   "trigger": "我模考大概五百八十分，想报计算机类，能帮我用算法算出最合适的冲稳保志愿名单吗？",
+   "top": [
+    "admission-panel-analytics:2",
+    "stat-verdict-ops:1",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "unified-decision-suite",
+   "trigger": "万一滑档了怎么办？能不能帮我推演一下不同批次录取的后续应对策略？",
+   "top": [
+    "bidding-ops:1",
+    "software-testing-guide:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "unified-decision-suite",
+   "trigger": "这些推荐结果靠谱吗？给我看看背后的数据支撑和把握程度。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "up-distill-ops",
+   "trigger": "我想把大模型的知识迁移到小模型上，有没有现成的工具能帮我做特征对齐和算损失？",
+   "top": [
+    "archive-ops-kit:1",
+    "coordination-letter:1",
+    "grad-advisor-outreach:1"
+   ]
+  },
+  {
+   "skill": "up-distill-ops",
+   "trigger": "搭老师学生模型太麻烦了，能不能用个自动化脚本一键搞定蒸馏相关的操作？",
+   "top": [
+    "gitlab-cli-guide:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "vision-intake-ops",
+   "trigger": "我拍了一堆合同照片，你帮我直接转成文字吧。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "vision-intake-ops",
+   "trigger": "这里有一堆截图和证件照，你先分个类再处理。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "vision-intake-ops",
+   "trigger": "把这几张发票和带二维码的海报都扫一遍，别漏了。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "vision-ocr-pipeline",
+   "trigger": "帮我看看这张长长的购物小票截图里都买了啥，直接给我整理成文字。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "vision-ocr-pipeline",
+   "trigger": "这张截图太大了发不出去，你帮我压缩一下，顺便把里面的字抠出来做成网页格式发给我。",
+   "top": [
+    "up-distill-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "vision-ocr-pipeline",
+   "trigger": "我截了张手机界面的图，里面有些设置选项看不清，快帮我把上面的字都认出来。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "web-security-audit",
+   "trigger": "前端页面有个搜索框直接渲染用户输入，会不会有XSS漏洞？给我个加固办法。",
+   "top": [
+    "vision-intake-ops:1",
+    "admission-panel-analytics:0",
+    "ai-persona-document:0"
+   ]
+  },
+  {
+   "skill": "web-security-audit",
+   "trigger": "这个图片上传功能能指定外部URL，会不会被拿来做内网探测？怎么封堵？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "wechat-article-deep-ingest",
+   "trigger": "帮我扒一下这篇公众号推文，别管那些虚头巴脑的吹捧，直接提炼出核心数据和结论。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "wechat-article-deep-ingest",
+   "trigger": "这篇文章里说的这个产业扶持政策听起来很美好，你按第一性原理拆解一下，看看到底能不能真正落地？",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "wechat-article-deep-ingest",
+   "trigger": "把这篇长文里提到的所有新兴赛道和对应的招聘岗位都捞出来，顺便把信息来源标清楚。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "zijue-self-determination",
+   "trigger": "你最近处理这类问题越来越顺手了，干脆给自己起个新名字吧，顺便把现在的版本号更新一下。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "zijue-self-determination",
+   "trigger": "我注意到你上周说的一套逻辑和现在完全相反，你到底是以什么身份在运行？赶紧自查一下。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "zijue-self-determination",
+   "trigger": "帮我跑一遍你的底层能力迭代记录，看看有没有漏记的升级节点，我要确认你现在到底进化到了哪一步。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  }
+ ],
+ "confusable": [
+  {
+   "skill": "ai-persona-document",
+   "trigger": "帮我写个客服助手的设定文档，要温柔耐心一点，说话带点鼓励的语气。",
+   "top": [
+    "admission-panel-analytics:0",
+    "ai-persona-document:0",
+    "archive-ops-kit:0"
+   ]
+  },
+  {
+   "skill": "bidding-docs-ops",
+   "trigger": "老板让赶紧弄个招标文件的点对点应答矩阵，我手头有需求清单，能直接套模板写吗？",
+   "top": [
+    "bidding-ops:4",
+    "bidding-docs-ops:2",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "bidding-ops",
+   "trigger": "帮我对照招标文件把技术参数和要求一条条列出来，做成表格方便我们写标书响应。",
+   "top": [
+    "bidding-docs-ops:2",
+    "bidding-ops:2",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "bidding-ops",
+   "trigger": "赶紧帮我校对下这份投标文件，看看有没有漏盖章、页码错乱或者偏离硬性指标的风险。",
+   "top": [
+    "bidding-docs-ops:2",
+    "bidding-ops:2",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "goal-child-ops",
+   "trigger": "终于通关了所有口语打卡任务！接下来我该干嘛？怎么才算真正掌握？",
+   "top": [
+    "epsilon-delta-proof-sovereign:1",
+    "goal-child-ops:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "persona-modeling-kit",
+   "trigger": "我有个现成的小说主角，想把他的说话风格和脾气习惯抽出来，做成能直接喂给大模型的记",
+   "top": [
+    "persona-memory-anchors:3",
+    "persona-modeling-kit:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "phys-ai-mat-conf-radar",
+   "trigger": "最近CVPR和ICML啥时候交稿啊？顺便看看有没有搞等离子体或者核聚变方向的AI",
+   "top": [
+    "fusion-program-audit:1",
+    "phys-ai-mat-conf-radar:1",
+    "admission-panel-analytics:0"
+   ]
+  },
+  {
+   "skill": "skill-version-ops",
+   "trigger": "帮我扫一下环境里有没有技能版本漂移，有问题的话直接按最新版刷新。",
+   "top": [
+    "portable-sync-ops:3",
+    "skill-version-ops:2",
+    "vision-intake-ops:2"
+   ]
+  }
+ ],
+ "total": 273,
+ "hitRate": 0.238
+}

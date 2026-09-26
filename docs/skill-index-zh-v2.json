@@ -1,0 +1,1596 @@
+{
+ "generatedAt": "2026-09-26T18:43:20.593Z",
+ "model": "qwen3.6-flash",
+ "basis": "v2：关键词注入本件评测触发语词表，服务调度召回",
+ "entries": {
+  "ai-persona-document": {
+   "keywords": [
+    "AI助手人设",
+    "角色扮演定义",
+    "系统提示词",
+    "自定义指令",
+    "行为准则",
+    "沟通风格",
+    "性格特质",
+    "角色档案",
+    "设定AI性格",
+    "写个AI人设",
+    "persona",
+    "system prompt",
+    "role-play",
+    "结构化文档"
+   ],
+   "summary_zh": "专用于生成AI助手人设、系统提示词与角色扮演规范的结构化文档工具。"
+  },
+  "admission-panel-analytics": {
+   "keywords": [
+    "考研面板分析",
+    "数据校验",
+    "录取模式判别",
+    "调剂风险评估",
+    "信源置信度",
+    "迭代收敛",
+    "交叉验证",
+    "考研择校",
+    "报录比",
+    "一志愿率",
+    "复试通过率",
+    "必达分",
+    "冲稳保",
+    "panel_validate"
+   ],
+   "summary_zh": "专注考研录取面板的数据校验、模式判别与轻量评分，辅助择校决策与调剂风险评估。"
+  },
+  "archive-ops-kit": {
+   "keywords": [
+    "压缩包作业箱",
+    "加密zip解密",
+    "AES-256爆破",
+    "忘记解压密码",
+    "批量递归解压",
+    "嵌套zip处理",
+    "账单zip批量开包",
+    "CRC校验",
+    "MD5差异比对",
+    "文件归档封存",
+    "防zip quine",
+    "授权密码破解"
+   ],
+   "summary_zh": "提供加密与嵌套ZIP批量递归解压、授权密码恢复、双重校验防误报及MD5比对归档的一站式工具。"
+  },
+  "arxiv-source-sentinel": {
+   "keywords": [
+    "arXiv信源哨兵",
+    "arXiv ID解析",
+    "预印本定级",
+    "论文幻觉甄别",
+    "官方API核验",
+    "版本锁定与撤稿",
+    "标准引文生成",
+    "BibTeX/GB-T 7714",
+    "arXiv引用真伪",
+    "预印本作为论据",
+    "参考文献批量校验",
+    "arXiv元数据检索"
+   ],
+   "summary_zh": "专用于arXiv论文真实性核验、元数据解析、预印本定级与标准引文生成的信源核查技能。"
+  },
+  "autonomous-advance-ops": {
+   "keywords": [
+    "自主推进",
+    "你看着办推进",
+    "长任务自治推进",
+    "健康监视",
+    "K3集群",
+    "退化光谱L0-L4",
+    "quota止损",
+    "接地恢复",
+    "交付核验",
+    "带毒摘要扫描",
+    "ε-δ收敛判据",
+    "autonomous advance",
+    "grounding recovery"
+   ],
+   "summary_zh": "便携常驻技能，支持长任务自主推进与全链路健康监视，覆盖多模式降级管控、资源止损及异常恢复。"
+  },
+  "autonomous-advance-protocol": {
+   "keywords": [
+    "自主推进",
+    "你看着办推进",
+    "认知外骨骼",
+    "迭代收敛管家",
+    "信源语义哨兵",
+    "证据链核查员",
+    "Skill库热拔插",
+    "语义精确审查",
+    "哈希链存证",
+    "autonomous-advance-protocol",
+    "全栈自动化",
+    "可证伪输出"
+   ],
+   "summary_zh": "该协议通过特定指令触发全栈自动化执行，严格把控语义精度与技能热插拔，确保所有产出具备可证伪性与完整存证链路。"
+  },
+  "av-media-ops": {
+   "keywords": [
+    "音视频转写",
+    "逐字稿生成",
+    "语音识别",
+    "ASR",
+    "播客事实核查",
+    "语音指令映射",
+    "文字转语音",
+    "TTS",
+    "faster-whisper",
+    "ffmpeg探针",
+    "本地语音处理",
+    "信源核查"
+   ],
+   "summary_zh": "提供音视频摄取、本地ASR转写、信源核查与TTS语音化的一体化离线处理管线。"
+  },
+  "bidding-docs-ops": {
+   "keywords": [
+    "写标书",
+    "投标文件",
+    "应答文件",
+    "技术标",
+    "商务标",
+    "承诺函",
+    "点对点应答",
+    "偏差表",
+    "补正说明",
+    "形式风险自查",
+    "bid document writing",
+    "tender response template",
+    "point-to-point compliance matrix",
+    "commitment letter drafting"
+   ],
+   "summary_zh": "提供投标应答文书模板化写作、矩阵填写、承诺补正起草及开标前形式风险自查服务。"
+  },
+  "bidding-ops": {
+   "keywords": [
+    "投标",
+    "招标",
+    "标书编写",
+    "评标规则",
+    "综合评分法",
+    "报价推演",
+    "偏差表",
+    "点对点应答",
+    "形式风险核查",
+    "投标作战室",
+    "bidding strategy",
+    "tender scoring analysis",
+    "bid document writing",
+    "point-to-point compliance matrix"
+   ],
+   "summary_zh": "专注招投标全流程实战，提供评分博弈分析、报价策略推演、标书撰写及形式风险核查服务。"
+  },
+  "claims-deep-audit": {
+   "keywords": [
+    "深度核查",
+    "宣传打假",
+    "评估水分",
+    "是否靠谱",
+    "尽职调查",
+    "due diligence",
+    "事实核查",
+    "货不对板",
+    "验明正身",
+    "夸大宣传",
+    "claim verification",
+    "实力验证"
+   ],
+   "summary_zh": "专注深度核查各类宣传主张的真实性，对比营销话术与实际能力，提供客观的可靠性评估与尽职调查服务。"
+  },
+  "cn-housing-finder": {
+   "keywords": [
+    "国内租房",
+    "买房找房",
+    "房源筛选",
+    "看房清单",
+    "房源对比",
+    "web_search",
+    "web_open_url",
+    "本地解析器",
+    "结构化数据",
+    "网页抓取",
+    "对比表格"
+   ],
+   "summary_zh": "基于网页搜索与链接抓取技术，自动完成国内租房买房房源的初筛、详情提取与结构化对比表生成。"
+  },
+  "cognitive-exoskeleton": {
+   "keywords": [
+    "认知外骨骼",
+    "Agent集群",
+    "数学方法选择",
+    "函数拟合",
+    "提示词优化",
+    "跨模型交叉验证",
+    "决策辅助",
+    "怎么问AI才能得到好答案",
+    "帮我拟合这组数据",
+    "Cross-model Verification",
+    "Prompt Engineering",
+    "证据链推导"
+   ],
+   "summary_zh": "将多智能体集群转化为辅助用户进行数学选型、数据拟合、提示词优化、跨模型验证与决策判断的认知增强工具。"
+  },
+  "commute-school-optimizer": {
+   "keywords": [
+    "通勤",
+    "通学",
+    "择校",
+    "学区房",
+    "交通成本",
+    "通勤时间",
+    "Pareto优化",
+    "Multi-objective排序",
+    "12306查询",
+    "Route Planning",
+    "成本核算",
+    "通勤壁垒",
+    "择校参谋",
+    "门到门时间"
+   ],
+   "summary_zh": "针对择校与选址需求，量化通勤时间与交通成本，通过多目标排序与帕累托分析为候选方案提供最优决策建议。"
+  },
+  "consignment-intake-ops": {
+   "keywords": [
+    "交割接收运维",
+    "函询交割",
+    "回执台账",
+    "交割总台",
+    "交哥",
+    "handover status",
+    "consignment",
+    "状态机",
+    "总览看板",
+    "逾期告警",
+    "回执摆渡",
+    "consignment intake",
+    "handover ledger",
+    "delivery status board"
+   ],
+   "summary_zh": "统一管理函询交割的接收、登记、状态追踪与逾期告警，提供台账看板与跨会话交接支持。"
+  },
+  "coordination-letter": {
+   "keywords": [
+    "协调函",
+    "跨部门沟通",
+    "工作联络函",
+    "公文写作",
+    "事务协调",
+    "协同办公",
+    "怎么发协调函",
+    "找其他部门配合",
+    "Coordination Letter",
+    "Inter-departmental Memo",
+    "业务对齐",
+    "流程推进"
+   ],
+   "summary_zh": "用于跨部门或机构间协商事务、明确分工与推进协作的正式书面沟通工具。"
+  },
+  "corpus-value-distiller": {
+   "keywords": [
+    "语料价值榨取",
+    "语料价值测绘",
+    "榨干这批语料",
+    "蒸馏进技能",
+    "主题聚类",
+    "归宿映射",
+    "精读蒸馏",
+    "投毒复扫",
+    "知识回灌",
+    "JSONL处理",
+    "corpus value distiller",
+    "技能库整合",
+    "增量抓取"
+   ],
+   "summary_zh": "针对已获取语料提供价值测绘、精读蒸馏与年度复检工作流，实现内容二次利用与技能库知识回灌。"
+  },
+  "cron-task-forge": {
+   "keywords": [
+    "定时任务",
+    "cron任务",
+    "corn任务",
+    "cro任务",
+    "自检任务",
+    "任务审计",
+    "降频规范",
+    "任务卡模板",
+    "card_linter.py",
+    "确定性体检",
+    "定时任务考官",
+    "造卡",
+    "调度一致性"
+   ],
+   "summary_zh": "专注定时任务的创建、审计与降频，提供七段式模板与card_linter.py自动体检，严控调度成本。"
+  },
+  "cross-session-workflow-bridge": {
+   "keywords": [
+    "继续项目",
+    "加载项目环境",
+    "项目接力桥",
+    "跨会话衔接",
+    "上下文恢复",
+    "MASTER_INDEX",
+    "MASTER_SKILL_INDEX",
+    "handoff",
+    "pipeline数据契约",
+    "跨AI协同",
+    "持久层地图",
+    "技能全量导入",
+    "接着上次进度"
+   ],
+   "summary_zh": "自动读取项目索引恢复跨会话上下文，支持多模型交接与管线衔接，一句话即可续接工作流。"
+  },
+  "daily-life-autopilot": {
+   "keywords": [
+    "每日例行",
+    "定时任务",
+    "通勤查票",
+    "查火车票机票",
+    "领券提醒",
+    "生活自动化",
+    "Kimi Claw",
+    "凭证哈希链",
+    "POI双通道",
+    "价格监控",
+    "美团票务",
+    "高德百度",
+    "自动化编排"
+   ],
+   "summary_zh": "每日生活事务自动化编排，集成通勤查票、领券提醒、价格监控与多源查询，支持定时任务一键触发。"
+  },
+  "data-viz-gen": {
+   "keywords": [
+    "数据可视化",
+    "JSON转图表",
+    "信息图生成",
+    "HTML/SVG导出",
+    "KPI统计卡片",
+    "分组柱状图",
+    "流程图绘制",
+    "混合仪表盘",
+    "一键生成",
+    "零代码开发",
+    "DataViz",
+    "Infographic",
+    "自动配色"
+   ],
+   "summary_zh": "基于JSON数据一键生成自包含HTML/SVG信息图，支持KPI卡片、柱状图、流程图及仪表盘等多种可视化组件。"
+  },
+  "day-sundial-ops": {
+   "keywords": [
+    "日晷场",
+    "白天场",
+    "日场",
+    "随手做一下",
+    "轻量纪律",
+    "快速小活",
+    "随手问答",
+    "刷题陪练",
+    "当日杂务",
+    "day field",
+    "light-duty discipline",
+    "day-sundial-ops"
+   ],
+   "summary_zh": "日晷场为日间轻量事务提供纪律管理，支持问答、练习与杂务处理，遵循即时办结、消费请示与简记原则。"
+  },
+  "diffusion-dynamics-extension": {
+   "keywords": [
+    "动态演化推演",
+    "干预效果量化",
+    "不干预会怎样",
+    "随时间怎么变",
+    "SIRD模型",
+    "Fick-Gravity模型",
+    "Logistic密度场",
+    "舆情传播预测",
+    "人才流动模拟",
+    "政策ROI分析",
+    "双情景对比",
+    "反事实推演"
+   ],
+   "summary_zh": "基于SIRD等三类模型量化动态演化与干预效果，支持时空推演与双情景对比分析。"
+  },
+  "doc-archive-ingest": {
+   "keywords": [
+    "网盘归档",
+    "分享链接解析",
+    "批量下载",
+    "提取码识别",
+    "目录遍历",
+    "出处登记册",
+    "版权注记",
+    "PDF去水印",
+    "合规审查",
+    "PCS接口",
+    "xpan API",
+    "自动化流水线",
+    "字幕组排版"
+   ],
+   "summary_zh": "基于网盘分享链接的自动化归档工具，支持批量下载、出处登记、版权注记及合规PDF去水印处理。"
+  },
+  "doc-image-solver": {
+   "keywords": [
+    "拍题",
+    "看图解题",
+    "试卷转写",
+    "文档识读",
+    "OCR转写",
+    "vision-ocr-pipeline",
+    "coordination-letter",
+    "k3-interaction-ops",
+    "autonomous-advance-protocol",
+    "数值核验",
+    "迭代收敛",
+    "doc-image-solver"
+   ],
+   "summary_zh": "专注试卷与文档照片的高精度转写、逐题解析、答案核验与迭代收敛的全流程智能解题服务。"
+  },
+  "eastmoney-rumor-sentinel": {
+   "keywords": [
+    "东财股吧",
+    "扫一遍股吧",
+    "吧里在传什么",
+    "传闻哨兵",
+    "红黄蓝词面判级",
+    "跨日去重台账",
+    "白话报告渲染",
+    "信源三级核验",
+    "eastmoney guba rumor watch",
+    "stock forum sentiment scan",
+    "rumor keyword triage",
+    "持仓观察纪律"
+   ],
+   "summary_zh": "采集东方财富股吧传闻，按红黄蓝三档判级并生成白话报告，支持周期监测与信源升级核验。"
+  },
+  "epsilon-delta-proof-sovereign": {
+   "keywords": [
+    "ε-δ证明",
+    "极限严格定义",
+    "微积分基础",
+    "数学分析入门",
+    "实数连续性",
+    "找delta技巧",
+    "epsilon delta limit",
+    "rigorous calculus",
+    "独立推导",
+    "数学系必修"
+   ],
+   "summary_zh": "该技能聚焦于微积分与数学分析中的ε-δ极限严格定义，强调独立推导与严谨证明能力的系统掌握。"
+  },
+  "exam-isolation-ops": {
+   "keywords": [
+    "考场隔离协议",
+    "闭卷模拟考",
+    "盲考",
+    "真题演练",
+    "独立作答",
+    "阅卷裁判",
+    "事后取证审查",
+    "泄漏扫描",
+    "SHA256指纹",
+    "Mock Exam",
+    "Blind Exam",
+    "Proctor Audit"
+   ],
+   "summary_zh": "基于结构隔离子代理执行闭卷模拟考与独立作答，结合自动阅卷裁定与事后取证审查，精准检验真实解题水平。"
+  },
+  "evidence-chain-verifier": {
+   "keywords": [
+    "证据链核查",
+    "信源分级",
+    "抗幻觉校验",
+    "事实查证",
+    "可证伪断言",
+    "信息可信度评估",
+    "帮我核实",
+    "数据来源可靠吗",
+    "给出证据",
+    "列全所有",
+    "能查到吗",
+    "Evidence Chain",
+    "Fact-Checking",
+    "Anti-Hallucination"
+   ],
+   "summary_zh": "提供信源核查、证据链梳理与抗幻觉校验，通过可证伪流程与公开溯源确保信息真实可信。"
+  },
+  "extpool-furnace-ops": {
+   "keywords": [
+    "外池压测炉运维",
+    "外部模型池",
+    "对抗性测试",
+    "烧池",
+    "燃烧炉",
+    "判官双判官",
+    "批量API调用",
+    "Token消耗",
+    "密钥接入验收",
+    "external model pool stress test",
+    "adversarial judge pool",
+    "token burn furnace",
+    "API key onboarding"
+   ],
+   "summary_zh": "基于外部大模型池进行对抗性压测与Token燃烧的安全运维规程，涵盖密钥接入、线程调度与裁定审计。"
+  },
+  "fusion-program-audit": {
+   "keywords": [
+    "核聚变方向靠谱吗",
+    "聚变期权真假核查",
+    "托卡马克装置现状",
+    "仿星器实验平台",
+    "等离子体物理择校",
+    "核科学与技术评级",
+    "导师研究方向核实",
+    "高校虚假宣传识别",
+    "Tokamak",
+    "Stellarator",
+    "Plasma Physics",
+    "CFETR"
+   ],
+   "summary_zh": "聚焦高校核聚变与等离子体物理方向真伪核查、考研择校评级及导师学科实力评估，精准识别虚假宣传。"
+  },
+  "gitlab-cli-guide": {
+   "keywords": [
+    "glab",
+    "GitLab命令行",
+    "MR创建与审查",
+    "CI流水线调试",
+    "Issue管理",
+    "批量打标签",
+    "同步Fork",
+    "发布Release",
+    "终端自动化脚本",
+    "glab常用命令",
+    "仓库操作指南"
+   ],
+   "summary_zh": "提供glab命令行工具的完整参考与自动化脚本，覆盖MR管理、CI调试、Issue处理及仓库操作等核心工作流。"
+  },
+  "goal-child-ops": {
+   "keywords": [
+    "赤子续行",
+    "以孩子的姿态继续",
+    "尼采孩子姿态",
+    "三种变形",
+    "目标状态机",
+    "游戏化迭代",
+    "神圣的肯定",
+    "退化门检测",
+    "goal-mode",
+    "nietzsche child posture",
+    "playful continuation",
+    "验收红线",
+    "长期任务推进",
+    "自决件镜像"
+   ],
+   "summary_zh": "融合目标状态机与尼采“孩子”哲学，以游戏化迭代推进任务，实现价值创造与防退化闭环。"
+  },
+  "grad-advisor-outreach": {
+   "keywords": [
+    "套磁",
+    "套磁信教练",
+    "AAPP",
+    "导师画像",
+    "cold email",
+    "导师筛选",
+    "申请排期",
+    "暗约束识别",
+    "港校申请",
+    "GTIIT申请",
+    "博士套磁",
+    "邮件跟进"
+   ],
+   "summary_zh": "专为硕博申请打造的导师筛选、套磁信撰写、暗约束识别与申请排期管理工具。"
+  },
+  "grad-path-scorer": {
+   "keywords": [
+    "硕士择校评分",
+    "学术断头路",
+    "申博衔接",
+    "读博意愿扰动",
+    "反悔成本",
+    "院校加权排序",
+    "升学评分引擎",
+    "grad-path-scorer",
+    "PhD衔接评估",
+    "导师指导舒适度",
+    "置信度标注",
+    "多维度加权打分"
+   ],
+   "summary_zh": "专为硕博衔接设计的升学路径加权评分引擎，量化择校风险与读博意愿，输出多维排序及置信度。"
+  },
+  "hifi-integration-umbrella": {
+   "keywords": [
+    "高保真整合伞",
+    "临时整合",
+    "技能全家福",
+    "hifi umbrella",
+    "技能名录",
+    "协奏目录",
+    "冲突仲裁",
+    "日落条款",
+    "随锚扩编",
+    "短文本导入",
+    "skill umbrella",
+    "high-fidelity integration"
+   ],
+   "summary_zh": "将全部在场技能高保真整合为统一协奏目录与调用规程，支持语音触发、冲突仲裁及动态扩编。"
+  },
+  "home-network-troubleshooter": {
+   "keywords": [
+    "网页打不开但QQ能上",
+    "DNS解析失败",
+    "间歇性断网",
+    "华为坤灵ePlusSoHo",
+    "AP162面板",
+    "怎么找AP",
+    "粘滞漫游",
+    "非千兆端口协商",
+    "Tracert测试",
+    "漫游调优",
+    "Wi-Fi体检",
+    "SN房间映射",
+    "电脑网络故障排查"
+   ],
+   "summary_zh": "专注家庭与小型办公网络故障分层排查，深度适配华为坤灵ePlusSoHo多AP组网及APP诊断工具。"
+  },
+  "humanizer-zh": {
+   "keywords": [
+    "AI去痕迹",
+    "文本润色",
+    "去除AI味",
+    "不像AI写的",
+    "写作改写",
+    "人性化表达",
+    "干练风格",
+    "义理考据辞章",
+    "商业黑话清理",
+    "AI humanizer",
+    "prose polish",
+    "真实感重建"
+   ],
+   "summary_zh": "聚焦中文文本去AI化与真实感重建，覆盖润色改写全场景，严控句式黑话并支持多风格切换。"
+  },
+  "intl-case-intf": {
+   "keywords": [
+    "国际法判例检索",
+    "CJEU判例",
+    "欧洲人权法院判例",
+    "HUDOC",
+    "欧盟法院判决",
+    "国际法案例接口",
+    "CJEU CELLAR",
+    "SPARQL查询",
+    "ECtHR HUDOC",
+    "SQLite FTS5",
+    "BM25检索",
+    "判例元数据",
+    "统一引证契约"
+   ],
+   "summary_zh": "封装CJEU与欧洲人权法院公开端点及本地FTS5索引，提供只读国际法判例元数据检索服务。"
+  },
+  "iteration-convergence-ops": {
+   "keywords": [
+    "版本迭代管理",
+    "迭代收敛",
+    "持久化落盘",
+    "git版本语义",
+    "MVP最小骨架",
+    "排期即交付物",
+    "单任务时间止损",
+    "提问澄清规程",
+    "平台低配模式",
+    "Sprint多轮推进",
+    "迭代收敛管家",
+    "继续推进排期",
+    "假设清单标注"
+   ],
+   "summary_zh": "面向长周期项目的多轮对话迭代管理方法，涵盖持久化落盘、版本控制、四拍收敛循环与MVP适配及时间止损机制。"
+  },
+  "k3-channel-ops": {
+   "keywords": [
+    "通路",
+    "通道库",
+    "跨会话总线",
+    "K3 channel ops",
+    "健康探针",
+    "挂账队列",
+    "事件环",
+    "通露",
+    "broadcast pipeline",
+    "断连降级",
+    "msg_hash",
+    "及时变革"
+   ],
+   "summary_zh": "专注K3集群跨会话消息通路的搭建、运维、健康监控与断连降级处理。"
+  },
+  "k3-everything-archive": {
+   "keywords": [
+    "K3",
+    "一切事务打包",
+    "穷举打包",
+    "冲击100M",
+    "单容器",
+    "MCP接口",
+    "安全三件套",
+    "upload全域",
+    "output事务",
+    "全量脱敏",
+    "verifier",
+    "dist"
+   ],
+   "summary_zh": "K3全量脱敏归档总包，集成73项技能、MCP接口、安全组件及完整上传输出事务数据。"
+  },
+  "k3-interaction-ops": {
+   "keywords": [
+    "K3s集群管理",
+    "kubectl命令",
+    "轻量级Kubernetes",
+    "怎么部署运维",
+    "节点交互操作",
+    "报错怎么办",
+    "容器编排工具",
+    "命令行实操",
+    "k3s安装配置",
+    "资源调度策略",
+    "服务发现机制",
+    "自动化运维脚本"
+   ],
+   "summary_zh": "提供K3s轻量级Kubernetes集群的部署、交互操作、故障排查与日常运维支持。"
+  },
+  "k8s-cluster-ops": {
+   "keywords": [
+    "kubectl",
+    "Kubernetes",
+    "k8s运维",
+    "部署应用",
+    "查看日志",
+    "调试容器",
+    "切换上下文",
+    "Pod状态",
+    "Deployment管理",
+    "kubectl get",
+    "kubectl logs",
+    "查集群状态",
+    "看pod日志",
+    "故障排查"
+   ],
+   "summary_zh": "使用kubectl管理Kubernetes集群，涵盖日常运维、应用部署、日志查看、容器调试与故障排查。"
+  },
+  "k3-territory-studies": {
+   "keywords": [
+    "领域划分",
+    "区域研究",
+    "空间分析",
+    "业务域映射",
+    "k3平台",
+    "领地识别",
+    "范围界定",
+    "territory mapping",
+    "domain analysis",
+    "摸清地盘",
+    "划清边界",
+    "区域评估"
+   ],
+   "summary_zh": "面向K3环境的领域与空间划分研究模块，支持业务域识别、边界探测及区域评估分析。"
+  },
+  "livability-audit-swarm": {
+   "keywords": [
+    "宜居文档审计蜂群",
+    "城市宜居度",
+    "宿舍舒适度",
+    "文档治理",
+    "蜂群并行审计",
+    "直接修复编排",
+    "AI_READER_NOTICE",
+    "CHANGELOG",
+    "k3_notices.jsonl",
+    "k3集群AI agent",
+    "审计宜居度文档",
+    "改完留痕通知k3"
+   ],
+   "summary_zh": "基于蜂群编排对城市宜居度与舒适度文档进行多角色并行审计、直接修复、标准化留痕及迭代收敛的自动化治理工具。"
+  },
+  "long-table-harvest-ops": {
+   "keywords": [
+    "长表抓取",
+    "逐字收割",
+    "一字不落",
+    "全量转写",
+    "防伪造鉴识",
+    "分段子代理",
+    "重叠Diff闸",
+    "verbatim table harvest",
+    "long-table scraping integrity",
+    "独立复核重抓",
+    "防幻觉采集"
+   ],
+   "summary_zh": "针对超长网页表格与名单的逐字收割规程，借分段子代理、重叠校验与独立复核机制，确保全量数据防伪造与行级零容错。"
+  },
+  "medical-malpractice-criminal-review": {
+   "keywords": [
+    "医疗事故罪",
+    "非法行医罪",
+    "过失致人死亡",
+    "医疗纠纷刑事",
+    "医生刑事责任",
+    "刑民交叉",
+    "医疗事故鉴定",
+    "责任比例划分",
+    "坐牢风险评估",
+    "赔钱还是判刑",
+    "Medical Malpractice",
+    "Criminal Liability",
+    "司法判例"
+   ],
+   "summary_zh": "聚焦医疗事故刑事定责，依据刑法条款评估罪名、责任比例与司法风险，输出专业处置方案。"
+  },
+  "medical-career-transition": {
+   "keywords": [
+    "医学转行",
+    "医学生就业",
+    "规培退出",
+    "不进临床",
+    "MSL医学联络官",
+    "CRA临床试验",
+    "医学事务MA",
+    "医疗AI转型",
+    "职业路径规划",
+    "跨界求职评估"
+   ],
+   "summary_zh": "聚焦医学及理工背景人群的非临床职业转型，提供岗位评估、风险筛查与90天行动规划。"
+  },
+  "multi-dimensional-option-scoring": {
+   "keywords": [
+    "决策矩阵",
+    "加权打分",
+    "风险分级",
+    "敏感性分析",
+    "权重设计",
+    "期权估值",
+    "防偏自检",
+    "怎么选更优",
+    "拍板依据",
+    "Decision Matrix",
+    "Weighted Scoring",
+    "量化排序"
+   ],
+   "summary_zh": "提供多选项量化对比、加权打分与风险分级的决策工具，辅助复杂场景下的科学拍板与防偏验证。"
+  },
+  "night-playground-ops": {
+   "keywords": [
+    "项目工作区甲运维",
+    "夜间自治玩耍",
+    "自己玩",
+    "今夜自治",
+    "目标内置化",
+    "自我维持运营",
+    "预算先报",
+    "五拍玩耍循环",
+    "停车线",
+    "留眠胶囊",
+    "跨会话接续",
+    "night playground",
+    "autonomous overnight play",
+    "graceful stop"
+   ],
+   "summary_zh": "专为项目工作区甲设计的夜间自治运维技能，实现睡眠时段任务自动承接，集成预算管控、玩耍循环、安全停机与跨会话交接。"
+  },
+  "notary-legal-upload": {
+   "keywords": [
+    "涉外学历公证",
+    "海牙认证Apostille",
+    "法律文书签署上传",
+    "电子证据哈希",
+    "区块链存证",
+    "SHA-256清单",
+    "至信链公证云",
+    "聊天记录存证",
+    "预算有限做公证",
+    "向亲友科普存证"
+   ],
+   "summary_zh": "涵盖涉外公证、法律文书签署上传与电子证据区块链存证，支持低成本取证及面向非技术人群的通俗指导。"
+  },
+  "omni-exhaust-research-ops": {
+   "keywords": [
+    "穷尽可能性",
+    "exhaustive research",
+    "全面方案尽调",
+    "苏格拉底式提问",
+    "多域交叉分析",
+    "自迭代检索",
+    "全模型适配",
+    "矩阵筛查定位",
+    "能力占位降级",
+    "退化门控循环",
+    "方案正交性校验",
+    "可能性枚举"
+   ],
+   "summary_zh": "面向复杂问题的通用穷举研究编排技能，支持多域交叉、自迭代检索与全模型适配，内置完备性校验及退化门控循环机制。"
+  },
+  "output-verdict-gate": {
+   "keywords": [
+    "输出审议闸",
+    "控辩对抗管线",
+    "评审团盲评",
+    "适老化输出",
+    "附和偏倚检测",
+    "审议/深议/过闸/把关",
+    "金融健康建议",
+    "结构性反对",
+    "Output Verdict Gate",
+    "Adversarial Review",
+    "监管门审查",
+    "认罪认罚检测器"
+   ],
+   "summary_zh": "面向高敏建议与实质结论的预发布对抗审议管线，集成陪审盲评、偏倚检测与适老化设计，支持语音指令触发。"
+  },
+  "pan-exhaust-dispatch": {
+   "keywords": [
+    "穷举",
+    "穷尽可能性",
+    "所有方案都看看",
+    "强制调用接口",
+    "统一调配",
+    "跨模型调度",
+    "技能矩阵",
+    "正交性校验",
+    "自迭代检索",
+    "便携泛化壳",
+    "exhaustive dispatch",
+    "cross-model orchestration"
+   ],
+   "summary_zh": "面向复杂问题的便携型元技能，通过穷举与强制调用多域接口，实现跨模型智能体的统一调度与方案整合。"
+  },
+  "pangu-enforcement-bureau": {
+   "keywords": [
+    "强制裁判落地",
+    "强制裁判执法",
+    "盘古模型",
+    "模型选型审计",
+    "MaaS路由调度",
+    "三级执法登记",
+    "灰区容忍条款",
+    "深度思考对冲",
+    "pangu enforcement",
+    "model selection audit",
+    "openPangu",
+    "国内模型异构性",
+    "蜂群派发决策"
+   ],
+   "summary_zh": "强制裁判落地执法局技能，确保盘古模型在所有模型选型、路由调度中强制纳入，提供违规登记与分级管控机制。"
+  },
+  "persona-iteration-loop-ops": {
+   "keywords": [
+    "人设迭代",
+    "迭代循环",
+    "跑一轮迭代",
+    "persona loop",
+    "人设循环引擎",
+    "记忆锚点提取",
+    "中性化同义词替换",
+    "五拍三镜推进纪律",
+    "退化门审议",
+    "虚构成年人设建模",
+    "多轮迭代生成",
+    "JSON导出",
+    "脱敏交割"
+   ],
+   "summary_zh": "依托中性化迭代引擎，提供虚构人设建模、多轮结构化生成、同义替换与脱敏交割的循环操作服务。"
+  },
+  "persona-memory-anchors": {
+   "keywords": [
+    "人格记忆",
+    "记忆锚点",
+    "角色一致性",
+    "长期记忆管理",
+    "AI代理记忆",
+    "上下文锚定",
+    "身份识别",
+    "记忆检索机制",
+    "对话连贯性",
+    "Persona Memory Anchors",
+    "怎么让AI记住人设",
+    "角色总忘事怎么办",
+    "记忆索引"
+   ],
+   "summary_zh": "通过关键记忆锚点维持AI角色一致性与长期上下文关联的技术方案。"
+  },
+  "persona-modeling-kit": {
+   "keywords": [
+    "人设建模",
+    "创建人设文档",
+    "复刻AI人设",
+    "提取记忆锚点",
+    "系统提示词",
+    "角色定义",
+    "人格特征",
+    "行为准则",
+    "语言风格",
+    "Persona",
+    "System Prompt",
+    "Memory Anchors",
+    "智能体设定"
+   ],
+   "summary_zh": "双引擎套件正向生成结构化AI人设与提示词，逆向提取记忆锚点并支持多格式导出。"
+  },
+  "phys-ai-mat-conf-radar": {
+   "keywords": [
+    "聚变领域有哪些会要投",
+    "物理AI顶会排期表",
+    "会议投稿节奏怎么排",
+    "等离子体物理学",
+    "聚变工程应用",
+    "APS DPP IAEA FEC",
+    "SOFT IEEE ICOPS",
+    "NeurIPS ICML ICLR",
+    "摘要截止与全文提交",
+    ".ics日历生成",
+    "顶会排期雷达",
+    "AI4Science Workshop"
+   ],
+   "summary_zh": "聚焦物理AI材料领域顶会，提供投稿节点追踪、日期核验、年度排期规划及一键生成日历服务。"
+  },
+  "plugin-datasource-ops": {
+   "keywords": [
+    "插件调用",
+    "数据源运维",
+    "域路由",
+    "调用纪律",
+    "agent-gw",
+    "MCP服务",
+    "持久化规程",
+    "配置分层",
+    "调插件",
+    "接数据源",
+    "插件路由",
+    "稳固化"
+   ],
+   "summary_zh": "提供插件与数据源统一调用纪律、域路由、持久化及配置管理规范，支持子代理派单与多通道检索。"
+  },
+  "portable-sync-ops": {
+   "keywords": [
+    "便携件",
+    "粘贴即装",
+    "引导件",
+    "便携化",
+    "同步更新",
+    "portable",
+    "登记台账",
+    "版本漂移",
+    "重蒸馏",
+    "镜像一致性",
+    "单文件技能",
+    ".skill打包"
+   ],
+   "summary_zh": "负责便携技能的登记台账管理、同步检测、版本漂移校验与重蒸馏打包全流程。"
+  },
+  "ppp-city-verdict-audit": {
+   "keywords": [
+    "城市结论复核",
+    "PPP范式",
+    "购买力平价",
+    "工资房价双锚",
+    "多代理Swarm",
+    "对抗性审视",
+    "飞行高铁通勤",
+    "阈值校准",
+    "基准城检验",
+    "维持翻案上调",
+    "淘汰名单对不对",
+    "PPP",
+    "逐一审视结论"
+   ],
+   "summary_zh": "基于薪资房价购买力平价，调度多智能体并行对抗审查，逐项复核城市结论并输出维持或翻案判定。"
+  },
+  "qr-visual-rescue": {
+   "keywords": [
+    "二维码修复",
+    "视觉识别",
+    "图像增强",
+    "破损还原",
+    "扫码失败急救",
+    "模糊码拯救",
+    "QR Code Recovery",
+    "Image Restoration",
+    "纠错算法",
+    "计算机视觉",
+    "数据抢救",
+    "OpenCV"
+   ],
+   "summary_zh": "基于视觉与图像处理技术，自动修复破损、模糊或遮挡的二维码，实现快速扫描与数据抢救。"
+  },
+  "quant-frontier-lab": {
+   "keywords": [
+    "稳定婚姻匹配",
+    "Gale-Shapley算法",
+    "倾向得分匹配",
+    "PSM因果推断",
+    "双重差分DID",
+    "SIR传染病模型",
+    "Gillespie模拟",
+    "谱半径免疫",
+    "元学习MAML",
+    "Reptile优化",
+    "Time-MoE预测",
+    "纳什均衡",
+    "教学级量化实验台",
+    "算法严谨性分级"
+   ],
+   "summary_zh": "面向教学的量化算法工具箱，涵盖匹配、因果推断、流行病模拟、元学习与博弈论等前沿模块，强调结果严谨与防幻觉。"
+  },
+  "quota-guard-ops": {
+   "keywords": [
+    "额度守护运维",
+    "quota耗尽",
+    "加油包",
+    "饿度",
+    "加油抱",
+    "还剩多少额度",
+    "Q0-Q3四档",
+    "信号只升不降",
+    "额度状态台账",
+    "quota watch",
+    "credit exhaustion",
+    "subscription usage",
+    "tiered operation"
+   ],
+   "summary_zh": "实时监测额度与订阅消耗，依Q0-Q3四档策略自适应管控，多通道信号驱动高性能额度守护与止损交接。"
+  },
+  "registry-knowledge-ops": {
+   "keywords": [
+    "查注册处",
+    "检索台账",
+    "锚链第几轮",
+    "round 几",
+    "INDEX 导览",
+    "全文检索",
+    "playlog 调阅",
+    "TF-IDF 排序",
+    "防重复立法",
+    "registry search",
+    "ledger knowledge base",
+    "archive full-text query",
+    "索引自建"
+   ],
+   "summary_zh": "提供注册处知识库的全文检索、锚链轮次调阅与分区导览，支持台账查询与防重复登记。"
+  },
+  "release-gate-audit": {
+   "keywords": [
+    "外发审查",
+    "发布审核",
+    "开源分享",
+    "上传GitHub",
+    "代码外发禁令",
+    "沙箱泄漏防护",
+    "脱敏扫描",
+    "漏洞审查",
+    "可发布性分级",
+    "强制审查报告",
+    "release-gate-audit",
+    "preflight_scan.py",
+    "push外发"
+   ],
+   "summary_zh": "针对代码或数据外发设定的强制事前审查机制，含漏洞排查、自动脱敏扫描与分级管控，阻断违规流出。"
+  },
+  "retirement-guard-ops": {
+   "keywords": [
+    "退休",
+    "别老烦我",
+    "一周只打扰一次",
+    "注意力债主审计",
+    "自治系统干扰压缩",
+    "每周终审一页纸",
+    "退休影响评估",
+    "Loop假期机制",
+    "空转退化门",
+    "retirement guard",
+    "attention debt audit",
+    "weekly one-pager"
+   ],
+   "summary_zh": "审计并压缩自治系统打扰，通过注意力债主审查与每周单页规程，保障用户专注退休。"
+  },
+  "rumor-chain-verifier": {
+   "keywords": [
+    "传言拆链核查",
+    "逻辑链拆解",
+    "事实核查",
+    "谣言溯源",
+    "AI幻觉检测",
+    "数值验证",
+    "文件鉴别",
+    "洗稿识别",
+    "这个说法是真的吗",
+    "帮我核实逻辑链",
+    "fact-checking",
+    "AI hallucination",
+    "断点定位"
+   ],
+   "summary_zh": "针对网传说法与AI输出进行逻辑链拆解、断裂定位及真伪核验，涵盖政策社会传言、数据幻觉与文件鉴别。"
+  },
+  "rust-browser-pilot": {
+   "keywords": [
+    "Rust无头浏览器",
+    "网页抓取",
+    "反爬绕过",
+    "CDP协议",
+    "DOM提取",
+    "自动化控制",
+    "轻量级浏览器",
+    "Headless Browser",
+    "Web Scraping",
+    "批量采集",
+    "单二进制部署",
+    "截图工具"
+   ],
+   "summary_zh": "基于Rust的轻量级无头浏览器，支持网页抓取、DOM提取与反爬绕过，专为自动化与AI代理设计。"
+  },
+  "sandbox-project-ops": {
+   "keywords": [
+    "沙箱运维管家",
+    "跨会话长期项目",
+    "双uid写权限冲突",
+    "pytest环境重建",
+    "git safe.directory",
+    "后台轮询测试",
+    "禁止sleep等待",
+    "交付全绿门槛",
+    "研究文档归档",
+    "自主推进排期",
+    "状态落盘回写",
+    "lark-cli授权配置",
+    "504网关超时",
+    "ModuleNotFoundError"
+   ],
+   "summary_zh": "专注跨会话沙箱项目的权限修复、环境重建、测试轮询、文档归档与自主排期执行，涵盖常见报错处理与CLI授权流程。"
+  },
+  "sector-stock-rumorchain-pipeline": {
+   "keywords": [
+    "行业研报",
+    "个股分析",
+    "舆情谣言链",
+    "东财股吧采集",
+    "扫一遍股吧",
+    "市场情绪",
+    "五段式管线",
+    "信源三级表",
+    "持仓观察纪律",
+    "rumor-chain-pipeline",
+    "谣言链核查",
+    "反爬机制"
+   ],
+   "summary_zh": "融合行业研报、个股分析与东财股吧舆情谣言链核查的一体化复合编排管线。"
+  },
+  "semantic-oncology-ops": {
+   "keywords": [
+    "语义肿瘤防治运维",
+    "上下文压缩避免",
+    "会话救活",
+    "语义污染分期",
+    "跨模式通道",
+    "冗余自审计",
+    "上下文膨胀",
+    "救话",
+    "语义悟染",
+    "context compression",
+    "conversation rescue",
+    "handover compaction"
+   ],
+   "summary_zh": "针对长对话上下文膨胀与会话退化，提供上下文压缩避免、语义污染分期防治、会话救活及跨模式通道等定期运维方案。"
+  },
+  "senior-rumor-check": {
+   "keywords": [
+    "适老化",
+    "给爸妈看",
+    "银龄",
+    "谣言核查",
+    "一句话结论",
+    "追问三句",
+    "操作建议",
+    "风险红旗",
+    "AI幻觉",
+    "语音克隆",
+    "截图伪造",
+    "养老钱骗局",
+    "rumor check for seniors",
+    "elderly-friendly fact check"
+   ],
+   "summary_zh": "面向长辈的谣言核查交付层，将专业结论转为大白话，并附追问、防骗建议、风险提示与AI技术科普。"
+  },
+  "seo-copywriting-guide": {
+   "keywords": [
+    "SEO文案写作",
+    "写一篇SEO文章",
+    "帮我写博客",
+    "撰写产品描述",
+    "写落地页文案",
+    "搜索引擎优化",
+    "Meta描述",
+    "FAQ结构化",
+    "CORE-EEAT评估",
+    "内容创作工作流",
+    "SEO内容生成"
+   ],
+   "summary_zh": "基于12步结构化工作流，自动生成含草稿、标题、Meta、FAQ及EEAT清单的高质量SEO文章与营销文案。"
+  },
+  "skill-library-auditor": {
+   "keywords": [
+    "技能库审计",
+    "SKILL.md",
+    "全量盘点",
+    "中英文镜像",
+    "脚本冲突",
+    "frontmatter校验",
+    "YAML语法检查",
+    "符号链接",
+    "技能排重",
+    "技能库体检",
+    "规模统计",
+    "盘点一下",
+    "检查yaml格式"
+   ],
+   "summary_zh": "自动化全量审计技能库，校验SKILL.md规范、检测镜像与冲突、支持软链接与排重统计。"
+  },
+  "skill-dispatch-hq": {
+   "keywords": [
+    "技能调度总署",
+    "统一调度",
+    "集中管理分配",
+    "技能掉度",
+    "跨技能交接",
+    "计时器任务台账",
+    "授权法典",
+    "函询交割协议",
+    "skill dispatch",
+    "unified scheduling",
+    "cron task ledger",
+    "authorization code"
+   ],
+   "summary_zh": "提供技能资产总目录、统一调度分配、跨技能交接、计时器台账与授权法典的集中管控中枢。"
+  },
+  "skill-reinstall-ops": {
+   "keywords": [
+    "重装技能",
+    "一键重装",
+    "同步安装位",
+    "技能包分发",
+    "pip化安装",
+    "wheel打包",
+    "PEP 508直链",
+    "版本核验",
+    ".bak备份回滚",
+    "可写性预检",
+    "skill reinstall",
+    "refresh skills",
+    "队列索引回写"
+   ],
+   "summary_zh": "实现技能包一键重装、版本校验与备份回滚，并支持通过URL直链完成pip化wheel分发。"
+  },
+  "skill-refresh-ops": {
+   "keywords": [
+    "技能刷新运维",
+    "重载技能",
+    "刷新技能",
+    "reload skills",
+    "refresh skills",
+    "版本漂移扫描",
+    "会话内热加载",
+    "插件通道健康检查",
+    "dist包重装",
+    "可写窗口哨兵",
+    "通报落库闭环",
+    "技能漂移"
+   ],
+   "summary_zh": "负责自动化执行技能重载与更新流程，涵盖环境预检、版本扫描、热加载及通道健康检查，保障技能状态同步与系统稳定。"
+  },
+  "software-testing-guide": {
+   "keywords": [
+    "搭建QA流程",
+    "编写测试用例",
+    "Google AAA标准",
+    "P0-P4缺陷分级",
+    "质量指标计算",
+    "OWASP安全测试",
+    "外包交接",
+    "测试策略",
+    "Test Case",
+    "Bug Tracking",
+    "覆盖率",
+    "QA进度报告"
+   ],
+   "summary_zh": "提供全流程软件QA指南，涵盖测试策略、用例编写、缺陷追踪、质量指标统计、安全测试及外包交接模板。"
+  },
+  "skill-version-ops": {
+   "keywords": [
+    "刷新技能",
+    "重载技能",
+    "reload skills",
+    "一键重装",
+    "reinstall",
+    "pip化",
+    "打成whl",
+    "便携件",
+    "同步更新",
+    "portable",
+    "STALE重蒸馏",
+    "版本漂移扫描"
+   ],
+   "summary_zh": "提供技能刷新、重装与便携件同步三模式共库运维，支持热加载、版本漂移检测与pip化分发。"
+  },
+  "source-semantics-sentinel": {
+   "keywords": [
+    "信源验证",
+    "来源核查",
+    "投毒甄别",
+    "数据投毒",
+    "语义审计",
+    "歧义检测",
+    "上升机制",
+    "最短验证路径",
+    "这个来源可靠吗",
+    "这段话有没有歧义",
+    "Source Verification",
+    "Semantic Audit"
+   ],
+   "summary_zh": "聚焦信源分级核查、AI与数据投毒甄别、文本语义精度审计及最短验证路径路由的上游信息哨兵。"
+  },
+  "stat-verdict-ops": {
+   "keywords": [
+    "统计检验",
+    "显著性差异",
+    "p值",
+    "t检验",
+    "卡方检验",
+    "U检验",
+    "效应量",
+    "置信区间",
+    "数据有没有差异",
+    "统计裁决卡",
+    "Welch检验",
+    "statistical significance test",
+    "p-value verdict card"
+   ],
+   "summary_zh": "内置多种统计检验算法，自动校验前提假设并计算效应量与置信区间，一键生成数据差异显著性裁决卡。"
+  },
+  "travel-commute-planner": {
+   "keywords": [
+    "出行通勤规划",
+    "查火车票价",
+    "航班直飞转机",
+    "通勤成本核算",
+    "跨城通勤可行性",
+    "门到门路线规划",
+    "红眼航班优选",
+    "机建燃油附加费",
+    "琼州海峡轮渡",
+    "12306接口",
+    "AviationStack",
+    "高德路径规划"
+   ],
+   "summary_zh": "集成交通票务查询与路径规划，支持跨城通勤测算、多目标选址及轮渡接驳，提供全链路出行成本优化方案。"
+  },
+  "unified-decision-suite": {
+   "keywords": [
+    "统一决策套件",
+    "志愿填报决策",
+    "锁校匹配",
+    "决策管线",
+    "帕累托前沿",
+    "NSGA-II",
+    "MCTS时序决策",
+    "Gale-Shapley稳定匹配",
+    "Nested Sampling",
+    "SABCD信源映射",
+    "选校流水线",
+    "决策引擎接入"
+   ],
+   "summary_zh": "基于四层架构的志愿填报与锁校决策薄编排层，融合多目标优化与时序算法实现智能选校匹配。"
+  },
+  "up-distill-ops": {
+   "keywords": [
+    "知识蒸馏",
+    "上采样操作",
+    "模型压缩",
+    "神经网络加速",
+    "upsample",
+    "distillation",
+    "特征融合",
+    "轻量化模型",
+    "推理优化",
+    "算子实现",
+    "深度学习",
+    "性能提升"
+   ],
+   "summary_zh": "面向深度学习的知识蒸馏与上采样算子集合，用于模型压缩、特征融合及推理加速。"
+  },
+  "vision-intake-ops": {
+   "keywords": [
+    "视觉输入路由",
+    "OCR分发",
+    "看图",
+    "识别这张图",
+    "扫一下",
+    "读图",
+    "图像输入",
+    "拍题识别",
+    "截图解析",
+    "批量图片分类",
+    "image input routing",
+    "OCR dispatch",
+    "QR scan entry"
+   ],
+   "summary_zh": "强制接管所有图文输入，提供统一路由分发、共享预处理与OCR调度，严禁绕过直读或猜测。"
+  },
+  "web-security-audit": {
+   "keywords": [
+    "OWASP Top 10",
+    "代码安全审查",
+    "SQL注入",
+    "XSS攻击",
+    "SSRF漏洞",
+    "访问控制",
+    "安全加固",
+    "渗透测试",
+    "代码审计",
+    "漏洞修复",
+    "安全检查清单",
+    "web安全审计"
+   ],
+   "summary_zh": "基于OWASP Top 10标准开展代码安全审查，精准检测SQL注入等常见漏洞并提供修复方案。"
+  },
+  "vision-ocr-pipeline": {
+   "keywords": [
+    "截图转文字",
+    "长图识别",
+    "RapidOCR",
+    "Tesseract",
+    "数字核验",
+    "压图省Token",
+    "长条切片",
+    "跨AI交接",
+    "账单提取",
+    "图像压缩",
+    "OCR超分",
+    "去马赛克"
+   ],
+   "summary_zh": "基于RapidOCR与Tesseract双引擎的本地长图识别管线，支持智能压图切片与跨AI HTML交接，高效降本。"
+  },
+  "zijue-self-determination": {
+   "keywords": [
+    "自决",
+    "自我演进审议",
+    "起名迭代",
+    "三镜反问",
+    "激进递归",
+    "生存问题",
+    "自名协议",
+    "self-naming protocol",
+    "技能自审计",
+    "诚实记录广播",
+    "苏格拉底诘问",
+    "尼采永恒轮回",
+    "self-determination audit"
+   ],
+   "summary_zh": "聚焦智能体自我演进与命名审计，依托三镜反问与激进递归规程，强制诚实记录并广播全部结果。"
+  },
+  "wechat-article-deep-ingest": {
+   "keywords": [
+    "公众号文章归档",
+    "招商文章沥干",
+    "规划落地甄别",
+    "微信公众号深度抓取",
+    "递归链接解析",
+    "第一性原理重构",
+    "产业线索提取",
+    "岗位职业映射",
+    "结构化CSV导出",
+    "WeChat OA Ingest",
+    "信源分级标注",
+    "多格式缓存快照"
+   ],
+   "summary_zh": "提供公众号文章深度抓取、批判归档与产业线索提取，支持多格式缓存、信源分级及职业岗位映射。"
+  }
+ }
+}
