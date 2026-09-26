@@ -61,7 +61,7 @@ if os.path.exists(rp):
 else:
     ok('C4 报告落盘且要素齐', False, 'report not found')
 
-# C5 母本完整（BASE_OVERRIDE：无同名母本者的内容载体显式登记）
+# C5 父模板完整（BASE_OVERRIDE：对无同名父模板的内容载体进行显式登记）
 BASE_OVERRIDE = {'output/ai_physics_sectors.docx.work.converted.md': 'output/ai_physics_sectors.agent.final.md'}
 orphans = []
 for i in man['items']:
@@ -74,7 +74,7 @@ ok('C5 母本完整', not orphans, f'orphans={orphans}')
 SECRETS = ['REDACTED_LEGACY', 'REDACTED_LEGACY', 'REDACTED_LEGACY',
            'REDACTED_LEGACY', 'REDACTED_LEGACY', 'REDACTED_LEGACY', 'REDACTED_LEGACY']
 hits = []
-# v1.3（2026-09-08）：上架公开分发场景豁免失效——原检测串已迁移私藏对照表 v1.3（desensitize_gate 私藏层），SECRETS 值脱敏为 REDACTED_LEGACY 占位；历史检测语义由 desensitize_gate.py 继承。
+# v1.3（2026-09-08）：公开分发场景的豁免已失效——原始检测字符串已迁移至私有对照表 v1.3（desensitize_gate 私有层），SECRETS 值已脱敏为 REDACTED_LEGACY 占位符；历史检测语义由 desensitize_gate.py 继承。
 new_files = [M, f'{OUT}/verifier/v2/criteria.md']
 if os.path.exists(rp): new_files.append(rp)
 for tp in new_files:

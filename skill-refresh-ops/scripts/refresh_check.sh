@@ -1,7 +1,7 @@
 #!/bin/sh
-# skill-refresh-ops 步骤①②⑤确定性执行：预检可写性 + 全库盘点版本漂移 + dist 包源搜索
+# skill-refresh-ops 步骤①②⑤确定性执行：预检写入权限 + 全库版本漂移盘点 + dist 包源搜索
 # 用法: sh refresh_check.sh [upload_dir]   默认 upload_dir=<上传区>
-# 输出: 报告写 <输出区>/skill_refresh_report_<日期>.txt 并回显关键结论
+# 输出: 报告写入 <输出区>/skill_refresh_report_<日期>.txt 并回显关键结论
 set -u
 UPLOAD="${1:-<上传区>}"
 OUT="<输出区>/skill_refresh_report_$(date +%Y%m%d_%H%M%S).txt"

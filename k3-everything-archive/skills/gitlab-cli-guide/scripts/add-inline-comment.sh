@@ -1,14 +1,14 @@
 #!/bin/bash
 # add-inline-comment.sh
-# Post inline code review comments to GitLab MRs at specific line numbers
-# Part of: gitlab-cli-skills
+# 在指定行号向 GitLab MR 发布内联代码审查评论
+# 属于：gitlab-cli-skills
 # 
-# Usage: add-inline-comment.sh <repo> <mr_iid> <file_path> <line_number> <comment_text>
-# Example: add-inline-comment.sh owner/repo 42 "src/File.js" 100 "Bug: This needs fixing"
+# 用法：add-inline-comment.sh <repo> <mr_iid> <file_path> <line_number> <comment_text>
+# 示例：add-inline-comment.sh owner/repo 42 "src/File.js" 100 "Bug: This needs fixing"
 
 set -e
 
-# Color codes for output
+# 输出的颜色代码
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -35,10 +35,10 @@ FILE_PATH="$3"
 LINE_NUMBER="$4"
 COMMENT_TEXT="$5"
 
-# URL-encode the repo path
+# URL编码仓库路径
 REPO_ENCODED=$(echo "$REPO" | sed 's/\//%2F/g')
 
-# Retrieve GitLab token via glab (avoids direct access to credential files)
+# 通过 glab 获取 GitLab token（避免直接访问凭证文件）
 GITLAB_TOKEN=$(glab auth token 2>/dev/null)
 
 if [ -z "$GITLAB_TOKEN" ]; then
@@ -47,7 +47,7 @@ if [ -z "$GITLAB_TOKEN" ]; then
     exit 1
 fi
 
-# Get MR metadata to extract project ID and SHAs
+# 获取 MR 元数据以提取项目 ID 和 SHAs
 echo -e "${YELLOW}Fetching MR metadata...${NC}" >&2
 MR_DATA=$(glab api "/projects/$REPO_ENCODED/merge_requests/$MR_IID" 2>&1)
 
@@ -77,10 +77,10 @@ echo -e "${YELLOW}Base SHA: ${BASE_SHA:0:8}...${NC}" >&2
 echo -e "${YELLOW}Head SHA: ${HEAD_SHA:0:8}...${NC}" >&2
 echo -e "${YELLOW}Target: $FILE_PATH:$LINE_NUMBER${NC}" >&2
 
-# Escape JSON special characters in comment text
+# 在注释文本中转义 JSON 特殊字符
 COMMENT_ESCAPED=$(echo "$COMMENT_TEXT" | jq -Rs .)
 
-# Build JSON payload
+# 构建 JSON 载荷
 JSON_PAYLOAD=$(cat <<EOF
 {
   "body": $COMMENT_ESCAPED,
@@ -96,7 +96,7 @@ JSON_PAYLOAD=$(cat <<EOF
 EOF
 )
 
-# Post inline comment
+# 发布行内评论
 echo -e "${YELLOW}Posting inline comment...${NC}" >&2
 RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
     "https://gitlab.com/api/v4/projects/$PROJECT_ID/merge_requests/$MR_IID/discussions" \

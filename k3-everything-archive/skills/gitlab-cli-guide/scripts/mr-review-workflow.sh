@@ -1,6 +1,6 @@
 #!/bin/bash
-# MR Review Workflow Script
-# Automates: checkout MR → run tests → post result as comment → approve if passed
+# MR 评审工作流脚本
+# 自动化：检出 MR → 运行测试 → 将结果发布为评论 → 若通过则批准
 
 set -e
 
@@ -14,14 +14,14 @@ if [ -z "$MR_ID" ]; then
     exit 1
 fi
 
-# Validate MR_ID is numeric to prevent injection
+# 验证 MR_ID 是否为数值，以防止注入
 if ! [[ "$MR_ID" =~ ^[0-9]+$ ]]; then
     echo "❌ Error: MR_ID must be a numeric value (got: $MR_ID)" >&2
     exit 1
 fi
 
-# Validate TEST_COMMAND against allowlist to prevent arbitrary code execution.
-# eval is intentionally NOT used here — see SECURITY.md for rationale.
+# 对照白名单验证 TEST_COMMAND，以防止任意代码执行。
+# 此处有意不使用 eval——详见 SECURITY.md 了解原因。
 ALLOWED_COMMANDS=("npm test" "pnpm test" "yarn test" "make test" "cargo test" "go test ./..." "bundle exec rspec" "pytest" "mvn test" "gradle test")
 COMMAND_ALLOWED=false
 for allowed in "${ALLOWED_COMMANDS[@]}"; do

@@ -1,6 +1,6 @@
 #!/bin/bash
 # kubectl-pod-debug.sh
-# Helper script to debug a pod with common diagnostic commands
+# 用于使用常用诊断命令调试 Pod 的辅助脚本
 
 set -e
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# verifier v12 — REST复活与穷衡考证批次（M1-M5）
+# verifier v12 — REST恢复与穷衡验证批次（M1-M5）
 import os, json, stat, sys, re
 DOC="<注册处>/穷衡临时政府考证报告_v1.0_20260903.md"
 VAULT1="<注册处>/vault/<通道库>_publishable_key.json"

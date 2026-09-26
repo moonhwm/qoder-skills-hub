@@ -22,7 +22,7 @@ import sys
 
 # 新式：YYMM.NNNNN 或 YYMM.NNNN（2007-04 ~ 2014-12 为 4 位序号，2015-01 起 5 位）
 NEW_RE = re.compile(r"(?<![\w./-])((\d{2})(0[1-9]|1[0-2])\.(\d{4,5}))(v(\d+))?(?![\w.-])")
-# 旧式：archive/YYMMNNN（archive 可含连字符，如 hep-th, math-ph；或大类缩写如 cs, math）
+# 旧版格式：archive/YYMMNNN（archive 可包含连字符，如 hep-th, math-ph；也可为学科大类缩写，如 cs, math）
 OLD_RE = re.compile(
     r"(?<![\w./-])((?:[a-z-]+(?:\.[A-Z]{2})?)/(\d{2})(0[1-9]|1[0-2])(\d{3}))(v(\d+))?(?![\w.-])"
 )

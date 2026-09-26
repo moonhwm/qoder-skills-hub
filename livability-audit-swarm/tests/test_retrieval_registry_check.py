@@ -257,8 +257,8 @@ check("R49 stdin 坏 JSON→exit2 且 stdout 无 JSON",
 
 # ============ v1.5 calc_meta ============
 HPI_CM = {"price": 14000, "area_sqm": 90, "income": 45000, "household_size": 2.8}
-# 回算 = 14000*90/(45000*2.8) = 10.0（v1.6：area_sqm/household_size 用 §9 钉死值，
-# 否则会触发「偏离统一口径」WARNING）
+# 反算 = 14000*90/(45000*2.8) = 10.0（v1.6：area_sqm/household_size 使用 §9 的固定值，
+# 否则将触发「偏离统一口径」WARNING）
 code, out, _, _ = run_items([entry(param="hpi", value=10.0, unit="倍",
                                    calc_meta=HPI_CM)])
 check("C01 hpi calc_meta 自洽→零错误零警告",
@@ -416,8 +416,8 @@ check("M13 merge --pretty 输出合并信息与矩阵",
       code == 0 and out is None and "合并模式" in so and "覆盖矩阵" in so,
       f"{code} {so[:200]}")
 
-# ============ v1.6 对抗修复（reviewer F1–F9） ============
-# F1：--merge 质性比较前先 float() 数值化，"10" 与 10.0 视为同值走数值分支
+# ============ v1.6 对抗修复（评审 F1–F9） ============
+# F1：--merge 质性比较前，先通过 float() 转换为数值型，将 "10" 与 10.0 视为相同值并进入数值分支
 fa = wf("fa.json", [entry(value="80000")])        # 广州 income "80000"（数字字符串）
 fb = wf("fb.json", [entry(value=80000)])
 fc = wf("fc.json", [entry(value=90000)])
@@ -464,7 +464,7 @@ check("V07 F3 hpi household_size=2.0 偏离 2.8→WARNING 偏离统一口径",
       code == 0 and nerr(out) == 0 and nwarn(out) == 1
       and "偏离统一口径" in out["warnings"][0], f"{code} {out}")
 
-# F4：rir calc_meta.area_sqm 仅在 ≠45 时 WARNING（仍不入回算）
+# F4：rir calc_meta.area_sqm 仅在 ≠45 时警告（仍不纳入回算）
 code, out, _, _ = run_items([entry(param="rir", value=1.0, unit="-",
                                    calc_meta={**RIR_CM, "area_sqm": 30})])
 check("V08 F4 rir area_sqm=30≠45→WARNING 偏离统一口径（回算不受影响）",
@@ -484,7 +484,7 @@ code, out, _, _ = run_items([entry(param="hpi", value=10.0, unit="倍")])
 check("V11 F5 hpi 缺 calc_meta 正常形态→仅缺 calc_meta 单 WARNING",
       code == 0 and nerr(out) == 0 and nwarn(out) == 1, f"{code} {out}")
 
-# F6：hpi/rir 带 calc_meta 但 value 非数值 → 错误
+# F6：hpi/rir 带有 calc_meta 但 value 不是数值 → 错误
 code, out, _, _ = run_items([entry(param="hpi", value="高", unit="倍",
                                    calc_meta=HPI_CM)])
 check("V12 F6 hpi value string + calc_meta→错误",
@@ -495,7 +495,7 @@ code, out, _, _ = run_items([entry(param="rir", value="高", unit="-",
 check("V13 F6 rir value string + calc_meta→错误",
       code == 1 and nerr(out) == 1, f"{code} {out}")
 
-# F7：质性 value strip 后相同 → WARNING 取新（行为保持，文档补声明）
+# F7：性质 value strip 后一致 → WARNING 采用新值（行为保持不变，补充文档说明）
 ft = wf("ft.json", [entry(param="city_tier", value="一线 ", unit="档",
                           source_type="商业平台", conf="C",
                           url="https://www.yicai.com")])
@@ -516,7 +516,7 @@ check("V15 F8 city 尾空格→strip 后同键 50% 偏差值冲突错误",
 check("V16 F8 coverage 城市行无尾空格重复",
       out and out["coverage"]["cities"] == ["广州", "深圳"], f"{out}")
 
-# F9：--merge 检测含同文件内部重复（行为保持，文档补声明）
+# F9：--merge 检测同一文件内部的重复项（行为保持不变，补充文档说明）
 fdup = wf("fdup.json", [entry(value=100), entry(value=108)])  # 同文件 8% 偏差
 code, out, _, _ = run([fdup])
 check("V17 F9 单文件模式不做重复检测→exit0",
@@ -614,7 +614,7 @@ code, out, _, _ = run_items([entry(comparability="full"),
 check("W19 单文件模式不做口径混杂检测→零警告",
       code == 0 and nerr(out) == 0 and nwarn(out) == 0, f"{code} {out}")
 
-# 同城同 param 不同 comparability 不属跨城横比→不出口径剪切（同值仅取新 WARNING）
+# 同城同 param 不同 comparability 不属于跨城横向比较→不进行口径过滤（同值仅保留最新 WARNING）
 g8 = wf("g8.json", [entry(value=80000, comparability="full")])
 g9 = wf("g9.json", [entry(value=80000, comparability="proxy")])
 code, out, _, _ = run(["--merge", g8, g9])

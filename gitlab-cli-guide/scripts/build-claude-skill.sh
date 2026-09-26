@@ -1,31 +1,31 @@
 #!/usr/bin/env bash
 # build-claude-skill.sh
 #
-# Generates claude-skill.zip — a single-SKILL.md zip suitable for upload to
-# Claude.ai organization settings (which requires exactly one SKILL.md).
+# 生成 claude-skill.zip —— 一个适合上传至
+# Claude.ai 组织设置的 zip 包（该设置要求必须且只能包含一个 SKILL.md）。
 #
-# Usage:
+# 用法：
 #   bash scripts/build-claude-skill.sh [--output <path>] [--root <repo-root>]
 #
-# Options:
-#   --output  Path for the output zip file (default: ./claude-skill.zip)
-#   --root    Repo root directory (default: directory of this script's parent)
+# 选项：
+#   --output  输出 zip 文件的路径（默认值：./claude-skill.zip）
+#   --root    仓库根目录（默认值：此脚本所在目录）
 #
-# Output:
-#   claude-skill.zip  containing a single merged SKILL.md
+# 输出：
+#   claude-skill.zip 包含一个合并后的 SKILL.md
 #
-# The merged file includes:
-#   1. The top-level SKILL.md (OpenClaw frontmatter stripped)
-#   2. Each sub-skill SKILL.md in alphabetical order (frontmatter stripped)
+# 合并后的文件包含：
+#   1. 顶层 SKILL.md（已移除 OpenClaw frontmatter）
+#   2. 按字母顺序排列的每个子技能 SKILL.md（已移除 frontmatter）
 
 set -euo pipefail
 
-# ── Resolve paths ─────────────────────────────────────────────────────────────
+# ── 解析路径 ─────────────────────────────────────────────────────────────
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OUTPUT_ZIP="$REPO_ROOT/claude-skill.zip"
 
-# ── Parse args ────────────────────────────────────────────────────────────────
+# ── 解析参数 ────────────────────────────────────────────────────────────────
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --output) OUTPUT_ZIP="$2"; shift 2 ;;
@@ -34,14 +34,14 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# ── Temp workspace ────────────────────────────────────────────────────────────
+# ── 临时工作区 ────────────────────────────────────────────────────────────
 WORK_DIR="$(mktemp -d)"
 trap 'rm -rf "$WORK_DIR"' EXIT
 
 MERGED="$WORK_DIR/SKILL.md"
 
-# ── Helper: strip YAML frontmatter and emit content ───────────────────────────
-# Frontmatter is the block between the first pair of `---` lines.
+# ── 辅助函数：去除 YAML 前置元数据并输出内容 ───────────────────────────
+# 前置元数据是指第一对 `---` 行之间的内容块。
 strip_frontmatter() {
   local file="$1"
   awk '
@@ -54,10 +54,10 @@ strip_frontmatter() {
   ' "$file"
 }
 
-# ── Build merged SKILL.md ─────────────────────────────────────────────────────
+# ── 生成合并后的 SKILL.md ─────────────────────────────────────────────────────
 echo "Building merged SKILL.md from $REPO_ROOT..."
 
-# Required YAML frontmatter (Claude.ai requires name + description)
+# 必需的 YAML frontmatter（Claude.ai 需要 name 和 description）
 cat >> "$MERGED" <<'FRONTMATTER'
 ---
 name: gitlab-cli-skills
@@ -68,9 +68,9 @@ dependencies:
 
 FRONTMATTER
 
-# Intro body
+# 简介正文
 cat >> "$MERGED" <<'INTRO'
-# GitLab CLI Skills — Comprehensive glab Reference
+# GitLab CLI 技能 — glab 全面参考手册
 
 This skill provides complete reference and workflows for the GitLab CLI (`glab`).
 It covers authentication, merge requests, CI/CD pipelines, issues, releases,
@@ -80,7 +80,7 @@ repositories, and 30+ other glab commands.
 
 INTRO
 
-# 1. Top-level skill (overview + routing) — strip its frontmatter since we wrote our own
+# 1. 顶层技能（概览与路由）—— 移除其 frontmatter，因为我们已自行编写
 TOP_LEVEL="$REPO_ROOT/SKILL.md"
 if [[ -f "$TOP_LEVEL" ]]; then
   echo "## Overview" >> "$MERGED"
@@ -91,8 +91,8 @@ if [[ -f "$TOP_LEVEL" ]]; then
   echo "" >> "$MERGED"
 fi
 
-# 2. Sub-skills in alphabetical order (any directory containing a SKILL.md,
-#    excluding the root itself and the scripts/ directory)
+# 2. 按字母顺序排列的子技能（包含 SKILL.md 的任意目录，
+#    排除根目录本身及 scripts/ 目录）
 mapfile -t SUB_SKILLS < <(
   find "$REPO_ROOT" -mindepth 2 -maxdepth 2 -name "SKILL.md" \
     ! -path "$REPO_ROOT/scripts/*" \
@@ -120,14 +120,14 @@ for skill_file in "${SUB_SKILLS[@]}"; do
   } >> "$MERGED"
 done
 
-# ── Package into zip ──────────────────────────────────────────────────────────
-# Claude.ai requires files inside a subdirectory, not at the zip root:
+# ── 打包为 zip ──────────────────────────────────────────────────────────
+# Claude.ai 要求文件必须放在子目录内，不能位于 zip 包根目录：
 #   claude-skill.zip
 #    └── gitlab-cli-skills/
 #        └── SKILL.md
 rm -f "$OUTPUT_ZIP"
 
-# Use zip if available, otherwise fall back to python3 (always present)
+# 若可用则使用 zip，否则回退到 python3（始终可用）
 if command -v zip &>/dev/null; then
   mkdir -p "$WORK_DIR/gitlab-cli-skills"
   cp "$MERGED" "$WORK_DIR/gitlab-cli-skills/SKILL.md"

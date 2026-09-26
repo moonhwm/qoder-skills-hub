@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# verify_legislation.py v1.0 —— 落实幻觉核验（protocol v2.5.9 条款配套）
+# verify_legislation.py v1.0 —— 执行幻觉校验（配合 protocol v2.5.9 条款）
 # 用法: python3 scripts/verify_legislation.py
 # 退出码: 0=全命中; 1=存在未命中(落实幻觉,按逃逸登记)
 import os, sys, json

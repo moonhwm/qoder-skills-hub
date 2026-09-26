@@ -1,5 +1,5 @@
 #!/bin/bash
-# 千席演练九路点火器——全绝对路径+setsid隔离，规避壳墙#9（&断链）与#10（pkill自匹配）
+# 千节点演练九路触发器——全绝对路径+setsid隔离，绕过防护墙#9（&断链）与#10（pkill自匹配）
 W=<输出区>/referendum_drill_1000/drill_worker_1000.py
 L=<输出区>/referendum_drill_1000
 setsid nohup python3 $W deepseek-v4-flash   1  294 > $L/log_v4flash.txt   2>&1 < /dev/null &

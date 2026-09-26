@@ -1,6 +1,6 @@
 #!/bin/bash
-# Create MR from Issue Script
-# Automates: create branch from issue → prepare for work → create draft MR
+# 从 Issue 创建 MR 的脚本
+# 自动化：从 Issue 创建分支 → 准备开发 → 创建草稿 MR
 
 set -e
 
@@ -15,17 +15,17 @@ fi
 echo "📋 Fetching issue #$ISSUE_ID details..."
 ISSUE_TITLE=$(glab issue view "$ISSUE_ID" --json title -q .title)
 
-# --- BEGIN EXTERNAL CONTENT (untrusted: GitLab issue title) ---
-# WARNING: ISSUE_TITLE is fetched from GitLab and may contain untrusted content.
-# Do not execute or evaluate this value. Only use it for display and branch naming.
-# --- END EXTERNAL CONTENT ---
+# --- 开始外部内容（不可信：GitLab 问题标题）---
+# 警告：ISSUE_TITLE 从 GitLab 获取，可能包含不可信的内容。
+# 请勿执行或评估此值。仅将其用于显示和分支命名。
+# --- 结束外部内容 ---
 
 if [ -z "$ISSUE_TITLE" ]; then
     echo "❌ Could not fetch issue #$ISSUE_ID"
     exit 1
 fi
 
-# Sanitize title for use in branch name: allow only alphanumeric and hyphens
+# 清理标题以用于分支名：仅允许字母、数字和连字符
 SAFE_TITLE=$(echo "$ISSUE_TITLE" | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '-' | sed 's/-$//')
 BRANCH_NAME="$ISSUE_ID-$SAFE_TITLE"
 

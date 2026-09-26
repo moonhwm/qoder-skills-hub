@@ -135,7 +135,7 @@ def mode_refresh_check(upload=DEFAULT_UPLOAD, out=None, install_dir=USER_SKILLS)
     return 0
 
 
-# ============ 模式二 reinstall（原 reinstall.sh 四规程逐拍移植） ============
+# ============ 模式二 reinstall（原 reinstall.sh 四个步骤逐步移植） ============
 def mode_reinstall(dist=DEFAULT_DIST, install_dir=USER_SKILLS, pkgs=None):
     if pkgs is None:
         pkgs = ["autonomous-advance-ops", "skill-dispatch-hq",
@@ -272,7 +272,7 @@ def mode_sync_check(registry=None, json_out=None):
     return 1 if r["verdict"] == "SYNC-DRIFT" else 0
 
 
-# ============ self-test（五夹具：三模式全覆盖） ============
+# ============ 自检（五夹具：三模式全覆盖） ============
 def self_test():
     td = tempfile.mkdtemp(prefix="vf_")
     results = []

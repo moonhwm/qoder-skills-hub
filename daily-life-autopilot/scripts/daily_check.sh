@@ -1,5 +1,5 @@
 #!/bin/sh
-# daily-life-autopilot · 每日例行检查（sh 兼容，勿用 bash 特性）
+# 日常自动化 · 每日例行检查（sh 兼容，勿用 bash 特性）
 # v1.3（2026-08-26 晚）：多参数组合 + 环境变量起终点
 # 用法: daily_check.sh [--all] [--with-travel] [--with-flyai] [--with-coupon]
 # 起终点: ORIGIN=衡阳 DEST=西安 daily_check.sh --all

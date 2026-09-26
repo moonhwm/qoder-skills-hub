@@ -88,44 +88,44 @@ def create_baseline_metrics(base_path, project_name):
     """Create BASELINE-METRICS.md template."""
     content = f"""# Baseline Metrics - {project_name}
 
-**Date**: {datetime.now().strftime("%Y-%m-%d")}
-**Purpose**: Pre-QA snapshot for comparison during testing
+**日期**: {datetime.now().strftime("%Y-%m-%d")}
+**目的**: 用于测试期间对比的预QA快照
 
 ---
 
-## 1. Test Coverage (Current State)
+## 1. 测试覆盖率（当前状态）
 
-### Unit Tests
+### 单元测试
 - **Total Tests**: [NUMBER]
 - **Passing**: [NUMBER] ([%]%)
 - **Failing**: [NUMBER]
 - **Coverage**: [%]% (statements/branches/functions)
 
-### Integration Tests
+### 集成测试
 - **Total Tests**: [NUMBER]
 - **Status**: [Passing/Failing/Not Implemented]
 
-### E2E Tests
+### 端到端测试
 - **Total Tests**: [NUMBER]
 - **Browsers Covered**: [List browsers]
 
 ---
 
-## 2. Known Issues (Pre-QA)
+## 2. 已知问题(Pre-QA)
 
-### Critical Issues
+### 关键问题
 - [ ] Issue 1: Description
 - [ ] Issue 2: Description
 
-### Technical Debt
+### 技术债务
 - [ ] Debt 1: Description
 - [ ] Debt 2: Description
 
 ---
 
-## 3. Security Status
+## 3. 安全状态
 
-### OWASP Top 10 Coverage
+### OWASP Top 10 覆盖范围
 - [ ] A01: Broken Access Control
 - [ ] A02: Cryptographic Failures
 - [ ] A03: Injection
@@ -137,11 +137,11 @@ def create_baseline_metrics(base_path, project_name):
 - [ ] A09: Logging Failures
 - [ ] A10: SSRF
 
-**Current Coverage**: [X]/10 ([%]%)
+**当前覆盖率**: [X]/10 ([%]%)
 
 ---
 
-## 4. Performance Metrics
+## 4. 性能指标
 
 - **Page Load Time**: [X]ms (average)
 - **API Response Time**: [X]ms (p95)
@@ -149,7 +149,7 @@ def create_baseline_metrics(base_path, project_name):
 
 ---
 
-## 5. Code Quality
+## 5. 代码质量
 
 - **Linting Errors**: [NUMBER]
 - **TypeScript Strict Mode**: [Yes/No]
@@ -158,9 +158,9 @@ def create_baseline_metrics(base_path, project_name):
 
 ---
 
-## 6. Predicted Issues
+## 6. 预测问题
 
-**CRITICAL-001**: [Title]
+**CRITICAL-001**: [标题]
 - **Predicted Severity**: P0/P1/P2
 - **Root Cause**: [Analysis]
 - **Test Case**: TC-XXX-YYY will verify
@@ -168,7 +168,7 @@ def create_baseline_metrics(base_path, project_name):
 
 ---
 
-**Next Steps**: Begin Week 1 testing with baseline established.
+**下一步**：基线确立后，开始第一周测试。
 """
 
     file_path = base_path / "tests/docs/BASELINE-METRICS.md"
@@ -181,17 +181,17 @@ def create_weekly_report_template(base_path):
     """Create WEEKLY-PROGRESS-REPORT.md template."""
     content = """# Weekly QA Progress Report - Week [N]
 
-**Date Range**: [Start Date] - [End Date]
-**QA Lead**: [Name]
-**Project**: [Project Name]
+**日期范围**: [Start Date] - [End Date]
+**QA负责人**: [Name]
+**项目**: [Project Name]
 
 ---
 
-## Executive Summary
+## 执行摘要
 
-**Status**: 🟢 On Track / 🟡 At Risk / 🔴 Blocked
+**状态**: 🟢 按计划进行 / 🟡 存在风险 / 🔴 受阻
 
-### Key Metrics
+### 关键指标
 - **Tests Executed**: X / Y ([Z]%)
 - **Pass Rate**: [%]%
 - **Bugs Filed**: [N] (P0: [a], P1: [b], P2: [c], P3: [d])
@@ -199,7 +199,7 @@ def create_weekly_report_template(base_path):
 
 ---
 
-## Test Execution Progress
+## 测试执行进度
 
 | Category | Total | Executed | Pass | Fail | Pass Rate |
 |----------|-------|----------|------|------|-----------|
@@ -210,7 +210,7 @@ def create_weekly_report_template(base_path):
 
 ---
 
-## Quality Gates Status
+## 质量门禁状态
 
 | Gate | Target | Current | Status |
 |------|--------|---------|--------|
@@ -223,20 +223,20 @@ def create_weekly_report_template(base_path):
 
 ---
 
-## Bugs Summary
+## Bug 汇总
 
-### P0 Bugs (Blockers)
+### P0 Bug（阻塞项）
 1. **BUG-001**: [Title]
    - Status: [Open/In Progress/Blocked]
    - Assignee: [Name]
    - ETA: [Date]
 
-### P1 Bugs (Critical)
+### P1 缺陷（严重）
 1. **BUG-XXX**: [Title]
 
 ---
 
-## Baseline Comparison
+## 基线对比
 
 | Metric | Week 1 | This Week | Trend |
 |--------|--------|-----------|-------|
@@ -246,32 +246,32 @@ def create_weekly_report_template(base_path):
 
 ---
 
-## Blockers & Risks
+## 阻塞项与风险
 
-### Current Blockers
+### 当前阻塞项
 - [ ] Blocker 1: Description
 - [ ] Blocker 2: Description
 
-### Risks
+### 风险
 - ⚠️ **Risk 1**: Description - Mitigation: [Action]
 - ⚠️ **Risk 2**: Description - Mitigation: [Action]
 
 ---
 
-## Next Week Plan
+## 下周计划
 
-### Test Cases (Week [N+1])
+### 测试用例（第[N+1]周）
 - [Category]: TC-XXX-YYY to TC-XXX-ZZZ ([N] tests)
 - Estimated Time: [X] hours
 
-### Prerequisites
+### 前置条件
 - [ ] Prerequisite 1
 - [ ] Prerequisite 2
 
 ---
 
-**Prepared By**: [Name]
-**Date**: [Date]
+**编制人**：[Name]
+**日期**：[Date]
 """
 
     file_path = base_path / "tests/docs/templates/WEEKLY-PROGRESS-REPORT.md"
@@ -284,55 +284,55 @@ def create_master_qa_prompt(base_path, project_name):
     """Create MASTER-QA-PROMPT.md for autonomous execution."""
     content = f"""# Master QA Prompt - {project_name}
 
-**Purpose**: Single copy-paste prompt for autonomous QA test execution.
+**目的**：用于自主 QA 测试执行的单次复制粘贴提示词。
 
 ---
 
-## ⭐ Master Prompt (Copy-Paste This)
+## ⭐ 主提示词（复制粘贴此内容）
 
 ```
 You are a senior QA engineer with 20+ years of experience at Google.
 Execute the {project_name} QA test plan.
 
-**CRITICAL INSTRUCTIONS**:
+**关键说明：**
 
 1. Read tests/docs/QA-HANDOVER-INSTRUCTIONS.md
 2. Read tests/docs/BASELINE-METRICS.md
 3. Read tests/docs/templates/TEST-EXECUTION-TRACKING.csv
 
-**Determine Current State**:
+**确定当前状态**：
 - If no tests executed: Start Day 1 onboarding
 - If tests in progress: Resume from last completed test case
 
-**For EACH test case**:
+**对于每个测试用例：**
 1. Read test specification
 2. Execute test steps
 3. Update TEST-EXECUTION-TRACKING.csv IMMEDIATELY (no batching)
 4. If FAILED: File bug in BUG-TRACKING-TEMPLATE.csv
 5. If P0 bug: STOP and escalate
 
-**Daily Routine**:
+**每日例行事项**：
 - Morning: Check blockers, plan today's tests
 - During: Execute tests, update CSV after EACH test
 - End-of-day: Provide summary (tests executed, pass rate, bugs filed)
 
-**Weekly Routine** (Friday):
+**每周例行工作**（周五）：
 - Generate WEEKLY-PROGRESS-REPORT.md
 - Compare against BASELINE-METRICS.md
 - Assess quality gates
 
-**MANDATORY RULES**:
+**强制规则**：
 - ❌ DO NOT skip tests
 - ❌ DO NOT batch CSV updates
 - ❌ DO NOT deviate from documented test cases
 - ✅ STOP immediately if P0 bug discovered
 
-**Start now**: Tell me current state and what you're doing today.
+**现在开始**：告诉我当前状态以及你今天正在做的事情。
 ```
 
 ---
 
-## Auto-Resume Capability
+## 自动恢复能力
 
 The master prompt automatically:
 1. Reads TEST-EXECUTION-TRACKING.csv
@@ -342,17 +342,17 @@ The master prompt automatically:
 
 ---
 
-## Weekly Execution Schedule
+## 每周执行计划
 
-**Week 1**: Critical path tests (highest priority)
-**Week 2**: User workflows (common journeys)
-**Week 3**: Data integrity (database, API)
-**Week 4**: Security audit (OWASP Top 10)
-**Week 5**: Regression (re-run P0 tests)
+**第1周**：关键路径测试（最高优先级）
+**第2周**：用户工作流（常见旅程）
+**第3周**：数据完整性（数据库、API）
+**第4周**：安全审计（OWASP Top 10）
+**第5周**：回归测试（重新执行P0测试）
 
 ---
 
-**Usage**: Copy the master prompt above and paste it to start autonomous QA execution.
+**用法**：复制上方的主提示词并粘贴，以启动自主 QA 执行。
 """
 
     file_path = base_path / "tests/docs/MASTER-QA-PROMPT.md"
@@ -365,20 +365,20 @@ def create_readme(base_path, project_name):
     """Create README.md for QA docs."""
     content = f"""# QA Documentation - {project_name}
 
-**Status**: 🟢 Ready for Execution
-**Created**: {datetime.now().strftime("%Y-%m-%d")}
-**QA Framework**: Google Testing Standards
+**状态**：🟢 准备就绪
+**创建时间**：{datetime.now().strftime("%Y-%m-%d")}
+**QA 框架**：Google Testing Standards
 
 ---
 
-## 📋 Quick Start
+## 📋 快速开始
 
-### Option 1: Autonomous Execution (Recommended)
+### 选项 1：自主执行（推荐）
 ```bash
-# Copy the master prompt from MASTER-QA-PROMPT.md and paste to your LLM
+# 从 MASTER-QA-PROMPT.md 复制主提示词，并粘贴至你的 LLM
 ```
 
-### Option 2: Manual Execution
+### 选项 2：手动执行
 1. Read `QA-HANDOVER-INSTRUCTIONS.md`
 2. Complete Day 1 onboarding checklist
 3. Execute test cases from category-specific documents
@@ -386,27 +386,27 @@ def create_readme(base_path, project_name):
 
 ---
 
-## 📚 Document Index
+## 文档索引
 
-### Core Strategy
+### 核心策略
 - **QA-HANDOVER-INSTRUCTIONS.md** - Master handover guide
 - **BASELINE-METRICS.md** - Pre-QA snapshot
 
-### Test Cases
+### 测试用例
 - **01-[CATEGORY]-TEST-CASES.md** - Component tests
 - **02-SECURITY-TEST-CASES.md** - OWASP Top 10 tests
 
-### Templates
+### 模板
 - **TEST-EXECUTION-TRACKING.csv** - Progress tracker
 - **BUG-TRACKING-TEMPLATE.csv** - Bug log
 - **WEEKLY-PROGRESS-REPORT.md** - Status reporting
 
-### Automation
+### 自动化
 - **MASTER-QA-PROMPT.md** - Autonomous execution
 
 ---
 
-## 🎯 Quality Gates
+## 🎯 质量门禁
 
 | Gate | Target | Status |
 |------|--------|--------|
@@ -418,15 +418,15 @@ def create_readme(base_path, project_name):
 
 ---
 
-## 🚀 Getting Started
+## 🚀 快速开始
 
-**Day 1 Setup** (5 hours):
+**第 1 天设置** (5 小时)：
 1. Environment setup
 2. Test data seeding
 3. Execute first test case
 4. Verify tracking systems
 
-**Week 1-5 Execution**:
+**第1-5周执行**：
 - Follow test case documents
 - Update CSV after EACH test
 - File bugs for failures
@@ -434,7 +434,7 @@ def create_readme(base_path, project_name):
 
 ---
 
-**Contact**: QA Lead - [Your Name]
+**联系人**: QA负责人 - [Your Name]
 """
 
     file_path = base_path / "tests/docs/README.md"

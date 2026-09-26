@@ -184,7 +184,7 @@ def stage_score(payload, args):
     return result, engine
 
 
-# ---------------------------------------------------------------- match 段
+# ---------------------------------------------------------------- 匹配段
 
 def gale_shapley_inline(students, schools, proposer="students"):
     """教科书版延迟接受（内联回退实现）。proposer 容量 1，receiver 容量 capacity。"""
@@ -347,7 +347,7 @@ def stage_psm(payload, args):
     return result, engine
 
 
-# ---------------------------------------------------------------- full 段
+# ---------------------------------------------------------------- 完整段
 
 def apply_gate(payload, gate):
     """数一门规：模考分 < 阈值时把数一依赖校移出可选集（候选池切换）。"""

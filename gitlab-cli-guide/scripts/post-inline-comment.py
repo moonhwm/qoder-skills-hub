@@ -65,7 +65,7 @@ import urllib.parse
 import urllib.request
 import urllib.error
 
-# ── Security constants ────────────────────────────────────────────────────────
+# ── 安全常量 ────────────────────────────────────────────────────────
 MAX_BODY_LENGTH = 10_000      # GitLab's own limit is ~1MB but we cap for safety
 MAX_BATCH_SIZE  = 100         # prevent runaway API usage
 MAX_BATCH_FILE_BYTES = 1_048_576  # 1 MB batch file limit
@@ -73,7 +73,7 @@ VALID_PROJECT_RE = re.compile(r'^[\w.\-]+(/[\w.\-]+)+$')  # group/project or gro
 VALID_FILE_RE    = re.compile(r'^[^\x00\n\r]+$')          # no null bytes or newlines
 
 
-# ── Token handling ────────────────────────────────────────────────────────────
+# ── Token 处理 ────────────────────────────────────────────────────────────
 
 def get_token(host):
     """
@@ -115,7 +115,7 @@ def _validate_token(token):
         sys.exit(1)
 
 
-# ── Input validation ──────────────────────────────────────────────────────────
+# ── 输入验证 ──────────────────────────────────────────────────────────
 
 def validate_host(host):
     """Enforce HTTPS to prevent token leakage over plaintext."""
@@ -213,7 +213,7 @@ def load_batch_file(path):
     return validated
 
 
-# ── GitLab API helpers ────────────────────────────────────────────────────────
+# ── GitLab API 辅助函数 ────────────────────────────────────────────────────────
 
 def _make_ssl_context():
     """Return a strict SSL context (system CA bundle, no hostname bypass)."""
@@ -289,7 +289,7 @@ def post_inline_comment(token, host, project_id, mr_iid, shas, file_path, line_n
     return disc_id, is_inline
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# ── 主 ──────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(

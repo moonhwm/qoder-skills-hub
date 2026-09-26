@@ -1,4 +1,4 @@
-// Shared utilities
+// 共享工具
 window.U = (() => {
   const TAU = Math.PI * 2;
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));

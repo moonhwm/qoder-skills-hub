@@ -1,4 +1,4 @@
-# Copyright (c) 2026 Lark Technologies Pte. Ltd.
+# 版权所有 (c) 2026 飞书科技有限公司
 # SPDX-License-Identifier: MIT
 from __future__ import annotations
 

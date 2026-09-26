@@ -117,7 +117,7 @@ CALC_META_FIELDS = {
 }
 CALC_TOLERANCE = 0.02   # calc_meta 回算与 value 相对偏差 >2% → 错误
 CALC_EPS = 1e-9         # v1.6：>2% 判定 epsilon，消除浮点边界抖动（恰好 2% 放行）
-# v1.6 §9 统一钉死值：calc_meta 偏离出 WARNING「偏离统一口径」（不阻断历史条目）
+# v1.6 §9 统一钉死值：calc_meta 偏离时触发 WARNING「偏离统一口径」（不阻断历史条目）
 PINNED_CALC = {"hpi": {"area_sqm": 90.0, "household_size": 2.8},
                "rir": {"area_sqm": 45.0}}
 MERGE_TOLERANCE = 0.05  # --merge 同 (city,param) value 相对偏差 >5% → 错误

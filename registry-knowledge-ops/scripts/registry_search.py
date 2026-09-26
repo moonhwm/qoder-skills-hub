@@ -125,7 +125,7 @@ def sections(root=DEFAULT_ROOT):
     return [l.strip() for l in open(ip, encoding='utf-8', errors='replace')
             if l.startswith('#')]
 
-# ---------- self-test ----------
+# ---------- 自检 ----------
 def self_test():
     import tempfile, shutil
     ok = []

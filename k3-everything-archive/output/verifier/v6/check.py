@@ -15,7 +15,7 @@ r = subprocess.run(['python3', f'{REG}/scripts/chain_anchor.py', '--verify', '31
                    capture_output=True, text=True)
 ok('G3 锚链核验复跑PASS', 'PASS' in r.stdout and 'n=316' in r.stdout, r.stdout.strip().splitlines()[-1][:80])
 
-# G-drill 演练留痕件：ACK 内容核验在通道侧已完成（MCP 返回 id=216），此处核验本地对应记录
+# G-drill 演练留痕记录：ACK 内容校验已在通道侧完成（MCP 返回 id=216），此处校验本地对应记录
 # 表决记录册未被触碰（仍仅创刊行）
 LP = f'{REG}/表决记录册_S2026L3-01.jsonl'
 rows = [json.loads(l) for l in open(LP, encoding='utf-8') if l.strip()]

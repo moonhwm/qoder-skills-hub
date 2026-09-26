@@ -19,7 +19,7 @@ check("totp_verify 自洽", totp_verify(sec, code))
 check("totp_verify 拒错码", not totp_verify(sec, "000000" if code != "000000" else "111111"))
 check("totp 窗口±1 接受", totp_verify(sec, totp(sec, int(time.time()) - 30)))
 
-# 指纹：同人同机稳定、extra 扰动即变、64hex
+# 指纹：同一用户与设备下保持稳定、附加 extra 扰动即刻变化、64hex
 f1, f2 = device_fingerprint(), device_fingerprint()
 check("fingerprint 稳定", f1 == f2 and len(f1) == 64)
 check("fingerprint 扰动敏感", device_fingerprint("x") != f1)

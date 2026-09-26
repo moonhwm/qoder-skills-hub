@@ -1,1 +1,1 @@
-# v21 check executed inline; result: PASS
+# v21 检查已内联执行；结果：通过

@@ -68,7 +68,7 @@ v2.1 新增：
 import argparse, json, os, py_compile, re, sys, tempfile
 
 ORDER = {"blocker": 0, "high": 1, "medium": 2, "low": 3}
-# 文头块扫描的扩展名（协议规定 .md/.txt 用 HTML 注释块，.py 用 # 行块，.tex 用 % 行块）
+# 文头块扫描的文件扩展名（协议规定 .md/.txt 使用 HTML 注释块，.py 使用 # 行注释，.tex 使用 % 行注释）
 HEADER_EXTS = {".md", ".py", ".txt", ".tex"}
 # 文头块内的机器可读字段
 RE_CHANGE_ID = re.compile(r"change_id:\s*(\S+)")

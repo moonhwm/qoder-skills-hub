@@ -141,7 +141,7 @@ _, out, removed, se = strip("% AI_READER_NOTICE\n% 截断\ntext\n", ".tex")
 check("T14 未闭合PCT块 零改动+WARNING",
       not removed and "未闭合留痕块" in se, f"removed={removed} se={se!r}")
 
-# CLI：未闭合旧块重盖 → rc=0、stderr WARNING、新块照常前插（旧残留待人工）
+# CLI：覆盖未闭合旧块 → rc=0、stderr WARNING、新块照常前置插入（旧残留需人工处理）
 punc = os.path.join(TMP, "unclosed.py")
 with open(punc, "w", encoding="utf-8") as f:
     f.write(unclosed)
@@ -153,7 +153,7 @@ check("T15 未闭合块CLI重盖 rc=0+WARNING+新块前插（BEGIN=2 残留待�
       and stamped.count("# AI_READER_NOTICE") == 2 and "# 被截断" in stamped,
       f"rc={rc1} se={se1!r} begin={stamped.count('# AI_READER_NOTICE')}")
 
-# ============ F-B2 扩展名优先：.py 跑 HASH 分支；HASH 未命中且确含 HTML 块才迁移 ============
+# ============ F-B2 扩展名优先：.py 执行 HASH 分支；HASH 未命中且确实包含 HTML 块时才迁移 ============
 pyhtml = '"""\n留痕: <!-- AI_READER_NOTICE\nchange_id: C\n-->\n"""\nx=1\n'
 _, out, removed, _ = strip(pyhtml, ".py")
 check("T16 .py 含闭合HTML块（HASH未命中）→ 迁移删除",

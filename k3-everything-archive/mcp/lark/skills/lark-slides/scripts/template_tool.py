@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2026 Lark Technologies Pte. Ltd.
+# 版权所有 (c) 2026 Lark Technologies Pte. Ltd.
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations

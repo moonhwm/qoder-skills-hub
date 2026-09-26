@@ -63,7 +63,7 @@ def pct_block():
 
 TMP = tempfile.mkdtemp()
 
-# ============ F-B1 计时回归：合法块 + N 行连续 # 注释（a_after 实战形态） ============
+# ============ F-B1 计时回归：有效块 + N 行连续的 # 注释（a_after 实际运行形态） ============
 for tag, N in (("T01", 30), ("T02", 50), ("T03", 100), ("T04", 5000)):
     path = os.path.join(TMP, f"f{N}.py")
     with open(path, "w", encoding="utf-8") as f:
@@ -116,7 +116,7 @@ for tag, src, ext, expect in cases:
     check(f"{tag} strip 逐字节一致", removed and out == expect and "未闭合" not in se,
           f"removed={removed} out={out!r}")
 
-# ============ F-B2 HTML 分支：畸形 .md 20 万行不挂起、不误删远处正文（4KB 界） ============
+# ============ F-B2 HTML 分支：畸形 .md 20 万行不挂起、不误删远处正文（4KB 边界） ============
 mal = ("<!-- AI_READER_NOTICE 旧格式\n"
        + "".join(f"正文第{i}节 -->\n" if i == 50000 else f"正文第{i}节\n"
                  for i in range(200000)))
@@ -141,7 +141,7 @@ _, out, removed, se = strip("% AI_READER_NOTICE\n% 截断\ntext\n", ".tex")
 check("T14 未闭合PCT块 零改动+WARNING",
       not removed and "未闭合留痕块" in se, f"removed={removed} se={se!r}")
 
-# CLI：未闭合旧块重盖 → rc=0、stderr WARNING、新块照常前插（旧残留待人工）
+# CLI：未闭合旧块被覆盖 → rc=0、stderr WARNING、新块正常前插（旧残留需人工处理）
 punc = os.path.join(TMP, "unclosed.py")
 with open(punc, "w", encoding="utf-8") as f:
     f.write(unclosed)
@@ -153,7 +153,7 @@ check("T15 未闭合块CLI重盖 rc=0+WARNING+新块前插（BEGIN=2 残留待�
       and stamped.count("# AI_READER_NOTICE") == 2 and "# 被截断" in stamped,
       f"rc={rc1} se={se1!r} begin={stamped.count('# AI_READER_NOTICE')}")
 
-# ============ F-B2 扩展名优先：.py 跑 HASH 分支；HASH 未命中且确含 HTML 块才迁移 ============
+# ============ F-B2 扩展名优先：.py 执行 HASH 分支；HASH 未命中且确实包含 HTML 块时才迁移 ============
 pyhtml = '"""\n留痕: <!-- AI_READER_NOTICE\nchange_id: C\n-->\n"""\nx=1\n'
 _, out, removed, _ = strip(pyhtml, ".py")
 check("T16 .py 含闭合HTML块（HASH未命中）→ 迁移删除",

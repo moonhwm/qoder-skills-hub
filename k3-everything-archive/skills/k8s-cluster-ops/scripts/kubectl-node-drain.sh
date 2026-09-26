@@ -1,6 +1,6 @@
 #!/bin/bash
 # kubectl-node-drain.sh
-# Helper script to safely drain a node for maintenance
+# 用于安全排空节点以进行维护的辅助脚本
 
 set -e
 

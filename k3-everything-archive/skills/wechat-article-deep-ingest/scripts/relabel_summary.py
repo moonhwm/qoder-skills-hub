@@ -1,6 +1,6 @@
 # VENDORED+MERGED v1.1（2026-08-26，修改人：Orchestrator/Kimi K3）
-# 上游：腾讯助手甲 relabel_summary.py（用户提供）+ K3 补丁(a/b) + 助手甲②c补丁（特征句查询走db_key别名）
-# 修复链：助手甲原版→K3(a)只处理正文/(b)全键对齐→助手甲复现发现(b)只修了known_length一处→②c两处查询统一走别名
+# 上游：腾讯助手甲 relabel_summary.py（用户提供）+ K3 补丁(a/b) + 助手甲②c补丁（特征句查询改用db_key别名）
+# 修复链：助手甲原版→K3(a)仅处理正文/(b)全键对齐→助手甲复现发现(b)仅修复了known_length一处→②c将两处查询统一改为使用别名
 """
 relabel_summary.py —— 整改脚本：把任务1首批6篇从"误标全文/verified"重标为"摘要级"
 

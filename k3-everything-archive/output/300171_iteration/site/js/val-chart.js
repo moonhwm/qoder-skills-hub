@@ -1,4 +1,4 @@
-// §4 估值锚：PE 双口径 + 可比对照（Wind 滞后口径以虚框标注，禁止直接当结论用）
+// §4 估值锚：PE 双口径 + 可比对照（Wind 滞后口径以虚线框标注，不得直接作为结论使用）
 (() => {
   const R = window.RPT; if (!R || !window.U) return;
   const { PAL, clamp } = U;

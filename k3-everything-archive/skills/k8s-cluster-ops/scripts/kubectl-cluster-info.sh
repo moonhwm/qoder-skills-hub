@@ -1,6 +1,6 @@
 #!/bin/bash
 # kubectl-cluster-info.sh
-# Helper script to gather cluster health information
+# 用于收集集群健康信息的辅助脚本
 
 set -e
 

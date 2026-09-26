@@ -1,6 +1,6 @@
 #!/bin/bash
-# Batch Label Issues Script
-# Automates: apply labels to multiple issues at once
+# 批量为问题添加标签的脚本
+# 自动化：一次性为多个问题添加标签
 
 set -e
 

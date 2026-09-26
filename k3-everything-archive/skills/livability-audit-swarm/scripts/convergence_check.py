@@ -73,7 +73,7 @@ HEADER_EXTS = {".md", ".py", ".txt", ".tex"}
 # 文头块内的机器可读字段
 RE_CHANGE_ID = re.compile(r"change_id:\s*(\S+)")
 RE_DATE = re.compile(r"\bdate:\s*(\d{4}-\d{2}-\d{2})")
-# change_id 内嵌日期（CHG-YYYYMMDD-…），用于 G3 日期一致性 WARNING
+# change_id 内嵌日期（CHG-YYYYMMDD-…），用于 G3 日期一致性警告
 RE_CID_DATE = re.compile(r"CHG-(\d{4})(\d{2})(\d{2})-")
 # 三种文头块格式（与 notice_stamp.py 生成格式对齐）
 RE_HTML_BLOCK = re.compile(r"<!-- AI_READER_NOTICE(.*?)-->", re.S)

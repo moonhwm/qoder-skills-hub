@@ -1,6 +1,6 @@
 #!/bin/bash
-# Sync Fork Script
-# Automates: fetch upstream → merge into current branch → push to origin
+# 同步 Fork 脚本
+# 自动化：fetch upstream → merge into current branch → push to origin
 
 set -e
 
@@ -12,7 +12,7 @@ echo "  Branch: $BRANCH"
 echo "  Upstream remote: $UPSTREAM_REMOTE"
 echo ""
 
-# Check if upstream remote exists
+# 检查上游远程仓库是否存在
 if ! git remote get-url "$UPSTREAM_REMOTE" >/dev/null 2>&1; then
     echo "❌ Upstream remote '$UPSTREAM_REMOTE' not found"
     echo ""
@@ -28,20 +28,20 @@ UPSTREAM_URL=$(git remote get-url "$UPSTREAM_REMOTE")
 echo "Upstream: $UPSTREAM_URL"
 echo ""
 
-# Save current branch
+# 保存当前分支
 CURRENT_BRANCH=$(git branch --show-current)
 
-# Checkout target branch
+# 检出目标分支
 if [ "$CURRENT_BRANCH" != "$BRANCH" ]; then
     echo "📍 Switching to $BRANCH..."
     git checkout "$BRANCH"
 fi
 
-# Fetch upstream
+# 获取上游
 echo "⬇️  Fetching from upstream..."
 git fetch "$UPSTREAM_REMOTE"
 
-# Merge upstream changes
+# 合并上游更改
 echo "🔀 Merging upstream/$BRANCH into $BRANCH..."
 if git merge "$UPSTREAM_REMOTE/$BRANCH" --ff-only; then
     echo "✅ Fast-forward merge successful"
@@ -61,7 +61,7 @@ else
     fi
 fi
 
-# Push to origin
+# 推送到 origin
 echo "⬆️  Pushing to origin/$BRANCH..."
 git push origin "$BRANCH"
 
@@ -69,7 +69,7 @@ echo ""
 echo "✨ Fork synced successfully!"
 echo ""
 
-# Return to original branch if different
+# 若不同则切回原分支
 if [ "$CURRENT_BRANCH" != "$BRANCH" ] && [ -n "$CURRENT_BRANCH" ]; then
     echo "📍 Returning to $CURRENT_BRANCH..."
     git checkout "$CURRENT_BRANCH"

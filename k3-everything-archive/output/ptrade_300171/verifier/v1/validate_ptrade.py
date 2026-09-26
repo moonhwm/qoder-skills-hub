@@ -15,7 +15,7 @@ ALLOWED_IMPORTS = {
 }
 FORBIDDEN_NAMES = {'open', 'eval', 'exec', 'compile', '__import__', 'input'}
 
-# Known PTrade API names (spelling reference table)
+# 已知 PTrade API 名称（拼写参考表）
 PTRADE_APIS = [
     # trading / orders
     'order', 'order_value', 'order_target', 'order_target_value',

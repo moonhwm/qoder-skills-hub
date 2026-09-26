@@ -21,13 +21,13 @@ ok('E1a P0三卡要素', all(k in t0 for k in ['追认信封', '准M4', '建心�
 ok('E1b 参数件要素', all(k in t1 for k in ['事由', '备份', '报告', '回滚日闸', '¥50', '准A/B/C/D']))
 ok('E1c 工单要素', all(k in t2 for k in ['03:30', 'W1', 'W2', 'W3', 'L3_DRILL_ACK', '回执']))
 
-# E2 cron 卡 lint PASS（现场复跑留痕）
+# E2 cron 卡 lint PASS（现场重新运行以留存记录）
 r = subprocess.run(['python3', '<技能安装位>/cron-task-forge/scripts/card_linter.py',
                     '--name', '退休工程·L3每日巡检心跳', '--cron', '30 5 * * *', '/tmp/l3_card.txt'],
                    capture_output=True, text=True)
 ok('E2 cron卡lint', '"verdict": "PASS"' in r.stdout, r.stdout.strip()[:60])
 
-# E3 零明文凭证（七项＋vault 钥匙前缀）
+# E3 无明文凭证（七项＋vault 密钥前缀）
 SECRETS = ['REDACTED_LEGACY', 'REDACTED_LEGACY', 'REDACTED_LEGACY',
            'REDACTED_LEGACY', 'REDACTED_LEGACY', 'REDACTED_LEGACY', 'REDACTED_LEGACY',
            'REDACTED20']  # 本轮新增：external_seat.json api_key 前缀（内部输出误露前20字符，禁入文书）

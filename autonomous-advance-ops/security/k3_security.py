@@ -7,7 +7,7 @@
 """
 import hmac, hashlib, base64, os, struct, time, secrets, platform, getpass, json
 
-# ---------- 1. MFA / TOTP (RFC 6238) ----------
+# ---------- 1. 多因素认证 (MFA) / 基于时间的一次性密码 (TOTP) (RFC 6238) ----------
 def totp_secret(nbytes: int = 20) -> str:
     """生成 base32 密钥（可读分组，供写入认证器）。"""
     return base64.b32encode(secrets.token_bytes(nbytes)).decode()

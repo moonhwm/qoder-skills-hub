@@ -16,7 +16,7 @@ actual = {f for f in os.listdir(REG) if os.path.isfile(f'{REG}/{f}')}
 unindexed = [f for f in actual if f != 'INDEX.md' and f not in idx]
 ok('D1a INDEX全覆盖', not unindexed, f'unindexed={unindexed[:8]}')
 
-# D1b 零幽灵（条目行 '- <fname>' 且带扩展名者逐项核验；目录行以/结尾豁免）
+# D1b 零幽灵（对带有扩展名的 '- <fname>' 条目行逐项核验；以 / 结尾的目录行予以豁免）
 ghosts = []
 for ln in idx.splitlines():
     m = re.match(r'^- (\S+\.(?:md|json|jsonl|py|txt|docx|skill))\b', ln)

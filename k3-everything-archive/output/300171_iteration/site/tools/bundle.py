@@ -8,13 +8,13 @@ import re, sys, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 
-# inline stylesheets (any <link rel="stylesheet" href="css/...">)
+# 内联样式表（任何 <link rel="stylesheet" href="css/...">）
 def css_repl(m):
     css = open(os.path.join(ROOT, m.group(1)), encoding="utf-8").read()
     return "<style>\n" + css + "\n</style>"
 html = re.sub(r'<link rel="stylesheet" href="(css/[^"]+)">', css_repl, html)
 
-# inline scripts in order（本站无外部 vendor 依赖：图表全部手写 canvas，无 d3/topojson）
+# 按顺序内联脚本（本站无外部 vendor 依赖：图表全部手写 canvas，无 d3/topojson）
 def repl(m):
     src = m.group(1)
     p = os.path.join(ROOT, src)

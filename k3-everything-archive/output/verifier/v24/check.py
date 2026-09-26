@@ -1,1 +1,1 @@
-# v24 executed inline; result: PASS
+# v24 内联执行; 结果：通过

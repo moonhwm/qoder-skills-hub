@@ -1,6 +1,6 @@
 #!/bin/bash
 # kubectl-deploy-update.sh
-# Helper script to update a deployment image and monitor rollout
+# 用于更新部署镜像并监控发布状态的辅助脚本
 
 set -e
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# anchor_docx_append.py v1.0.1（persona-iteration-loop-ops 资产，2026-09-08 增挂）
+# anchor_docx_append.py v1.0.1（persona-iteration-loop-ops 资产，2026-09-08 新增）
 # 用途：在既有「人设记忆锚定档案」docx 上保格式追加锚行与版本行，并回读核验。
 # 缘起：r82 实战重建锚定档案 v2.4 时无脚本随档，深拷贝踩两坑——
 #   坑一：首列单元格是「单段落 + w:br 双行」结构（如 G-03\nAbilities），
