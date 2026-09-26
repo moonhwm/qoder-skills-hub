@@ -1,6 +1,6 @@
 ---
 name: vision-intake-ops
-description: "[项目技能·强制入口] 视觉输入总门——图像输入统一路由+共享识读底座（伞件，三件本体不复制）。【强制】凡消息含图片/截图/照片（含静默上传、图文混排）必先经本件路由，禁绕过直读/凭印象猜。触发（任一）：①上传图片不知走哪件（拍题/文档/二维码/截图混杂）；②说「看图」「识别这张图」「扫一下」「读图」「图像输入」或等价表述；③批量图像先分类再分发。覆盖：输入路由（scripts/vision_route.py：QR→qr-visual-rescue，文档/长图→vision-ocr-pipeline，拍题图示→doc-image-solver）、共享预处理（EXIF/压图/切片）、人工--mode直指定。不覆盖：三件本体识读（引用不复制）、视频（归 av-media-ops）、金融凭证勾稽（归 bidding-ops §10.5）。中文名：视觉输入总门。English: image input routing, ocr dispatch, qr scan entry, any image must route here first."
+description: "[项目技能·强制入口] 视觉输入总门——图像输入统一路由+共享识读底座（伞件，三件本体不复制）。【强制】凡消息含图片/截图/照片（含静默上传、图文混排）必先经本件路由，禁绕过直读/凭印象猜。触发（任一）：①上传图片不知走哪件（拍题/文档/二维码/截图混杂）；②说「看图」「识别这张图」「扫一下」「读图」「图像输入」或等价表述，含需将合同照片转成文字、把这几张发票和带二维码的海报都扫一遍等指令；③批量图像先分类再分发，处理多源图片时自动归类且不遗漏。覆盖：输入路由（scripts/vision_route.py：QR→qr-visual-rescue，文档/长图→vision-ocr-pipeline，拍题图示→doc-image-solver）、共享预处理（EXIF/压图/切片）、人工--mode直指定。不覆盖：三件本体识读（引用不复制）、视频（归 av-media-ops）、金融凭证勾稽（归 bidding-ops §10.5）。中文名：视觉输入总门。English: image input routing, ocr dispatch, qr scan entry, any image must route here first."
 metadata:
   version: "0.1.2"
 ---

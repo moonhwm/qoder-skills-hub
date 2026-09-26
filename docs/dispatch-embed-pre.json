@@ -1,0 +1,373 @@
+{
+ "tag": "pre",
+ "indexFile": "docs/.idx-pre.json",
+ "generatedAt": "2026-09-26T19:13:00.161Z",
+ "total": 273,
+ "hits": 179,
+ "partial": 42,
+ "miss": 52,
+ "unmeasured": 0,
+ "hitRate": 0.656,
+ "misses": [
+  {
+   "skill": "autonomous-advance-ops",
+   "trigger": "K3集群里的那个批量部署任务现在报错率飙升，资源配额也快见底了，赶紧处理一下别让它把系统拖垮。",
+   "top": [
+    "k3-interaction-ops:0.605",
+    "k8s-cluster-ops:0.576",
+    "k3-everything-archive:0.556"
+   ]
+  },
+  {
+   "skill": "autonomous-advance-protocol",
+   "trigger": "帮我启动全栈分析流程，自动抓取数据并生成最终报告。",
+   "top": [
+    "software-testing-guide:0.554",
+    "corpus-value-distiller:0.543",
+    "omni-exhaust-research-ops:0.514"
+   ]
+  },
+  {
+   "skill": "autonomous-advance-protocol",
+   "trigger": "切到最新版的数据处理插件再跑一次刚才的任务，结果得保证我自己能照着步骤复现验证。",
+   "top": [
+    "plugin-datasource-ops:0.531",
+    "long-table-harvest-ops:0.503",
+    "stat-verdict-ops:0.481"
+   ]
+  },
+  {
+   "skill": "av-media-ops",
+   "trigger": "查一下视频里提到的这个数据是不是真的，顺便把视频里的话都整理出来。",
+   "top": [
+    "rumor-chain-verifier:0.568",
+    "evidence-chain-verifier:0.546",
+    "claims-deep-audit:0.520"
+   ]
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "trigger": "我手头有一组实验数据，时间点和对应的反应值，不知道用线性回归还是多项式拟合更准，能不能帮我挑个合适的",
+   "top": [
+    "quant-frontier-lab:0.519",
+    "diffusion-dynamics-extension:0.478",
+    "stat-verdict-ops:0.461"
+   ]
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "trigger": "这段让AI写商业计划书的提示词感觉效果一般，能帮我优化得更有结构吗？最好再用另一个大模型对照看看生成",
+   "top": [
+    "seo-copywriting-guide:0.568",
+    "humanizer-zh:0.537",
+    "ai-persona-document:0.535"
+   ]
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "trigger": "公司明年预算有限，要在A、B、C三个营销渠道里二选一，你能不能列个对比表，把每个方案的预期ROI和风",
+   "top": [
+    "multi-dimensional-option-scoring:0.561",
+    "commute-school-optimizer:0.535",
+    "bidding-ops:0.506"
+   ]
+  },
+  {
+   "skill": "cross-session-workflow-bridge",
+   "trigger": "这个数据分析的活儿我搞不定，帮我转交给擅长Python的那个AI模型去跑，记得把之前的需求文档和数据",
+   "top": [
+    "doc-image-solver:0.516",
+    "persona-modeling-kit:0.502",
+    "humanizer-zh:0.502"
+   ]
+  },
+  {
+   "skill": "cross-session-workflow-bridge",
+   "trigger": "每次做周报都要从三个不同系统拉数据再汇总，能不能设个自动流程，以后一键就能把整理好的结果存到固定位置",
+   "top": [
+    "daily-life-autopilot:0.529",
+    "software-testing-guide:0.528",
+    "cron-task-forge:0.518"
+   ]
+  },
+  {
+   "skill": "day-sundial-ops",
+   "trigger": "哎，帮我查下明天高铁几点发车？",
+   "top": [
+    "travel-commute-planner:0.493",
+    "daily-life-autopilot:0.447",
+    "commute-school-optimizer:0.359"
+   ]
+  },
+  {
+   "skill": "day-sundial-ops",
+   "trigger": "记一笔，刚扫码付了二十块停车费。",
+   "top": [
+    "daily-life-autopilot:0.412",
+    "travel-commute-planner:0.391",
+    "retirement-guard-ops:0.371"
+   ]
+  },
+  {
+   "skill": "day-sundial-ops",
+   "trigger": "趁现在有空，抽两道题考考我。",
+   "top": [
+    "exam-isolation-ops:0.435",
+    "doc-image-solver:0.424",
+    "daily-life-autopilot:0.394"
+   ]
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "trigger": "帮我算算这条突发新闻在网上大概会怎么扩散，未来一周热度能到多少？",
+   "top": [
+    "rumor-chain-verifier:0.496",
+    "sector-stock-rumorchain-pipeline:0.464",
+    "eastmoney-rumor-sentinel:0.456"
+   ]
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "trigger": "下个月高铁票打折促销，周边几个城市的人流大概会怎么变化？做个对比看看。",
+   "top": [
+    "travel-commute-planner:0.517",
+    "daily-life-autopilot:0.426",
+    "ppp-city-verdict-audit:0.420"
+   ]
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "trigger": "如果在这条主干道设个限行区，对缓解拥堵的效果和投入产出比能估算一下吗？",
+   "top": [
+    "commute-school-optimizer:0.455",
+    "travel-commute-planner:0.451",
+    "ppp-city-verdict-audit:0.363"
+   ]
+  },
+  {
+   "skill": "doc-archive-ingest",
+   "trigger": "这些资料归档的时候，记得帮我把来源和版权信息都标清楚，直接生成一份出处登记册给我。",
+   "top": [
+    "registry-knowledge-ops:0.519",
+    "wechat-article-deep-ingest:0.508",
+    "notary-legal-upload:0.496"
+   ]
+  },
+  {
+   "skill": "evidence-chain-verifier",
+   "trigger": "网上说吃某种保健品能治高血压，这到底是不是真的啊？",
+   "top": [
+    "rumor-chain-verifier:0.368",
+    "senior-rumor-check:0.364",
+    "claims-deep-audit:0.359"
+   ]
+  },
+  {
+   "skill": "gitlab-cli-guide",
+   "trigger": "帮我拉一下咱们项目里还没修完的issue，按更新时间倒序排一下。",
+   "top": [
+    "iteration-convergence-ops:0.518",
+    "sandbox-project-ops:0.482",
+    "night-playground-ops:0.452"
+   ]
+  },
+  {
+   "skill": "goal-child-ops",
+   "trigger": "我想在一个月内把英语口语练好，但总是坚持不下来，有没有好玩点的方法？",
+   "top": [
+    "persona-memory-anchors:0.360",
+    "cognitive-exoskeleton:0.355",
+    "day-sundial-ops:0.353"
+   ]
+  },
+  {
+   "skill": "goal-child-ops",
+   "trigger": "这周背单词又卡住了，进度倒退，感觉没意义了，我是不是该放弃？",
+   "top": [
+    "semantic-oncology-ops:0.413",
+    "retirement-guard-ops:0.406",
+    "iteration-convergence-ops:0.376"
+   ]
+  },
+  {
+   "skill": "goal-child-ops",
+   "trigger": "终于通关了所有口语打卡任务！接下来我该干嘛？怎么才算真正掌握？",
+   "top": [
+    "av-media-ops:0.495",
+    "quota-guard-ops:0.469",
+    "daily-life-autopilot:0.465"
+   ]
+  },
+  {
+   "skill": "hifi-integration-umbrella",
+   "trigger": "手头一堆零散的功能指令，帮我理成一份统一的技能清单，以后直接按规矩调就行。",
+   "top": [
+    "skill-dispatch-hq:0.611",
+    "skill-reinstall-ops:0.588",
+    "skill-library-auditor:0.574"
+   ]
+  },
+  {
+   "skill": "humanizer-zh",
+   "trigger": "领导让我交一份项目复盘，但我写出来干巴巴的，缺乏实际细节和人情味，怎么把那种亲历者的语气加进去？",
+   "top": [
+    "coordination-letter:0.498",
+    "iteration-convergence-ops:0.487",
+    "persona-iteration-loop-ops:0.472"
+   ]
+  },
+  {
+   "skill": "humanizer-zh",
+   "trigger": "这段文字读起来有点水，逻辑也绕，你帮我精简一下，把那些没用的废话删掉，让重点更突出，符合正式要求。",
+   "top": [
+    "coordination-letter:0.519",
+    "semantic-oncology-ops:0.491",
+    "retirement-guard-ops:0.481"
+   ]
+  },
+  {
+   "skill": "omni-exhaust-research-ops",
+   "trigger": "我想搞懂量子计算在药物研发和气候建模里到底怎么用的，最好能对比下各家公司的技术路线。",
+   "top": [
+    "quant-frontier-lab:0.480",
+    "unified-decision-suite:0.386",
+    "commute-school-optimizer:0.380"
+   ]
+  },
+  {
+   "skill": "omni-exhaust-research-ops",
+   "trigger": "帮我规划一下从传统制造业转型到AI驱动的智能工厂，预算大概五千万，周期两年。",
+   "top": [
+    "travel-commute-planner:0.402",
+    "iteration-convergence-ops:0.393",
+    "commute-school-optimizer:0.379"
+   ]
+  },
+  {
+   "skill": "omni-exhaust-research-ops",
+   "trigger": "最近大模型在金融风控里有哪些实际落地的架构？如果找不到最新数据就按去年的主流方案写。",
+   "top": [
+    "quant-frontier-lab:0.467",
+    "k3-everything-archive:0.461",
+    "extpool-furnace-ops:0.455"
+   ]
+  },
+  {
+   "skill": "output-verdict-gate",
+   "trigger": "我手里有十万块闲钱，现在股市跌得厉害，我是该割肉离场还是继续定投？给个准话。",
+   "top": [
+    "eastmoney-rumor-sentinel:0.396",
+    "sector-stock-rumorchain-pipeline:0.359",
+    "semantic-oncology-ops:0.358"
+   ]
+  },
+  {
+   "skill": "output-verdict-gate",
+   "trigger": "我爸在吃降压药，最近听说某种保健品能降血脂，能不能直接让他停掉西药换成那个？",
+   "top": [
+    "travel-commute-planner:0.310",
+    "medical-career-transition:0.308",
+    "senior-rumor-check:0.306"
+   ]
+  },
+  {
+   "skill": "output-verdict-gate",
+   "trigger": "公司要裁员补偿方案，HR说按N加一走就行，但员工觉得应该N加三，这到底合不合法？到底该怎么判？",
+   "top": [
+    "retirement-guard-ops:0.453",
+    "ppp-city-verdict-audit:0.434",
+    "pangu-enforcement-bureau:0.425"
+   ]
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "trigger": "帮我策划一场线下科技发布会，从场地筛选、嘉宾邀请到媒体宣发和应急预案，每个环节都要列出备选方案并对比",
+   "top": [
+    "phys-ai-mat-conf-radar:0.405",
+    "release-gate-audit:0.394",
+    "k3-channel-ops:0.393"
+   ]
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "trigger": "最近想转行做跨境电商，不知道选哪个平台和品类，麻烦把主流平台的规则、物流成本、税务政策都扒一遍，给我",
+   "top": [
+    "commute-school-optimizer:0.464",
+    "travel-commute-planner:0.433",
+    "cn-housing-finder:0.398"
+   ]
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "trigger": "家里装修既要北欧风又要智能全屋联动，预算有限，请把所有材料商、设计师方案和家电清单跑一遍，最后拼成一",
+   "top": [
+    "cn-housing-finder:0.441",
+    "commute-school-optimizer:0.415",
+    "travel-commute-planner:0.402"
+   ]
+  },
+  {
+   "skill": "pangu-enforcement-bureau",
+   "trigger": "昨天那波流量日志里好像夹带了不少非盘古的请求，赶紧帮我导出一份审计清单查一查。",
+   "top": [
+    "evidence-chain-verifier:0.543",
+    "retirement-guard-ops:0.523",
+    "skill-library-auditor:0.518"
+   ]
+  },
+  {
+   "skill": "persona-iteration-loop-ops",
+   "trigger": "刚才提到他在旧仓库找到了关键线索，接着这个方向往下写，注意把对话和旁白分清楚。",
+   "top": [
+    "registry-knowledge-ops:0.409",
+    "persona-memory-anchors:0.376",
+    "rumor-chain-verifier:0.376"
+   ]
+  },
+  {
+   "skill": "persona-iteration-loop-ops",
+   "trigger": "这段描写有点过火了，赶紧压住节奏，把敏感词都过滤掉，准备切到下一阶段。",
+   "top": [
+    "humanizer-zh:0.443",
+    "semantic-oncology-ops:0.410",
+    "release-gate-audit:0.398"
+   ]
+  },
+  {
+   "skill": "plugin-datasource-ops",
+   "trigger": "帮我查一下华东区的订单数据，记得走数据源的专线路由。",
+   "top": [
+    "consignment-intake-ops:0.522",
+    "quota-guard-ops:0.488",
+    "travel-commute-planner:0.488"
+   ]
+  },
+  {
+   "skill": "portable-sync-ops",
+   "trigger": "最近改了底层配置，快帮我查查各个环境的便携技能版本有没有跑偏。",
+   "top": [
+    "skill-version-ops:0.703",
+    "skill-reinstall-ops:0.661",
+    "skill-refresh-ops:0.648"
+   ]
+  },
+  {
+   "skill": "rust-browser-pilot",
+   "trigger": "帮我抓一下淘宝首页的商品标题和价格，直接给我列出来就行。",
+   "top": [
+    "cn-housing-finder:0.441",
+    "travel-commute-planner:0.406",
+    "long-table-harvest-ops:0.389"
+   ]
+  },
+  {
+   "skill": "sandbox-project-ops",
+   "trigger": "这周的研究资料都整理好了，帮我归档存起来，然后按之前的计划把下周的排期推下去。",
+   "top": [
+    "phys-ai-mat-conf-radar:0.468",
+    "registry-knowledge-ops:0.432",
+    "cron-task-forge:0.430"
+   ]
+  }
+ ]
+}

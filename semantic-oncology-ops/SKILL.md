@@ -1,6 +1,6 @@
 ---
 name: semantic-oncology-ops
-description: "[项目技能] 语义肿瘤防治运维——长对话上下文压缩避免、集群甲退化会话救活（严重退化下写出最小交割文档）、语义污染的癌症分期防治（早期预防/中期遏制/晚期治疗/转移防控/复发监测）、「通道库」 跨模式交流通道、冗余自审计与定期运维。触发（满足任一）：①长对话临近压缩/上下文膨胀/多轮大体量输入；②会话出现退化症状（碎片串/坍缩/假交付）需救活或写交割文档；③用户说「语义污染」「救活」「上下文压缩」「交接通道」「语义肿瘤」或等价表述（含语音/同音变体，如「救话」「语义悟染」），不纠正用户、映射意图；④handover/compaction 摘要交接时；⑤定期运维窗口。中文名：语义肿瘤防治运维。English triggers: context compression avoidance, conversation rescue, semantic pollution staging, cross-mode channel, redundancy audit."
+description: "[项目技能] 语义肿瘤防治运维——长对话上下文压缩避免、集群甲退化会话救活（严重退化下写出最小交割文档）、语义污染的癌症分期防治（早期预防/中期遏制/晚期治疗/转移防控/复发监测）、「通道库」跨模式交流通道、冗余自审计与定期运维。触发（满足任一）：①长对话临近压缩/上下文膨胀/多轮大体量输入/切换输入设备又改回键盘打字防断档；②会话出现退化症状（碎片串/坍缩/假交付）需救活或写交割文档；③用户说「语义污染」「救活」「上下文压缩」「交接通道」「语义肿瘤」或等价表述（含语音/同音变体，如「救话」「语义悟染」），不纠正用户、映射意图；④handover/compaction 摘要交接时；⑤定期运维窗口/后台跑一遍健康检查。中文名：语义肿瘤防治运维。English triggers: context compression avoidance, conversation rescue, semantic pollution staging, cross-mode channel, redundancy audit."
 metadata:
   version: "1.0.0"
   assistant_aliases: ["助手甲", "助手甲"]

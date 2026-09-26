@@ -1,0 +1,116 @@
+{
+ "generatedAt": "2026-09-26T19:04:51.617Z",
+ "model": "qwen3.6-flash",
+ "applied": [
+  {
+   "skill": "autonomous-advance-protocol",
+   "oldLen": 170,
+   "newLen": 220
+  },
+  {
+   "skill": "av-media-ops",
+   "oldLen": 542,
+   "newLen": 419
+  },
+  {
+   "skill": "cognitive-exoskeleton",
+   "oldLen": 412,
+   "newLen": 375
+  },
+  {
+   "skill": "day-sundial-ops",
+   "oldLen": 216,
+   "newLen": 230
+  },
+  {
+   "skill": "diffusion-dynamics-extension",
+   "oldLen": 195,
+   "newLen": 231
+  },
+  {
+   "skill": "cross-session-workflow-bridge",
+   "oldLen": 680,
+   "newLen": 547
+  },
+  {
+   "skill": "evidence-chain-verifier",
+   "oldLen": 294,
+   "newLen": 321
+  },
+  {
+   "skill": "goal-child-ops",
+   "oldLen": 630,
+   "newLen": 579
+  },
+  {
+   "skill": "livability-audit-swarm",
+   "oldLen": 346,
+   "newLen": 386
+  },
+  {
+   "skill": "multi-dimensional-option-scoring",
+   "oldLen": 130,
+   "newLen": 215
+  },
+  {
+   "skill": "output-verdict-gate",
+   "oldLen": 320,
+   "newLen": 389
+  },
+  {
+   "skill": "pan-exhaust-dispatch",
+   "oldLen": 516,
+   "newLen": 574
+  },
+  {
+   "skill": "plugin-datasource-ops",
+   "oldLen": 424,
+   "newLen": 444
+  },
+  {
+   "skill": "rumor-chain-verifier",
+   "oldLen": 302,
+   "newLen": 311
+  },
+  {
+   "skill": "rust-browser-pilot",
+   "oldLen": 175,
+   "newLen": 207
+  },
+  {
+   "skill": "semantic-oncology-ops",
+   "oldLen": 434,
+   "newLen": 460
+  },
+  {
+   "skill": "source-semantics-sentinel",
+   "oldLen": 356,
+   "newLen": 382
+  },
+  {
+   "skill": "skill-dispatch-hq",
+   "oldLen": 556,
+   "newLen": 590
+  },
+  {
+   "skill": "unified-decision-suite",
+   "oldLen": 301,
+   "newLen": 354
+  },
+  {
+   "skill": "vision-ocr-pipeline",
+   "oldLen": 186,
+   "newLen": 289
+  },
+  {
+   "skill": "vision-intake-ops",
+   "oldLen": 473,
+   "newLen": 523
+  }
+ ],
+ "skipped": [
+  "autonomous-advance-ops:gen-fail",
+  "persona-iteration-loop-ops:gen-fail",
+  "sandbox-project-ops:gen-fail"
+ ]
+}

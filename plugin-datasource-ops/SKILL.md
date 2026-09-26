@@ -1,6 +1,6 @@
 ---
 name: plugin-datasource-ops
-description: "[项目技能] 插件与数据源调用范式——全会话插件接口的统一调用纪律、域路由表、实证 Pitfalls 与持久化规程。触发（满足任一）：①任务涉及调用任何已安装插件或 agent-gw 数据源（元典法律、scholar、金融数据源、生物/材料库、宏观数据库、MCP 服务、lark-cli 等）；②用户要求把插件调用持久化/稳固化/全局化；③子代理派单需要携带插件调用纪律。统一调配入口为 autonomous-advance-ops（§2 默认动作栈登记本件）。覆盖：三条调用通道识别、按域路由、多检索式交叉纪律、原始返回持久化、conf 分层保持、写类例外与外发禁令的继承、安装位只读期间的工作副本规程。中文名：插件数据源运维范式。English triggers: plugin routing, datasource discipline, agent-gw invocation paradigm, MCP call discipline."
+description: "[项目技能] 插件与数据源调用范式——全会话插件接口的统一调用纪律、域路由表、实证 Pitfalls 与持久化规程。触发（满足任一）：①任务涉及调用任何已安装插件或 agent-gw 数据源（元典法律、scholar、金融数据源、生物/材料库、宏观数据库、MCP 服务、lark-cli 等）；②用户要求把插件调用持久化/稳固化/全局化；③子代理派单需要携带插件调用纪律；④需走数据源的专线路由处理定向业务查询。统一调配入口为 autonomous-advance-ops（§2 默认动作栈登记本件）。覆盖：三条调用通道识别、按域路由、多检索式交叉纪律、原始返回持久化、conf 分层保持、写类例外与外发禁令的继承、安装位只读期间的工作副本规程。中文名：插件数据源运维范式。English triggers: plugin routing, datasource discipline, agent-gw invocation paradigm, MCP call discipline."
 metadata:
   version: "1.0.4"
   assistant_aliases: ["助手甲", "助手甲"]

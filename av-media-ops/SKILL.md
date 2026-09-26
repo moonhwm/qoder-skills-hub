@@ -1,6 +1,6 @@
 ---
 name: av-media-ops
-description: "[项目技能] 音视频作战室——音视频材料的摄取、ASR 转写、信源核查与语音化产出一体管线（用户侧主权件）。触发（满足任一）：①用户说「音视频」「转写」「逐字稿」「听写」「语音识别」「ASR」「播客」「视频核查」「语音指令」「语音输入」「念一遍」「语音版」「TTS」「文字转语音」或等价表述（含语音变体，不纠正用户、映射意图）；②需要对音频/视频文件产出带时间戳逐字稿时；③需要核查视频/播客中的声明真伪时；④需要把报告/函件语音化时；⑤机主语音指令转写纠错与意图映射时。覆盖：ffmpeg 探针与抽取（scripts/av_intake.py）、faster-whisper 本地 ASR（低置信段【存疑】禁猜读）、语音变体表容错、音视频信源核查升级链（转 rumor-chain-verifier，引用不复制）、摄取包产出（兼容《摄取蒸馏两段式管线契约 v1.0》）、本地 TTS 末节。不覆盖：音视频创作剪辑、实时流处理、任何出域上传。中文名：音视频作战室。English triggers: audio transcription, video speech-to-text, podcast fact-check, voice memo ingest, local TTS."
+description: "[项目技能] 音视频作战室——音视频材料的摄取、ASR 转写、信源核查与语音化产出一体管线（用户侧主权件）。当您需要查一下视频里提到的这个数据是不是真的，或者需要把视频里的话都整理出来时，系统将调用 ffmpeg 探针与抽取（scripts/av_intake.py）解析素材，经 faster-whisper 本地 ASR 识别后对低置信段标记为【存疑】并禁猜读，随后通过音视频信源核查升级链（转 rumor-chain-verifier，引用不复制）核验声明真伪，最终结合语音变体表容错机制与本地 TTS 末节生成兼容《摄取蒸馏两段式管线契约 v1.0》的摄取包。本管线专注离线处理，不覆盖音视频创作剪辑、实时流处理与任何出域上传，完整覆盖 audio transcription、video speech-to-text、podcast fact-check、voice memo ingest 与 local TTS 等对应场景。"
 metadata:
   version: "0.1.0"
 ---
