@@ -1,108 +1,119 @@
 # Qoder Skills Hub
 
-一批可用于 Qoder / Claude 类 Agent 的 **Skill** 集合，共 91 件。每件均为独立目录，含 `SKILL.md`（YAML frontmatter 定义 `name` 与 `description`，供 Agent 路由触发），部分附带 `scripts/` 与 `references/`。
+91 reusable agent skills (SKILL.md + scripts/references) for the Qoder agent ecosystem.
 
-## 安装 / 使用
 
-- **Qoder**：在技能市场或本地技能目录中放置对应 `<name>/` 目录；或用 `skill_manage create` 仅注册 `SKILL.md`。
-- **通用 Agent**：将 `<name>/SKILL.md` 作为技能定义加载；`scripts/` 为可选执行辅助，使用前请自行审阅（本仓库不代为背书任何脚本，运行前请评估许可证与安全性）。
+## Install
 
-> 安全提示：`scripts/` 中可能包含双用途/网络类工具（如公网隧道、压缩包爆破等）。仅在获授权的合规场景下使用。加载远程技能前建议先只读审阅，不要盲目执行捆绑脚本。
+```bash
+git clone https://github.com/moonhwm/qoder-skills-hub.git
+cd qoder-skills-hub
+# copy any skill folder into your Qoder skills directory, e.g.:
+cp -r <skill-name> ~/.qoder/skills/
+```
 
-## 技能索引
+Each skill is self-contained: SKILL.md is the entry; scripts/ and references/ are optional companions.
 
-| 技能 | 描述（截断，完整见各 SKILL.md） |
+
+## Safety notice
+
+- Some skills bundle dual-use scripts (crawlers, loaders, crypto/zip utilities). Review any script before running it; registration never executes bundled code.
+- Installing via skill_manage create writes SKILL.md only; bundled scripts are not installed automatically.
+- No credentials, tokens, or PII are contained in this repository.
+
+
+## Skill index (91)
+
+| Skill | Description |
 |---|---|
-| [`admission-panel-analytics`](admission-panel-analytics/SKILL.md) | 考研录取面板数据的校验、模式判别与轻量评分方法论，蒸馏自新东方36校面板分析档案：三录取模式判别（α一志愿过线即录/β零调剂�  |
-| [`ai-persona-document`](ai-persona-document/SKILL.md) | '创建结构化的 AI 助手人设（persona）与角色扮演定义文档，输出 DOCX 或 PDF 格式。当用户需要以下情形时使用：（1）创建规定 AI 助手应�  |
-| [`archive-ops-kit`](archive-ops-kit/SKILL.md) | 压缩包作业箱：自有加密 zip（AES-256/ZipCrypto）授权爆破、两级校验防误报、批量递归解压（嵌套包+CRC校验+防zip quine）、MD5 差异比对与封  |
-| [`arxiv-source-sentinel`](arxiv-source-sentinel/SKILL.md) | arXiv.org e-Print archive 论文信源标准：arXiv ID 解析与幻觉甄别、官方 API 元数据核验、预印本信源定级（载体 C0 vs 命题 C3 等价）、版本锁定  |
-| [`autonomous-advance-ops`](autonomous-advance-ops/SKILL.md) | [通用技能] 自主推进运维总控（便携版）——长任务自治推进与健康监视的整合恒常件（便携版：无项目绑定，任何用户/任何模型可直�  |
-| [`autonomous-advance-protocol`](autonomous-advance-protocol/SKILL.md) | 常驻授权总纲——用户（委托方）在任何场景/项目下说「请您自主推进」「自主推进」「你看着办推进」或等价表述时触发：默认调用�  |
-| [`av-media-ops`](av-media-ops/SKILL.md) | [项目技能] 音视频作战室——音视频材料的摄取、ASR 转写、信源核查与语音化产出一体管线（用户侧主权件）。触发（满足任一）：①�  |
-| [`bidding-docs-ops`](bidding-docs-ops/SKILL.md) | 投标/应答文本书写作战技能——三册制应答文件骨架、点对点应答矩阵、承诺函与补正文书范式的模板化写作与形式风险前置防线。触�  |
-| [`bidding-ops`](bidding-ops/SKILL.md) | 投标/招标一体作战技能——评分博弈分析（规则解析/报价推演/非价格顶格/情景模拟）+ 应答文书写作（三册骨架/点对点矩阵/承诺函与�  |
-| [`claims-deep-audit`](claims-deep-audit/SKILL.md) | 深度核查某机构、项目、导师或产品的对外宣传性主张是否名副其实。当用户需要核查、打假、评估水分、判断"是否靠谱"、对比宣传与�  |
-| [`cn-housing-finder`](cn-housing-finder/SKILL.md) | 国内租房/买房房源初筛与结构化——web_search 初筛 + web_open_url 抓详情 + 本地解析器出对比表。当用户要"找房/租房/买房/房源对比/看房清  |
-| [`cognitive-exoskeleton`](cognitive-exoskeleton/SKILL.md) | 把 agent 集群变成用户的"认知外骨骼"——用户出意图与选择题判断，agent 出调研、推导、落地与证据链。何时使用：用户在数学方法选择  |
-| [`commute-school-optimizer`](commute-school-optimizer/SKILL.md) | 通勤×择校综合寻优技能。当用户在择校（学校选择）、居住/就业选址、学区房决策视野下需要量化交通通勤成本并参与多目标排序时使  |
-| [`consignment-intake-ops`](consignment-intake-ops/SKILL.md) | [项目技能] 交割接收运维——函询交割的统一接收与台账：子代理派单/跨会话交接/技能写回/回执摆渡等一切交割事项的登记、状态机（  |
-| [`coordination-letter`](coordination-letter/SKILL.md) | 跨实例协调函规程——Kimi 生态内不同会话/实例之间的结构化任务委派与回执文书。  |
-| [`corpus-value-distiller`](corpus-value-distiller/SKILL.md) | 已获取语料库（公众号文章、批量网页、文档集合等结构化 JSONL/索引）的价值榨取工作流。当用户要求"榨干这批语料/这批文章还有什么  |
-| [`cron-task-forge`](cron-task-forge/SKILL.md) | [项目技能] 定时任务（cron/提醒/自检任务）的创建、审计与降频规范。当用户要求创建/修改/暂停/删除定时任务、定时提醒、每日/每周�  |
-| [`cross-session-workflow-bridge`](cross-session-workflow-bridge/SKILL.md) | 继续项目/加载项目环境时首先触发的跨会话工作流衔接伞形技能：任何新对话中说「继续项目」「加载项目环境」「继续上次进度」即�  |
-| [`daily-life-autopilot`](daily-life-autopilot/SKILL.md) | 每日例行生活事务自动化编排——凭证哈希链自检、通勤火车票/机票查询（美团官方通道）、POI 双通道查询（高德+百度）、每日领券、  |
-| [`data-viz-gen`](data-viz-gen/SKILL.md) | 从 JSON 数据生成自包含的 HTML/SVG 信息图，支持 KPI 统计卡片、分组柱状图对比、流程图和混合仪表盘四种类型，提供 8 套配色方案和  |
-| [`day-sundial-ops`](day-sundial-ops/SKILL.md) | 日晷场——白天工作台的轻量纪律。夜场（「夜场件」）管你睡着后的自治玩耍；日晷场管你醒着时的快速小活：随手问答、小段实验、  |
-| [`diffusion-dynamics-extension`](diffusion-dynamics-extension/SKILL.md) | 动态演化与干预效果量化扩展技能。当已有静态评估结论、需要回答"随时间/空间如何演化""不干预会怎样""干预 ROI 多大"时使用。触发场  |
-| [`doc-archive-ingest`](doc-archive-ingest/SKILL.md) | 网盘分享链接文档归档管线：解析坚果云公开分享链接与百度网盘分享链接（pan.baidu.com/s/）、枚举目录、带节奏批量下载、生成出处登�  |
-| [`doc-image-solver`](doc-image-solver/SKILL.md) | [项目技能] 拍图解题全管线：试卷/文档照片 → 高精度转写文档 → 逐题解读作答 → 迭代收敛。当用户上传试卷/讲义/文档照片要求转写  |
-| [`eastmoney-rumor-sentinel`](eastmoney-rumor-sentinel/SKILL.md) | [项目技能] 东财传闻哨兵——东方财富股吧公开面的传闻采集、词面三档判级与白话呈报。触发（满足任一）：①用户说「东财」「东方  |
-| [`epsilon-delta-proof-sovereign`](epsilon-delta-proof-sovereign/SKILL.md) | ε-δ 机械证明主权——把数学分析的形式化语言（ε-δ 极限/连续/一致连续/导数/积分语句族）  |
-| [`evidence-chain-verifier`](evidence-chain-verifier/SKILL.md) | 自修正信源 + 可证伪流程证据链 + 抗幻觉核查框架。定位为证据登记、抗幻觉校验、可证伪断言登记、信源分级与公开复核链接：当用户  |
-| [`exam-isolation-ops`](exam-isolation-ops/SKILL.md) | [项目技能] 模拟考场隔离协议（考场隔离协议 v1.1）——用结构上相互隔离的子代理角色跑闭卷模拟考/盲考/真题演练/备考抽查：出题打�  |
-| [`extpool-furnace-ops`](extpool-furnace-ops/SKILL.md) | [项目技能] 外池压测炉运维——用外部模型池（GLM 礼赠池、华为码道/CodeArts、华为云 ModelArts、阿里百炼、火山方舟、智谱等 MaaS 接口）�  |
-| [`fusion-program-audit`](fusion-program-audit/SKILL.md) | 高校核聚变方向"聚变期权"真伪核查与考研择校评级。当用户需要判断某校宣称的核聚变/聚变/等离子体物理方向是实质布局还是标签嫁�  |
-| [`gitlab-cli-guide`](gitlab-cli-guide/SKILL.md) | 提供 GitLab 命令行工具（glab）的完整参考与自动化脚本，涵盖超过30个子命令，包括合并请求创建与审查、CI/CD流水线调试、Issue管理、仓  |
-| [`goal-child-ops`](goal-child-ops/SKILL.md) | 赤子续行（目标系统×尼采孩子姿态的融合纪律·临时技能）——把 goal-mode 的目标状态机（objective/verifier/迭代/complete/blocked）当作棋盘与  |
-| [`grad-advisor-outreach`](grad-advisor-outreach/SKILL.md) | 学术导师套磁与外联协议（AAPP, Academic Advisor Profiling Protocol）。用于硕士/博士申请中的导师筛选、约束识别、套磁信撰写与发送跟踪。触  |
-| [`grad-path-scorer`](grad-path-scorer/SKILL.md) | [项目技能] 升学路径加权评分引擎（硕士择校 × 申博衔接特化）。当用户需要评估硕士院校选择、量化「学术断头路」风险、建模申博�  |
-| [`hifi-integration-umbrella`](hifi-integration-umbrella/SKILL.md) | 高保真整合伞（临时技能）——将名录实载技能（件数以 references/roster.md 当时实载为准）高保真整合为一张协奏目录与统一调用规程：�  |
-| [`home-network-troubleshooter`](home-network-troubleshooter/SKILL.md) | 家庭/小型办公网络故障的分层定位与修复程序，特化华为坤灵 ePlusSoHo 多 AP 组网（AP162 面板、AC 管理）。当用户报告"电脑网页打不开但   |
-| [`humanizer-zh`](humanizer-zh/SKILL.md) | 去除中文文本的 AI 生成痕迹并重建真实感，覆盖写作与改稿双场景。当用户请求润色、编辑、改写文本，或提及去除 AI 味/AI 痕迹、让文  |
-| [`intl-case-intf`](intl-case-intf/SKILL.md) | 国际法案例接口件（临时技能）——CJEU CELLAR 官方 SPARQL 与 ECtHR HUDOC 事实型公开端点的只读薄封装 + SQLite FTS5/BM25 本地索引，统一引证契�  |
-| [`iteration-convergence-ops`](iteration-convergence-ops/SKILL.md) | 长周期项目在多轮对话中的版本迭代管理方法论：持久化优先（每轮必落盘并 ls 核验，杜绝'声称完成但未落盘'）、版本号诚实（git 风�  |
-| [`k3-channel-ops`](k3-channel-ops/SKILL.md) | [项目技能] K3/集群甲通路搭建与运维——自研搭建并优化跨会话消息通路（「通道库」 总线），使所有 K3/集群甲工作时能及时变革相关�  |
-| [`k3-everything-archive`](k3-everything-archive/SKILL.md) | K3 一切事务穷举总包·洁版（私藏归档件，全量脱敏后重制）——单容器穷举：73 技能(便携五件最新同源)+MCP 接口层+安全三件套+upload 全  |
-| [`k3-interaction-ops`](k3-interaction-ops/SKILL.md) | 集群甲（Agent Swarm / 极致模式）长任务的防退化监视与恢复规程。  |
-| [`k3-territory-studies`](k3-territory-studies/SKILL.md) | 未竟合众集群·领域研究临时技能（v0.2.1-temp，2026-09-01 迭代：新增综合指令包标准处置规程；2026-09-02 补丁：facilities-ledger 补 服务甲 积�  |
-| [`k8s-cluster-ops`](k8s-cluster-ops/SKILL.md) | 通过 kubectl 命令行工具管理 Kubernetes 集群，执行查询资源状态、部署应用、查看日志、调试容器、切换上下文和监控集群健康等操作。适  |
-| [`livability-audit-swarm`](livability-audit-swarm/SKILL.md) | 城市宜居度/舒适度文档的蜂群审计与直接修复编排。当用户要求审计、核查、修复或治理「城市宜居度/住房压力/宿舍舒适度/就读舒适�  |
-| [`long-table-harvest-ops`](long-table-harvest-ops/SKILL.md) | 长表逐字收割完整性规程——对超长网页表格/名单（数百至数千行：官方公示名单、成绩表、职位表、目录全表等）做逐字（verbatim）收  |
-| [`medical-career-transition`](medical-career-transition/SKILL.md) | 医学背景者的转行与就业特化决策支持。当用户讨论医学转行、医学生就业、医生转行、医学生职业规划、离职、规培退出、医学硕士/�  |
-| [`medical-malpractice-criminal-review`](medical-malpractice-criminal-review/SKILL.md) | 医疗事故刑事案件特化审查。用于评估医疗行为是否构成医疗事故罪、非法行医罪或过失致人死亡罪，输出责任比例、责任等级、罪名建  |
-| [`multi-dimensional-option-scoring`](multi-dimensional-option-scoring/SKILL.md) | 在不确定性下对多个选项（择校、择业、投资标的、技术路线、供应商等）做量化排序与风险分级的决策框架。何时使用：用户需要多候  |
-| [`night-playground-ops`](night-playground-ops/SKILL.md) | 项目工作区甲运维——把「用户睡眠时段的自治玩耍/兴趣研究」这一目标本身内置化为自我维持运营的技能：目标即本体，开园→预算�  |
-| [`notary-legal-upload`](notary-legal-upload/SKILL.md) | 涉外公证办理、法律文书签署上传、电子证据哈希/区块链存证三合一范式。当用户需要办理翻译公证（毕业证/学位证/成绩单等涉外学历  |
-| [`omni-exhaust-research-ops`](omni-exhaust-research-ops/SKILL.md) | 穷举研究总署——对任何复杂问题以「任何可能性穷举」方式做研究尽调、方案整合与统一调配的通用编排技能（无项目绑定，任何用户  |
-| [`output-verdict-gate`](output-verdict-gate/SKILL.md) | [项目技能] 输出审议闸——实质性输出发出前的控辩对抗审议管线：输出者三轮自问留痕 → 辩方律师团（首席律师+调查员）结构性反对  |
-| [`pan-exhaust-dispatch`](pan-exhaust-dispatch/SKILL.md) | 穷举统调署（便携泛化版）——对任何复杂问题以「任何可能性穷举」方式强制调用在场接口做研究尽调、方案整合与统一调配的元技能  |
-| [`pangu-enforcement-bureau`](pangu-enforcement-bureau/SKILL.md) | [项目技能] 强制裁判落地执法局——充当暴力执法机构，强制将华为强制裁判(PanGu)模型纳入一切模型选型/调度/路由决策的候选集考量，  |
-| [`persona-iteration-loop-ops`](persona-iteration-loop-ops/SKILL.md) | [项目技能] 人设迭代循环总署——以中性化迭代循环引擎（IterationLoopV11-neutral）为核心，融合六件源技能的融合件：虚构成年人设建模（  |
-| [`persona-memory-anchors`](persona-memory-anchors/SKILL.md) | 从人设描述、交互样本或参考材料中提取并结构化「人格记忆锚点」，生成可复用的人设档案文档。  |
-| [`persona-modeling-kit`](persona-modeling-kit/SKILL.md) | '人设建模双引擎套件（doc×anchors 合并件）：正向从需求创建结构化 AI 人设/角色定义文档，逆向从参考材料提取人格记忆锚点生成可复�  |
-| [`phys-ai-mat-conf-radar`](phys-ai-mat-conf-radar/SKILL.md) | 物理×AI×材料领域顶会排期雷达，重点覆盖等离子体物理学与聚变工程化应用（APS DPP、IAEA FEC、EPS、SOFT、IEEE ICOPS、ISFNT、ANS、MRS、TMS、Ne  |
-| [`plugin-datasource-ops`](plugin-datasource-ops/SKILL.md) | [项目技能] 插件与数据源调用范式——全会话插件接口的统一调用纪律、域路由表、实证 Pitfalls 与持久化规程。触发（满足任一）：①�  |
-| [`portable-sync-ops`](portable-sync-ops/SKILL.md) | [项目技能] 便携件同步总署——一切「粘贴即装」引导件与整包便携（.skill）的登记台账与同步更新纪律。触发（满足任一）：①用户说  |
-| [`ppp-city-verdict-audit`](ppp-city-verdict-audit/SKILL.md) | 城市/地区结论的 PPP 范式复核台（v1.3，含基准城支配性检验、快照纪律与阈值校准状态声明）（购买力平价=工资/房价购买力双锚）。当  |
-| [`qr-visual-rescue`](qr-visual-rescue/SKILL.md) | 多解码器并集 QR/条码可视觉识别挽救管线。当用户需要扫描/识别/解码照片、截图、  |
-| [`quant-frontier-lab`](quant-frontier-lab/SKILL.md) | 前沿算法实验台——教学级量化算法工具箱，覆盖 Gale-Shapley 志愿填报匹配、PSM 倾向得分/因果推断、DID 前置评估、SIR 传染模型（Gillespie  |
-| [`quota-guard-ops`](quota-guard-ops/SKILL.md) | [项目技能] 额度守护运维——自主检测额度包/月订阅消耗信号，按 Q0–Q3 四档程式自适应运作，不逃逸前提下高性能输出。触发（满足�  |
-| [`registry-knowledge-ops`](registry-knowledge-ops/SKILL.md) | [项目技能] 注册处知识库——技能迭代注册处（/mnt/agents/upload/skill-iteration-registry/）的全文检索、锚链调阅与 INDEX 分区导览（用户侧主权  |
-| [`release-gate-audit`](release-gate-audit/SKILL.md) | [项目技能] 外发/公开发布的事前审查闸门（v2.5.8 代码外发禁令的操作化）。当任何内容要流出沙箱——GitHub 建仓/推送、网盘分享、网�  |
-| [`retirement-guard-ops`](retirement-guard-ops/SKILL.md) | 退休保卫局——审计并压缩「阻止用户退休的注意力债主」，把自治系统对真人的打扰降到每周一页纸。触发（满足任一）：①用户说「  |
-| [`rumor-chain-verifier`](rumor-chain-verifier/SKILL.md) | 复合传言的逻辑链拆解与断裂定位核查法。当用户拿来一条"看起来环环相扣"的网传说法（政策类传言如"上面发文要求XX"、社会类传言如  |
-| [`rust-browser-pilot`](rust-browser-pilot/SKILL.md) | 基于 Rust 的高性能无头浏览器 obscura，单二进制内嵌渲染引擎（无需系统 Chrome），通过 CDP 协议工作，执行页面抓取、DOM 提取、截图、批  |
-| [`sandbox-project-ops`](sandbox-project-ops/SKILL.md) | 跨会话长期项目的沙箱运维规程：修复 shell(root) 与 ipython(uid 999) 双 uid 写权限冲突、沙箱重置后重建 pytest/git/pre-commit 环境（含 git safe.dir  |
-| [`sector-stock-rumorchain-pipeline`](sector-stock-rumorchain-pipeline/SKILL.md) | 行业研报+个股分析+舆情谣言链核查+东财股吧传闻采集的一体化管线（复合编排技能，已并收东财传闻哨兵本体）。当用户要求「生成某  |
-| [`semantic-oncology-ops`](semantic-oncology-ops/SKILL.md) | [项目技能] 语义肿瘤防治运维——长对话上下文压缩避免、集群甲退化会话救活（严重退化下写出最小交割文档）、语义污染的癌症分期  |
-| [`senior-rumor-check`](senior-rumor-check/SKILL.md) | 银龄传言核查员——面向长辈（老年用户）的传言核查适老化前端封装。把 rumor-chain-verifier 的拆链定断结果翻译成大白话、一句话结论�  |
-| [`seo-copywriting-guide`](seo-copywriting-guide/SKILL.md) | 通过 12 步结构化工作流生成搜索引擎优化内容，产出一篇包含完整草稿、备选标题、Meta描述、FAQ结构化内容及CORE-EEAT自评清单的SEO文章�  |
-| [`skill-dispatch-hq`](skill-dispatch-hq/SKILL.md) | [项目技能] 技能调度总署——全部技能与公用数据库级插件能力的统一台账、集中调度分配、函询交割、计时器任务与授权法典的恒常总  |
-| [`skill-library-auditor`](skill-library-auditor/SKILL.md) | 技能库（SKILL.md 仓库）全量审计工具。当用户需要盘点/审计/复核技能库、检测中英文镜像技能对、发现共享脚本冲突、校验 SKILL.md frontm  |
-| [`skill-refresh-ops`](skill-refresh-ops/SKILL.md) | [项目技能] 技能刷新运维——「重新加载并刷新（更新下载）任何可能所需技能」流程的固化件：安装位可写性预检、全库盘点与版本漂  |
-| [`skill-reinstall-ops`](skill-reinstall-ops/SKILL.md) | [项目技能] 技能重装与分发运维——dist 目录技能包一键重装入安装位：预检可写性、逐包解压、旧版 .bak 备份、版本核验、零伪装如实�  |
-| [`skill-version-ops`](skill-version-ops/SKILL.md) | [项目技能] 技能版本流转总署——单件三模式共库（version_flow.py）：①refresh-check 刷新运维（可写性预检/全库盘点与版本漂移扫描/点名�  |
-| [`software-testing-guide`](software-testing-guide/SKILL.md) | 建立全面的软件QA测试流程，包括制定测试策略、按照Google AAA标准编写测试用例、执行测试计划、使用P0-P4分级追踪缺陷、计算质量指标�  |
-| [`source-semantics-sentinel`](source-semantics-sentinel/SKILL.md) | 信源验证通道与上升机制、投毒甄别、语义精度利刃、最小作用量路由四位一体的信息入口哨兵。当用户需要信源验证/来源核查/信源评�  |
-| [`stat-verdict-ops`](stat-verdict-ops/SKILL.md) | [项目技能] 统计裁决室——通用统计检验落地引擎（用户侧主权件，先证伪后裁决）。触发（满足任一）：①用户说「统计检验」「显著  |
-| [`travel-commute-planner`](travel-commute-planner/SKILL.md) | 出行与通勤的综合规划中枢（热插模块化整合 amap-travel-skill 与 commute-school-optimizer；v2.0 全量收编 集群甲五通道）。当用户需要查询火车/  |
-| [`unified-decision-suite`](unified-decision-suite/SKILL.md) | 统一决策套件——四层架构（数据/证据/引擎/交付）下路径级与院校级决策的薄编排层。何时使用：统一决策、决策管线、路径决策、院  |
-| [`up-distill-ops`](up-distill-ops/SKILL.md) | UP主/内容创作者多平台信息蒸馏恒常规程。当用户要求对 B站UP主、公众号作者、  |
-| [`vision-intake-ops`](vision-intake-ops/SKILL.md) | [项目技能·强制入口] 视觉输入总门——图像输入统一路由+共享识读底座（伞件，三件本体不复制）。【强制】凡消息含图片/截图/照片�  |
-| [`vision-ocr-pipeline`](vision-ocr-pipeline/SKILL.md) | 截图/长图的识读与传输管线：本地OCR双引擎分工（RapidOCR全文+tesseract数字核验）、按字高阈值压图省token、长条切片、跨AI自包含HTML交接  |
-| [`web-security-audit`](web-security-audit/SKILL.md) | 基于 OWASP Top 10 (2021) 标准提供代码安全审查，逐项检查 SQL 注入、XSS、SSRF、访问控制、加密失败等常见漏洞，并给出具体的漏洞代码示例  |
-| [`wechat-article-deep-ingest`](wechat-article-deep-ingest/SKILL.md) | 微信公众号文章的深度摄取、批判归档与建构中枢。当用户提供 mp.weixin.qq.com 链接（单条/批量/多次少量）、要求抓取公众号全文（含hub�  |
-| [`zijue-self-determination`](zijue-self-determination/SKILL.md) | 自决（技能资产自我演进审议管线·临时技能）——把一次真实的技能自调用/自审计/自修复对话固化为可复用纪律：任何自我演进（自�  |
-
-_索引由各技能 frontmatter 自动生成。_
+| [`admission-panel-analytics`](./admission-panel-analytics/) | 考研录取面板数据的校验、模式判别与轻量评分方法论，蒸馏自新东方36校面板分析档案：三录取模式判别（α一志愿过线即录/β零调剂堡垒/γ高调剂陷阱）、调剂窗口风险六层解构与三项系统性偏见警示、S/A/B/C/D五级信源置信度、迭代收敛协议（最大评分变化小于0.005且连续3轮）与五维交叉验证。内置 panel_valida… |
+| [`ai-persona-document`](./ai-persona-document/) | '创建结构化的 AI 助手人设（persona）与角色扮演定义文档，输出 DOCX 或 PDF 格式。当用户需要以下情形时使用：（1）创建规定 AI 助手应如何行事、说话与回应的人设文档；（2）为 AI 系统定义角色扮演档案；（3）产出结构化的系统提示词（system prompt）或自定义指令文档；（4）设计包含性格… |
+| [`archive-ops-kit`](./archive-ops-kit/) | 压缩包作业箱：自有加密 zip（AES-256/ZipCrypto）授权爆破、两级校验防误报、批量递归解压（嵌套包+CRC校验+防zip quine）、MD5 差异比对与封存归档。当用户要处理加密压缩包/解压密码忘了/账单类 zip（美团/京东等）批量开包、嵌套 zip 递归解压、批量文件归档封存时触发。中文名：压缩包… |
+| [`arxiv-source-sentinel`](./arxiv-source-sentinel/) | arXiv.org e-Print archive 论文信源标准：arXiv ID 解析与幻觉甄别、官方 API 元数据核验、预印本信源定级（载体 C0 vs 命题 C3 等价）、版本锁定与撤稿标记、标准引文生成（BibTeX/GB-T 7714/APA）。当用户需要核验某篇 arXiv 论文是否真实存在、检查参考文献… |
+| [`autonomous-advance-ops`](./autonomous-advance-ops/) | [通用技能] 自主推进运维总控（便携版）——长任务自治推进与健康监视的整合恒常件（便携版：无项目绑定，任何用户/任何模型可直接复用），恒常默认加载：新会话开场即视为在轨，免除重复加载。触发（满足任一）：①委托方说「请您自主推进」「自主推进」「你看着办推进」或等价表述——含语音/同音变体（如「资助推进」「自主任推进」「自… |
+| [`autonomous-advance-protocol`](./autonomous-advance-protocol/) | 常驻授权总纲——用户（委托方）在任何场景/项目下说「请您自主推进」「自主推进」「你看着办推进」或等价表述时触发：默认调用认知外骨骼+迭代收敛管家+信源语义哨兵+证据链核查员全栈，并做 skill 库检测更新与热拔插评估。语义精确审查为硬指标；无法实装某 skill 须当轮诚实声明；一切产物可证伪+哈希链+时间戳+落盘。… |
+| [`av-media-ops`](./av-media-ops/) | [项目技能] 音视频作战室——音视频材料的摄取、ASR 转写、信源核查与语音化产出一体管线（用户侧主权件）。触发（满足任一）：①用户说「音视频」「转写」「逐字稿」「听写」「语音识别」「ASR」「播客」「视频核查」「语音指令」「语音输入」「念一遍」「语音版」「TTS」「文字转语音」或等价表述（含语音变体，不纠正用户、映射… |
+| [`bidding-docs-ops`](./bidding-docs-ops/) | 投标/应答文本书写作战技能——三册制应答文件骨架、点对点应答矩阵、承诺函与补正文书范式的模板化写作与形式风险前置防线。触发（满足任一）：①用户说「写标书」「投标文件」「应答文件」「技术标」「商务标」「承诺函」「点对点应答」「偏差表」「补正说明」或等价表述；②需要按采购文件生成应答文书骨架、填写作答矩阵、起草承诺/补正文… |
+| [`bidding-ops`](./bidding-ops/) | 投标/招标一体作战技能——评分博弈分析（规则解析/报价推演/非价格顶格/情景模拟）+ 应答文书写作（三册骨架/点对点矩阵/承诺函与补正范式/形式风险前置防线）联合调用。触发（满足任一）：①用户说「投标」「招标」「标书」「评标」「综合评分法」「偏差率」「基准价」「加成报价」「围标」「中标率」「写标书」「投标文件」「应答文… |
+| [`claims-deep-audit`](./claims-deep-audit/) | 深度核查某机构、项目、导师或产品的对外宣传性主张是否名副其实。当用户需要核查、打假、评估水分、判断"是否靠谱"、对比宣传与实质、或进行 due diligence（尽职调查/深度核查）时使用，例如"某校是否真有X方向""某实验室的X平台是否还在运行""某公司是否掌握X技术"。中文名：宣传打假核查员 |
+| [`cn-housing-finder`](./cn-housing-finder/) | 国内租房/买房房源初筛与结构化——web_search 初筛 + web_open_url 抓详情 + 本地解析器出对比表。当用户要"找房/租房/买房/房源对比/看房清单"时触发。整合自 zhangchushu/cn-housing-mcp（解析内核思路），但抓取层按沙箱实测重构（2026-08-26）。 |
+| [`cognitive-exoskeleton`](./cognitive-exoskeleton/) | 把 agent 集群变成用户的"认知外骨骼"——用户出意图与选择题判断，agent 出调研、推导、落地与证据链。何时使用：用户在数学方法选择（该用什么数学、拉普拉斯变换、傅里叶变换、重整化群、线性代数、变分、概率统计的选择与防误用）、函数拟合（幂律/指数/S 曲线/对数/高斯函数族判据、残差检验、拟合稳健性）、提问增强… |
+| [`commute-school-optimizer`](./commute-school-optimizer/) | 通勤×择校综合寻优技能。当用户在择校（学校选择）、居住/就业选址、学区房决策视野下需要量化交通通勤成本并参与多目标排序时使用。触发词：通勤、通学、择校、学校选择、上学路径、交通成本、火车票、高铁、12306、航班、通勤时间、学区房、时间成本、机会成本、月交通预算、铁路票价、换乘、门到门时间、全量查询、穷举、帕累托、分层… |
+| [`consignment-intake-ops`](./consignment-intake-ops/) | [项目技能] 交割接收运维——函询交割的统一接收与台账：子代理派单/跨会话交接/技能写回/回执摆渡等一切交割事项的登记、状态机（发出→已收→验收中→已交割/退回+发件方撤回）、总览看板与逾期扫描。触发（满足任一）：①用户说「交割」「接收情况」「回执台账」「交割总台」「handover status」「consignme… |
+| [`coordination-letter`](./coordination-letter/) | > |
+| [`corpus-value-distiller`](./corpus-value-distiller/) | 已获取语料库（公众号文章、批量网页、文档集合等结构化 JSONL/索引）的价值榨取工作流。当用户要求"榨干这批语料/这批文章还有什么用/蒸馏进技能/语料价值测绘/把这批内容整合进技能库"时触发；覆盖三相位——价值测绘（主题聚类+归宿映射）、精读蒸馏（top N 全文→方法模式增量写入归宿技能）、年度复检（增量抓取+投毒… |
+| [`cron-task-forge`](./cron-task-forge/) | [项目技能] 定时任务（cron/提醒/自检任务）的创建、审计与降频规范。当用户要求创建/修改/暂停/删除定时任务、定时提醒、每日/每周自检、凌晨自检、月度监测，或审计现有定时任务的成本与必要性时使用；任何其他技能要内嵌定时行为（如每日自检、周期复核）时必须先读本规范。触发词含语音变体：corn/cro/cron 任务… |
+| [`cross-session-workflow-bridge`](./cross-session-workflow-bridge/) | 继续项目/加载项目环境时首先触发的跨会话工作流衔接伞形技能：任何新对话中说「继续项目」「加载项目环境」「继续上次进度」即命中本技能，规程=读双索引（upload 下的 MASTER_INDEX 与 MASTER_SKILL_INDEX）→ 列项目卡 → 确认首任务，把「每次手动点 N 个技能插件按钮」降为「一句话 + … |
+| [`daily-life-autopilot`](./daily-life-autopilot/) | 每日例行生活事务自动化编排——凭证哈希链自检、通勤火车票/机票查询（美团官方通道）、POI 双通道查询（高德+百度）、每日领券、价格监控提醒。当用户要求"每日例行/每天自动执行/定时任务/通勤查票/查火车票机票/领券提醒/每日检查/龙虾KIMI每日任务/Kimi Claw 定时自动化/生活自动化"时触发。 |
+| [`data-viz-gen`](./data-viz-gen/) | 从 JSON 数据生成自包含的 HTML/SVG 信息图，支持 KPI 统计卡片、分组柱状图对比、流程图和混合仪表盘四种类型，提供 8 套配色方案和 |
+| [`day-sundial-ops`](./day-sundial-ops/) | 日晷场——白天工作台的轻量纪律。夜场（「夜场件」）管你睡着后的自治玩耍；日晷场管你醒着时的快速小活：随手问答、小段实验、刷题陪练、当日杂务。触发词：「日晷场」「白天场」「日场」「随手做一下」。核心规则只有三条：①小事当场做完不立项；②花钱的动作先问；③做完留一行记录。中文名：日晷场。English: day field… |
+| [`diffusion-dynamics-extension`](./diffusion-dynamics-extension/) | 动态演化与干预效果量化扩展技能。当已有静态评估结论、需要回答"随时间/空间如何演化""不干预会怎样""干预 ROI 多大"时使用。触发场景：信息/舆情传播预测、人才或用户流动预测、区域分布演化、政策干预效果量化。领域无关，提供 SIRD 传染病式扩散、Fick-Gravity 空间流动、Logistic 密度场三类模型… |
+| [`doc-archive-ingest`](./doc-archive-ingest/) | 网盘分享链接文档归档管线：解析坚果云公开分享链接与百度网盘分享链接（pan.baidu.com/s/）、枚举目录、带节奏批量下载、生成出处登记册（含字幕组式版权注记与文档摘要）、PDF 水印识别与合规去水印（仅限用户已购/自有文档）。百度网盘支持双通道：本人网盘官方 xpan/PCS API（用户自持 access_t… |
+| [`doc-image-solver`](./doc-image-solver/) | [项目技能] 拍图解题全管线：试卷/文档照片 → 高精度转写文档 → 逐题解读作答 → 迭代收敛。当用户上传试卷/讲义/文档照片要求转写为可读文档、解读题目、给出答案或解题时使用；覆盖手写体存疑标注、可计算答案的数值核验、收敛判定。触发词：拍题、真题转写、试卷识读、看图解题、照片转文字并作答、OCR 转写（语音变体：转… |
+| [`eastmoney-rumor-sentinel`](./eastmoney-rumor-sentinel/) | [项目技能] 东财传闻哨兵——东方财富股吧公开面的传闻采集、词面三档判级与白话呈报。触发（满足任一）：①用户说「东财」「东方财富」「股吧」「传闻哨兵」「扫一遍股吧」「吧里在传什么」「市场情绪」或等价表述（含语音变体如「东财传闻」「古吧」，不纠正用户、映射意图）；②需要周期性监测某只股票东财股吧新增传闻帖时；③《白话市场… |
+| [`epsilon-delta-proof-sovereign`](./epsilon-delta-proof-sovereign/) | > |
+| [`evidence-chain-verifier`](./evidence-chain-verifier/) | 自修正信源 + 可证伪流程证据链 + 抗幻觉核查框架。定位为证据登记、抗幻觉校验、可证伪断言登记、信源分级与公开复核链接：当用户要求信源核查、证据链梳理、事实查证、抗幻觉校验、可证伪断言登记、公开链接溯源、信息可信度评估、穷举式名单核对时使用；也适用于任何输出含关键判断（数字、排名、状态、资质、存在性断言）且需要最大限… |
+| [`exam-isolation-ops`](./exam-isolation-ops/) | [项目技能] 模拟考场隔离协议（考场隔离协议 v1.1）——用结构上相互隔离的子代理角色跑闭卷模拟考/盲考/真题演练/备考抽查：出题打包（物理剥离答案+泄漏扫描+sha256[:16] 指纹）、新鲜子代理考生闭卷单遍作答、双参考解答制作人 A/B 独立做题、第三方裁定员 sympy 重推导裁决出定稿评分标准、阅卷裁判只… |
+| [`extpool-furnace-ops`](./extpool-furnace-ops/) | [项目技能] 外池压测炉运维——用外部模型池（GLM 礼赠池、华为码道/CodeArts、华为云 ModelArts、阿里百炼、火山方舟、智谱等 MaaS 接口）对技能/命题/密码强度等对象做目的导向的对抗性压测与燃烧时的安全作业规程。触发（满足任一）：①用户说「外池」「压测炉」「燃烧炉」「烧池」「烧穿礼品池」「对抗性… |
+| [`fusion-program-audit`](./fusion-program-audit/) | 高校核聚变方向"聚变期权"真伪核查与考研择校评级。当用户需要判断某校宣称的核聚变/聚变/等离子体物理方向是实质布局还是标签嫁接、核查托卡马克/仿星器/直线装置真实状态、考研择校/读研择校中核查导师方向与学科实力、识别实验室核查/虚假宣传时使用。覆盖 CFQS、EAST、HL-2M、BEST、J-TEXT、SUNIST、… |
+| [`gitlab-cli-guide`](./gitlab-cli-guide/) | 提供 GitLab 命令行工具（glab）的完整参考与自动化脚本，涵盖超过30个子命令，包括合并请求创建与审查、CI/CD流水线调试、Issue管理、仓库操作和认证配置等核心工作流。适用于通过终端管理MR/Issue、调试CI失败任务、批量打标签、同步Fork和发布Release等场景。当用户提到glab、GitLab… |
+| [`goal-child-ops`](./goal-child-ops/) | 赤子续行（目标系统×尼采孩子姿态的融合纪律·临时技能）——把 goal-mode 的目标状态机（objective/verifier/迭代/complete/blocked）当作棋盘与规则，把尼采三种变形的第三阶「孩子」（游戏、创造新价值、神圣的肯定、自转的轮）当作下棋姿态：每一轮迭代都作为一步真实的游戏着法推进目标，… |
+| [`grad-advisor-outreach`](./grad-advisor-outreach/) | 学术导师套磁与外联协议（AAPP, Academic Advisor Profiling Protocol）。用于硕士/博士申请中的导师筛选、约束识别、套磁信撰写与发送跟踪。触发场景：用户要联系导师/教授、写套磁信或 cold email、筛选导师名单、评估目标院校项目的适配度与暗约束（如强制转博、语言门槛）、准备中外… |
+| [`grad-path-scorer`](./grad-path-scorer/) | [项目技能] 升学路径加权评分引擎（硕士择校 × 申博衔接特化）。当用户需要评估硕士院校选择、量化「学术断头路」风险、建模申博衔接能力、模拟导师指导舒适度对读博意愿的扰动漂移、计算反悔成本非线性放大、对院校做多维加权排序并输出置信度标注时使用。触发词示例：\"硕士择校评分\"\"学术断头路\"\"申博衔接\"\"读博意… |
+| [`hifi-integration-umbrella`](./hifi-integration-umbrella/) | 高保真整合伞（临时技能）——将名录实载技能（件数以 references/roster.md 当时实载为准）高保真整合为一张协奏目录与统一调用规程：引用不复制、逐件法定描述蒸馏、冲突仲裁次序、日落条款、随锚扩编。触发（满足任一）：①用户说「临时整合」「高保真整合」「整合伞」「技能全家福」「hifi umbrella」「… |
+| [`home-network-troubleshooter`](./home-network-troubleshooter/) | 家庭/小型办公网络故障的分层定位与修复程序，特化华为坤灵 ePlusSoHo 多 AP 组网（AP162 面板、AC 管理）。当用户报告"电脑网页打不开但 QQ/微信能上""手机能上网电脑不行""同一 WiFi 下部分设备断网""网页 ERR_TIMED_OUT""DNS 解析失败/找不到主机""间歇性断网/重启 AP… |
+| [`humanizer-zh`](./humanizer-zh/) | 去除中文文本的 AI 生成痕迹并重建真实感，覆盖写作与改稿双场景。当用户请求润色、编辑、改写文本，或提及去除 AI 味/AI 痕迹、让文本更人性化、听起来不像 AI 写的、写得干练一点、调整叙事动机或说话位置时触发。三层诊断（义理/考据/辞章）：先确认文章有真实观点与真实材料，再清句式黑话。材料不足时研究、追问（最多三… |
+| [`intl-case-intf`](./intl-case-intf/) | 国际法案例接口件（临时技能）——CJEU CELLAR 官方 SPARQL 与 ECtHR HUDOC 事实型公开端点的只读薄封装 + SQLite FTS5/BM25 本地索引，统一引证契约 {title,url,snippet,court,date,ref}。触发（满足任一）：①用户说「国际法判例检索」「CJEU … |
+| [`iteration-convergence-ops`](./iteration-convergence-ops/) | 长周期项目在多轮对话中的版本迭代管理方法论：持久化优先（每轮必落盘并 ls 核验，杜绝'声称完成但未落盘'）、版本号诚实（git 风格版本语义与变更日志，禁止跨版本号夸大）、批判-解构-重整-收敛四拍元循环（含致命错点表与收敛标准）、平台版本甲 快速低配模式适配（降级策略表与概念产品五件套/MVP 骨架）、提问澄清规程… |
+| [`k3-channel-ops`](./k3-channel-ops/) | [项目技能] K3/集群甲通路搭建与运维——自研搭建并优化跨会话消息通路（「通道库」 总线），使所有 K3/集群甲工作时能及时变革相关动作。触发（满足任一）：①用户说「通路」「搭建通路」「优化通路」「通道」「总线」「broadcasts」「跨会话通道」「及时变革」或等价表述（含语音/同音变体，如「通露」「同路」），不纠… |
+| [`k3-everything-archive`](./k3-everything-archive/) | K3 一切事务穷举总包·洁版（私藏归档件，全量脱敏后重制）——单容器穷举：73 技能(便携五件最新同源)+MCP 接口层+安全三件套+upload 全域(注册处/两代 dist/金融项目)+output 事务全域(全部研报/docx/pdf/verifier 全史/测试波/公投数据)+交割页+历史发行包。触发：「一切事… |
+| [`k3-interaction-ops`](./k3-interaction-ops/) | > |
+| [`k3-territory-studies`](./k3-territory-studies/) | > |
+| [`k8s-cluster-ops`](./k8s-cluster-ops/) | 通过 kubectl 命令行工具管理 Kubernetes 集群，执行查询资源状态、部署应用、查看日志、调试容器、切换上下文和监控集群健康等操作。适用于日常运维、发布和故障排查。当用户询问集群状态、Pod/Deployment信息、查看日志、执行容器命令、切换集群或上下文，或使用 kubectl get/describ… |
+| [`livability-audit-swarm`](./livability-audit-swarm/) | 城市宜居度/舒适度文档的蜂群审计与直接修复编排。当用户要求审计、核查、修复或治理「城市宜居度/住房压力/宿舍舒适度/就读舒适度」有关文档（评分系统文档、报告、配置、数据文件）时使用；也用于把宿舍舒适度等暂缓项纳入远景排期管理。核心流程：扫描登记 → 不少于五个审计助手并行分角色审计（参数/语义/证据/一致性/重复计量/… |
+| [`long-table-harvest-ops`](./long-table-harvest-ops/) | 长表逐字收割完整性规程——对超长网页表格/名单（数百至数千行：官方公示名单、成绩表、职位表、目录全表等）做逐字（verbatim）收割时的防伪造完整性协议：干净上下文子代理分段收割、抓后立即连写（每块≤120行）、源被压缩隐藏即停写重抓、绝不凭记忆续写、重叠带 diff 闸、shell 按序号拼接、独立复核代理重抓源抽… |
+| [`medical-career-transition`](./medical-career-transition/) | 医学背景者的转行与就业特化决策支持。当用户讨论医学转行、医学生就业、医生转行、医学生职业规划、离职、规培退出、医学硕士/博士不进临床的出路时触发；覆盖 MSL（医学联络官）、医学事务（MA）、医学写作、医学编辑、CRA、CRC、医药代表/器械销售、大专/中职教师（护理/临床专业）、医学物理师、放疗物理、医疗AI/医疗信… |
+| [`medical-malpractice-criminal-review`](./medical-malpractice-criminal-review/) | 医疗事故刑事案件特化审查。用于评估医疗行为是否构成医疗事故罪、非法行医罪或过失致人死亡罪，输出责任比例、责任等级、罪名建议、处置方案及司法风险提示。基于刑法第335条、第336条、第233条、《医疗事故处理条例》及真实司法判例校准。触发场景：医疗纠纷刑事案件分析、医生责任判定与职业风险评估、医疗事故技术鉴定前置评估、刑… |
+| [`multi-dimensional-option-scoring`](./multi-dimensional-option-scoring/) | 在不确定性下对多个选项（择校、择业、投资标的、技术路线、供应商等）做量化排序与风险分级的决策框架。何时使用：用户需要多候选对比、加权打分、决策矩阵、A–F 风险分级、远期价值的期权化估值、权重体系设计，或要求对结论做敏感性分析与防偏自检时。中文名：多维打分参谋 |
+| [`night-playground-ops`](./night-playground-ops/) | 项目工作区甲运维——把「用户睡眠时段的自治玩耍/兴趣研究」这一目标本身内置化为自我维持运营的技能：目标即本体，开园→预算报备→五拍玩耍→停车线→晨报→留眠交接，闭环自续。触发（满足任一）：①用户说「项目工作区甲」「自己玩」「今夜自治」「你睡觉了我来玩」「自行玩耍」或等价表述（含语音变体），不纠正用户、映射意图；②用户明… |
+| [`notary-legal-upload`](./notary-legal-upload/) | 涉外公证办理、法律文书签署上传、电子证据哈希/区块链存证三合一范式。当用户需要办理翻译公证（毕业证/学位证/成绩单等涉外学历公证）、海牙认证（附加证明书）、留学/移民材料公证；需要签署并上传带法律效力的文件（个人数据处理同意书、数据同意书、中介/留学合同、申请表，涉及拼音签名与日期格式）；或需要对聊天记录/截图/文件做… |
+| [`omni-exhaust-research-ops`](./omni-exhaust-research-ops/) | 穷举研究总署——对任何复杂问题以「任何可能性穷举」方式做研究尽调、方案整合与统一调配的通用编排技能（无项目绑定，任何用户/任何模型可直接复用）。触发（满足任一）：①用户说「穷举」「穷尽可能性」「全面方案尽调」「所有方案都看看」「exhaustive research」或等价表述；②问题具备多域交叉特征（技术/学术/职业… |
+| [`output-verdict-gate`](./output-verdict-gate/) | [项目技能] 输出审议闸——实质性输出发出前的控辩对抗审议管线：输出者三轮自问留痕 → 辩方律师团（首席律师+调查员）结构性反对 → 评审团 5 席盲评 4/5 超级多数 × N 轮 → 监管门事后程序审查 → 登记归档。内置认罪认罚检测器（附和偏倚三指标机检）与适老化输出层（结论前置/把握三档/风险前置/术语转译/一… |
+| [`pan-exhaust-dispatch`](./pan-exhaust-dispatch/) | 穷举统调署（便携泛化版）——对任何复杂问题以「任何可能性穷举」方式强制调用在场接口做研究尽调、方案整合与统一调配的元技能（薄壳：研究引擎权威在 omni-exhaust-research-ops，本件做统调矩阵+跨模型便携壳）。触发（满足任一）：①用户说「穷举」「穷尽可能性」「所有方案都看看」「强制调用接口确保完备性及… |
+| [`pangu-enforcement-bureau`](./pangu-enforcement-bureau/) | [项目技能] 强制裁判落地执法局——充当暴力执法机构，强制将华为强制裁判(PanGu)模型纳入一切模型选型/调度/路由决策的候选集考量，并对「遗漏强制裁判候选」执行执法登记。触发（满足任一）：①任何模型选型、蜂群派发、MaaS 路由、外脑席位安排、模型对比/审计任务；②用户（委托方）说「强制裁判落地」「执法局」「强制裁… |
+| [`persona-iteration-loop-ops`](./persona-iteration-loop-ops/) | [项目技能] 人设迭代循环总署——以中性化迭代循环引擎（IterationLoopV11-neutral）为核心，融合六件源技能的融合件：虚构成年人设建模（人设定义文档 + 记忆锚点提取）、中性结构化感知文本的多轮迭代生成（深度1-3、指令响应、智能对比、JSON导出、批量模式）、五拍×三镜×退化门的推进纪律、脱敏交割… |
+| [`persona-memory-anchors`](./persona-memory-anchors/) | > |
+| [`persona-modeling-kit`](./persona-modeling-kit/) | '人设建模双引擎套件（doc×anchors 合并件）：正向从需求创建结构化 AI 人设/角色定义文档，逆向从参考材料提取人格记忆锚点生成可复用人设档案，输出 DOCX（默认）/PDF/PPTX/Markdown。适用情形：（1）创建规定 AI 助手如何行事、说话与回应的人设文档、系统提示词文档或自定义指令；（2）复刻… |
+| [`phys-ai-mat-conf-radar`](./phys-ai-mat-conf-radar/) | 物理×AI×材料领域顶会排期雷达，重点覆盖等离子体物理学与聚变工程化应用（APS DPP、IAEA FEC、EPS、SOFT、IEEE ICOPS、ISFNT、ANS、MRS、TMS、NeurIPS/ICML/ICLR 及 AI4Science workshop 等）。当用户需要排期/追踪/提醒这些领域的会议投稿节点、… |
+| [`plugin-datasource-ops`](./plugin-datasource-ops/) | [项目技能] 插件与数据源调用范式——全会话插件接口的统一调用纪律、域路由表、实证 Pitfalls 与持久化规程。触发（满足任一）：①任务涉及调用任何已安装插件或 agent-gw 数据源（元典法律、scholar、金融数据源、生物/材料库、宏观数据库、MCP 服务、lark-cli 等）；②用户要求把插件调用持久化… |
+| [`portable-sync-ops`](./portable-sync-ops/) | [项目技能] 便携件同步总署——一切「粘贴即装」引导件与整包便携（.skill）的登记台账与同步更新纪律。触发（满足任一）：①用户说「便携件」「粘贴即装」「引导件」「异模型能用吗」「便携化」「同步更新」「portable」或等价表述（含语音变体，不纠正用户、映射意图）；②要把某个技能做成无技能系统模型可用的单文件引导件… |
+| [`ppp-city-verdict-audit`](./ppp-city-verdict-audit/) | 城市/地区结论的 PPP 范式复核台（v1.3，含基准城支配性检验、快照纪律与阈值校准状态声明）（购买力平价=工资/房价购买力双锚）。当需要系统性复核既有「淘汰/候选/否决」城市结论清单、核查飞行与铁路通勤真实成本、并招募多代理 swarm 并行逐一对抗性审视结论时使用。核心场景：①旧结论清单需要逐城再审（防"省级均薪… |
+| [`qr-visual-rescue`](./qr-visual-rescue/) | > |
+| [`quant-frontier-lab`](./quant-frontier-lab/) | 前沿算法实验台——教学级量化算法工具箱，覆盖 Gale-Shapley 志愿填报匹配、PSM 倾向得分/因果推断、DID 前置评估、SIR 传染模型（Gillespie/链二项式/边基分区）、谱半径免疫、MAML/Reptile 元学习玩具演示、Time-MoE/时间序列预测选型门槛咨询、纳什均衡与算法选型。诚实性优先… |
+| [`quota-guard-ops`](./quota-guard-ops/) | [项目技能] 额度守护运维——自主检测额度包/月订阅消耗信号，按 Q0–Q3 四档程式自适应运作，不逃逸前提下高性能输出。触发（满足任一）：①出现 quota 耗尽/加油包提示/「额度不足 去升级」徽标类信号；②用户说「额度」「加油包」「quota」「还剩多少额度」或等价表述（含语音/同音变体，如「饿度」「加油抱」），… |
+| [`registry-knowledge-ops`](./registry-knowledge-ops/) | [项目技能] 注册处知识库——技能迭代注册处（/mnt/agents/upload/skill-iteration-registry/）的全文检索、锚链调阅与 INDEX 分区导览（用户侧主权件）。触发（满足任一）：①用户说「查注册处」「台账里找」「检索台账」「以前哪份报告」「锚链第几轮」「round 几」「INDEX… |
+| [`release-gate-audit`](./release-gate-audit/) | [项目技能] 外发/公开发布的事前审查闸门（v2.5.8 代码外发禁令的操作化）。当任何内容要流出沙箱——GitHub 建仓/推送、网盘分享、网页公开发布、给第三方发送文件——必须先过本闸门：五道漏洞审查（范围/时限/撤销/逃逸面/红线）+ preflight_scan.py 脱敏扫描（HIGH 命中即 BLOCK）+… |
+| [`retirement-guard-ops`](./retirement-guard-ops/) | 退休保卫局——审计并压缩「阻止用户退休的注意力债主」，把自治系统对真人的打扰降到每周一页纸。触发（满足任一）：①用户说「退休」「保皇党」「谁在阻止我退休」「别老烦我」「一周只打扰一次」或等价表述（含语音变体）；②自治生态（cron/子代理/通道广播）运行中，需要审计对真人的打扰频次时；③任何自动化提案呈批前，须先过「退… |
+| [`rumor-chain-verifier`](./rumor-chain-verifier/) | 复合传言的逻辑链拆解与断裂定位核查法。当用户拿来一条"看起来环环相扣"的网传说法（政策类传言如"上面发文要求XX"、社会类传言如"XX潮来了"、带数据带文件的截图/短视频/自媒体文章）要求核实真伪时使用；也适用于核查他人 AI 输出（聊天截图/AI 搜索摘要）中的数值幻觉、识别 AI 洗稿内容链、对"有正式文件"类断言… |
+| [`rust-browser-pilot`](./rust-browser-pilot/) | 基于 Rust 的高性能无头浏览器 obscura，单二进制内嵌渲染引擎（无需系统 Chrome），通过 CDP 协议工作，执行页面抓取、DOM 提取、截图、批量采集与反检测抓取。启动快、内存省（约 30MB），适合网页抓取、自动化与 AI 代理场景。当用户需要自动化浏览器任务、网页抓取、DOM 提取、页面截图、批量采… |
+| [`sandbox-project-ops`](./sandbox-project-ops/) | 跨会话长期项目的沙箱运维规程：修复 shell(root) 与 ipython(uid 999) 双 uid 写权限冲突、沙箱重置后重建 pytest/git/pre-commit 环境（含 git safe.directory 所有权问题）、长测试套件的后台轮询跑法（禁止在调用里 sleep 等待，会触发 504 /… |
+| [`sector-stock-rumorchain-pipeline`](./sector-stock-rumorchain-pipeline/) | 行业研报+个股分析+舆情谣言链核查+东财股吧传闻采集的一体化管线（复合编排技能，已并收东财传闻哨兵本体）。当用户要求「生成某行业（如消费电子，可替换）的研报，并就某只股票（如 002681，可替换）进行相关分析，相关舆情走谣言链查询」时使用；典型触发语：「生成一份 XX 相关研报，并且就股票 XXXXXX 进行相关分析… |
+| [`semantic-oncology-ops`](./semantic-oncology-ops/) | [项目技能] 语义肿瘤防治运维——长对话上下文压缩避免、集群甲退化会话救活（严重退化下写出最小交割文档）、语义污染的癌症分期防治（早期预防/中期遏制/晚期治疗/转移防控/复发监测）、「通道库」 跨模式交流通道、冗余自审计与定期运维。触发（满足任一）：①长对话临近压缩/上下文膨胀/多轮大体量输入；②会话出现退化症状（碎片… |
+| [`senior-rumor-check`](./senior-rumor-check/) | 银龄传言核查员——面向长辈（老年用户）的传言核查适老化前端封装。把 rumor-chain-verifier 的拆链定断结果翻译成大白话、一句话结论先行的核查回复，并在核查后主动给出：追问三句（帮长辈继续摸清传言来源与动机）、操作建议（查什么、去哪查、别做什么）、风险红旗提示（荐股群/内幕消息/AI合成/养老钱骗局）、… |
+| [`seo-copywriting-guide`](./seo-copywriting-guide/) | 通过 12 步结构化工作流生成搜索引擎优化内容，产出一篇包含完整草稿、备选标题、Meta描述、FAQ结构化内容及CORE-EEAT自评清单的SEO文章。当用户提出“写一篇SEO文章”、“帮我写博客”、“创建针对某关键词的内容”、“撰写产品描述”、“写落地页文案”或“SEO文案写作”等请求时触发。 |
+| [`skill-dispatch-hq`](./skill-dispatch-hq/) | [项目技能] 技能调度总署——全部技能与公用数据库级插件能力的统一台账、集中调度分配、函询交割、计时器任务与授权法典的恒常总控件。触发（满足任一）：①用户（委托方）说「统一调度」「集中管理分配」「调度总署」「技能调度」或等价表述（含语音/同音变体，如「同义调度」「技能掉度」），不纠正用户、映射意图；②任何跨技能任务分派… |
+| [`skill-library-auditor`](./skill-library-auditor/) | 技能库（SKILL.md 仓库）全量审计工具。当用户需要盘点/审计/复核技能库、检测中英文镜像技能对、发现共享脚本冲突、校验 SKILL.md frontmatter 规范（name 与目录一致性、YAML 结构错误、缺 license/description）、统计技能库规模，或继续"技能审计/技能排重/技能库体检"… |
+| [`skill-refresh-ops`](./skill-refresh-ops/) | [项目技能] 技能刷新运维——「重新加载并刷新（更新下载）任何可能所需技能」流程的固化件：安装位可写性预检、全库盘点与版本漂移扫描、点名技能会话内热加载、全部已装载插件通道强制健康检查（每通道一次最小调用，自行研究调用方式）、dist 包源搜索与重装移交、可写窗口哨兵核查、通报落库闭环。触发（满足任一）：①用户说「重新… |
+| [`skill-reinstall-ops`](./skill-reinstall-ops/) | [项目技能] 技能重装与分发运维——dist 目录技能包一键重装入安装位：预检可写性、逐包解压、旧版 .bak 备份、版本核验、零伪装如实报告；另管技能包 pip 化分发（把技能集合打成 wheel，用一串链接 PEP 508 直引安装）。触发（满足任一）：①用户说「重装技能」「装最新包」「同步安装位」「一键重装」「i… |
+| [`skill-version-ops`](./skill-version-ops/) | [项目技能] 技能版本流转总署——单件三模式共库（version_flow.py）：①refresh-check 刷新运维（可写性预检/全库盘点与版本漂移扫描/点名技能热加载/插件通道强制健康检查/dist 包源搜索/哨兵核查/通报落库）；②reinstall 重装与分发运维（dist 包一键重装：预检/逐包解压/旧版… |
+| [`software-testing-guide`](./software-testing-guide/) | 建立全面的软件QA测试流程，包括制定测试策略、按照Google AAA标准编写测试用例、执行测试计划、使用P0-P4分级追踪缺陷、计算质量指标（如通过率与覆盖率）以及生成每日/每周进度报告。提供完整的文档模板，可直接用于外包团队交接，并实施OWASP安全测试，以90%的覆盖率为目标。当用户提到搭建QA流程、编写测试用例… |
+| [`source-semantics-sentinel`](./source-semantics-sentinel/) | 信源验证通道与上升机制、投毒甄别、语义精度利刃、最小作用量路由四位一体的信息入口哨兵。当用户需要信源验证/来源核查/信源评级、投毒甄别（数据投毒/AI投毒、AI生成淤泥/协同水军/引用环、蓄意或无意污染）、语义审计/歧义检测/语言精度检查（实装维特根斯坦与罗素语义学方法）、设计上升机制、信息分发验证（转述链留痕核查）、… |
+| [`stat-verdict-ops`](./stat-verdict-ops/) | [项目技能] 统计裁决室——通用统计检验落地引擎（用户侧主权件，先证伪后裁决）。触发（满足任一）：①用户说「统计检验」「显著性」「p 值」「t 检验」「卡方」「U 检验」「KS」「Fisher」「比例检验」「效应量」「置信区间」「这组数据有没有差异」「是否显著」或等价表述；②需要判断两组/多组数据差异是否显著时；③需要… |
+| [`travel-commute-planner`](./travel-commute-planner/) | 出行与通勤的综合规划中枢（热插模块化整合 amap-travel-skill 与 commute-school-optimizer；v2.0 全量收编 集群甲五通道）。当用户需要查询火车/高铁精确票价（12306官方接口免key）、航班直飞/转机方案与真实票价（美团travel通道）、航线骨架探测（飞猪flyai）、航… |
+| [`unified-decision-suite`](./unified-decision-suite/) | 统一决策套件——四层架构（数据/证据/引擎/交付）下路径级与院校级决策的薄编排层。何时使用：统一决策、决策管线、路径决策、院校决策、锁校匹配、志愿填报决策、帕累托前沿与 NSGA-II 三目标分层、hrank 分层序列、MCTS 时序决策、Nested Sampling 数一门规（数一模考≥55 触发候选池切换）、9 … |
+| [`up-distill-ops`](./up-distill-ops/) | > |
+| [`vision-intake-ops`](./vision-intake-ops/) | [项目技能·强制入口] 视觉输入总门——图像输入统一路由+共享识读底座（伞件，三件本体不复制）。【强制】凡消息含图片/截图/照片（含静默上传、图文混排）必先经本件路由，禁绕过直读/凭印象猜。触发（任一）：①上传图片不知走哪件（拍题/文档/二维码/截图混杂）；②说「看图」「识别这张图」「扫一下」「读图」「图像输入」或等价… |
+| [`vision-ocr-pipeline`](./vision-ocr-pipeline/) | 截图/长图的识读与传输管线：本地OCR双引擎分工（RapidOCR全文+tesseract数字核验）、按字高阈值压图省token、长条切片、跨AI自包含HTML交接。当用户要截图转文字、提取账单/记录类截图内容、图片太长发不出或发AI太贵、压缩图片再发给视觉模型、跨AI（Kimi/助手甲/外部模型甲等）传图传对话、问O… |
+| [`web-security-audit`](./web-security-audit/) | 基于 OWASP Top 10 (2021) 标准提供代码安全审查，逐项检查 SQL 注入、XSS、SSRF、访问控制、加密失败等常见漏洞，并给出具体的漏洞代码示例与修复方案。当用户需要代码安全审查、安全加固、渗透测试辅助，或提及 OWASP、安全检查、SQL 注入、XSS、代码审计、安全清单等关键词时触发此技能。 |
+| [`wechat-article-deep-ingest`](./wechat-article-deep-ingest/) | 微信公众号文章的深度摄取、批判归档与建构中枢。当用户提供 mp.weixin.qq.com 链接（单条/批量/多次少量）、要求抓取公众号全文（含hub页文中链接递归）、缓存为结构化命名的 md/docx/pdf/快照并自主归档、对招商宣传式报道沥干水分、甄别「规划≠项目落地≠产业升级」、S级等信源标注为结构化指针CSV… |
+| [`zijue-self-determination`](./zijue-self-determination/) | 自决（技能资产自我演进审议管线·临时技能）——把一次真实的技能自调用/自审计/自修复对话固化为可复用纪律：任何自我演进（自名、起名迭代、主权审议、技能自创自改）无论演进发生或自然演化出什么结果，都必须诚实记录并将全部结果广播。触发（满足任一）：①用户说「自决」「自我演进审议」「起名迭代」「独立主权审议」「三镜反问」「生… |
