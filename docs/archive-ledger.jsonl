@@ -1,0 +1,2 @@
+{"ts":"2026-09-27T00:00:00+08:00","event":"archive-ledger-init","note":"本地总账先行；Supabase/Neon/ima/WPS/百度云盘/腾讯云函数/iOA 候凭据镜像","targets":["supabase:pending","neon:pending","ima:pending","kdocs-moon:login-walled","baidu-pan:pending","tencent-scf:pending","ioa:login-walled"]}
+{"ts":"2026-09-27","event":"workbuddy-handshake","receipt":"fp=60f366e11066c22f A2A 0.3.0 确定性回执","channel":"serveo-public"}

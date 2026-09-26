@@ -1,5 +1,5 @@
-// SHA3-256 梅克尔完整性树。
-// gen：对 git 跟踪文件逐文件取 SHA3-256 叶子，按路径排序两两拼接哈希至根，写 MERKle.json。
+// SHA3-512 梅克尔完整性树（用户立法升级：512 位输出，后量子哈希族基线）。
+// gen：对 git 跟踪文件逐文件取 SHA3-512 叶子，按路径排序两两拼接哈希至根，写 MERKLE.json。
 // verify：重算并比对；一致退出 0，不一致列出差异文件退出 1。
 // 哈希族校验不依赖公钥密码学，作为后量子完整性基线（SHA-3，NIST FIPS 202）。
 const fs = require("fs");
@@ -7,7 +7,7 @@ const crypto = require("crypto");
 const { execSync } = require("child_process");
 
 const mode = process.argv[2] === "gen" ? "gen" : "verify";
-const h = (buf) => crypto.createHash("sha3-256").update(buf).digest();
+const h = (buf) => crypto.createHash("sha3-512").update(buf).digest();
 
 let files = execSync("git ls-files -z").toString().split("\0").filter(Boolean);
 files = files.filter((f) => f !== "MERKLE.json" && fs.existsSync(f)).sort();
@@ -33,7 +33,7 @@ const rootHex = root.toString("hex");
 
 if (mode === "gen") {
   const obj = {
-    algorithm: "SHA3-256 (FIPS 202), merkle binary tree, leaves sorted by path",
+    algorithm: "SHA3-512 (FIPS 202), merkle binary tree, leaves sorted by path",
     generatedAt: new Date().toISOString(),
     fileCount: files.length,
     root: rootHex,

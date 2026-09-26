@@ -44,11 +44,17 @@
 
 总线载荷默认 caveman 压缩档（lite）：peer 间 `message/send` 文本先经压缩技能降 token，再入总线；解压缩在对端会话内完成。压缩不作用于凭据头与 JSON-RPC 结构字段。
 
-## 5. 华为云 Flexus X 考量（强制生态项）
+## 5. 华为云 X 实例考量（强制生态项）
 
-- 定位：Flexus X 为轻量应用级算力（区别于 ECS/Stack），适合跑 watchdog+节点镜像与隧道出口备份；
-- 强制考量清单：① 节点双活候选宿主；② serveo 免费层不稳时的固定出口；③ Cloudflare turnkey 未启用前的过渡 WAF 前置；
-- 前置：需您的华为云账号与配额；无凭据前本项只入计划不执行。
+### 5.1 实机档案（X_INSTANCE_MANUAL_v1 实证，2026-09-27）
+- 实例：MoonChannelPlasma（华为云 ECS，华北-北京四，120.46.86.165）；8 vCPU / 31 GiB / CPU-only；HCE 6.6（dnf/yum，非 apt）；Node 20.18.2 / Python 3.11.6；磁盘余 28G（大文件先报备）。
+- **8099（0.0.0.0）= k3_a2a_httpd.py 自家 A2A 总线 HTTP 中继＝生态通信主通道**——本计划云端枢纽的实机落点；
+- 8017 llama-server（127.0.0.1，CPU 推理）＝本地模型 peer，经 SSH 隧道接入总线；3080/8188 本地 web/python 服务；
+- 纪律：29338/29339 华为云管 agent 禁动；在役服务未报备勿动；私钥本体永不入库/不入手册附件；root authorized_keys 仅 1 把。
+- Flexus X（轻量应用级）仍列为过渡/备份宿主候选：隧道出口备份与 CF 未启用前的前置点。
+
+### 5.2 总线接法
+幻16 节点 ↔ 8099 中继 ↔ qca 云会话 ↔ peer（DeepSeek harness/hermess/EvoMap/llama-8017）：全部以 A2A JSON-RPC 方言互通；跨段只传引用与哈希（SHA3-512 梅克尔根作交割指纹）。
 
 ## 6. 风险与回退
 

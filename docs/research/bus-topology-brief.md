@@ -25,6 +25,16 @@
 - 真实跨境数据库互联需法务/合规评审与云厂商专线报价，本简报只给架构约束；
 - 华为云 X 实例落地需账号与配额（候用户）。
 
+## 5. 后量子密码学增补（2026-09-27 用户立法：SHA-3 512 + PQC 研究）
+- 哈希族：本品梅克尔树已升级 SHA3-512（FIPS 202）；哈希基原像/碰撞抗性不受 Shor 影响，Grover 仅平方根加速（512 位输出裕度充足）；
+- NIST PQC 标准族：ML-KEM（FIPS 203，密钥封装）、ML-DSA（FIPS 204，签名）、SLH-DSA（FIPS 205，哈希基签名）——总线传输层若需认证加密，优先 ML-KEM 混合模式（与现网 X25519 并联），签名迁移 ML-DSA；
+- 与本品关系：梅克尔根作交割指纹＝哈希基承诺，与 PQC 签名互补不替代；凭据轮换纪律见陪跑方案阶段 4。
+
+## 6. 3D 建模与 3DGS 入视野（候选栈）
+- 3DGS 参考实现：gaussian-splatting（CUDA）、gsplat、nerfstudio（splatfacto）；Web 展现：three.js + SOG/SPZ 压缩载荷；
+- 与总线接法：模型资产走引用+梅克尔指纹入档，渲染在端侧；X 实例 CPU-only 不跑训练，训练候选=云 GPU 候补通道；
+- 节点页扩展位：04 归档夹旁预留 05「三维档案」夹（videos.json 同构 manifest，kind=3dgs）。
+
 ## 来源
 - 中国国际光缆互联互通白皮书（CAICT）：http://www.caict.ac.cn/kxyj/qwfb/bps/201808/P020180828517209310975.pdf
 - 高性能互连网络拓扑研究综述：https://www.sciopen.com/local/article_pdf/10.11887/j.issn.1001-2486.25110046.pdf
