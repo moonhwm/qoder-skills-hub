@@ -26,7 +26,7 @@ cp -r <技能名> ~/.qoder/skills/
 
 - 部分技能附带两用脚本（爬虫、负载工具、加密与压缩工具）。运行前读源码；注册与安装动作本身不执行任何脚本。
 - 仓库不含凭据、令牌与个人信息。若在本仓库发现此类内容，按泄漏事件处理：立即轮换并删除对应提交历史。
-- 内容完整性以 SHA3-256 梅克尔树校验，见下一节。
+- 内容完整性以 SHA3-512 梅克尔树校验，见下一节。
 
 ## 完整性校验
 
@@ -39,6 +39,10 @@ node tools/merkle.cjs gen      # 内容变更后重新生成 MERKLE.json
 
 verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件并以 1 退出。
 
+**生成序铁律**：`merkle.cjs` 以 `git ls-files` 取快照，必须是一次提交内**最后**运行的生成器——所有内容变更与派生件生成完毕、`git add` 之后再跑 `gen`，随即提交。否则清单与同提交新增文件错位（727ca43c、81b22b2 两连发实证）。
+
+已知缺口闭合：2026-09-27 曾在 @81b22b2 登记 98 件未入树（docs/skill-graph.json、docs/evals-index.json、docs/evals/*.json、tools/gen-graph.cjs 等），已由 b6fde47、6d74644 两次补录闭合；此后 verify 一致属常态，再报差异即视为篡改或未补录，须按铁律重跑。
+
 ## 派生件
 
 | 文件 | 内容 | 生成器 |
@@ -49,6 +53,18 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 | docs/sinicize-ledger.jsonl | 注释汉化台账（块级、含 token 计数） | tools/sinicize.cjs |
 
 派生件均可重跑再生；重跑后须重新 gen 梅克尔树。
+
+## 检索与调度评测
+
+名录是平铺的 91 行；「干什么用哪件」请走检索层，勿逐行扫表：
+
+| 资产 | 用途 | 消费示例 |
+|---|---|---|
+| [docs/skill-index-zh.json](./docs/skill-index-zh.json) | 91 件 × 8 中文关键词 + 一句摘要 | `jq -r '.entries \| to_entries[] \| select(.value.keywords + [.key] \| join(" ") \| test("舆情")) \| .key' docs/skill-index-zh.json` |
+| [docs/skill-graph.json](./docs/skill-graph.json) | 57 边交叉引用图，找枢纽与邻居 | 读 `topHubs` / `edges`，从枢纽件顺藤摸瓜 |
+| [docs/evals/](./docs/evals/) | 每件 3 条调度评测（触发语/期望/判定词，共 273 例） | 新增技能前先跑同名 eval 验触发面是否撞车 |
+
+agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面比对；拿不准时以 evals 的触发语做回归。
 
 ## 技能索引（91 件）
 
@@ -154,6 +170,7 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 | 2026-09-26 | 修复 README 三十处三字节汉字截断（bf55995） |
 | 2026-09-26 | README 重写为简体中文；脚本注释批量简体汉化；注入 SHA3-256 梅克尔树 |
 | 2026-09-27 | 梅克尔树升级 SHA3-512；连通计划/陪跑方案/跨境总线研究/四平台内容包入册；调度度量与描述手术留痕 |
+| 2026-09-27 | 并入远端协作者 README 增补（检索与调度评测节、生成序铁律、缺口闭合说明，023b4e8 线） |
 
 ## 来源与署名
 
