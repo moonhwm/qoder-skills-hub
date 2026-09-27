@@ -12,7 +12,11 @@ const h = (buf) => crypto.createHash("sha3-512").update(buf).digest();
 let files = execSync("git ls-files -z").toString().split("\0").filter(Boolean);
 files = files.filter((f) => f !== "MERKLE.json" && fs.existsSync(f)).sort();
 
-const leaves = files.map((f) => ({ f, hash: h(fs.readFileSync(f)) }));
+const norm = (buf) => {
+  const s = buf.toString("latin1");
+  return Buffer.from(s.replace(/\r\n/g, "\n"), "latin1");
+};
+const leaves = files.map((f) => ({ f, hash: h(norm(fs.readFileSync(f))) }));
 
 function rootOf(leafHashes) {
   let level = leafHashes.slice();
