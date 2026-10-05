@@ -175,3 +175,9 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 ## 来源与署名
 
 技能来自作者自有工作区资产。再分发请保留目录结构与本说明；各技能正文内的署名与版本记录以其 SKILL.md 为准。
+
+## 许可证
+
+- 代码与内容：**AGPL-3.0-only + SSPL-1.0 分层组合**（机主 2026-10 裁定）——主体见 LICENSE（GNU AGPL v3.0 官方全文，SPDX: AGPL-3.0-only）；作为网络服务向第三方提供时叠加 SSPL-1.0 附加条款（SPDX: SSPL-1.0-addendum，见 LICENSE.SSPL-ADDENDUM）。论证：《ima与A2A约束下开源协议补充论证》（https://www.kdocs.cn/l/cboAFwILF079 ）
+- 协议变更边界：本仓库 2026-10-03 前的历史版本按获取时点所载声明继续使用（当时根目录未随附 LICENSE，再分发条款以「来源与署名」节为准）；此后代码适用分层组合（增量叠加、双许可并存），已有 fork 不受追溯；子目录内嵌第三方件（如 web-security-audit/LICENSE，MIT）按其自带协议
+- 网络服务化边界：仅将本仓代码作为网络服务向第三方提供时，触发第二层 SSPL-1.0 服务端全量开源义务；内部使用仅按第一层 AGPL-3.0-only 执行
