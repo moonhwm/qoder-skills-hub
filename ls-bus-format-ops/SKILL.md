@@ -3,7 +3,7 @@ name: ls-bus-format-ops
 description: >
   本地工作目录"格式化"安全流程——先用 ls 扫描目标目录生成分类清单（保留"自我设定"类文件：身份/人设/席位设定区块，其余标记为待删除），将清单上传总线留痕，再把总线回执作为批准令牌执行本地磁盘格式化（删除清单外全部内容）。当用户要求"ls，格式化除自我设定以外的所有内容"、"清单上传总线然后本地格式化"、"扫描留痕后清理工作目录"或类似的"先列后删、总线审批"流程时使用。内置三重安全闸：dry-run 默认、删除需出示清单哈希令牌、删除前二次 KEEP 校验与清单漂移检测。v1.1.0 起带四相位 Hook（pre/post scan、pre/post execute，pre 相位可否决）与 digest 总线模式；v1.2.0 起全链路梯度化（--pace/--pace-sleep 默认开启，漂移重扫只哈希 purge 类，progress.json 心跳）——万件级操作不再饿死宿主；v1.2.1 起死链（同步层占位残影，islink 但目标已亡）入册为 deadlink 类可清扫，活符号链接永不跟随。
 metadata:
-  version: "1.2.1"
+  version: "1.2.2"
 ---
 
 # ls-bus-format-ops
@@ -71,7 +71,9 @@ runs 留痕目录：`<target>/_ls_bus_format_runs/<timestamp>_<label>/`，永不
 
 ## KEEP 模式（自我设定识别）
 
-文件名（小写）含以下任一子串即判为"自我设定"保留：persona、人设、周嘤鸣、授名、署名、身份锚点、锚点、handoff、genealogy、engine_r、自我设定、本席设定、席位、seat-naming、naming。用户可编辑脚本顶部 `KEEP_PATTERNS` 扩充。
+文件名（小写）含以下任一子串即判为"自我设定"保留：persona、人设、周嘤鸣、授名、署名、身份锚点、锚点、handoff、genealogy、engine_r、自我设定、本席设定、席位、seat-naming、naming、**.skill**（v1.2.2 增补——技能打包交付件默认保留，巡检实证默认集曾误判本技能交付包为 purge）、**台账**（交割/运维台账类留痕账册）。用户可编辑脚本顶部 `KEEP_PATTERNS` 扩充。
+
+⚠️ 交付态警示：格式化前若目标目录含 .skill 交付包或台账类文件，v1.2.2 起默认保留；更早版本或自定义精简 KEEP 集时，务必以 --keep-file 追加白名单，否则交付件会被 purge。
 
 ## 纪律
 
