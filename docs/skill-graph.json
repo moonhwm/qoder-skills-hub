@@ -1,7 +1,7 @@
 {
- "generatedAt": "2026-09-26T16:19:41.538Z",
+ "generatedAt": "2026-10-08T07:13:12.987Z",
  "method": "关键词交集≥2 或 摘要/关键词直呼件名；本地计算零 API 消耗",
- "nodeCount": 91,
+ "nodeCount": 92,
  "edgeCount": 57,
  "topHubs": [
   {

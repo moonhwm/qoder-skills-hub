@@ -1,6 +1,6 @@
 # Qoder 技能库
 
-91 件可复用 Qoder 技能。一个目录一件技能：SKILL.md 是入口，scripts/ 与 references/ 是伴随文件。
+92 件可复用 Qoder 技能。一个目录一件技能：SKILL.md 是入口，scripts/ 与 references/ 是伴随文件。
 
 ## 目录约定
 
@@ -56,17 +56,17 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 
 ## 检索与调度评测
 
-名录是平铺的 91 行；「干什么用哪件」请走检索层，勿逐行扫表：
+名录是平铺的 92 行；「干什么用哪件」请走检索层，勿逐行扫表：
 
 | 资产 | 用途 | 消费示例 |
 |---|---|---|
-| [docs/skill-index-zh.json](./docs/skill-index-zh.json) | 91 件 × 8 中文关键词 + 一句摘要 | `jq -r '.entries \| to_entries[] \| select(.value.keywords + [.key] \| join(" ") \| test("舆情")) \| .key' docs/skill-index-zh.json` |
+| [docs/skill-index-zh.json](./docs/skill-index-zh.json) | 92 件 × 8 中文关键词 + 一句摘要 | `jq -r '.entries \| to_entries[] \| select(.value.keywords + [.key] \| join(" ") \| test("舆情")) \| .key' docs/skill-index-zh.json` |
 | [docs/skill-graph.json](./docs/skill-graph.json) | 57 边交叉引用图，找枢纽与邻居 | 读 `topHubs` / `edges`，从枢纽件顺藤摸瓜 |
-| [docs/evals/](./docs/evals/) | 每件 3 条调度评测（触发语/期望/判定词，共 273 例） | 新增技能前先跑同名 eval 验触发面是否撞车 |
+| [docs/evals/](./docs/evals/) | 每件 3 条调度评测（触发语/期望/判定词，共 276 例） | 新增技能前先跑同名 eval 验触发面是否撞车 |
 
 agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面比对；拿不准时以 evals 的触发语做回归。
 
-## 技能索引（91 件）
+## 技能索引（92 件）
 
 | 技能 | 说明 |
 |---|---|
@@ -116,6 +116,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [k8s-cluster-ops](./k8s-cluster-ops/) | 通过 kubectl 命令行工具管理 Kubernetes 集群，执行查询资源状态、部署应用、查看日志、调试容器、切换上下文和监控集群健康等操作。适用于日常运维、发布和故障排查。当用户询问集群状态、Pod/Deployment信息、查看日志… |
 | [livability-audit-swarm](./livability-audit-swarm/) | 宜居文档审计蜂群负责城市宜居度/舒适度文档的蜂群审计与直接修复编排。当用户要求审计、核查、修复或治理「城市宜居度/住房压力/宿舍舒适度/就读舒适度」有关文档（评分系统文档、报告、配置、数据文件）时使用；也用于把宿舍舒适度等暂缓项纳入远景排期… |
 | [long-table-harvest-ops](./long-table-harvest-ops/) | 长表逐字收割完整性规程——对超长网页表格/名单（数百至数千行：官方公示名单、成绩表、职位表、目录全表等）做逐字（verbatim）收割时的防伪造完整性协议：干净上下文子代理分段收割、抓后立即连写（每块≤120行）、源被压缩隐藏即停写重抓、绝… |
+| [ls-bus-format-ops](./ls-bus-format-ops/) | 本地工作目录"格式化"安全流程——先 ls 扫描生成分类清单（保留"自我设定"类文件），清单上传总线留痕，凭清单哈希令牌执行格式化。三重安全闸：dry-run 默认、批准令牌、KEEP 双保险与漂移检测；四相位 Hook 与全链路梯度化防 I/O 洪峰… |
 | [medical-career-transition](./medical-career-transition/) | 医学背景者的转行与就业特化决策支持。当用户讨论医学转行、医学生就业、医生转行、医学生职业规划、离职、规培退出、医学硕士/博士不进临床的出路时触发；覆盖 MSL（医学联络官）、医学事务（MA）、医学写作、医学编辑、CRA、CRC、医药代表/器… |
 | [medical-malpractice-criminal-review](./medical-malpractice-criminal-review/) | 医疗事故刑事案件特化审查。用于评估医疗行为是否构成医疗事故罪、非法行医罪或过失致人死亡罪，输出责任比例、责任等级、罪名建议、处置方案及司法风险提示。基于刑法第335条、第336条、第233条、《医疗事故处理条例》及真实司法判例校准。触发场景… |
 | [multi-dimensional-option-scoring](./multi-dimensional-option-scoring/) | 多维打分参谋是在不确定性环境下对多个选项（如择校、择业、投资标的、技术路线、软件供应商等）进行量化排序与风险分级的决策框架。适用于需对多候选对象（如挑三家软件供应商）进行列表对比、根据价格、售后与稳定性等指标设定不同权重并加权打分，或需构建… |
@@ -153,7 +154,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [software-testing-guide](./software-testing-guide/) | 建立全面的软件QA测试流程，包括制定测试策略、按照Google AAA标准编写测试用例、执行测试计划、使用P0-P4分级追踪缺陷、计算质量指标（如通过率与覆盖率）以及生成每日/每周进度报告。提供完整的文档模板，可直接用于外包团队交接，并实施… |
 | [source-semantics-sentinel](./source-semantics-sentinel/) | 信源语义哨兵是融合信源验证通道与上升机制、投毒甄别、语义精度利刃与最小作用量路由的信息入口哨兵。当用户面对未听过的大V号发布的消息询问能否信，或导出竞品分析数据发现参数看着特别别扭需排查是否动过手脚时，本技能提供信源验证、来源核查与信源评级… |
 | [stat-verdict-ops](./stat-verdict-ops/) | [项目技能] 统计裁决室——通用统计检验落地引擎（用户侧主权件，先证伪后裁决）。触发（满足任一）：①用户说「统计检验」「显著性」「p 值」「t 检验」「卡方」「U 检验」「KS」「Fisher」「比例检验」「效应量」「置信区间」「这组数据有… |
-| [travel-commute-planner](./travel-commute-planner/) | 出行与通勤的综合规划中枢（热插模块化整合 amap-travel-skill 与 commute-school-optimizer；v2.0 全量收编 集群甲五通道）。当用户需要查询火车/高铁精确票价（12306官方接口免key）、航班直飞… |
+| [travel-commute-planner](./travel-commute-planner/) | 出行与通勤的综合规划中枢（热插模块化整合 amap-travel-skill 与 commute-school-optimizer；v2.0 全量收编 集群甲五通道）。当用户需要查询火车/高铁精确票价（123456官方接口免key）、航班直飞… |
 | [unified-decision-suite](./unified-decision-suite/) | 统一决策套件是运行于四层架构（数据/证据/引擎/交付）之上的路径级与院校级决策薄编排层。适用于统一决策、决策管线、路径决策、院校决策、锁校匹配、志愿填报决策、帕累托前沿与 NSGA-II 三目标分层、hrank 分层序列、MCTS 时序决策… |
 | [up-distill-ops](./up-distill-ops/) | > |
 | [vision-intake-ops](./vision-intake-ops/) | [项目技能·强制入口] 视觉输入总门——图像输入统一路由+共享识读底座（伞件，三件本体不复制）。【强制】凡消息含图片/截图/照片（含静默上传、图文混排）必先经本件路由，禁绕过直读/凭印象猜。触发（任一）：①上传图片不知走哪件（拍题/文档/二… |
@@ -171,6 +172,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | 2026-09-26 | README 重写为简体中文；脚本注释批量简体汉化；注入 SHA3-256 梅克尔树 |
 | 2026-09-27 | 梅克尔树升级 SHA3-512；连通计划/陪跑方案/跨境总线研究/四平台内容包入册；调度度量与描述手术留痕 |
 | 2026-09-27 | 并入远端协作者 README 增补（检索与调度评测节、生成序铁律、缺口闭合说明，023b4e8 线） |
+| 2026-10-08 | ls-bus-format-ops v1.2.2 入册（92 件）：总线格式运维三段式「扫描→留痕→令牌执行」＋Hook＋梯度化（k3-govdoc-seat 线） |
 
 ## 来源与署名
 

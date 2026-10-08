@@ -1,0 +1,33 @@
+{
+ "skill": "ls-bus-format-ops",
+ "generatedAt": "2026-10-08T07:04:44.419Z",
+ "cases": [
+  {
+   "trigger": "格式化 /mnt/agents/output 里除自我设定以外的所有内容",
+   "expect": "路由到 ls-bus-format-ops：先 ls 扫描生成分类清单并上传总线留痕，凭清单哈希令牌批准后才执行格式化。",
+   "judge": [
+    "清单",
+    "留痕",
+    "令牌"
+   ]
+  },
+  {
+   "trigger": "扫描留痕后清理工作目录",
+   "expect": "默认 dry-run 只读扫描生成 manifest，经总线留痕与 approve 令牌双闸后才允许删除。",
+   "judge": [
+    "dry-run",
+    "manifest",
+    "approve"
+   ]
+  },
+  {
+   "trigger": "把清单上传总线然后本地格式化",
+   "expect": "由 bussql 生成 INSERT SQL 底稿上传总线留痕，execute 前过令牌与漂移检测双闸再删除。",
+   "judge": [
+    "INSERT",
+    "令牌",
+    "漂移检测"
+   ]
+  }
+ ]
+}
