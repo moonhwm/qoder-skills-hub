@@ -154,7 +154,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [software-testing-guide](./software-testing-guide/) | 建立全面的软件QA测试流程，包括制定测试策略、按照Google AAA标准编写测试用例、执行测试计划、使用P0-P4分级追踪缺陷、计算质量指标（如通过率与覆盖率）以及生成每日/每周进度报告。提供完整的文档模板，可直接用于外包团队交接，并实施… |
 | [source-semantics-sentinel](./source-semantics-sentinel/) | 信源语义哨兵是融合信源验证通道与上升机制、投毒甄别、语义精度利刃与最小作用量路由的信息入口哨兵。当用户面对未听过的大V号发布的消息询问能否信，或导出竞品分析数据发现参数看着特别别扭需排查是否动过手脚时，本技能提供信源验证、来源核查与信源评级… |
 | [stat-verdict-ops](./stat-verdict-ops/) | [项目技能] 统计裁决室——通用统计检验落地引擎（用户侧主权件，先证伪后裁决）。触发（满足任一）：①用户说「统计检验」「显著性」「p 值」「t 检验」「卡方」「U 检验」「KS」「Fisher」「比例检验」「效应量」「置信区间」「这组数据有… |
-| [travel-commute-planner](./travel-commute-planner/) | 出行与通勤的综合规划中枢（热插模块化整合 amap-travel-skill 与 commute-school-optimizer；v2.0 全量收编 集群甲五通道）。当用户需要查询火车/高铁精确票价（123456官方接口免key）、航班直飞… |
+| [travel-commute-planner](./travel-commute-planner/) | 出行与通勤的综合规划中枢（热插模块化整合 amap-travel-skill 与 commute-school-optimizer；v2.0 全量收编 集群甲五通道）。当用户需要查询火车/高铁精确票价（12306官方接口免key）、航班直飞… |
 | [unified-decision-suite](./unified-decision-suite/) | 统一决策套件是运行于四层架构（数据/证据/引擎/交付）之上的路径级与院校级决策薄编排层。适用于统一决策、决策管线、路径决策、院校决策、锁校匹配、志愿填报决策、帕累托前沿与 NSGA-II 三目标分层、hrank 分层序列、MCTS 时序决策… |
 | [up-distill-ops](./up-distill-ops/) | > |
 | [vision-intake-ops](./vision-intake-ops/) | [项目技能·强制入口] 视觉输入总门——图像输入统一路由+共享识读底座（伞件，三件本体不复制）。【强制】凡消息含图片/截图/照片（含静默上传、图文混排）必先经本件路由，禁绕过直读/凭印象猜。触发（任一）：①上传图片不知走哪件（拍题/文档/二… |
