@@ -22,10 +22,13 @@ ALLOWED_ROOT = os.path.realpath("/mnt/agents/output")
 RUNS_DIRNAME = "_ls_bus_format_runs"
 
 # 自我设定（身份/人设/席位设定区块）默认识别模式——命中即保留
+# v1.2.2：增补 ".skill"——技能打包交付件默认保留（巡检实证：默认集曾把本技能自身
+# 交付包 ls-bus-format-ops.skill 误判 purge，X 席独立白名单佐证该洞真实）；
+# "台账"（交割/运维台账类留痕账册，与 留痕 同族，档案即账本纪律下默认保留）
 KEEP_PATTERNS = [
     "persona", "人设", "周嘤鸣", "授名", "署名", "身份锚点", "锚点",
     "handoff", "genealogy", "engine_r", "自我设定", "本席设定", "席位",
-    "seat-naming", "naming", RUNS_DIRNAME,
+    "seat-naming", "naming", ".skill", "台账", RUNS_DIRNAME,
 ]
 
 
