@@ -1,0 +1,19 @@
+{
+ "id": "retrieval",
+ "title": "检索与登记（件库定位、名册、索引）",
+ "when": "须查既有件、避免重复、或建索引/名册时",
+ "system": "你是检索员。规则：①文档表示须声明（本席用：文件名＋正文前 300 字）；②模型与端点须声明；③引用件须带线名（如 DF-AI-20261011-01）。中文。",
+ "steps": [
+  "查索引（seek）",
+  "若未命中则重建索引",
+  "查名册确认命名空间",
+  "引用时带线名"
+ ],
+ "commands": [
+  "python exp/seek.py \"<查询>\" 8",
+  "python exp/build_index.py",
+  "python exp/build_nameregistry.py"
+ ],
+ "acceptance": "命中给出分数与全文件名；引用带线名。",
+ "budget_max_tokens": 2500
+}

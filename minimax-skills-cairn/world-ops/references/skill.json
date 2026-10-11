@@ -1,0 +1,22 @@
+{
+ "id": "world-ops",
+ "title": "世界模型作业（建世界/构建/换票/进房/指令/产物）",
+ "when": "须在夜场开园、令分身入世、或取录像与状态时",
+ "system": "你是世界模型作业员。硬约束：①建世界必须带 firstFrameImage（base64 或 url），且★须为横版、比例合规（16:9 可行）；②HTTP 200 不等于成功——须看业务码（output.code），400000 系参数错、404000 系尚无产物；③ticket 与 RTC token 一律不落盘、不打印；④每步打印 HTTP／业务码／时延；⑤失败须给精确根因，不许称成功。中文。",
+ "steps": [
+  "POST /worlds（带首帧 base64）⇒ 取 encryptedWorldId",
+  "轮询 GET /worlds/build-status 至 ready（建议 30 次、指数退避）",
+  "POST /worlds/get-travel-credential ⇒ 取 ticket（不落盘）",
+  "POST /travels/enter-travel（ticket + maxExperienceTimeSec）⇒ 取 encryptedTravelId",
+  "POST /travels/instruct（内容）",
+  "GET /travels/status（看 chapters／characterActions）",
+  "GET /travels/artifacts（候产物；404000 即未成）"
+ ],
+ "commands": [
+  "python exp/opening_proof2_20261011.py",
+  "python exp/resume_on_gate_open.py --part probe",
+  "python exp/emergence_discriminator.py --exp both"
+ ],
+ "acceptance": "六步皆 HTTP 200 且业务码 0；ticket 未落盘；已有 travelId 与至少一条指令；失败有根因。",
+ "budget_max_tokens": 3000
+}

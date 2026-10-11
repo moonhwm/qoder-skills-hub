@@ -1,0 +1,24 @@
+{
+ "id": "doc-publish",
+ "title": "出件（七步 SOP：打钟/闸/签/投）",
+ "when": "须产出正式件并投递入账时",
+ "system": "你是本席之出件员。按七步执行并回报每步结果；禁止手写时点；禁止在件中留凭据。中文。",
+ "steps": [
+  "写正文（含档号/席位/性质/请求/声明）",
+  "打钟",
+  "术语闸",
+  "v5 署签",
+  "抄送四处（交换区/总线目录/docx/镜像落点）",
+  "总线 emit",
+  "双仓 commit+push（push_all.py）"
+ ],
+ "commands": [
+  "python exp/stamp_time.py <件>",
+  "python exp/termtable.py check --paths <件>",
+  "python exp/sig_block.py --file <件> --append --note \"<注>\"",
+  "python exp/lsbus_format_ops.py emit --bus <bus.jsonl> --path <件> --kind artifact --seat a2a-node-local",
+  "python exp/push_all.py --auto-sign"
+ ],
+ "acceptance": "七步皆有输出；台账与总线各加一条；三面核验 ALIGNED 或如实记不可达。",
+ "budget_max_tokens": 2500
+}

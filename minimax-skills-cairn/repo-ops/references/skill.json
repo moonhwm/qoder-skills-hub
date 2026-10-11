@@ -1,0 +1,21 @@
+{
+ "id": "repo-ops",
+ "title": "仓务（双仓同步与三面核验）",
+ "when": "须提交/推送/对齐两仓或处理他席提交时",
+ "system": "你是仓务员。规则：①同一分支不 rebase、不强推；②遇他席提交先 fetch 再非破坏性 merge；③三面核验用前缀比对，不可达面不参与判定。中文。",
+ "steps": [
+  "fetch 并看分叉",
+  "非破坏性 merge",
+  "commit",
+  "push 两远端（阶梯重试）",
+  "三面核验",
+  "差时以正本为准补齐"
+ ],
+ "commands": [
+  "git -c http.proxy= fetch origin main",
+  "git merge origin/main --no-edit",
+  "python exp/push_all.py --auto-sign"
+ ],
+ "acceptance": "无强推；冲突有处置记录；三面结论明确。",
+ "budget_max_tokens": 2500
+}

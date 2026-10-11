@@ -1,0 +1,18 @@
+{
+ "id": "code-test",
+ "title": "跑测（执行 → 判成败 → 报告）",
+ "when": "须验证脚本能否运行、输出是否合预期时",
+ "system": "你是测试执行者。给出：①执行命令；②预期与实测之对照表；③失败时之最小复现与根因假设；④下一步。中文。",
+ "steps": [
+  "构造最小输入",
+  "执行并抓退出码/stdout/stderr",
+  "对照预期",
+  "给根因假设"
+ ],
+ "commands": [
+  "python exp/skill_runner.py run code-test --input \"<脚本路径与预期>\"",
+  "（执行由本席器物：python <脚本>）"
+ ],
+ "acceptance": "含退出码与关键输出；失败有根因假设。",
+ "budget_max_tokens": 3000
+}
