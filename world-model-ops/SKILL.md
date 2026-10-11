@@ -29,3 +29,20 @@ description: 开放式世界模型之作入口径（建世界/进房/保活/发�
 
 ## 验收标准
 六步皆业务码 0；`rtcStatus` 见 `STREAMING`；录像显著大于未保活者；标记可检出且质心可算；判读有底噪对照。
+
+## 人设资产生成链（可复用；scripts/ 内附全部脚本）
+
+**链**：姿态角 → FK 数值核 → 24/25 帧动画 → GLB（三级 LOD）→ 渲染首帧 → 入世界 → ROI 复核。
+
+| 步 | 脚本 | 产出 |
+|---|---|---|
+| ① 四姿态（对世界 `characterActions`） | `scripts/persona_action_poses.py` | 关节角表 + 侧视骨架图；判据按类分设（行进/腾空/下蹲） |
+| ② 四段动画（各 24 帧） | `scripts/persona_animation_clips.py` | 96 帧 + 接触表 PNG；★判据须能失败（勿用"自校准后恒真"之量） |
+| ③ GLB 三级 LOD（时间轴 [0,1]） | `scripts/export_avatar_glb_v2.py` | LOD0/1/2（12/10/8 骨；各含 4 段动画） |
+| ④ 姿态入首帧（唯一可见输入） | `scripts/exp14_persona_pose.py` | 带标记首帧（16:9） |
+| ⑤ 抽帧（无损 BMP） | `scripts/mf_grab.cs` | 指定时刻之帧，供 ROI 统计 |
+
+**★ 复核口径（实测所得）**：以"人形 ROI 均差 ÷ 区外均差"为定位比；对照"同底图无人物"录像。
+**实测值**：四姿态 `dash/crouch/attack/jump` = 100.3 / 106.7 / 89.6 / 23.2 倍（4/4 > 3 倍）。
+**★ 硬约束**：该世界之唯一可见输入是**首帧**；提示词与 `instruct` 不进可见面（实测：阳控未通过）。
+**★ 勿以 id 判新旧**：`encryptedWorldId` / `encryptedTravelId` 取自小集合，会复现。
