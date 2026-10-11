@@ -1,0 +1,415 @@
+{
+ "ts": "2026-10-11T18:38:48+0800",
+ "kind": "repro-manifest",
+ "seat": "a2a-node-local",
+ "purpose": "★他席可据此复现本席今夜之实验与自证（脚本＋数据＋关键数，皆附 SHA3-512 前 32 位）",
+ "scripts": [
+  {
+   "name": "aliyun_api.py",
+   "kb": 1.9,
+   "sha3_512_32": "b6bfa83e5fe13e095b0a463346af4e8a"
+  },
+  {
+   "name": "cross_review_night.py",
+   "kb": 4.7,
+   "sha3_512_32": "ff12225e5996b6d8318893bdaaab81e4"
+  },
+  {
+   "name": "decision_model_compare.py",
+   "kb": 4.1,
+   "sha3_512_32": "69d03cc573c8fe1b57a0c6c39edd40d1"
+  },
+  {
+   "name": "decision_recognition.py",
+   "kb": 5.8,
+   "sha3_512_32": "ebb5120b984b41e88cad35a44fc2f763"
+  },
+  {
+   "name": "decision_scoring_run.py",
+   "kb": 4.1,
+   "sha3_512_32": "a944861ca429b7789304531621f6b7e1"
+  },
+  {
+   "name": "decision_vector_rerank.py",
+   "kb": 6.5,
+   "sha3_512_32": "ca69be418ffc301590f68d9f7fb055c7"
+  },
+  {
+   "name": "decision_vector_rerank_v2.py",
+   "kb": 6.7,
+   "sha3_512_32": "cb9101025e0f2f2e785e856df9172b51"
+  },
+  {
+   "name": "doc_archive.py",
+   "kb": 6.5,
+   "sha3_512_32": "2cf759c7dd8651fd311b70db42bd966a"
+  },
+  {
+   "name": "doc_archive_extend.py",
+   "kb": 5.5,
+   "sha3_512_32": "bc85a8841d0d84fca2c0f065f8a2dfe2"
+  },
+  {
+   "name": "doc_refresh.py",
+   "kb": 6.5,
+   "sha3_512_32": "131012b7252196e0f2204939e2c1d457"
+  },
+  {
+   "name": "doc_update_diff.py",
+   "kb": 3.7,
+   "sha3_512_32": "47a01594cc734f7d535edc734c5a675a"
+  },
+  {
+   "name": "exp10_presence_heartbeat.py",
+   "kb": 5.1,
+   "sha3_512_32": "dd6135b6b0a1f59acba84cffcee87c52"
+  },
+  {
+   "name": "exp11_action_legality.py",
+   "kb": 5.9,
+   "sha3_512_32": "2cf7790097baf2c17f0225731ce091b1"
+  },
+  {
+   "name": "exp12_positive_control.py",
+   "kb": 5.1,
+   "sha3_512_32": "0f0d3f68680aeaa14586beb2c63478d2"
+  },
+  {
+   "name": "exp13_position_control.py",
+   "kb": 5.6,
+   "sha3_512_32": "723d1e36a7a099d30f33dcf17e46da29"
+  },
+  {
+   "name": "exp14_persona_pose.py",
+   "kb": 7.5,
+   "sha3_512_32": "4c5a071feb390e81742dbe81402d69dc"
+  },
+  {
+   "name": "exp15_four_poses.py",
+   "kb": 8.3,
+   "sha3_512_32": "201975468344abec1150d38b6e92f36c"
+  },
+  {
+   "name": "exp22_appearance_x_pose.py",
+   "kb": 6.2,
+   "sha3_512_32": "621505e25593868d3d62bd08f4a05d38"
+  },
+  {
+   "name": "exp23_asset2_in_world.py",
+   "kb": 6.7,
+   "sha3_512_32": "f9d64b88a0135a22768ec78c12bfb653"
+  },
+  {
+   "name": "exp4_fetch_videos.py",
+   "kb": 3.2,
+   "sha3_512_32": "b385f68e3341e51b947687f63d5e3928"
+  },
+  {
+   "name": "exp4_nonce_perturbation.py",
+   "kb": 6.5,
+   "sha3_512_32": "1a8b9208d0a5762b1f3e5966530084fb"
+  },
+  {
+   "name": "exp5_state_persistence.py",
+   "kb": 6.4,
+   "sha3_512_32": "e1dc1ba0e7bda4e062500ad5fb2c2e80"
+  },
+  {
+   "name": "exp6_persona_in_world.py",
+   "kb": 7.4,
+   "sha3_512_32": "5d581e4cf657fa5fc551b9dea979c04d"
+  },
+  {
+   "name": "exp7_short_commands.py",
+   "kb": 5.1,
+   "sha3_512_32": "c43570b106fd45d08362621c7e574e63"
+  },
+  {
+   "name": "exp8_status_fields.py",
+   "kb": 6.1,
+   "sha3_512_32": "c4b17b5274b3e236ad3899271f9ed043"
+  },
+  {
+   "name": "exp9_character_actions.py",
+   "kb": 5.4,
+   "sha3_512_32": "2eaf8730e18392f54cd6c248b76fc8e6"
+  },
+  {
+   "name": "export_avatar_glb.py",
+   "kb": 9.9,
+   "sha3_512_32": "77238ee3e29a47e8103deaf9d59107b1"
+  },
+  {
+   "name": "export_avatar_glb_v2.py",
+   "kb": 9.8,
+   "sha3_512_32": "935108512ae20344b5339616af10c076"
+  },
+  {
+   "name": "persona_action_poses.py",
+   "kb": 6.9,
+   "sha3_512_32": "27123c7288d42468bde807e03c1537ed"
+  },
+  {
+   "name": "persona_animation_clips.py",
+   "kb": 8.6,
+   "sha3_512_32": "86913ca8be2f7dea4e44c90186202c9e"
+  },
+  {
+   "name": "persona_pull.py",
+   "kb": 3.6,
+   "sha3_512_32": "d064c127bfcc30fde421cf02d65df202"
+  },
+  {
+   "name": "persona_v7.py",
+   "kb": 6.7,
+   "sha3_512_32": "423df55cf338006709ecf1250ec80d1f"
+  },
+  {
+   "name": "provider_rerank_probe.py",
+   "kb": 3.8,
+   "sha3_512_32": "f40c779c06c2302299295a3fb24d80ad"
+  },
+  {
+   "name": "secret_sweep.py",
+   "kb": 3.0,
+   "sha3_512_32": "817d5ccad1a57a12d2e7b858b3b8bcce"
+  },
+  {
+   "name": "sig_block.py",
+   "kb": 6.4,
+   "sha3_512_32": "397f25d6502afdb5ce02371e53e05a80"
+  },
+  {
+   "name": "sig_verify.py",
+   "kb": 2.5,
+   "sha3_512_32": "e0612ba3b48ff0d00fab3c4026af4aaa"
+  },
+  {
+   "name": "sop_check.py",
+   "kb": 4.9,
+   "sha3_512_32": "cfc6be877719b0915a7f2f230b63b037"
+  },
+  {
+   "name": "tripo_assets_contact.py",
+   "kb": 3.9,
+   "sha3_512_32": "2ee6b9fcf62593506d8ad39ec7c01e8a"
+  },
+  {
+   "name": "tripo_render_firstframe.py",
+   "kb": 4.2,
+   "sha3_512_32": "beb567459b03573e53ea07eeabac0423"
+  },
+  {
+   "name": "mf_audio.cs",
+   "kb": 14.8,
+   "sha3_512_32": "20e8da9ed37127703bd7e68fcd9a47aa"
+  },
+  {
+   "name": "mf_grab.cs",
+   "kb": 20.5,
+   "sha3_512_32": "05bf653ac8577e8ddc3d27a08c00516b"
+  }
+ ],
+ "results": [
+  {
+   "name": "avatar_glb_export_20261011.json",
+   "kb": 0.3,
+   "sha3_512_32": "c44fc49a161e9b4b5c03279a4d9a8c1e"
+  },
+  {
+   "name": "avatar_glb_v2_export_20261011.json",
+   "kb": 1.1,
+   "sha3_512_32": "7e70899033fef749996ec79870a0a12f"
+  },
+  {
+   "name": "decision_external_priority_20261011.json",
+   "kb": 1.0,
+   "sha3_512_32": "003eb110181dd4194f813e5455bdc583"
+  },
+  {
+   "name": "decision_model_compare_20261009_CAIRN.json",
+   "kb": 11.6,
+   "sha3_512_32": "0078663a66a148109234c22b51f0f49b"
+  },
+  {
+   "name": "decision_priority_read_20261011.json",
+   "kb": 0.7,
+   "sha3_512_32": "091b14885cbed4507614421521c828c3"
+  },
+  {
+   "name": "decision_scoring_corpus_20261009.json",
+   "kb": 5.9,
+   "sha3_512_32": "36d7f4572a410398e9866b204bda4c82"
+  },
+  {
+   "name": "decision_triage_night_20261009_CAIRN.json",
+   "kb": 4.4,
+   "sha3_512_32": "2d2947567b06f21534fd31863a3fe294"
+  },
+  {
+   "name": "decision_vector_rerank_20261011.json",
+   "kb": 3.0,
+   "sha3_512_32": "f139d2bd88b8c3224ff152c4478647ae"
+  },
+  {
+   "name": "decision_vector_rerank_v2_20261011.json",
+   "kb": 1.7,
+   "sha3_512_32": "018a0a0b50ae0f1ee36f054eadb4600d"
+  },
+  {
+   "name": "exp10_presence_heartbeat_20261011.json",
+   "kb": 3.2,
+   "sha3_512_32": "338fae1ce2defcc41c336b051d05c65f"
+  },
+  {
+   "name": "exp11_action_legality_20261011.json",
+   "kb": 3.9,
+   "sha3_512_32": "90dc699916fcbf372374d166bce95fff"
+  },
+  {
+   "name": "exp12_compare_20261011.json",
+   "kb": 1.1,
+   "sha3_512_32": "5e924e298c01697fa74e214e056c213e"
+  },
+  {
+   "name": "exp12_positive_control_20261011.json",
+   "kb": 0.8,
+   "sha3_512_32": "677756410143a66e969035db25953349"
+  },
+  {
+   "name": "exp13_position_compare_20261011.json",
+   "kb": 0.9,
+   "sha3_512_32": "6a6b5bafcb8b57f75b484f87413d3b1b"
+  },
+  {
+   "name": "exp13_position_control_20261011.json",
+   "kb": 0.3,
+   "sha3_512_32": "496c0553b592a3f3436a7d10f371938b"
+  },
+  {
+   "name": "exp14_persona_pose_world_20261011.json",
+   "kb": 0.4,
+   "sha3_512_32": "88b795dbc011403feee43d3b33238c09"
+  },
+  {
+   "name": "exp14_roi_compare_20261011.json",
+   "kb": 0.5,
+   "sha3_512_32": "f0420152aee9c7d0f59717a9f06e997e"
+  },
+  {
+   "name": "exp15_four_poses_20261011.json",
+   "kb": 0.6,
+   "sha3_512_32": "63e778408b861b0c7e3a6554ac6e18e1"
+  },
+  {
+   "name": "exp15_roi_four_poses_20261011.json",
+   "kb": 0.3,
+   "sha3_512_32": "e251256b6ddc62b0e93350c31e43451c"
+  },
+  {
+   "name": "exp16_marker_trajectory_20261011.json",
+   "kb": 0.9,
+   "sha3_512_32": "a18a585fdb85e3ee41ead97c52cfff8d"
+  },
+  {
+   "name": "exp17_scaled_firstframe_fit_20261011.json",
+   "kb": 0.4,
+   "sha3_512_32": "36e9e9c7e5c12ab08b8fea367bc9cfc7"
+  },
+  {
+   "name": "exp21_roi_compare_20261011.json",
+   "kb": 0.5,
+   "sha3_512_32": "ef8c151144a3e2eee164781e630506fd"
+  },
+  {
+   "name": "exp21_tripo_asset_in_world_20261011.json",
+   "kb": 0.3,
+   "sha3_512_32": "bd5f203254e58e1ddacfd42f8024fede"
+  },
+  {
+   "name": "exp22_appearance_x_pose_20261011.json",
+   "kb": 0.8,
+   "sha3_512_32": "d02371d76f42555191675ed8e1e8e2ee"
+  },
+  {
+   "name": "exp22_roi_compare_20261011.json",
+   "kb": 0.2,
+   "sha3_512_32": "820e932d3bc41998f7c31b920408d7c9"
+  },
+  {
+   "name": "exp23_asset2_in_world_20261011.json",
+   "kb": 0.4,
+   "sha3_512_32": "5cc1b99119a70fe96ba06962e527cc05"
+  },
+  {
+   "name": "exp23_roi_compare_20261011.json",
+   "kb": 0.3,
+   "sha3_512_32": "448c6c0197d31b04be0305216d4ba5b1"
+  },
+  {
+   "name": "exp23b_asset2_resume_20261011.json",
+   "kb": 0.4,
+   "sha3_512_32": "6f0b3a70090273ef1e79347d34fee0fe"
+  },
+  {
+   "name": "recognition_candidates_20261011.json",
+   "kb": 2.3,
+   "sha3_512_32": "a19062bcce1979804fb746c754630de7"
+  },
+  {
+   "name": "subject_backfill_20261011.json",
+   "kb": 4.8,
+   "sha3_512_32": "a1a0142636e3682365ff7aa352b3bf53"
+  },
+  {
+   "name": "taxonomy_20261011.json",
+   "kb": 5.1,
+   "sha3_512_32": "92865f80633d96cced0773b733912508"
+  },
+  {
+   "name": "taxonomy_stability_20261011.json",
+   "kb": 0.2,
+   "sha3_512_32": "489bc43703c01a850a1c64f19d798f91"
+  },
+  {
+   "name": "taxonomy_v2_20261011.json",
+   "kb": 4.4,
+   "sha3_512_32": "885ca1a8faa31a08de34d2395d96ad15"
+  },
+  {
+   "name": "taxonomy_v3_20261011.json",
+   "kb": 2.8,
+   "sha3_512_32": "0fde945ebac29a871376a25ea613f979"
+  },
+  {
+   "name": "three_modes_probe_20261011.json",
+   "kb": 1.3,
+   "sha3_512_32": "f4286a28d02509450db6966b3543225d"
+  }
+ ],
+ "key_numbers": {
+  "世界模型": {
+   "一条令之拒": "instruct 第二次调用 409000（未保活时）",
+   "保活": "30s⇒≥110s；录像 0.83⇒11.56MB",
+   "三问": {
+    "条件生效": "定位比 23.2–106.7／88.3／30.3–30.5 倍",
+    "像素保真": "自残差=他帧残差（比 1.0）",
+    "运动": "帧间漂移 ≤0.4 px"
+   },
+   "底噪": "0.2409／84.572%（区间 0.1733–0.3339／80.27–88.10%）",
+   "文本": "不入可见面（L1 0.0168／边缘比 1.006）"
+  },
+  "自证": {
+   "署名复算": "369 件不符 0",
+   "落地率": "时点100/署名100/总线95.2/正本仓100/镜像100（制度后252件）",
+   "台账留痕率": "245／252=97.2%（7 件不补录）",
+   "四仓": "皆一致（推送状态由 ls-remote 实测）"
+  }
+ },
+ "how": [
+  "① 世界模型：依 sop_check/sig_verify 无关；按 SKILL.md 六步执行",
+  "② 自证：python exp/sig_verify.py --dir <交换区> --glob '*CAIRN-*.otl'",
+  "③ 单件：python exp/sop_check.py --file <件>",
+  "④ 全量：python exp/daily_nine_audit_20261010.py"
+ ]
+}
