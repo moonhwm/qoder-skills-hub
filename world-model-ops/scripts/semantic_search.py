@@ -78,6 +78,9 @@ def main():
     idx = json.loads(INDEX.read_text(encoding="utf-8")) if (INDEX.exists() and not a.build) else build()
     print("  ═══ 语义检索（索引 %d 件）═══" % len(idx))
     qv = embed_one(a.query, "q")
+    if qv is None:
+        print("   ⇒ 已中止：无查询向量（额度不足）。索引仍完好（%d 件），待额度恢复即可用。" % len(idx))
+        return
     sc = sorted(((cos(qv, it["v"]), it) for it in idx), key=lambda x: -x[0])
     for i, (s, it) in enumerate(sc[:a.top]):
         print("   %2d. %.4f ｜ %s" % (i+1, s, it["name"][:64]))
