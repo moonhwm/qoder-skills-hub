@@ -26,7 +26,8 @@ def run(args, tries=4, need=None, label=""):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--file", required=True)
-    ap.add_argument("--note", default=""); ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--note", default=""); ap.add_argument("--ledger", default="")
+    ap.add_argument("--dry", action="store_true")
     a = ap.parse_args(); f = pathlib.Path(a.file)
     if a.dry:
         print("  ═══ 预演（不写任何文件）═══")
@@ -48,7 +49,14 @@ def main():
             print("   ✗ 投递失败 %s：%s" % (dst, str(e)[:60]))
     run([str(seat/"exp"/"lsbus_format_ops.py"), "emit", "--bus", str(EX/"bus"), "--path", str(f),
          "--kind", "artifact", "--seat", "a2a-node-local"], need="已入总", label="总线 emit")
-    print("   ⇒ 判：驱动完成（托管者须随后跑台账 append 与两仓推送）"); return 0
+    # ★最后一步：写台账（仅当此前各步皆成；带重试＋写后复核）⇒ 结构上不可能"先记后做"
+    if a.ledger:
+        run([str(seat/"exp"/"mkled.py"), a.ledger], need="已生成", label="生成台账条目")
+        j = a.ledger[:-4] + ".json" if a.ledger.endswith(".led") else a.ledger
+        run([str(seat/"ledger"/"cairn_ledger.py"), "append", j], need="已追加", label="写入台账")
+        out = run([str(seat/"ledger"/"cairn_ledger.py"), "verify"], need="PASS", label="台账复核")
+        if out: print("   " + [l.strip() for l in out.splitlines() if "条目数" in l][-1][:60])
+    print("   ⇒ 判：驱动完成（若未传 --ledger，则台账仍须托管者补）"); return 0
 
 
 if __name__ == "__main__":
