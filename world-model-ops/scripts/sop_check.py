@@ -88,6 +88,24 @@ def main():
             st = "⚠ 未能核：%s" % str(e)[:50]
         print("      %-7s %s" % (name, st))
 
+    # ⑦ 台账留痕（★先账后件之硬闸：件须在 frontier_ledger 内可查）
+    print("   ⑦ 台账留痕（frontier_ledger.jsonl）")
+    try:
+        lg = SEAT/"ledger"/"frontier_ledger.jsonl"
+        txt = lg.read_text(encoding="utf-8", errors="replace") if lg.exists() else ""
+        dig = re.search(r"(DF-[A-Z]+-\d{8}-CAIRN-\d+)", p.name)
+        hit_file = p.name in txt
+        hit_id = bool(dig and dig.group(1) in txt)
+        if hit_file:
+            st = "✓ 见件名"
+        elif hit_id:
+            st = "✓ 见档号（%s）" % dig.group(1)
+        else:
+            st = "✗ 台账无踪迹（★须补：先账后件）"
+        print("      %s" % st)
+    except Exception as e:
+        print("      ⚠ 未能核：%s" % str(e)[:60])
+
     print("   ⇒ 判：%d／5 项落地%s" % (ok, "" if ok == 5 else "  ★有缺项，须补"))
     return 0 if ok == 5 else 1
 
