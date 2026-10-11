@@ -49,3 +49,32 @@ def main():
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
     sys.exit(main())
+
+
+# ── 真路径（2026-10-11 实测可用）：以 302.AI 之联网检索模型作为"指定外部搜索入口" ──
+ENDPOINT = "https://api.302ai.cn/v1/chat/completions"
+ONLINE = ("sonar-pro", "sonar", "sonar-reasoning", "gemini-2.0-flash-search", "searchapi")
+
+
+def online_search(query, model="sonar-pro", timeout=120):
+    """以 302.AI 联网模型检索；返回 (状态码, 答案, 引用列表)。★引用之真实性未逐一核验。"""
+    e = env(); K = e.get("AI302_API_KEY", "")
+    if not K:
+        return -1, "无 AI302 凭据", []
+    body = {"model": model, "messages": [{"role": "user", "content": query}], "max_tokens": 700}
+    r = urllib.request.Request(ENDPOINT, data=json.dumps(body, ensure_ascii=False).encode(), method="POST")
+    r.add_header("Authorization", "Bearer " + K); r.add_header("Content-Type", "application/json")
+    for att in range(1, 4):                       # 戒三十四：网络带重试
+        try:
+            with urllib.request.urlopen(r, timeout=timeout) as resp:
+                j = json.loads(resp.read().decode("utf-8", "replace"))
+            msg = (j.get("choices") or [{}])[0].get("message", {}) or {}
+            cites = msg.get("citations") or j.get("citations") or []
+            return resp.status, (msg.get("content") or ""), list(cites)
+        except urllib.error.HTTPError as e2:
+            if 400 <= e2.code < 500:
+                return e2.code, e2.read().decode("utf-8", "replace")[:200], []
+        except Exception as e3:
+            if att == 3:
+                return -1, str(e3)[:120], []
+    return -1, "重试耗尽", []
