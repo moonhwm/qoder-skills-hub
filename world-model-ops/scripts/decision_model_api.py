@@ -60,7 +60,7 @@ def tolerant_json(txt):
 def call(model, q, kind, to=120):
     K = env().get("AI302_API_KEY", "")
     body = {"model": model, "messages": [{"role": "system", "content": SYS}, {"role": "user", "content": q}],
-            "max_tokens": 500, "temperature": 0}
+            "max_tokens": 2000, "temperature": 0}
     r = urllib.request.Request("https://api.302ai.cn/v1/chat/completions",
                                data=json.dumps(body, ensure_ascii=False).encode(), method="POST")
     r.add_header("Authorization", "Bearer " + K); r.add_header("Content-Type", "application/json")
@@ -68,7 +68,10 @@ def call(model, q, kind, to=120):
         try:
             with urllib.request.urlopen(r, timeout=to) as resp:
                 j = json.loads(resp.read().decode("utf-8", "replace"))
-            txt = ((j.get("choices") or [{}])[0].get("message") or {}).get("content", "")
+            _msg = (j.get("choices") or [{}])[0].get("message") or {}
+            txt = _msg.get("content") or ""
+            if not (txt or "").strip():                      # ★思维链兜底：部分模型把内容放在 reasoning_content
+                txt = _msg.get("reasoning_content") or ""
             obj = tolerant_json(txt)          # ★容错解析（纯 JSON／前有说明／尾有注释／尾逗号 皆可）
             if obj is not None:
                 return 200, obj, txt[:200]
@@ -99,7 +102,7 @@ def main():
         else:
             rows.append({"id": it["id"], "http": st, "err": raw[:120]})
             print("   %-3s HTTP %s ⇒ %s" % (it["id"], st, raw[:80]))
-    ok = [r for r in rows if r.get("http") == 200]
+    ok = [r for r in rows if r.get("label") is not None]   # ★成败判据＝有 label（非"HTTP 200"）
     print("\n   ★ 成功 %d／%d ｜ 平均自报置信度 %s" % (
         len(ok), len(rows),
         round(sum(float(r["confidence"]) for r in ok if r.get("confidence") is not None)/max(1, len(ok)), 3)))
