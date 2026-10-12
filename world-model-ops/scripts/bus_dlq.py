@@ -31,6 +31,21 @@ def _append(p, obj):
 
 
 
+
+def _already_emitted(path, bus):
+    """★幂等闸：同 path ＋ 同内容哈希已在总线 ⇒ 返回 True（应跳过，勿重复投递）"""
+    import hashlib
+    b = pathlib.Path(bus)/"bus.jsonl"
+    if not b.exists(): return False
+    try:
+        h = hashlib.sha3_256(pathlib.Path(path).read_bytes()).hexdigest()[:16]
+    except Exception:
+        return False
+    name = pathlib.Path(path).name
+    for l in b.read_text(encoding="utf-8", errors="replace").splitlines()[-400:]:
+        if name in l and h in l: return True
+    return False
+
 def _valid_bus(bus):
     """★总线合法性：目录已存在且其下有 bus.jsonl（否则拒绝，避免误造"假总线"而自认成功）"""
     b = pathlib.Path(bus)
@@ -64,6 +79,11 @@ def emit(path, kind, seat, tries, bus=None):
         return False
     last = ""
     for k in range(1, tries + 1):
+        if _already_emitted(path, bus):
+            _append(AUDIT, {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "event": "duplicate_skip",
+                            "path": pathlib.Path(path).name, "note": "★同 path 同哈希已在总线 ⇒ 幂等跳过"})
+            print("   · 幂等跳过（同 path 同哈希已在总线）：%s" % pathlib.Path(path).name[:60])
+            return True
         ok, last = _emit_once(path, kind, seat, bus)
         if ok and not _readback_ok(path, bus):
             ok, last = False, "★假成功：输出称已入总，但 bus.jsonl 末 40 行未见该件名"
