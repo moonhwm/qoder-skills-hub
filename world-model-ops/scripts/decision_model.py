@@ -2,7 +2,10 @@
 """decision_model.py —— 决策模型之调用器（应任务书："仅需单次前向传播即可完成分类、是非判断与评分任务，并输出概率分布与置信度结果"）
 输出契约（★严格）：label（判）｜probs（概率分布，和为 1）｜score（评分 0–1）｜confidence（＝最大概率）｜forwards（前向次数，须＝1）
 引擎：①typesafeai（302.AI 渠道之 Jev；★专用端点 /typesafeai/v1/systemone）②chat（代为；★输出中明标"代为"）③offline（★合成响应，零花费，仅供自测解析与校验）
-可失败判据：①probs 之和＝1（±0.01）②confidence ＝ max(probs) ③forwards ＝ 1 ④label ∈ 给定集合
+可失败判据：①probs 之和＝1（±0.01）②自报 confidence 若在，须与 max(probs) 一致（★校核后置信度以此为准）
+            ③forwards ＝ 1 ④★分级：是非／分类题核 label ∈ 给定集合；★评分题核"label 为 0–10 整数且落在最高概率档内"
+★评分题口径（承旧批 SYS 原文）：评分题 label 用 0–10 之整数，并把各分值★归并为 3 档概率 ⇒
+  "label 不在概率键中"对评分题★不是瑕疵（故判据④分级，2026-10-12）
 用法：
   python decision_model.py --offline --selftest
   python decision_model.py --engine chat --q "该件是否可以入册？" --labels 可,不可
@@ -28,12 +31,23 @@ def key():
         pass
     return None
 
-def build_prompt(q, labels):
-    return ("你是决策模型。只做一次前向判断，不要解释过程。\n"
+def build_prompt(q, labels, kind="auto"):
+    """★评分题口径（2026-10-12 记，承旧批 SYS 原文）：评分题 label 用 0–10 之整数，
+    并把各分值★归并为 3 档概率（如 "0-3"／"4-6"／"7-10"）—— 此为本席决策工具之统一约定；
+    ★故"label 不在概率键中"对评分题★不是瑕疵（判据④已按此分级）。"""
+    base = ("你是决策模型。只做一次前向判断，不要解释过程。\n"
             "待判：" + q + "\n"
             "可选判：" + "／".join(labels) + "\n"
             "只输出一行 JSON：{\"label\":\"<判>\",\"probs\":{\"<判>\":<数>,…},\"score\":<0-1>}\n"
             "要求：probs 之各值非负且和为 1；score 为 0–1 之评分。")
+    if kind == "score":
+        base += ("\n★评分题约定：label 用 0–10 之整数；probs 之键用 3 档区间（如 \"0-3\"／\"4-6\"／\"7-10\"），"
+                 "各档之和为 1；score 为 0–1。")
+    elif kind == "classify":
+        base += "\n★分类题约定：label 取给定类别之一；probs 之键即各给定类别。"
+    elif kind == "yesno":
+        base += "\n★是非题约定：label 取「是」或「否」；probs 之键为「是」「否」。"
+    return base
 
 def normalize(d):
     pr = {k: float(v) for k, v in (d.get("probs") or {}).items() if isinstance(v, (int, float)) or (isinstance(v, str) and v.replace('.','',1).isdigit())}
