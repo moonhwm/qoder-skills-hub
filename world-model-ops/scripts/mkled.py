@@ -139,11 +139,15 @@ def main() -> int:
         _blob = str(obj.get("subject") or "") + " " + str(obj.get("detail") or "")
         # ★2026-10-12 精化（-1334 之辨）：识别"前瞻语境"（约／下次／届时／预计／T+／将）⇒ 不计偏差
         _FWD = ("约", "下次", "届时", "预计", "T+", "将", "随后", "其后", "翌", "次日")
+        # ★2026-10-12 加（-1346 之发现）：★过去引用亦免计（第二类误报位）—— 事故／之因／曾／彼时／史／前文／上文／参见／追溯／重基线
+        #   以及★时间戳语境（前邻为 T 或 - 或位于 "2026-…T" 之日期中）
+        _PAST = ("事故", "之因", "曾", "彼时", "由来", "史", "前文", "上文", "参见", "追溯", "重基线", "当时", "原")
         _hits = []
         for _m2 in _re.finditer(r"(\d{1,2}):(\d{2})", _blob):
-            _pre = _blob[max(0, _m2.start()-14):_m2.start()]
+            _pre = _blob[max(0, _m2.start()-20):_m2.start()]
             _fwd = any(f in _pre for f in _FWD)
-            _hits.append((_m2.group(1), _m2.group(2), _fwd))
+            _past = any(q in _pre for q in _PAST) or ("T" in _pre[-2:]) or ("-" in _pre[-1:]) or ("2026-" in _pre)
+            _hits.append((_m2.group(1), _m2.group(2), _fwd or _past))
         _bad = []; _fwd_n = 0
         for _h, _m, _fwd in _hits:
             _hh, _mm = int(_h), int(_m)
@@ -153,7 +157,7 @@ def main() -> int:
             _d = abs((_t - _now).total_seconds())/60.0
             _d = min(_d, 1440 - _d)          # ★跨零点取近者
             if _d > 5: _bad.append("%s（差 %.0f min）" % ("%02d:%02d" % (_hh, _mm), _d))
-        print("   ★真实钟核对：现 %s ｜ 时间样 %d 处（★前瞻语境 %d 处已免计）｜ %s"
+        print("   ★真实钟核对：现 %s ｜ 时间样 %d 处（★前瞻/引述语境 %d 处已免计）｜ %s"
               % (_now.strftime("%Y-%m-%d %H:%M:%S"), len(_hits), _fwd_n,
                  ("★不符 " + "；".join(_bad[:4])) if _bad else "一致（≤5 min 或皆前瞻）"))
         if _bad:
