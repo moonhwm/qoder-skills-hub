@@ -41,7 +41,7 @@ def main():
     run([str(seat/"exp"/"sig_verify.py"), "--paths", str(f)], need="相符", label="署名复算")
     run([str(seat/"exp"/"sop_check.py"), "--file", str(f)], label="七项自检")
     for dst in (BUS_DIR/"Cairn席_20261011", HOME/"openplanlink-cairn"/"notes",
-                HOME/"openplanlink-mirror"/"deliverables"/"20261011"/"seat-cairn"):
+                HOME/"openplanlink-mirror"/"deliverables"/time.strftime("%Y%m%d")/"seat-cairn"):
         try:
             dst.mkdir(parents=True, exist_ok=True)
             (dst/f.name).write_bytes(f.read_bytes()); print("   ✓ 投递 %s" % dst.name)
