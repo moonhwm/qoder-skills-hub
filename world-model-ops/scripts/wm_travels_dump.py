@@ -69,7 +69,7 @@ def main():
     cnt = collections.Counter(str(it.get("status") or it.get("state") or "?") for it in uniq)
     print("   ★按状态：%s" % "、".join("%s=%d" % (k, v) for k, v in cnt.most_common()))
     rows = []
-    for it in uniq[:30]:
+    for it in uniq:
         i = str(it.get("encryptedTravelId") or it.get("id") or "")
         rows.append({"tail": i[-8:], "status": str(it.get("status") or it.get("state") or ""),
                      "world_tail": str(it.get("encryptedWorldId") or it.get("worldId") or "")[-8:],
