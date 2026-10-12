@@ -68,19 +68,37 @@ def run(a):
             "index_mtime": idx_mt, "newest_artifact_mtime": newest, "fresh": fresh, "criteria": crit},
             ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
     ok = all(crit.values())
-    if not ok and a.rebuild:
+    if not ok and (a.rebuild or a.auto):
         out = SEAT/"exp"/".cache"/("section_index_%s.json" % time.strftime("%Y%m%d_%H%M"))
         env = dict(os.environ); env["OPL_SECTION_IDX"] = str(out)
         print("   → 触发重建：%s" % out.name)
         pr = subprocess.run([sys.executable, str(SEAT/"exp"/"section_search.py"), "--build"],
                             capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
         for l in ((pr.stdout or "") + (pr.stderr or "")).splitlines()[-2:]: print("     " + l.strip()[:100])
+        if a.auto and out.exists():
+            # ★自动重建后即复查（2026-10-12）：以"重建后之档"再跑一次本检测（子进程，env 指新档）
+            print("   → 自动重建后复查（新档 %s）" % out.name)
+            env2 = dict(os.environ); env2["OPL_SECTION_IDX"] = str(out)
+            pr2 = subprocess.run([sys.executable, str(pathlib.Path(__file__)), "--json", a.json or os.devnull],
+                                 capture_output=True, text=True, encoding="utf-8", errors="replace", env=env2)
+            for l in (pr2.stdout or "").splitlines():
+                s = l.strip()
+                if s.startswith(("节 ", "件号映射", "时效：")) or (s.startswith(("①", "②", "③", "④")) and "⇒" in s):
+                    print("     " + s[:116])
+            ok2 = (pr2.returncode == 0)
+            print("     ⇒ 复查判：%s（退出码 %d）｜★默认指针未改；如需切换：index_switch.py --to %s" % (
+                "✓ 重建档四项全过" if ok2 else "★重建档仍不过 ⇒ 须人工查", pr2.returncode, out.name))
+            return 0 if (ok2 and not a.switch) or ok2 else 1
         print("     ★据以检索须设 OPL_SECTION_IDX=%s" % out.name)
+    elif ok:
+        print("   ⇒ 判：✓ 索引新且自洽（无需重建）")
     return 0 if ok else 1
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
     ap = argparse.ArgumentParser(); ap.add_argument("--index", default=""); ap.add_argument("--rebuild", action="store_true")
+    ap.add_argument("--auto", action="store_true")      # ★检出即重建＋重建后复查（仍不改默认指针）
+    ap.add_argument("--switch", action="store_true")    # ★重建后可选切换指针（默认不切）
     ap.add_argument("--json", default="")
     ap.add_argument("--tolerance", type=int, default=30)   # ★时效容差（分钟）
     sys.exit(run(ap.parse_args()))
