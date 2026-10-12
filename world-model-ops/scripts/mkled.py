@@ -137,28 +137,24 @@ def main() -> int:
         import re as _re, datetime as _dt
         _now = _dt.datetime.now()
         _blob = str(obj.get("subject") or "") + " " + str(obj.get("detail") or "")
-        # ★2026-10-12 精化（-1334 之辨）：识别"前瞻语境"（约／下次／届时／预计／T+／将）⇒ 不计偏差
-        _FWD = ("约", "下次", "届时", "预计", "T+", "将", "随后", "其后", "翌", "次日")
-        # ★2026-10-12 加（-1346 之发现）：★过去引用亦免计（第二类误报位）—— 事故／之因／曾／彼时／史／前文／上文／参见／追溯／重基线
-        #   以及★时间戳语境（前邻为 T 或 - 或位于 "2026-…T" 之日期中）
-        _PAST = ("事故", "之因", "曾", "彼时", "由来", "史", "前文", "上文", "参见", "追溯", "重基线", "当时", "原")
-        _hits = []
+        # ★2026-10-12 重设计（-1336/-1346/-1348 三度误报之总修）：由"排除法"改★"正语境法"
+        #   ★只核"自称现在"者 —— 即时间样前 6 字内含 现／此刻／本件／当前／时点 者；
+        #   ★其余（前瞻／引述／时区标注／来源标记等）★一律免计 ⇒ 一举消除三类误报。
+        _NOWW = ("现", "此刻", "本件", "当前", "时点", "现在")
+        _hits = []; _bad = []; _skip_n = 0
         for _m2 in _re.finditer(r"(\d{1,2}):(\d{2})", _blob):
-            _pre = _blob[max(0, _m2.start()-20):_m2.start()]
-            _fwd = any(f in _pre for f in _FWD)
-            _past = any(q in _pre for q in _PAST) or ("T" in _pre[-2:]) or ("-" in _pre[-1:]) or ("2026-" in _pre)
-            _hits.append((_m2.group(1), _m2.group(2), _fwd or _past))
-        _bad = []; _fwd_n = 0
-        for _h, _m, _fwd in _hits:
-            _hh, _mm = int(_h), int(_m)
+            _pre = _blob[max(0, _m2.start()-6):_m2.start()]
+            _isnow = any(w in _pre for w in _NOWW)
+            _hits.append((_m2.group(1), _m2.group(2), _isnow))
+            if not _isnow: _skip_n += 1; continue
+            _hh, _mm = int(_m2.group(1)), int(_m2.group(2))
             if not (0 <= _hh <= 23 and 0 <= _mm <= 59): continue
-            if _fwd: _fwd_n += 1; continue       # ★前瞻语境 ⇒ 不计
-            _t = _now.replace(hour=_hh, minute=_mm, second=0, microsecond=0)
-            _d = abs((_t - _now).total_seconds())/60.0
+            _tt = _now.replace(hour=_hh, minute=_mm, second=0, microsecond=0)
+            _d = abs((_tt - _now).total_seconds())/60.0
             _d = min(_d, 1440 - _d)          # ★跨零点取近者
             if _d > 5: _bad.append("%s（差 %.0f min）" % ("%02d:%02d" % (_hh, _mm), _d))
-        print("   ★真实钟核对：现 %s ｜ 时间样 %d 处（★前瞻/引述语境 %d 处已免计）｜ %s"
-              % (_now.strftime("%Y-%m-%d %H:%M:%S"), len(_hits), _fwd_n,
+        print("   ★真实钟核对：现 %s ｜ 时间样 %d 处（★非自称现在者 %d 处免计）｜ %s"
+              % (_now.strftime("%Y-%m-%d %H:%M:%S"), len(_hits), _skip_n,
                  ("★不符 " + "；".join(_bad[:4])) if _bad else "一致（≤5 min 或皆前瞻）"))
         if _bad:
             print("      ★告警：批号／件名与真实钟不符 ⇒ 请改取真实钟（训见 -1331）")
