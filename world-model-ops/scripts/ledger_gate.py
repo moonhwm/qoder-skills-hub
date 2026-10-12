@@ -10,7 +10,7 @@
 用法：python ledger_gate.py {snapshot|check|recover}
 （中文串一律用「」）
 """
-import argparse, hashlib, json, pathlib, sys, time
+import argparse, hashlib, json, os, pathlib, sys, time
 
 SEAT = pathlib.Path(__file__).resolve().parent.parent
 LED = SEAT/"ledger"/"frontier_ledger.jsonl"
@@ -30,9 +30,26 @@ def state():
 def cmd_snapshot():
     s = state()
     if not s: print("   ★台账不在"); return 1
-    SNAP.write_text(json.dumps({"snapshot_at": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), **s},
-                               ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
-    print("   ✓ 已记快照：行 %d ｜ 末 hash %s ｜ mtime %s" % (s["lines"], s["last_hash"][:16], s["mtime"]))
+    # ★2026-10-12 自纠（-1312 之训）：改用"临时文件 ＋ os.replace"原子写
+    #   因"深内存警戒 ＋ WPS 云盘锁"会使★直接写随机遭 PermissionError（Errno 13），而 os.replace 可绕开
+    data = json.dumps({"snapshot_at": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), **s}, ensure_ascii=False, indent=1)
+    tmp = SNAP.parent/"_snap_tmp.json"
+    done = False
+    for att in range(1, 4):
+        try:
+            tmp.write_text(data, encoding="utf-8", newline="\n")
+            os.replace(str(tmp), str(SNAP))
+            print("   ✓ 已记快照（★原子写，第 %d 次）：行 %d ｜ 末 hash %s ｜ mtime %s"
+                  % (att, s["lines"], s["last_hash"][:16], s["mtime"]))
+            done = True; break
+        except Exception as ex:
+            print("   · 原子写第 %d 次失败：%s" % (att, str(ex)[:60])); time.sleep(2)
+    if not done:
+        try:
+            SNAP.write_text(data, encoding="utf-8", newline="\n")
+            print("   ✓ 已记快照（★直写兜底）：行 %d" % s["lines"]); done = True
+        except Exception as ex:
+            print("   ✗ 两种写法皆失败：%s" % str(ex)[:70]); return 1
     return 0
 
 
