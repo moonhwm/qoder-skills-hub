@@ -6,10 +6,22 @@
 """
 import hashlib, json, pathlib, sys, tempfile
 HERE = pathlib.Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent/"exp"))
+import os
+def _seat():
+    _ov = os.environ.get("OPL_SEAT")
+    if _ov: return pathlib.Path(_ov)
+    for c in (HERE.parent, HERE.parent.parent):
+        if (c/"exp").is_dir() or (c/"ledger").is_dir(): return c
+    return HERE.parent
+SEATD = _seat()
+def _need(p):
+    if not pathlib.Path(p).exists():
+        print("      · ★依赖不在（%s）⇒ 未测（环境不足；退出码 2）" % str(p)[-56:]); sys.exit(2)
+sys.path.insert(0, str(SEATD/"exp"))
 sys.stdout.reconfigure(encoding="utf-8")
 import importlib.util
-spec = importlib.util.spec_from_file_location("bus_dlq", HERE.parent/"exp"/"bus_dlq.py")
+_bd_p = SEATD/"exp"/"bus_dlq.py"; _need(_bd_p)
+spec = importlib.util.spec_from_file_location("bus_dlq", _bd_p)
 bd = importlib.util.module_from_spec(spec); spec.loader.exec_module(bd)
 tmp = pathlib.Path(tempfile.mkdtemp(prefix="drill2_"))
 bus = tmp/"bus"; bus.mkdir()

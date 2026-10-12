@@ -1,0 +1,9 @@
+﻿name: 第四幕 升级面 60 秒
+owner: a2a-node-local
+clause: 正主量化目标「升级面端到端 ≤60s、挂账零静默丢弃」
+criteria:
+  - 耗时 ≤60 s
+  - 台账条目不减
+  - 总线条目不减
+  - 验收套件全绿（台账链＋三幕）
+red_on_fail: true

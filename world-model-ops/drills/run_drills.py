@@ -33,9 +33,10 @@ def run_act(n):
     t0 = time.time()
     pr = subprocess.run([sys.executable, str(script)], capture_output=True, text=True, encoding="utf-8", errors="replace")
     dt = round(time.time()-t0, 2)
-    ok = pr.returncode == 0
+    rc = pr.returncode
+    st = "PASS" if rc == 0 else ("UNTESTED" if rc == 2 else "FAIL")
     tail = [l for l in ((pr.stdout or "") + (pr.stderr or "")).splitlines() if l.strip()][-1:] 
-    return n, ("PASS" if ok else "FAIL"), {"name": d.get("name", "?"), "s": dt, "last": (tail[0][:96] if tail else "")}
+    return n, st, {"name": d.get("name", "?"), "s": dt, "last": (tail[0][:96] if tail else "")}
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--act", type=int, default=0)
@@ -47,8 +48,9 @@ def main():
         num, st, info = run_act(n)
         if st == "★缺脚本":
             print("   第%d幕 ⇒ ○ 未建（待补）" % n); continue
-        print("   第%d幕 ⇒ %s ｜ %s ｜ %.2fs ｜ %s" % (num, "★PASS" if st == "PASS" else "★FAIL", info["name"], info["s"], info["last"]))
-        if st != "PASS": bad += 1
+        mark = {"PASS": "★PASS", "FAIL": "★FAIL", "UNTESTED": "○ 未测（环境不足）"}[st]
+        print("   第%d幕 ⇒ %s ｜ %s ｜ %.2fs ｜ %s" % (num, mark, info["name"], info["s"], info["last"]))
+        if st == "FAIL": bad += 1
     print("   ⇒ 判：%s（失败 %d 幕）" % ("★构建红（判据失败）" if bad else "★全绿", bad))
     sys.exit(1 if bad else 0)
 

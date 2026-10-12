@@ -1,0 +1,9 @@
+﻿name: 第一幕 心跳聚合
+owner: a2a-node-local
+clause: 正主量化目标「心跳占比从 81%（8,594/10,611 条）压至 ≤30%」
+scope: 本席总线 bus.jsonl（网络脊髓总线本席不可达 ⇒ 不对其断言）
+criteria:
+  - 可算得占比
+  - 占比 ≤30%
+  - 心跳类条目可辨识且计数可复算
+red_on_fail: true
