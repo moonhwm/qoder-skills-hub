@@ -60,6 +60,26 @@ class Retriever:
         return [(d, round(bydoc[d], 3)) for d in fused[:k]]
 
 
+def decide_support(cands, qt, docs_terms):
+    """★支持式判定（2026-10-12 加）：以"查询关键词是否出现在前 K 候选（名或正文）"为支持证据
+    ★动机：集中度式（decide）测的是"证据是否集中"，与"命题为真"无必然关系（见 -1255 之真例判反）。
+    ★本式为"词面支持"，仍非语义 —— 然对"有据可依之是非题"更贴切。"""
+    if not cands or not qt:
+        p_yes = 0.0
+    else:
+        top = [d for d, _ in cands[:3]]
+        sup = 0.0
+        for d in top:
+            dn = set(toks(d)) | docs_terms.get(d, set())
+            sup = max(sup, len(qt & dn) / max(1, len(qt)))
+        # ★支持度 → 概率：以 sigmoid 式映射（0 ⇒ 0.05；0.5 ⇒ 0.5；1 ⇒ 0.95）
+        p_yes = min(0.95, max(0.05, 1.0 / (1 + __import__("math").exp(-6 * (sup - 0.5)))))
+    probs = {"是": round(p_yes, 4), "否": round(1 - p_yes, 4)}
+    conf = max(probs.values())
+    return {"label": "是" if p_yes >= 0.5 else "否", "probs": probs, "score": min(10, max(0, int(round(conf * 10)))),
+            "confidence": round(conf, 4), "forwards": 1, "mode": "support", "evidence": [d for d, _ in cands[:3]]}
+
+
 def decide(cands):
     """★以证据强度出决策契约（单次前向；无迭代）"""
     vals = [v for _, v in cands]
@@ -106,14 +126,20 @@ def selftest(R):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--q", default=""); ap.add_argument("--k", type=int, default=5)
-    ap.add_argument("--index", default=""); ap.add_argument("--json", default=""); ap.add_argument("--selftest", action="store_true")
+    ap.add_argument("--index", default=""); ap.add_argument("--json", default=""); ap.add_argument("--selftest", action="store_true"); ap.add_argument("--mode", default="support", choices=["support", "concentration"])
     a = ap.parse_args()
     S = pathlib.Path(__file__).resolve().parent
     R = Retriever(a.index or S/".cache"/"section_index_union_20261012.json")
     if a.selftest: return selftest(R)
     if not a.q:
         print("   ★须给 --q 或 --selftest"); return 2
-    cands = R.top(a.q, a.k); r = decide(cands)
+    cands = R.top(a.q, a.k)
+    if a.mode == "support":
+        qt = set(toks(a.q))
+        docs_terms = {d: set().union(*[R.tf[i].keys() for i in R.doc2sec[d]]) if R.doc2sec.get(d) else set() for d, _ in cands}
+        r = decide_support(cands, qt, docs_terms)
+    else:
+        r = decide(cands)
     print("  ═══ 离线决策（以检索证据为据；★单次前向）═══")
     print("   问题：%s" % a.q[:60])
     print("   候选：%s" % "；".join("%s(%.2f)" % (d[:22], v) for d, v in cands[:3]))
