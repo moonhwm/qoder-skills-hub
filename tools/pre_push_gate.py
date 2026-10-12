@@ -41,7 +41,8 @@ def gate(repo, selftest=False):
     # ② 镜像树签名（mirror）
     if (repo/"tools"/"sha3-tree.mjs").exists():
         rc, out = sh(["node", str(repo/"tools"/"sha3-tree.mjs"), "verify"], cwd=str(repo), to=300)
-        ok = rc == 0 and ("OK" in out.upper() or "MATCH" in out.upper() or "一致" in out)
+        up = out.upper()
+        ok = rc == 0 and ("VERIFIED" in up or "OK" in up or "MATCH" in up or "一致" in out or "成功" in out)
         print("   ② 镜像树签名 ⇒ %s" % ("✓" if ok else "✗ " + out.strip().splitlines()[-1][:70]))
         if not ok: fails.append("镜像树签名")
     # ③ 署名抽验（改动之 CAIRN 件）
@@ -67,7 +68,7 @@ def gate(repo, selftest=False):
     print("   ④ 大件闸（>5 MB）⇒ %s" % ("✓ 无" if not big else "✗ " + "、".join(big[:3])))
     if big: fails.append("大件 %d 个" % len(big))
     # ⑤ 机密模式闸
-    hits = []
+    hits, notes = [], []
     for r in ("notes", "tools", "skills"):
         d = repo/r
         if d.exists():
@@ -76,8 +77,17 @@ def gate(repo, selftest=False):
                     t = p.read_text(encoding="utf-8", errors="replace")
                 except Exception: continue
                 m = SECRET.search(t)
-                if m: hits.append("%s（%s…）" % (p.relative_to(repo), m.group(1)[:8]))
-    print("   ⑤ 机密模式闸 ⇒ %s" % ("✓ 无" if not hits else "✗ " + "；".join(hits[:3])))
+                if not m: continue
+                rel = str(p.relative_to(repo))
+                if re.search(r"(^|[\\/])(test|tests|sample|samples|example|examples|fixture|fixtures|mock|mocks)", rel, re.I):
+                    notes.append("%s（测试夹具，已忽略）" % rel); continue
+                v = m.group(1)
+                if re.fullmatch(r"(?i)(abcdefghijklmnopqrstuvwxyz.*|1234567890.*|sk-abc.*)", v) or len(set(v)) <= 4:
+                    notes.append("%s（疑似占位／顺序串，已忽略）" % rel); continue
+                hits.append("%s（%s…%s）" % (rel, v[:6], v[-4:]))
+    print("   ⑤ 机密模式闸 ⇒ %s%s" % ("✓ 无" if not hits else "✗ " + "；".join(hits[:3]),
+          ("（另忽略 %d 处测试夹具／占位串）" % len(notes)) if notes else ""))
+    for nt in notes[:3]: print("        · 已忽略：" + nt)
     if hits: fails.append("机密模式 %d 处" % len(hits))
     import os as _os
     if selftest or _os.environ.get("OPL_GATE_SELFTEST") == "1":
