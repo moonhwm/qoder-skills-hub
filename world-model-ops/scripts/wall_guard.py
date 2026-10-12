@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-"""wall_guard.py —— 容量墙闸（应《跨生态A2A协作网络体系建设方案》：
+"""wall_guard.py（★已与既有 quota_wall.py 合并为单一入口）—— 容量墙闸（应《跨生态A2A协作网络体系建设方案》：
 「遇到额度墙（墙码 1308/1310/1005）零重试，按预案切换通道或等待窗口，异常事件按『撞墙即停』原则处置并全程留痕」）
 三分类（★判据在手，勿凭感觉重试）：
   wall       额度／预算／欠费类 ⇒ ★零重试；按预案切通道或等窗口；★全程留痕
@@ -25,6 +25,16 @@ PERM_PAT  = re.compile(r'("code"\s*[:=]\s*"?\s*(400|404|400001|403)\b)|(Unsuppor
 
 def classify(text):
     t = str(text)
+    # ★与既有旧器合并（2026-10-12）：旧器 quota_wall.py（纯数字码策略）为准之"码层"；本器补"文本与语境层"
+    try:
+        import sys as _s, pathlib as _p
+        _s.path.insert(0, str(_p.Path(__file__).resolve().parent))
+        import quota_wall as _qw
+        _num = re.search(r"(?<![0-9])(\d{4})(?![0-9])", t)
+        if _num and _qw.is_wall(int(_num.group(1))):
+            return ("wall", _num.group(1), "旧器 quota_wall 判定：%s" % _qw.policy(int(_num.group(1)))["note"])
+    except Exception:
+        pass
     m = WALL_PAT.search(t)
     if m: return ("wall", (m.group(2) or m.group(3) or m.group(5) or "wall")[:24], "额度／预算类（结构化或紧邻同现）")
     m = TRANS_PAT.search(t)
