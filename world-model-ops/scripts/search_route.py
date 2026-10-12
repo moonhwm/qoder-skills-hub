@@ -72,6 +72,18 @@ def online_search(query, model="sonar-pro", timeout=120):
             cites = msg.get("citations") or j.get("citations") or []
             return resp.status, (msg.get("content") or ""), list(cites)
         except urllib.error.HTTPError as e2:
+            """★墙闸"""
+            try:
+                _wb = e2.read().decode("utf-8", "replace")
+                import sys as _ws, pathlib as _wp
+                _ws.path.insert(0, str(_wp.Path(__file__).resolve().parent))
+                import wall_guard as _wg
+                if _wg.classify(_wb)[0] == "wall":
+                    _wg.record(_wb, source=_wp.Path(__file__).name, channel="wall")
+                    print("   ★撞墙即停（零重试）")
+                    return e2.code, _wb[:200], []
+            except Exception:
+                pass
             if 400 <= e2.code < 500:
                 return e2.code, e2.read().decode("utf-8", "replace")[:200], []
         except Exception as e3:
