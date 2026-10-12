@@ -61,6 +61,24 @@ def dim3_quota():
          API花费元=round(api, 4), 资源花费元=round(res, 2), 合计元=round(api+res, 2))
     return {"ledger_files": len(files), "tokens_in": tin, "tokens_out": tout, "api_cny": round(api, 4), "res_cny": round(res, 2)}
 
+def dim2b_esc():
+    """升级面端到端（读 ledger/esc_watch.jsonl）"""
+    ew = SEAT/"ledger"/"esc_watch.jsonl"
+    if not ew.exists():
+        line(维度="升级面端到端", 状态="无计时簿", 判="·"); return {"n": 0}
+    op = cl = over = 0; els = []
+    for l in ew.read_text(encoding="utf-8", errors="replace").splitlines():
+        if not l.strip(): continue
+        j = json.loads(l)
+        if j.get("event") == "open": op += 1
+        elif j.get("event") == "close":
+            cl += 1; els.append(float(j.get("elapsed_s", 0)))
+            if not j.get("pass_60s"): over += 1
+    line(维度="升级面端到端", 立案=op, 结案=cl, 未结=op-cl, 超60s=over,
+         最长=("%.2f s" % max(els)) if els else "—", 判=("✓" if over == 0 else "✗"))
+    return {"open": op, "close": cl, "over60": over, "max_s": (max(els) if els else None)}
+
+
 def dim4_audit(no_net=False):
     fl = SEAT/"ledger"/"frontier_ledger.jsonl"
     entries = len(fl.read_text(encoding="utf-8", errors="replace").splitlines()) if fl.exists() else 0
@@ -107,7 +125,7 @@ def main():
                     print("   ✓ 已结案自检样本：%s" % r.get("name"))
     print("  ═══ 每日四维对账单（可重跑复现）｜ %s ═══" % time.strftime("%Y-%m-%d %H:%M:%S+0800"))
     out = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "seat": "a2a-node-local"}
-    out["success"] = dim1_success(); out["latency"] = dim2_latency(); out["quota"] = dim3_quota(); out["audit"] = dim4_audit(a.no_net)
+    out["success"] = dim1_success(); out["latency"] = dim2_latency(); out["esc"] = dim2b_esc(); out["quota"] = dim3_quota(); out["audit"] = dim4_audit(a.no_net)
     p = pathlib.Path(a.json) if a.json else SEAT/"ledger"/("daily_statement_%s.json" % time.strftime("%Y%m%d"))
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")

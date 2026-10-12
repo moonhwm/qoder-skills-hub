@@ -48,6 +48,19 @@ def record(text, source="", channel="", kind="", code="", advice=""):
     rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "kind": kind, "code": code, "advice": advice,
            "source": source, "channel": channel, "excerpt": re.sub(r"\s+", " ", str(text))[:160],
            "retry_policy": "★零重试（切通道或等窗口）" if kind == "wall" else ("有限重试 3 次" if kind == "transient" else "不重试")}
+    # ★联动（2026-10-12）：墙类事件 ⇒ 自动在升级面计时簿立案（使 esc.* 端到端可评）
+    if kind == "wall":
+        try:
+            import subprocess as _sp
+            _ew = pathlib.Path(__file__).resolve().parent/"esc_watch.py"
+            if _ew.exists():
+                _o = _sp.run([sys.executable, str(_ew), "open", "--level", "esc",
+                              "--subject", "撞墙：%s（%s）" % (code, str(source)[:60])],
+                             capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=40)
+                _m = re.search(r"(ESC-\d{8}-\d{3})", _o.stdout or "")
+                if _m: rec["esc_case"] = _m.group(1)
+        except Exception:
+            pass
     WALL_LEDGER.parent.mkdir(parents=True, exist_ok=True)
     with open(WALL_LEDGER, "a", encoding="utf-8", newline="\n") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
