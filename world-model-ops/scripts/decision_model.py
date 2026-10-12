@@ -158,14 +158,28 @@ def main():
     a = ap.parse_args()
     labels = [x for x in a.labels.split(",") if x]
     if a.selftest:
-        print("  ═══ 决策模型 离线自测（★零花费；验解析与四项判据）═══")
-        for nm, d, want in (("合规样例", SYN, True), ("不合规样例（和≠1／前向2）", SYN_BAD, False)):
-            pr, conf, crit, _rep = verdict(d, labels)
+        # ★四题型各一例（2026-10-12 扩）：合规者须全过；反例须被拦（★判据能失败）
+        print("  ═══ 决策模型 离线自测 ｜ 四题型各一例（★零花费）═══")
+        CASES = [
+            ("score 合规", "score", ["0-3","4-6","7-10"], {"label":"8","probs":{"0-3":0.05,"4-6":0.15,"7-10":0.80},"confidence":0.80,"forwards":1}, True),
+            ("score 反例（label 12 越界）", "score", ["0-3","4-6","7-10"], {"label":"12","probs":{"0-3":0.05,"4-6":0.15,"7-10":0.80},"confidence":0.80,"forwards":1}, False),
+            ("classify 合规", "classify", ["甲","乙","丙"], {"label":"丙","probs":{"甲":0.1,"乙":0.25,"丙":0.65},"confidence":0.65,"forwards":1}, True),
+            ("yesno 合规", "yesno", ["是","否"], {"label":"否","probs":{"是":0.24,"否":0.76},"confidence":0.76,"forwards":1}, True),
+            ("yesno 反例（自报 0.9 ≠ max 0.76）", "yesno", ["是","否"], {"label":"否","probs":{"是":0.24,"否":0.76},"confidence":0.9,"forwards":1}, False),
+            ("auto 反例（forwards 2／和≠1）", "auto", ["可","不可"], {"label":"可","probs":{"可":0.5,"不可":0.4},"confidence":0.5,"forwards":2}, False),
+        ]
+        allok = True
+        for nm, kd, lb, d, want in CASES:
+            pr, conf, crit, rep = verdict(d, lb)
             ok = all(crit.values())
-            print("   %-26s ⇒ 判据全过=%s（期望 %s）｜probs=%s｜confidence=%s" % (
-                nm, ok, want, json.dumps(pr, ensure_ascii=False), conf))
-            for k2, v in crit.items(): print("      %s ⇒ %s" % (k2, "✓" if v else "✗"))
-        return 0
+            good = (ok == want)
+            allok &= good
+            print("   %-34s ⇒ %s（期望 %s）%s" % (nm, "判据全过" if ok else "★有不过", "过" if want else "不过", "" if good else " ★与期望不符"))
+            if not good:
+                for k2, v in crit.items():
+                    if not v: print("        不过者：%s" % k2[:70])
+        print("   ⇒ 自测判：%s" % ("✓ 四题型契约成立，且反例皆被拦" if allok else "★有与期望不符 ⇒ 须修"))
+        return 0 if allok else 1
     q = a.q or "该件是否可以入册？"
     k = key()
     if a.engine == "typesafeai":
