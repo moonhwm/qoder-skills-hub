@@ -68,13 +68,51 @@ def run(a):
             "index_mtime": idx_mt, "newest_artifact_mtime": newest, "fresh": fresh, "criteria": crit},
             ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
     ok = all(crit.values())
+    # ★重建节流（2026-10-12）：①先找"已合规之档"（全档扫描）⇒ 有则★跳过重建、只报告并建议切换
+    #                    ②否则比时间闸（--min-interval 分钟）⇒ 未到则跳过（免日更每次重建）
     if not ok and (a.rebuild or a.auto):
+        import json as _json
+        def _check(p):
+            try:
+                jj = _json.loads(p.read_text(encoding="utf-8"))
+            except Exception:
+                return None
+            ss = jj.get("sections") or []
+            if not ss or "tf" not in ss[0]: return None
+            dd = {s["doc"] for s in ss}
+            hh = sum(1 for v in m.values() if v in dd)
+            cc = 100.0*hh/max(1, len(m))
+            lg = (newest - p.stat().st_mtime)/60.0
+            return {"name": p.name, "cons": cc, "lag": max(0.0, lg), "sha16": hashlib.sha3_256(p.read_bytes()).hexdigest()[:16]}
+        cands = []
+        for q in sorted((SEAT/"exp"/".cache").glob("section_index*.json"), key=lambda q: -q.stat().st_mtime):
+            if q == idx: continue
+            f2 = _check(q)
+            if f2 and f2["cons"] >= 95.0 and f2["lag"] <= a.tolerance: cands.append(f2)
+        if a.auto and cands:
+            c = cands[0]
+            print("   ★节流：已存在合规档 %s（映射 %.0f%%｜落后 %.0f 分钟｜指纹 %s）⇒ ★跳过重建" % (
+                c["name"], c["cons"], c["lag"], c["sha16"]))
+            print("     ⇒ 如需采用：index_switch.py --to %s（★默认指针未改）" % c["name"])
+            return 0
+        st = SEAT/"exp"/".cache"/"index_rebuild_state.json"
+        last = 0
+        if st.exists():
+            try: last = float(_json.loads(st.read_text(encoding="utf-8")).get("last_ts", 0))
+            except Exception: last = 0
+        gap = (time.time() - last)/60.0
+        if a.auto and last and gap < a.min_interval:
+            print("   ★节流：距上次重建仅 %.1f 分钟（下限 %d）⇒ ★跳过重建" % (gap, a.min_interval))
+            return 0
         out = SEAT/"exp"/".cache"/("section_index_%s.json" % time.strftime("%Y%m%d_%H%M"))
         env = dict(os.environ); env["OPL_SECTION_IDX"] = str(out)
         print("   → 触发重建：%s" % out.name)
         pr = subprocess.run([sys.executable, str(SEAT/"exp"/"section_search.py"), "--build"],
                             capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
         for l in ((pr.stdout or "") + (pr.stderr or "")).splitlines()[-2:]: print("     " + l.strip()[:100])
+        if out.exists():
+            st.write_text(_json.dumps({"last_ts": time.time(), "last_file": out.name,
+                "at": time.strftime("%Y-%m-%dT%H:%M:%S+0800")}, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
         if a.auto and out.exists():
             # ★自动重建后即复查（2026-10-12）：以"重建后之档"再跑一次本检测（子进程，env 指新档）
             print("   → 自动重建后复查（新档 %s）" % out.name)
@@ -99,6 +137,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--index", default=""); ap.add_argument("--rebuild", action="store_true")
     ap.add_argument("--auto", action="store_true")      # ★检出即重建＋重建后复查（仍不改默认指针）
     ap.add_argument("--switch", action="store_true")    # ★重建后可选切换指针（默认不切）
+    ap.add_argument("--min-interval", type=int, default=10)   # ★节流：两次重建之最小间隔（分钟）
     ap.add_argument("--json", default="")
     ap.add_argument("--tolerance", type=int, default=30)   # ★时效容差（分钟）
     sys.exit(run(ap.parse_args()))
