@@ -131,7 +131,7 @@ def _otl_read(link_id, to=150):
     return d.get("content", ""), {"code": code, "name": d.get("name")}
 
 print("\n  ═══ ② 全量复拉（%d 件）═══" % len([k for k in manifest if not k.startswith("_")]))
-t1 = time.time(); chg = same = fail = 0; skip_type = 0
+t1 = time.time(); chg = same = fail = 0; skip_type = 0; skip_up = 0
 for key, v in list(manifest.items()):
     if key.startswith("_"): continue
     if time.time()-t1 > a.budget:
@@ -143,6 +143,9 @@ for key, v in list(manifest.items()):
         _e = str(meta.get("err") or "")
         if "类型不支持" in _e or "Unsupported" in _e or "400001" in _e:
             skip_type += 1; print("   · %-10s ★跳过（类型不支持，永久不可读）⇒ 不计失败" % key); continue
+        # ★2026-10-12 加（-1301 之判）：上游 400100"文档内容抽取失败"亦单列（固定集合，非我之过）
+        if "400100" in _e or "内容抽取失败" in _e:
+            skip_up += 1; print("   · %-10s ★跳过（上游 400100 抽取失败，非我之过）" % key); continue
         fail += 1; print("   ✗ %-10s %s" % (key, meta.get("err"))); continue
     # ★空内容闸（2026-10-12 立；因 1319/1321 批曾写入 0 字空档而工器报"变更"）
     if not c or not c.strip():
@@ -175,8 +178,8 @@ for key, v in list(manifest.items()):
         print("        ～ " + t[:66])
 manifest["_updated"] = time.strftime("%Y-%m-%dT%H:%M:%S+0800")
 IDX.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
-print("\n  ═══ 汇总：复拉 %.1f s ｜ 变更 %d ｜ 未变 %d ｜ ★跳过(类型不支持) %d ｜ 失败 %d ｜ 档案 %d 件 ═══" % (
-    time.time()-t1, chg, same, skip_type, fail, len([k for k in manifest if not k.startswith("_")])))
+print("\n  ═══ 汇总：复拉 %.1f s ｜ 变更 %d ｜ 未变 %d ｜ ★跳过(类型不支持) %d ｜ ★跳过(上游抽取) %d ｜ 失败 %d ｜ 档案 %d 件 ═══" % (
+    time.time()-t1, chg, same, skip_type, skip_up, fail, len([k for k in manifest if not k.startswith("_")])))
 if chg:
     nd = SEAT/"outbox"/"notify"; nd.mkdir(parents=True, exist_ok=True)
     nf = nd/("doc_update_%s.md" % time.strftime("%Y%m%d_%H%M"))
