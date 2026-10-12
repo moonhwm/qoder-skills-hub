@@ -158,15 +158,30 @@ try:
         import hashlib as _h
         _D = SEAT/"archive"/"docs"
         def _sh(name):
+            """★改读"最后非空版"（＝现行版）（2026-10-12）：最新版可能为空档（见 -68 事故）
+            ⇒ 若据"最新版"判"基准"，必得假绿（空档对空档亦同哈希）"""
             vs = sorted((_D/name).glob("v_2026*.md"))
-            if not vs: return None, None
-            x = vs[-1].read_text(encoding="utf-8", errors="replace")
-            return vs[-1].stem[2:], _h.sha3_256(x.encode()).hexdigest()[:16]
-        _a, _ha = _sh("kd_McccFi"); _b, _hb = _sh("outline")
-        _same = (_ha is not None and _ha == _hb)
-        print("   纲要 正本 %s/%s ｜ 副本 %s/%s ⇒ %s" % (
-            _a, (_ha or "无")[:12], _b, (_hb or "无")[:12], "★同哈希（基准最新）" if _same else "★不同哈希 ⇒ 须核"))
-        land["outline_hash"] = {"canon": _ha, "copy": _hb, "same": _same}
+            ok = []
+            for v in vs:
+                x = v.read_text(encoding="utf-8", errors="replace")
+                if len(x) > 0: ok.append((v, x))
+            if not ok: return None, None, 0, (vs[-1].stem[2:] if vs else None)
+            v, x = ok[-1]
+            return v.stem[2:], _h.sha3_256(x.encode()).hexdigest()[:16], len(x), (vs[-1].stem[2:])
+        # ★自纠（2026-10-12）：空档对空档亦"同哈希" ⇒ 若不核非空，即得"★同哈希（基准最新）"之假绿
+        _a, _ha, _na, _la = _sh("kd_McccFi"); _b, _hb, _nb, _lb = _sh("outline")
+        _stale = (_la != _a) or (_lb != _b)
+        if min(_na, _nb) == 0:
+            _same = False
+            _verdict = "★两者或其一为空档（%d／%d 字）⇒ ★不可判（勿读作同哈希）" % (_na, _nb)
+        else:
+            _same = (_ha is not None and _ha == _hb)
+            _verdict = "★同哈希（现行版）" if _same else "★不同哈希 ⇒ 须核"
+            if _stale: _verdict += "｜★注：最新版为空档（%s／%s），已改读现行版" % (_la, _lb)
+        print("   纲要 正本 %s/%s（%d 字）｜ 副本 %s/%s（%d 字）⇒ %s" % (
+            _a, (_ha or "无")[:12], _na, _b, (_hb or "无")[:12], _nb, _verdict))
+        land["outline_hash"] = {"canon": _ha, "copy": _hb, "same": _same, "chars": [_na, _nb],
+                                "canon_ver": _a, "copy_ver": _b, "stale_latest": _stale}
     except Exception as _e:
         print("   纲要核验未能执行：%s" % str(_e)[:60])
 
@@ -174,9 +189,124 @@ try:
 except Exception as e:
     print("   ⚠ ⑨ 未能执行：%s" % str(e)[:100])
 
+# ★⑩ 索引陈旧检测（2026-10-12 立）：应「旧索引 3,126 节／无 tf／件号映射仅 47%」之发现
+_idx_ok = None
+_idx_guard_json = None
+try:
+    import os as _os, subprocess as _sp
+    _ig = SEAT/"exp"/"index_guard.py"
+    if _ig.exists():
+        print("\n  ═══ ⑩ 索引陈旧检测（★--auto：检出即重建＋复查；★不改默认指针）═══")
+        _igj = SEAT/"outbox"/"mem"/"index_guard_daily_20261012.json"
+        _pr = _sp.run([sys.executable, str(_ig), "--auto", "--json", str(_igj)],
+                      capture_output=True, text=True, encoding="utf-8", errors="replace", env=dict(_os.environ))
+        for _l in ((_pr.stdout or "") + (_pr.stderr or "")).splitlines():
+            _s = _l.strip()
+            if _s.startswith(("节 ", "件号映射", "时效：", "→ ", "⇒ 复查判", "★节流", "⇒ 如需采用")) or (_s.startswith(("①", "②", "③", "④")) and "⇒" in _s):
+                print("   " + _s[:118])
+        _idx_ok = (_pr.returncode == 0)
+        # ★机读键值（2026-10-12）：取 index_guard 之 JSON 读数
+        try:
+            if _igj.exists(): _idx_guard_json = json.loads(_igj.read_text(encoding="utf-8"))
+        except Exception: pass
+        print("   ⇒ 判：%s（退出码 %d）" % ("✓ 索引新且自洽（或已重建／复用合规档并复查通过）" if _idx_ok else "★索引陈旧／不自洽且无合规档可复用 ⇒ 须人工查", _pr.returncode))
+    else:
+        print("\n  ═══ ⑩ 索引陈旧检测：★检测器不在（未测）")
+except Exception as e:
+    print("   ⚠ ⑩ 未能执行：%s" % str(e)[:100])
+
+# ★⑪ 记忆变更日志（2026-10-12 立）：比对"记忆面"（指针／索引档／台账／登记表／档案／总线）之变更并留痕
+_mcl = None
+_mcl_last = None
+_mcl_state = None
+try:
+    import subprocess as _sp2, os as _os2
+    _mc = SEAT/"exp"/"memory_change_log.py"
+    if _mc.exists():
+        print("\n  ═══ ⑪ 记忆变更日志 ═══")
+        _pr2 = _sp2.run([sys.executable, str(_mc)], capture_output=True, text=True, encoding="utf-8",
+                        errors="replace", env=dict(_os2.environ))
+        for _l in ((_pr2.stdout or "") + (_pr2.stderr or "")).splitlines():
+            _s = _l.strip()
+            if _s.startswith(("记忆变更日志 ｜", "★", "记忆面读数", "⇒ 判")):
+                print("   " + _s[:118])
+        _mcl = (_pr2.returncode == 0)
+        # ★机读键值（2026-10-12）：取变更日志末条与状态快照
+        try:
+            _cf = SEAT/"ledger"/"memory_changes.jsonl"
+            if _cf.exists():
+                _ls = [x for x in _cf.read_text(encoding="utf-8", errors="replace").splitlines() if x.strip()]
+                if _ls: _mcl_last = json.loads(_ls[-1])
+        except Exception: pass
+        try:
+            _sf = SEAT/"ledger"/"memory_state.json"
+            if _sf.exists(): _mcl_state = json.loads(_sf.read_text(encoding="utf-8"))
+        except Exception: pass
+    else:
+        print("\n  ═══ ⑪ 记忆变更日志：★器不在（未测）")
+except Exception as e:
+    print("   ⚠ ⑪ 未能执行：%s" % str(e)[:100])
+
+# ★⑫ 决策读数之置信度校核（2026-10-12 立）：对全部决策读数档统一校核"自报 confidence vs max(概率)"并留痕
+_conf_cal = None
+try:
+    import subprocess as _sp3, os as _os3
+    _cc = SEAT/"exp"/"conf_calibration_audit.py"
+    if _cc.exists():
+        print("\n  ═══ ⑫ 决策读数之置信度校核 ═══")
+        _ccj = SEAT/"outbox"/"mem"/"conf_calibration_20261012.json"
+        _pr3 = _sp3.run([sys.executable, str(_cc), "--json", str(_ccj)], capture_output=True, text=True,
+                        encoding="utf-8", errors="replace", env=dict(_os3.environ))
+        for _l in ((_pr3.stdout or "") + (_pr3.stderr or "")).splitlines():
+            _s = _l.strip()
+            if _s.startswith(("置信度校核", "⇒ 汇总", "⇒ 已追加")) or (_s.startswith(("①", "②", "③")) and "⇒" in _s):
+                print("   " + _s[:118])
+        if _ccj.exists():
+            try: _conf_cal = json.loads(_ccj.read_text(encoding="utf-8"))
+            except Exception: pass
+        print("   ⇒ 判：%s（退出码 %d）" % ("✓ 校核完成（不一致项已逐项标注）" if _pr3.returncode == 0 else "★校核异常 ⇒ 须查", _pr3.returncode))
+    else:
+        print("\n  ═══ ⑫ 决策校核：★器不在（未测）")
+except Exception as e:
+    print("   ⚠ ⑫ 未能执行：%s" % str(e)[:100])
+
 print("\n  ═══ 汇总 ═══")
 tot_same = sum(x[1] for x in pairs); tot_diff = sum(x[2] for x in pairs); tot_miss = sum(x[3] for x in pairs)
 print("   同哈希 %d ｜ 异哈希 %d ｜ 仅正本有 %d" % (tot_same, tot_diff, tot_miss))
+# ★索引指纹与读数纳入汇总（2026-10-12）：读 ledger/index_registry.jsonl，按指纹聚合，并标出"当前指向"之档与其读数
+_idx_sum = None
+try:
+    _REG = SEAT/"ledger"/"index_registry.jsonl"
+    if _REG.exists():
+        _rows = [json.loads(l) for l in _REG.read_text(encoding="utf-8").splitlines() if l.strip()]
+        _agg = {}
+        for _r in _rows:
+            if _r.get("kind") == "correction" or not _r.get("sha16"): continue
+            _a = _agg.setdefault(_r["sha16"], {"names": [], "sections": _r.get("sections"), "tf": _r.get("tf"),
+                                              "map_pct": _r.get("map_pct"), "readings": _r.get("readings") or {}})
+            _a["names"].append(_r.get("name"))
+        _cp, _csrc = None, None
+        _ptr = SEAT/"exp"/".cache"/"index_pointer.json"
+        if _ptr.exists():
+            try: _cp = pathlib.Path(json.loads(_ptr.read_text(encoding="utf-8"))["index"]).name; _csrc = "pointer"
+            except Exception: pass
+        if _cp is None: _cp, _csrc = "section_index.json", "default"
+        _cur_sha = None
+        for _s, _a in _agg.items():
+            if _cp in _a["names"]: _cur_sha = _s
+        print("   索引：%d 档 ⇒ ★%d 个指纹 ｜ 当前指向 %s（%s）%s" % (
+            sum(len(_a["names"]) for _a in _agg.values()), len(_agg), _cp, _csrc,
+            ("｜指纹 " + (_cur_sha or "未登记")) if True else ""))
+        for _s, _a in _agg.items():
+            _rd = _a.get("readings") or {}
+            _txt = ("读数 none_B %.3f／★multi_B %.3f／oracle_B %.3f" % (_rd["none_B"], _rd["multi_B"], _rd["oracle_B"])) if "none_B" in _rd else "★未录读数"
+            print("     %s ⇒ %d 份 ｜ 节 %s ｜ tf %s ｜ 映射 %s%% ｜ %s%s" % (
+                _s, len(_a["names"]), _a.get("sections"), "有" if _a.get("tf") else "★无", _a.get("map_pct"), _txt,
+                "　★当前" if _s == _cur_sha else ""))
+        _idx_sum = {"files": sum(len(_a["names"]) for _a in _agg.values()), "fingerprints": len(_agg),
+                    "current": _cp, "current_src": _csrc, "current_sha16": _cur_sha}
+except Exception as _e:
+    print("   ⚠ 索引汇总未能执行：%s" % str(_e)[:80])
 out = SEAT/"outbox"/"mem"/"daily_nine_audit_20261010.json"
 out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(json.dumps({
@@ -187,5 +317,9 @@ out.write_text(json.dumps({
     "totals": {"same": tot_same, "diff": tot_diff, "only_canonical": tot_miss},
     "item6_sig_verify": sig_stat,
     "item7_landing_rates": land,
+    "item10_index_guard": _idx_guard_json,
+    "item11_memory_changes": _mcl_last,
+    "item11_memory_state": _mcl_state,
+    "item_index_summary": _idx_sum,
 }, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
 print("   落盘：" + str(out))
