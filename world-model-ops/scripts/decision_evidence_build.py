@@ -70,13 +70,39 @@ def main():
     print("  ═══ 外部事实源之证据构造（★台账为源）═══")
     print("   库 %d 条 ｜ 基准 %d 项 ｜ top-%d" % (len(lib), len(items), a.topk))
     # 库向量（缓存多半已有）
+    # ★2026-10-12 自纠二十三（承 -1360 之二十二）：★本器自嵌其库 —— 原只取缓存，而 ask_hist 之库
+    #   文本为 subject＋detail[:80] ⇒ 与本器之 subject 原文键不同 ⇒ 不命中 ⇒ 库长期只 124 条。
+    #   今：缺则该器★自嵌（闸内；★宁停不超）。
     libv = []
-    miss_lib = 0
+    miss_texts = [(nm, s) for nm, s in lib if vec(s, False, 0.0)[0] is None]
+    lib_est = sum(len(s) for _n, s in miss_texts)/1.7/1000*0.0002
+    print("   ★库向量命中 %d／%d（★缺 %d ⇒ 本器自嵌须 ≈%.6f 元）"
+          % (len(lib)-len(miss_texts), len(lib), len(miss_texts), lib_est))
+    if miss_texts and a.run and a.budget_max >= lib_est:
+        kk = key()
+        if kk:
+            op2 = urllib.request.build_opener(urllib.request.ProxyHandler({"http": PROXY, "https": PROXY}))
+            done = 0
+            for i in range(0, len(miss_texts), 8):
+                batch = [s for _n, s in miss_texts[i:i+8]]
+                b = json.dumps({"model": "text-embedding-3-small", "input": batch}, ensure_ascii=False).encode()
+                rq = urllib.request.Request("https://api.302ai.cn/v1/embeddings", data=b,
+                                            headers={"Authorization": "Bearer " + kk, "Content-Type": "application/json"})
+                with op2.open(rq, timeout=180) as resp:
+                    jj = json.loads(resp.read().decode("utf-8", "replace"))
+                for s2, dd in zip(batch, jj.get("data", [])):
+                    v2 = dd["embedding"]; h2 = hashlib.sha1(str(s2).encode("utf-8")).hexdigest()[:20]
+                    (CACHE/("e302s_"+h2+".json")).write_text(json.dumps({"v": v2, "text_sha1_20": h2,
+                        "text_head": str(s2)[:80], "n_chars": len(str(s2)), "dim": len(v2),
+                        "model": "text-embedding-3-small", "src": "decision_ev", "ts": "2026-10-12"},
+                        ensure_ascii=False), encoding="utf-8", newline="\n")
+                    done += 1
+            print("   ★已自嵌库向量 %d 条" % done)
     for name, s in lib:
         v, note = vec(s, False, 0.0)
-        if v is None: miss_lib += 1; continue
+        if v is None: continue
         libv.append((name, s, v))
-    print("   ★库向量命中 %d／%d（★缺 %d ⇒ 若须嵌请先跑 ask_hist 以复用其缓存）" % (len(libv), len(lib), miss_lib))
+    print("   ★库向量可用 %d／%d" % (len(libv), len(lib)))
     if len(libv) < 50:
         print("   ⇒ 判：★库向量不足（<50），止（★宁停不做假）"); return 2
     need = [str(it.get("stmt") or it.get("q") or "") for it in items]
