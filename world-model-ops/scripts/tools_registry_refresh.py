@@ -2,12 +2,12 @@
 """tools_registry_refresh.py —— 器物登记刷新（2026-10-12 立）
 背景：cairn/tools 已达 398 个 .py，而仓内登记表（mem/cairn_nameregistry_20261009.json）停在 10-09
      ⇒ 抽样核 6 个今日新器（decision_model／decision_rerank／emb_cache／vec_index／glb_uv_check／uv_stretch_check）★皆未登记
-     ⇒ 即"文实脱节"：外人（他席）无法从登记表发现新器。
+     ⇒ 即「文实脱节」：外人（他席）无法从登记表发现新器。
 本器（★零依赖、只读文档串首行，轻量）：
   ① 扫 cairn/tools/*.py（及可选 seat/exp）⇒ 取器物名与其文档串★首行（一句话用途）
-  ② 读既有登记表（若有）之键集 ⇒ ★列"新增（未登记）"与"已登记"
+  ② 读既有登记表（若有）之键集 ⇒ ★列「新增（未登记）」与"已登记"
   ③ 写新登记表（★只增不改：文件名带日期；不覆盖旧表）
-判据（可失败）：①扫得器物数 > 0 ②每个器物皆有其文档串首行（缺者标"★无文档串"）③未登记者已逐条列出
+判据（可失败）：①扫得器物数 > 0 ②每个器物皆有其文档串首行（缺者标「★无文档串」）③未登记者已逐条列出
 用法：python tools_registry_refresh.py --tools <目录> [--prev <旧登记表>] [--out <新表>]
 （中文串一律用「」）
 """
@@ -56,9 +56,39 @@ def main():
         try:
             j = json.loads(pathlib.Path(a.prev).read_text(encoding="utf-8-sig"))
             if isinstance(j, dict):
-                # 兼容多种形态：{name: …} 或 {"tools": [...]} 
-                ks = list(j.keys())
-                prev = set(ks) if "tools" not in j else {str(x.get("name") if isinstance(x, dict) else x) for x in j["tools"]}
+                # 兼容多种形态：{name: …} 或 {"tools": [...]} 或 {"items": [...]/{}}
+                # ★2026-10-12 自纠（-1315 之果）：旧表 cairn_nameregistry_v2_20261009.json 之器名★在 items 之内，
+                #   而顶层 9 键（ts/seat/note/count/by_seat/by_series/hyphen_series/unmatched/items）★皆非器名
+                #   ⇒ 原取键法把顶层键当器名集 ⇒ "未登记"误报为"全部"（440/440）⇒ 今补 items 分支
+                def _stem(s):
+                    # ★2026-10-12 加（-1317 之果）：指纹清单之器名在 path（如 "exp/a2a_client.py"）
+                    #   ⇒ 须取 basename 并去扩展名，方能与现行器名（无目录无扩展名）匹配
+                    b = str(s).replace("\\", "/").split("/")[-1]
+                    return b[:-3] if b.endswith(".py") else b
+                def _names(v):
+                    if isinstance(v, dict):
+                        return {str(k) for k in v.keys()}
+                    if isinstance(v, list):
+                        out = set()
+                        for x in v:
+                            if isinstance(x, dict):
+                                if "path" in x: out.add(_stem(x["path"]))
+                                elif "name" in x: out.add(str(x["name"]))
+                                elif "file" in x: out.add(str(x["file"]))
+                            else:
+                                out.add(_stem(x))
+                        return out
+                    return set()
+                if "tools" in j:
+                    prev = _names(j["tools"])
+                elif "items" in j:
+                    prev = _names(j["items"])
+                else:
+                    prev = set(j.keys())
+                # ★防呆：若旧表所取之名远少于现行器物（<10%）⇒ 提示格式可能未匹配
+                if prev and len(prev) < 0.1 * max(1, len(rows)):
+                    print("   ★提示：旧表取得器名仅 %d 个（远少于现行 %d）⇒ 恐格式未匹配，"
+                          "请核旧表结构（未登记列可能有误）" % (len(prev), len(rows)))
         except Exception as ex:
             print("   ★旧登记表不可解析：%s" % str(ex)[:60])
     have = {r["name"] for r in rows}
