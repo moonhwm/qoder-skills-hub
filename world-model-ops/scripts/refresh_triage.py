@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""refresh_triage.py —— 例行复拉之"第 3.5 步"裁决器（2026-10-12 立，应 -1218／-1220／-1221）
-问题：含"临时签名 URL"之档（如 polish，实测嵌 73 处）每轮复拉皆报"变更"，然★归一后节级差异为 0
-     ⇒ 若照旧出短件，则为"假变更"出件（浪费且污染台账）。
+"""refresh_triage.py —— 例行复拉之「第 3.5 步」裁决器（2026-10-12 立，应 -1218／-1220／-1221）
+问题：含「临时签名 URL」之档（如 polish，实测嵌 73 处）每轮复拉皆报「变更」，然★归一后节级差异为 0
+     ⇒ 若照旧出短件，则为「假变更」出件（浪费且污染台账）。
 本器（零外呼、★只增不改）一步裁决：
   ① 读 outbox/notify 最新之 doc_update_*.md ⇒ 取其列名之文档（manifest 键，如 polish）
-  ② 对该档，从 archive/docs/<键>/ 取最新两版 v_*.md ⇒ 跑"归一后节级差异"（内联实现，复用同法）
+  ② 对该档，从 archive/docs/<键>/ 取最新两版 v_*.md ⇒ 跑「归一后节级差异」（内联实现，复用同法）
   ③ ★给裁决：若归一后新增/删除/变动皆 0 ⇒ "★假变更 ⇒ 只台账一行，不出短件"；否则 ⇒ "★实质变更 ⇒ 出短件"
 判据（可失败）：①能读到最新通知；②能取到该档 ≥2 版；③★裁决已给出（出件／不出件）
 用法：python refresh_triage.py [--notify-dir <dir>] [--archive <dir>] [--json out]
@@ -61,7 +61,7 @@ def main():
     txt = latest.read_text(encoding="utf-8-sig", errors="replace")
     keys = re.findall(r"-\s+\*\*([A-Za-z0-9_\-]+)\*\*（", txt)
     if not keys:
-        # ★格式 B（只给计数）⇒ 由 manifest 取"latest.ver 最近之档"（至多 5 个）
+        # ★格式 B（只给计数）⇒ 由 manifest 取「latest.ver 最近之档」（至多 5 个）
         try:
             mf = json.loads((ar/"index.json").read_text(encoding="utf-8-sig"))
             cand = []
@@ -92,7 +92,7 @@ def main():
         print("      归一后字数 %d ⇒ %d（差 %+d）｜节 %d ⇒ %d" % (r["norm_chars"][0], r["norm_chars"][1],
               r["norm_chars"][1]-r["norm_chars"][0], r["sections"][0], r["sections"][1]))
         print("      ★新增 %d／删除 %d／变动 %d ⇒ ★%s" % (len(r["added"]), len(r["removed"]), len(r["changed"]),
-              "实质变更" if real else "假变更（归一后全 0）"))
+              "实质变更「 if real else 」假变更（归一后全 0）"))
         for n in r["added"][:6]: print("         + %s" % n[:80])
         for n in r["removed"][:6]: print("         - %s" % n[:80])
         for n in r["changed"][:6]: print("         ~ %s" % n[:80])
