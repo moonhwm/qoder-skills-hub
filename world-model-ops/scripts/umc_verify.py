@@ -62,6 +62,15 @@ def main():
     for r in faces["esc.*"]:
         t0, t1 = ts(r), ts({"ts": r.get("handle_ts") or r.get("resolved_ts") or ""})
         if t0 and t1: e2e.append(t1-t0)
+    # ★接入升级面计时簿（esc_watch.jsonl）：端到端可评
+    ew = SEAT/"ledger"/"esc_watch.jsonl"
+    n_ew = 0
+    if ew.exists():
+        for l in ew.read_text(encoding="utf-8", errors="replace").splitlines():
+            if not l.strip(): continue
+            j = json.loads(l)
+            if j.get("event") == "close" and j.get("elapsed_s") is not None:
+                e2e.append(float(j["elapsed_s"])); n_ew += 1
     over = [g for g in e2e if g > 60]
     gaps = e2e
     # ④ 五段式回执
@@ -73,7 +82,7 @@ def main():
     noface_pct = 100.0*len(faces["无面"])/max(1, n)
     crit = {"①无面占比 ≤10%%（现 %.1f%%；超出即须补规则，非即判违规）" % noface_pct: noface_pct <= 10.0,
             "②hb.* 未触达机主": len(hb_owner) == 0,
-            "③升级面端到端 ≤60 s（可评 %d 次；无处置记录则不可评）" % len(gaps): (len(over) == 0),
+            "③升级面端到端 ≤60 s（可评 %d 次，含计时簿 %d 次）" % (len(gaps), n_ew): (len(over) == 0),
             "④五段式回执齐备": (not miss)}
     for k, v in crit.items(): print("   %s ⇒ %s" % (k, "✓" if v else "✗"))
     if faces["无面"]:
