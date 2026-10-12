@@ -24,6 +24,19 @@ def run(args, tries=4, need=None, label=""):
     print("   ✗ %s 失败（已重试 %d 次）" % (label, tries)); return None
 
 
+def precheck_ledger(led):
+    """★出件前先校验台账条目必填键（快速失败，免"件已出而账未记"）"""
+    import pathlib as _pl
+    f = _pl.Path(led)
+    if not f.exists():
+        print("   ✗ 台账条目文件不存在：%s" % led); return False
+    txt = f.read_text(encoding="utf-8", errors="replace")
+    need = ("ev_type", "subject", "detail", "evidence", "seal_files")
+    miss = [k for k in need if (k + ":") not in txt]
+    if miss:
+        print("   ✗ 台账条目缺必填键 %s ⇒ 先补键再出件（本次不落笔）" % miss); return False
+    print("   ✓ 台账条目键齐备（%s）" % "、".join(need)); return True
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--file", required=True)
     ap.add_argument("--note", default=""); ap.add_argument("--ledger", default="")
@@ -35,6 +48,8 @@ def main():
         print("   顺序：打钟 → 术语闸 → 署签 → 复核 → 投递三处 → 总线 emit → 台账")
         print("   ⇒ 判：驱动就绪（本轮不落笔）"); return 0
     seat = SEAT
+    if a.ledger and not precheck_ledger(a.ledger):
+        return 2
     run([str(seat/"exp"/"stamp_time.py"), str(f)], need="已打钟", label="打钟")
     run([str(seat/"exp"/"termtable.py"), "check", "--paths", str(f)], label="术语闸")
     run([str(seat/"exp"/"sig_block.py"), "--file", str(f), "--append", "--note", a.note], need="逐位相符", label="署签")
