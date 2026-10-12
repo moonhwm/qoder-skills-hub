@@ -49,6 +49,15 @@ def build_prompt(q, labels, kind="auto"):
         base += "\n★是非题约定：label 取「是」或「否」；probs 之键为「是」「否」。"
     return base
 
+def guess_kind(labels):
+    """★按标签集自动判别题型（2026-10-12）：区间形 ⇒ score；甲/乙/丙式 ⇒ classify；是/否 ⇒ yesno；否则 auto"""
+    ls = [str(x).strip() for x in (labels or [])]
+    if any(re.match(r"^\d+\s*[-–~]\s*\d+$", x) for x in ls): return "score"
+    if any(x in ("甲", "乙", "丙", "丁") for x in ls): return "classify"
+    if set(ls) <= {"是", "否"}: return "yesno"
+    return "auto"
+
+
 def normalize(d):
     pr = {k: float(v) for k, v in (d.get("probs") or {}).items() if isinstance(v, (int, float)) or (isinstance(v, str) and v.replace('.','',1).isdigit())}
     s = sum(pr.values())
@@ -94,10 +103,10 @@ def verdict(d, labels):
             crit["④label ∈ 给定集合（现 label=%s 不在其中）" % str(_lb)[:8]] = False
     return pr, conf_cal, crit, rep_f
 
-def call_chat(q, labels, k):
+def call_chat(q, labels, k, kind=None):
     import urllib.request
     body = json.dumps({"model": CHAT_MODEL, "temperature": 0, "max_tokens": 600,
-                       "messages": [{"role": "user", "content": build_prompt(q, labels)}]}).encode()
+                       "messages": [{"role": "user", "content": build_prompt(q, labels, kind or guess_kind(labels))}]}).encode()
     req = urllib.request.Request(EP_CHAT, data=body, headers={"Authorization": "Bearer " + k, "Content-Type": "application/json"})
     op = urllib.request.build_opener(urllib.request.ProxyHandler({"http": PROXY, "https": PROXY}))
     with op.open(req, timeout=90) as r:
@@ -118,9 +127,9 @@ def call_chat(q, labels, k):
     d["_raw_head"] = _raw_head
     return d
 
-def call_typesafeai(q, labels, k):
+def call_typesafeai(q, labels, k, kind=None):
     import urllib.request
-    body = json.dumps({"model": "typesafeai", "input": build_prompt(q, labels)}).encode()
+    body = json.dumps({"model": "typesafeai", "input": build_prompt(q, labels, kind or guess_kind(labels))}).encode()
     req = urllib.request.Request(EP_TS, data=body, headers={"Authorization": "Bearer " + k, "Content-Type": "application/json"})
     op = urllib.request.build_opener(urllib.request.ProxyHandler({"http": PROXY, "https": PROXY}))
     try:
@@ -131,12 +140,20 @@ def call_typesafeai(q, labels, k):
     except Exception as e:
         return {"_error": str(e)[:160], "forwards": 0}
 
-SYN = {"label": "可", "probs": {"可": 0.82, "不可": 0.18}, "score": 0.8, "forwards": 1}
+# ★合成响应随题型（2026-10-12）：使 --engine offline 能按题型演示（零花费）
+SYN_BY_KIND = {
+    "score": {"label": "8", "probs": {"0-3": 0.05, "4-6": 0.15, "7-10": 0.80}, "score": 0.8, "confidence": 0.80, "forwards": 1},
+    "classify": {"label": "丙", "probs": {"甲": 0.1, "乙": 0.25, "丙": 0.65}, "score": 0.65, "confidence": 0.65, "forwards": 1},
+    "yesno": {"label": "否", "probs": {"是": 0.24, "否": 0.76}, "score": 0.76, "confidence": 0.76, "forwards": 1},
+    "auto": {"label": "可", "probs": {"可": 0.82, "不可": 0.18}, "score": 0.8, "confidence": 0.82, "forwards": 1},
+}
+SYN = SYN_BY_KIND["auto"]
 SYN_BAD = {"label": "不可", "probs": {"可": 0.5, "不可": 0.4}, "score": 0.4, "forwards": 2}
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--engine", default="offline", choices=["typesafeai", "chat", "offline"])
-    ap.add_argument("--q", default=""); ap.add_argument("--labels", default="可,不可"); ap.add_argument("--selftest", action="store_true")
+    ap.add_argument("--q", default=""); ap.add_argument("--labels", default="可,不可")
+    ap.add_argument("--kind", default="auto", choices=["auto", "yesno", "classify", "score"]); ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--json", default="")
     a = ap.parse_args()
     labels = [x for x in a.labels.split(",") if x]
@@ -153,15 +170,16 @@ def main():
     k = key()
     if a.engine == "typesafeai":
         if not k: print("  ★无凭据 ⇒ 未测"); return 2
-        d = call_typesafeai(q, labels, k)
+        d = call_typesafeai(q, labels, k, a.kind)
         print("  ═══ 引擎 typesafeai（Jev）═══")
         if "_error" in d: print("   ★未通：%s" % d["_error"]); return 1
     elif a.engine == "chat":
         if not k: print("  ★无凭据 ⇒ 未测"); return 2
-        d = call_chat(q, labels, k)
-        print("  ═══ 引擎 chat（★代为：typesafeai 未通，暂以 chat 模型代行）═══")
+        d = call_chat(q, labels, k, a.kind)
+        print("  ═══ 引擎 chat（★代为：typesafeai 未通，暂以 chat 模型代行）｜题型 %s ═══" % (a.kind if a.kind != "auto" else guess_kind(labels)))
     else:
-        d = SYN; print("  ═══ 引擎 offline（★合成，仅供演示）═══")
+        _k = a.kind if a.kind != "auto" else guess_kind(labels)
+        d = SYN_BY_KIND.get(_k, SYN); print("  ═══ 引擎 offline（★合成，仅供演示）｜题型 %s ═══" % _k)
     pr, conf, crit, rep = verdict(d, labels)
     print("   待判：%s ｜ 判：%s ｜ 概率：%s ｜ 评分：%s ｜ ★校核后置信度：%s ｜ 模型自报：%s ｜ 前向：%s" % (
         q[:34], d.get("label"), json.dumps(pr, ensure_ascii=False), d.get("score"), conf, rep, d.get("forwards")))
