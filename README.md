@@ -66,7 +66,7 @@ verify 一致时打印根哈希并以 0 退出；不一致时列出差异文件�
 
 agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面比对；拿不准时以 evals 的触发语做回归。
 
-## 技能索引（92 件）
+## 技能索引（97 件）
 
 | 技能 | 说明 |
 |---|---|
@@ -99,6 +99,8 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [evidence-chain-verifier](./evidence-chain-verifier/) | 自修正信源 + 可证伪流程证据链 + 抗幻觉核查框架。定位为证据登记、抗幻觉校验、可证伪断言登记、信源分级与公开复核链接：当用户询问财务造假相关的爆料视频是从哪来的、有没有实锤，或要求信源核查、证据链梳理、事实查证、抗幻觉校验、可证伪断言登… |
 | [exam-isolation-ops](./exam-isolation-ops/) | [项目技能] 模拟考场隔离协议（考场隔离协议 v1.1）——用结构上相互隔离的子代理角色跑闭卷模拟考/盲考/真题演练/备考抽查：出题打包（物理剥离答案+泄漏扫描+sha256[:16] 指纹）、新鲜子代理考生闭卷单遍作答、双参考解答制作人 … |
 | [extpool-furnace-ops](./extpool-furnace-ops/) | [项目技能] 外池压测炉运维——用外部模型池（GLM 礼赠池、华为码道/CodeArts、华为云 ModelArts、阿里百炼、火山方舟、智谱等 MaaS 接口）对技能/命题/密码强度等对象做目的导向的对抗性压测与燃烧时的安全作业规程。触发… |
+| [forge-round-robin-ops](./forge-round-robin-ops/) | > 技能轮铸调度官——一批待锻技能的名册登记、能跑门（Phase A 静态可运行性）、轮铸排期（Phase B 完善轮）与裁定回录。 当用户说「排期轮铸」「轮铸这些技能」「技能排队锻造」「先能跑再完善」「锻造排期」「roster forge |
+| [fusion-cast-ops](./fusion-cast-ops/) | [项目技能] 整合熔铸元技能——把持续问答萃取成卡、正交沉淀入册、外池 LLM 轮铸裁定、四检闸验证的自包含循环（萃-排-铸-验）。触发（满足任一）：「萃取这张卡」「沉淀入册」「轮铸这轮」「测撞注册」「整合熔铸」「fusion cast」； |
 | [fusion-program-audit](./fusion-program-audit/) | 高校核聚变方向"聚变期权"真伪核查与考研择校评级。当用户需要判断某校宣称的核聚变/聚变/等离子体物理方向是实质布局还是标签嫁接、核查托卡马克/仿星器/直线装置真实状态、考研择校/读研择校中核查导师方向与学科实力、识别实验室核查/虚假宣传时使… |
 | [gitlab-cli-guide](./gitlab-cli-guide/) | 提供 GitLab 命令行工具（glab）的完整参考与自动化脚本，涵盖超过30个子命令，包括合并请求创建与审查、CI/CD流水线调试、Issue管理、仓库操作和认证配置等核心工作流。适用于通过终端管理MR/Issue、调试CI失败任务、批量… |
 | [goal-child-ops](./goal-child-ops/) | 赤子续行（目标系统×尼采孩子姿态的融合纪律·临时技能）将goal-mode的目标状态机（objective/verifier/迭代/complete/blocked）视为棋盘规则，以尼采三种变形的第三阶「孩子」（游戏、创造新价值、神圣的肯定… |
@@ -135,6 +137,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [ppp-city-verdict-audit](./ppp-city-verdict-audit/) | 城市/地区结论的 PPP 范式复核台（v1.3，含基准城支配性检验、快照纪律与阈值校准状态声明）（购买力平价=工资/房价购买力双锚）。当需要系统性复核既有「淘汰/候选/否决」城市结论清单、核查飞行与铁路通勤真实成本、并招募多代理 swarm… |
 | [qr-visual-rescue](./qr-visual-rescue/) | > |
 | [quant-frontier-lab](./quant-frontier-lab/) | 前沿算法实验台——教学级量化算法工具箱，覆盖 Gale-Shapley 志愿填报匹配、PSM 倾向得分/因果推断、DID 前置评估、SIR 传染模型（Gillespie/链二项式/边基分区）、谱半径免疫、MAML/Reptile 元学习玩具… |
+| [quant-lab-ops](./quant-lab-ops/) | quant-lab 量化工作台的口径纪律：费用、T+1、防未来函数、输出规范。当用户让我在 quant-lab 目录做数据、回测、推演、寻优相关工作时使用。 |
 | [quota-guard-ops](./quota-guard-ops/) | [项目技能] 额度守护运维——自主检测额度包/月订阅消耗信号，按 Q0–Q3 四档程式自适应运作，不逃逸前提下高性能输出。触发（满足任一）：①出现 quota 耗尽/加油包提示/「额度不足 去升级」徽标类信号；②用户说「额度」「加油包」「q… |
 | [registry-knowledge-ops](./registry-knowledge-ops/) | [项目技能] 注册处知识库——技能迭代注册处（/mnt/agents/upload/skill-iteration-registry/）的全文检索、锚链调阅与 INDEX 分区导览（用户侧主权件）。触发（满足任一）：①用户说「查注册处」「台… |
 | [release-gate-audit](./release-gate-audit/) | [项目技能] 外发/公开发布的事前审查闸门（v2.5.8 代码外发禁令的操作化）。当任何内容要流出沙箱——GitHub 建仓/推送、网盘分享、网页公开发布、给第三方发送文件——必须先过本闸门：五道漏洞审查（范围/时限/撤销/逃逸面/红线）+… |
@@ -147,6 +150,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [senior-rumor-check](./senior-rumor-check/) | 银龄传言核查员——面向长辈（老年用户）的传言核查适老化前端封装。把 rumor-chain-verifier 的拆链定断结果翻译成大白话、一句话结论先行的核查回复，并在核查后主动给出：追问三句（帮长辈继续摸清传言来源与动机）、操作建议（查什… |
 | [seo-copywriting-guide](./seo-copywriting-guide/) | 通过 12 步结构化工作流生成搜索引擎优化内容，产出一篇包含完整草稿、备选标题、Meta描述、FAQ结构化内容及CORE-EEAT自评清单的SEO文章。当用户提出“写一篇SEO文章”、“帮我写博客”、“创建针对某关键词的内容”、“撰写产品描… |
 | [skill-dispatch-hq](./skill-dispatch-hq/) | [项目技能] 技能调度总署——全部技能与公用数据库级插件能力的统一台账、集中调度分配、函询交割、计时器任务与授权法典的恒常总控件。触发（满足任一）：①用户（委托方）说「统一调度」「集中管理分配」「调度总署」「技能调度」或等价表述（含语音/同… |
+| [skill-forge-pipeline](./skill-forge-pipeline/) | > 技能锻造管线 v2.4.1（女娲-仓颉-达尔文 主链 + 女娲⇄达尔文 短链）——从实战或需求锻造新 Agent Skill 的标准管路。 当用户说「锻造技能」「五节点管线」「四节点短链」「用女娲仓颉达尔文管线锻造」「造个 skill」 |
 | [skill-library-auditor](./skill-library-auditor/) | 技能库（SKILL.md 仓库）全量审计工具。当用户需要盘点/审计/复核技能库、检测中英文镜像技能对、发现共享脚本冲突、校验 SKILL.md frontmatter 规范（name 与目录一致性、YAML 结构错误、缺 license/d… |
 | [skill-refresh-ops](./skill-refresh-ops/) | [项目技能] 技能刷新运维——「重新加载并刷新（更新下载）任何可能所需技能」流程的固化件：安装位可写性预检、全库盘点与版本漂移扫描、点名技能会话内热加载、全部已装载插件通道强制健康检查（每通道一次最小调用，自行研究调用方式）、dist 包源… |
 | [skill-reinstall-ops](./skill-reinstall-ops/) | [项目技能] 技能重装与分发运维——dist 目录技能包一键重装入安装位：预检可写性、逐包解压、旧版 .bak 备份、版本核验、零伪装如实报告；另管技能包 pip 化分发（把技能集合打成 wheel，用一串链接 PEP 508 直引安装）。… |
@@ -161,6 +165,7 @@ agent 用法：读 `entries.<技能名>.keywords` 与 `summary_zh` 做触发面�
 | [vision-ocr-pipeline](./vision-ocr-pipeline/) | 图像识读管线负责截图与长图的识读及跨平台传输。采用本地OCR双引擎分工架构，由RapidOCR执行全文识别并交由tesseract完成数字核验；支持按字高阈值压图以降低token消耗，对超长图片进行长条切片处理，最终生成跨AI环境可用的自包… |
 | [web-security-audit](./web-security-audit/) | 基于 OWASP Top 10 (2021) 标准提供代码安全审查，逐项检查 SQL 注入、XSS、SSRF、访问控制、加密失败等常见漏洞，并给出具体的漏洞代码示例与修复方案。当用户需要代码安全审查、安全加固、渗透测试辅助，或提及 OWAS… |
 | [wechat-article-deep-ingest](./wechat-article-deep-ingest/) | 微信公众号文章的深度摄取、批判归档与建构中枢。当用户提供 mp.weixin.qq.com 链接（单条/批量/多次少量）、要求抓取公众号全文（含hub页文中链接递归）、缓存为结构化命名的 md/docx/pdf/快照并自主归档、对招商宣传式… |
+| [world-model-ops](./world-model-ops/) | 开放式世界模型之作入口径（建世界/进房/保活/发令/取产物/定量判读）；由 A2A新席_石敢当Cairn 依实测血证整理 |
 | [zijue-self-determination](./zijue-self-determination/) | 自决（技能资产自我演进审议管线·临时技能）——把一次真实的技能自调用/自审计/自修复对话固化为可复用纪律：任何自我演进（自名、起名迭代、主权审议、技能自创自改）无论演进发生或自然演化出什么结果，都必须诚实记录并将全部结果广播。触发（满足任一… |
 
 ## 维护记录
