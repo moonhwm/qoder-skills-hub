@@ -94,6 +94,15 @@ def run(a):
             print("   ★节流：已存在合规档 %s（映射 %.0f%%｜落后 %.0f 分钟｜指纹 %s）⇒ ★跳过重建" % (
                 c["name"], c["cons"], c["lag"], c["sha16"]))
             print("     ⇒ 如需采用：index_switch.py --to %s（★默认指针未改）" % c["name"])
+            # ★消歧义（2026-10-12）：把"决策"写回 JSON —— 判 ✓ 是"存在合规档"，非"当前档合规"
+            if a.json:
+                try:
+                    _j = _json.loads(pathlib.Path(a.json).read_text(encoding="utf-8")) if pathlib.Path(a.json).exists() else {}
+                    _j["decision"] = {"action": "throttle_reuse", "chosen": c["name"], "chosen_sha16": c["sha16"],
+                                      "chosen_map_pct": c["cons"], "chosen_lag_min": c["lag"],
+                                      "checked_backend": idx.name, "note": "★判 ✓ 意为「存在合规档可复用」，非「当前指向之档合规」；★默认指针未改"}
+                    pathlib.Path(a.json).write_text(_json.dumps(_j, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+                except Exception: pass
             return 0
         st = SEAT/"exp"/".cache"/"index_rebuild_state.json"
         last = 0
@@ -130,6 +139,16 @@ def run(a):
         print("     ★据以检索须设 OPL_SECTION_IDX=%s" % out.name)
     elif ok:
         print("   ⇒ 判：✓ 索引新且自洽（无需重建）")
+    # ★消歧义（2026-10-12）：其余路径亦写 decision（none＝当前档即合规；rebuild＝已被重建）
+    if a.json:
+        try:
+            _p = pathlib.Path(a.json)
+            _j = _json.loads(_p.read_text(encoding="utf-8")) if _p.exists() else {}
+            if ok and "decision" not in _j:
+                _j["decision"] = {"action": "none", "chosen": idx.name, "checked_backend": idx.name,
+                                  "note": "★当前指向之档即合规 ⇒ 无需重建、无需复用他档"}
+            _p.write_text(_json.dumps(_j, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+        except Exception: pass
     return 0 if ok else 1
 
 if __name__ == "__main__":
