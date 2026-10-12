@@ -13,7 +13,8 @@ from collections import Counter
 HOME = pathlib.Path.home()
 SEAT = HOME/"WPSDrive"/"29969771"/"WPS云盘"/"月之暗面的Plasma游乐场"/"A2A新席_石敢当Cairn_20260928"
 EX = HOME/"WPSDrive"/"29969771"/"WPS云盘"/"月之暗面的Plasma游乐场"/"A2A共同体_共享交换区"
-IDX = SEAT/"exp"/".cache"/"section_index.json"
+import os as _os
+IDX = pathlib.Path(_os.environ["OPL_SECTION_IDX"]) if _os.environ.get("OPL_SECTION_IDX") else (SEAT/"exp"/".cache"/"section_index.json")
 
 
 def toks(s, n=2):
@@ -54,7 +55,7 @@ def build():
         s["tf"] = Counter(toks(s["body"] + " " + s["head"]))
         for w in s["tf"]: df[w] += 1
     N = len(secs); avg = sum(sum(s["tf"].values()) for s in secs)/max(1, N)
-    data = {"N": N, "avgdl": avg, "df": dict(df), "sections": [{"doc": s["doc"], "i": s["i"], "head": s["head"], "body": s["body"][:400]} for s in secs]}
+    data = {"N": N, "avgdl": avg, "df": dict(df), "sections": [{"doc": s["doc"], "i": s["i"], "tf": dict(s["tf"]), "head": s["head"], "body": s["body"][:400]} for s in secs]}
     IDX.parent.mkdir(parents=True, exist_ok=True)
     IDX.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8", newline="\n")
     print("  ✓ 索引建成：%d 节（源自 纲要 ＋ 交换区 CAIRN 件）｜%.1f MB" % (N, IDX.stat().st_size/1048576))
