@@ -62,8 +62,9 @@ def main():
             (dst/f.name).write_bytes(f.read_bytes()); print("   ✓ 投递 %s" % dst.name)
         except Exception as e:
             print("   ✗ 投递失败 %s：%s" % (dst, str(e)[:60]))
-    run([str(seat/"exp"/"lsbus_format_ops.py"), "emit", "--bus", str(EX/"bus"), "--path", str(f),
-         "--kind", "artifact", "--seat", "a2a-node-local"], need="已入总", label="总线 emit")
+    # ★emit 步改走 bus_dlq（含"总线合法性"与"读回复验"两道闸；失败即入死信队列）
+    run([str(seat/"exp"/"bus_dlq.py"), "emit", "--path", str(f), "--kind", "artifact",
+         "--seat", "a2a-node-local", "--tries", "4"], need="已入总", label="总线 emit（经 DLQ 两闸）")
     # ★最后一步：写台账（仅当此前各步皆成；带重试＋写后复核）⇒ 结构上不可能"先记后做"
     if a.ledger:
         run([str(seat/"exp"/"mkled.py"), a.ledger], need="已生成", label="生成台账条目")
