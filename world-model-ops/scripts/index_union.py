@@ -58,6 +58,9 @@ def main():
         tf_list.append(t)
         dl.append(sum(t.values()) or 1)
         for w in t.keys(): df[w] += 1
+    # ★2026-10-12 自纠（真因）：此前算了 tf_list 却未写回节 ⇒ 并集档中来自"无 tf 之索引"的节仍无 tf
+    for _i, _s in enumerate(merged):
+        _s["tf"] = tf_list[_i]
     N = len(merged); avgdl = sum(dl)/max(1, N)
     docs = {str(s.get("doc") or "") for s in merged}
     print("   ★去重去除 %d 条 ⇒ 并集：★档 %d ｜ ★节 %d" % (dup, len(docs), N))

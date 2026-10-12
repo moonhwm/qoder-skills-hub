@@ -59,6 +59,11 @@ def main():
     H5 = sum(1 for r in rows if r["rank"] and r["rank"] <= a.k)/max(1, n)
     M = sum((1.0/r["rank"]) if r["rank"] else 0.0 for r in rows)/max(1, n)
     # A 组对照：节正文中段 12 字（字面查询，§级）
+    # ★2026-10-12 修正：金标由"节下标 i"改为"节内容指纹"（★因并集索引去重后下标移位 ⇒ 下标不可跨索引复用）
+    def fp(s):
+        import hashlib as _h
+        return _h.sha3_256(((s.get("head") or "") + "|" + (s.get("body") or "")).encode("utf-8")).hexdigest()[:16]
+    fps = [fp(s) for s in secs]
     A = []
     for i, s in enumerate(secs[:120]):
         b = re.sub(r"\s+", "", s.get("body") or "")
@@ -66,7 +71,8 @@ def main():
         span = b[len(b)//2: len(b)//2+12]
         if len(span) < 8: continue
         order = rank(span)
-        A.append(order.index(i)+1 if i in order else None)
+        got = next((p for p, j in enumerate(order, 1) if fps[j] == fps[i]), None)
+        A.append(got)
     AM = sum((1.0/r) if r else 0.0 for r in A)/max(1, len(A))
     AH1 = sum(1 for r in A if r == 1)/max(1, len(A))
     crit = {"①每条查询皆解析出目标档（未解析 0）": miss == 0,
