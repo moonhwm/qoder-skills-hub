@@ -18,15 +18,28 @@ def first_line(p):
     """★只读文档串首行（轻量：不整档入内存）"""
     try:
         with open(p, "r", encoding="utf-8-sig", errors="replace") as f:
-            for i, l in enumerate(f):
-                if i > 40: break
-                s = l.strip()
-                if s.startswith('"""') and len(s) > 3:
-                    return s.strip('"').strip()[:110]
-                if s.startswith('r"""') or s.startswith("'''"):
-                    return s.strip("r\"'").strip()[:110]
+            lines = [l.strip() for l in f]
     except Exception:
-        pass
+        return None
+    for i, s in enumerate(lines[:40]):
+        if not s: continue
+        # ★2026-10-12 自纠（-1318 之果）：原法在「r\"\"\" 独占一行」时取到★空串 ⇒ 假报"无文档串"
+        #   （本席规范写法正是「r\"\"\" 独占一行 ＋ 次行为说明」）⇒ 今：首行为纯引号起行者，取其后第一非空行
+        pure = s in ('"""', 'r"""', "'''", "r'''", 'u"""', 'R"""')
+        for pre in ('"""', 'r"""', 'R"""', 'u"""', "'''", "r'''", 'R"""'):
+            if s.startswith(pre):
+                rest = s[len(pre):].strip().strip('"').strip("'").strip()
+                if rest and rest not in ('"""', "'''"):
+                    return rest[:110]
+                # ★纯起行 ⇒ 向下取第一非空行（跳过后续纯引号行）
+                for t in lines[i+1:i+6]:
+                    if t and t not in ('"""', "'''", 'r"""'):
+                        return t.strip('"').strip("'").strip()[:110]
+                break
+        if pure:
+            for t in lines[i+1:i+6]:
+                if t and t not in ('"""', "'''", 'r"""'):
+                    return t.strip('"').strip("'").strip()[:110]
     return None
 
 
