@@ -18,11 +18,15 @@ TARGETS = ["embed_rerank_302.py", "decision_model_api.py", "wm_create_generic.py
 
 
 def hits_by_source():
-    c = collections.Counter()
+    """★返回 {source: {origin: 计数}}（2026-10-12 加 origin 分读；旧行 origin 记 unknown）"""
+    c = {}
     try:
         for l in LEDGER.read_text(encoding="utf-8", errors="replace").splitlines():
-            if l.strip():
-                c[str(json.loads(l).get("source") or "")] += 1
+            if not l.strip(): continue
+            r = json.loads(l)
+            s = str(r.get("source") or "")
+            o = str(r.get("origin") or "unknown（旧行无此字段）")
+            c.setdefault(s, collections.Counter())[o] += 1
     except Exception:
         pass
     return c
@@ -45,11 +49,16 @@ def main():
             py_compile.compile(str(p), doraise=True); cp = True
         except Exception:
             cp = False
-        n = sum(v for k, v in hb.items() if k.endswith(f))
+        _d = {}
+        for k, cnt in hb.items():
+            if k.endswith(f):
+                for o, v in cnt.items(): _d[o] = _d.get(o, 0) + v
+        n = sum(_d.values())
+        origin_split = dict(_d)
         marked += 1 if mk > 0 else 0
         compiled += 1 if cp else 0
-        rows.append({"file": f, "marked": mk, "compiled": cp, "hits": n})
-        print("   %-32s %-8s %-8s %d" % (f, ("%d 处" % mk) if mk else "★无", "✓" if cp else "★失败", n))
+        rows.append({"file": f, "marked": mk, "compiled": cp, "hits": n, "origin_split": origin_split})
+        print("   %-32s %-8s %-8s %s" % (f, ("%d 处" % mk) if mk else "★无", "✓" if cp else "★失败", (json.dumps(origin_split, ensure_ascii=False) if origin_split else "0")))
     crit = {"①十一支皆含★墙闸标记": marked == len(TARGETS),
             "②十一支皆编译通过": compiled == len(TARGETS),
             "③台账命中数为参考（不设阈值）": True}
@@ -59,7 +68,7 @@ def main():
     print("   ★注：台账命中数之语义是「命中流水」★非「接入覆盖」⇒ 二者须分读（2026-10-12 明）")
     rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "targets": len(TARGETS), "marked": marked,
            "compiled": compiled, "rows": rows, "criteria": crit,
-           "note": "★覆盖以标记＋编译为证；台账命中数仅为参考"}
+           "note": "★覆盖以标记＋编译为证；台账命中数按 origin 分读（runtime／scan／unknown）"}
     if a.json: pathlib.Path(a.json).write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
     return 0 if all(crit.values()) else 1
 

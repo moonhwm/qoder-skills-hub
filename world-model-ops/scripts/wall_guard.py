@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """wall_guard.py（★已与既有 quota_wall.py 合并为单一入口）—— 容量墙闸（应《跨生态A2A协作网络体系建设方案》：
 「遇到额度墙（墙码 1308/1310/1005）零重试，按预案切换通道或等待窗口，异常事件按『撞墙即停』原则处置并全程留痕」）
 三分类（★判据在手，勿凭感觉重试）：
@@ -43,10 +43,13 @@ def classify(text):
     if m: return ("permanent", (m.group(2) or m.group(3) or "")[:24] or "perm", "参数／类型类（不重试，修因）")
     return ("unknown", "", "未识别 ⇒ 默认按 permanent 处置（不重试）并记待核")
 
-def record(text, source="", channel="", kind="", code="", advice=""):
+def record(text, source="", channel="", kind="", code="", advice="", origin="runtime"):
+    """★origin（2026-10-12 加）：区分"扫描命中"（origin="scan"）与"运行时撞墙"（origin="runtime"）
+    —— 旧行（506 条）无此字段 ⇒ 读表时须按 origin 分读，缺失者记 unknown（★只增不改，不追改历史行）"""
     if not kind: kind, code, advice = classify(text)
     rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "kind": kind, "code": code, "advice": advice,
-           "source": source, "channel": channel, "excerpt": re.sub(r"\s+", " ", str(text))[:160],
+           "source": source, "channel": channel, "origin": origin,
+           "excerpt": re.sub(r"\s+", " ", str(text))[:160],
            "retry_policy": "★零重试（切通道或等窗口）" if kind == "wall" else ("有限重试 3 次" if kind == "transient" else "不重试")}
     # ★联动（2026-10-12）：墙类事件 ⇒ 自动在升级面计时簿立案（使 esc.* 端到端可评）
     if kind == "wall":
