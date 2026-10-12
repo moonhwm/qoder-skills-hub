@@ -270,6 +270,26 @@ try:
 except Exception as e:
     print("   ⚠ ⑫ 未能执行：%s" % str(e)[:100])
 
+# ★⑫b 决策模型之四题型自测（2026-10-12 立，零花费）：跑 --engine offline --selftest ⇒ 六例须与期望相符
+_dm_st = None
+try:
+    import subprocess as _sp4, os as _os4
+    _dmp = SEAT/"exp"/"decision_model.py"
+    if _dmp.exists():
+        print("\n  ═══ ⑫b 决策模型四题型自测（离线，零花费）═══")
+        _pr4 = _sp4.run([sys.executable, str(_dmp), "--engine", "offline", "--selftest"],
+                        capture_output=True, text=True, encoding="utf-8", errors="replace", env=dict(_os4.environ))
+        for _l in ((_pr4.stdout or "") + (_pr4.stderr or "")).splitlines():
+            _s = _l.strip()
+            if _s.startswith(("score", "classify", "yesno", "auto", "⇒ 自测判")):
+                print("   " + _s[:118])
+        _dm_st = (_pr4.returncode == 0)
+        print("   ⇒ 判：%s（退出码 %d）" % ("✓ 四题型契约成立且反例皆被拦" if _dm_st else "★自测不符 ⇒ 须查", _pr4.returncode))
+    else:
+        print("\n  ═══ ⑫b 决策自测：★器不在（未测）")
+except Exception as e:
+    print("   ⚠ ⑫b 未能执行：%s" % str(e)[:100])
+
 print("\n  ═══ 汇总 ═══")
 tot_same = sum(x[1] for x in pairs); tot_diff = sum(x[2] for x in pairs); tot_miss = sum(x[3] for x in pairs)
 print("   同哈希 %d ｜ 异哈希 %d ｜ 仅正本有 %d" % (tot_same, tot_diff, tot_miss))
@@ -320,6 +340,7 @@ out.write_text(json.dumps({
     "item10_index_guard": _idx_guard_json,
     "item11_memory_changes": _mcl_last,
     "item11_memory_state": _mcl_state,
+    "item12b_decision_selftest": _dm_st,
     "item_index_summary": _idx_sum,
 }, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
 print("   落盘：" + str(out))
