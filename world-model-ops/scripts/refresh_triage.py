@@ -49,6 +49,8 @@ def diff_norm(fa, fb):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--notify-dir", default=""); ap.add_argument("--archive", default=""); ap.add_argument("--json", default="")
+    ap.add_argument("--scan-all", action="store_true")   # ★2026-10-12 加：扫"本轮窗口内所有有新版本之档"
+    ap.add_argument("--window-sec", type=int, default=1800)
     a = ap.parse_args()
     S = pathlib.Path(__file__).resolve().parent.parent
     nd = pathlib.Path(a.notify_dir) if a.notify_dir else S/"outbox"/"notify"
@@ -74,7 +76,17 @@ def main():
             print("   （格式 B：只给计数 ⇒ 由 manifest 取 latest.ver 最近之 5 档）")
         except Exception as ex:
             print("   ★manifest 不可解析：%s" % str(ex)[:60])
-    print("   最新通知：%s（%s）｜ 其列名之档：%s" % (latest.name, time.strftime("%H:%M", time.localtime(latest.stat().st_mtime)), "、".join(keys) or "（无）"))
+    if a.scan_all:
+        now = time.time()
+        hit = []
+        for d in sorted(ar.iterdir()):
+            if not d.is_dir(): continue
+            vs = sorted(d.glob("v_*.md"), key=lambda f: f.name)
+            if not vs: continue
+            if (now - vs[-1].stat().st_mtime) <= a.window_sec: hit.append(d.name)
+        print("   ★全扫（窗口 %d s）⇒ 本轮有新版本之档 %d 个：%s" % (a.window_sec, len(hit), "、".join(hit) or "（无）"))
+        if hit: keys = hit
+    print("   最新通知：%s（%s）｜ 裁决之档：%s" % (latest.name, time.strftime("%H:%M", time.localtime(latest.stat().st_mtime)), "、".join(keys) or "（无）"))
     if not keys:
         print("   ⇒ 判：★本轮无变更（无需出短件）"); return 0
     rows = []
@@ -92,7 +104,7 @@ def main():
         print("      归一后字数 %d ⇒ %d（差 %+d）｜节 %d ⇒ %d" % (r["norm_chars"][0], r["norm_chars"][1],
               r["norm_chars"][1]-r["norm_chars"][0], r["sections"][0], r["sections"][1]))
         print("      ★新增 %d／删除 %d／变动 %d ⇒ ★%s" % (len(r["added"]), len(r["removed"]), len(r["changed"]),
-              "实质变更「 if real else 」假变更（归一后全 0）"))
+              ("★实质变更" if real else "★假变更") + "（归一后全 0）"))
         for n in r["added"][:6]: print("         + %s" % n[:80])
         for n in r["removed"][:6]: print("         - %s" % n[:80])
         for n in r["changed"][:6]: print("         ~ %s" % n[:80])
