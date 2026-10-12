@@ -46,8 +46,9 @@ def cur():
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--status", action="store_true")
     ap.add_argument("--to", default=""); ap.add_argument("--rollback", action="store_true")
+    ap.add_argument("--prune", type=int, default=0)   # ★档保留策略：保留最近 N 档（★绝不剪当前指向），其余归档
     a = ap.parse_args()
-    if a.status or not (a.to or a.rollback):
+    if a.status or not (a.to or a.rollback or a.prune):
         print("  ═══ 索引档一览 ═══")
         for p in sorted(CACHE.glob("section_index*.json")):
             f = facts(p)
@@ -57,6 +58,32 @@ def main():
                 mark, f["name"], f.get("sections"), f.get("docs"), "有" if f.get("tf") else "★无",
                 f.get("map_pct"), "新" if f.get("fresh") else "★陈旧", f.get("mtime"), f.get("sha16")))
         p, src = cur(); print("   当前指向：%s（来源 %s）｜指针文件：%s" % (p.name, src, PTR.name if PTR.exists() else "无"))
+        return 0
+    if a.prune:
+        # ★档保留策略（2026-10-12）：保留最近 N 档；★绝不剪"当前指向"之档；其余★归档（非删除）并记指纹
+        ARCH = SEAT/"archive"/"cache"; ARCH.mkdir(parents=True, exist_ok=True)
+        MAN = ARCH/"index_prune_manifest.jsonl"
+        cp, _src = cur()
+        files = sorted([q for q in CACHE.glob("section_index*.json")], key=lambda q: -q.stat().st_mtime)
+        keep = [q for q in files[:a.prune]]
+        if cp not in keep: keep.append(cp)
+        drop = [q for q in files if q not in keep]
+        print("  ═══ 档保留策略 ｜ 共 %d 档 ⇒ 保留 %d（最近 %d ＋ ★当前指向 %s）｜归档 %d ═══" % (
+            len(files), len(keep), a.prune, cp.name, len(drop)))
+        for q in keep: print("   · 保留 %s（%s）%s" % (q.name, time.strftime("%m-%d %H:%M", time.localtime(q.stat().st_mtime)),
+                                                       "★当前" if q == cp else ""))
+        moved = 0
+        with open(MAN, "a", encoding="utf-8", newline="\n") as mf:
+            for q in drop:
+                f = facts(q) or {}
+                dst = ARCH/q.name
+                if dst.exists(): dst = ARCH/(q.stem + "_" + time.strftime("%H%M%S") + q.suffix)
+                q.rename(dst); moved += 1
+                mf.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "name": q.name, "moved_to": str(dst),
+                    "sha16": f.get("sha16"), "sections": f.get("sections"), "map_pct": f.get("map_pct"),
+                    "reason": "★超出保留数 %d 且非当前指向 ⇒ 归档（未删除，可按指纹取回）" % a.prune}, ensure_ascii=False) + "\n")
+                print("   → 归档 %s ⇒ archive/cache/（指纹 %s）" % (q.name, f.get("sha16")))
+        print("   ⇒ 归档 %d 档；清单：%s（★可按指纹取回）" % (moved, MAN.name))
         return 0
     if a.to:
         t = pathlib.Path(a.to)
