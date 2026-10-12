@@ -18,9 +18,10 @@ OUT = SEATP/"outbox"/"mem"
 PROBES = [
     ("词面检索（前 5）", [sys.executable, str(SEAT/"retrieval_v2.py"), "--set",
                        str(OUT/"b_spec_doc_20261012.json"), "--json", str(OUT/"_lat_lex.json")], False),
-    ("决策（离线契约）", [sys.executable, str(SEAT/"decision_from_retrieval.py"), "--set",
-                      str(OUT/"decision_balanced_20261012.json"), "--mode", "support",
-                      "--json", str(OUT/"_lat_dec.json")], False),
+    # ★2026-10-13 自纠（-1326 之果）：本器无 --set（那是 retrieval_v2 之参数）⇒ 误传致 rc=2
+    #   其正用法为 --q 或 --selftest ⇒ 改以 --selftest（内置自检，零外呼）
+    ("决策（离线契约自检）", [sys.executable, str(SEAT/"decision_from_retrieval.py"), "--selftest",
+                       "--json", str(OUT/"_lat_dec.json")], False),
     ("台账闸检", [sys.executable, str(SEAT/"ledger_gate.py"), "check"], False),
     ("器物登记刷新（cairn）", [sys.executable, str(SEAT/"tools_registry_refresh.py"), "--tools",
                         str(pathlib.Path.home()/"openplanlink-cairn"/"tools"),
