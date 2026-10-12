@@ -58,7 +58,26 @@ def verdict(d, labels):
     else:
         crit["②自报 %.4f ＝ max(probs)（Δ=%.4f）" % (rep_f, rep_f - (conf_cal or 0))] = abs(rep_f - (conf_cal or 0)) <= 0.01
     crit["③forwards ＝ 1"] = (d.get("forwards") == 1)
-    crit["④label ∈ 给定集合"] = (d.get("label") in labels)
+    # ★判据④分级（2026-10-12 自纠）：评分题之 label 为 0–10 整数、其概率为"分值归并之三档"（题设即如此）
+    #   ⇒ 直接核"label ∈ 概率键"会误报 ⇒ 评分题改核"label 为整数且落在最高概率档内"
+    _lb = d.get("label")
+    if _lb in (labels or []):
+        crit["④label ∈ 给定集合"] = True
+    else:
+        try:
+            _v = float(str(_lb).strip())
+            _isnum = (0 <= _v <= 10)
+        except Exception:
+            _isnum = False
+        if _isnum and pr:
+            _top = max(pr.items(), key=lambda kv: kv[1])[0]
+            _in = False
+            import re as _re2
+            m2 = _re2.match(r"^\s*(\d+)\s*[-–~]\s*(\d+)\s*$", str(_top))
+            if m2: _in = float(m2.group(1)) <= _v <= float(m2.group(2))
+            crit["④label 为 0–10 整数且落在最高概率档 %s 内" % _top] = _in
+        else:
+            crit["④label ∈ 给定集合（现 label=%s 不在其中）" % str(_lb)[:8]] = False
     return pr, conf_cal, crit, rep_f
 
 def call_chat(q, labels, k):
