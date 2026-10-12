@@ -61,7 +61,11 @@ def build_lib(max_ledger=300, with_names=False):
             try: r = json.loads(l)
             except Exception: continue
             s = str(r.get("subject") or "")
-            if s: items.append(("台账#%d｜%s" % (i, str(r.get("ts") or "")[:16]), s))
+            d = str(r.get("detail") or "")[:80]
+            if s:
+                # ★2026-10-12 扩字段（-1351 之果）：原只嵌 subject ⇒ "未闭合/候裁"类问偏
+                #   ⇒ 今并嵌 detail 首 80 字（★补足"字段粒度"）
+                items.append(("台账#%d｜%s" % (i, str(r.get("ts") or "")[:16]), (s + " " + d).strip()))
     # ★2026-10-12 缩库（-1344 之果）：台账 subject 为工作史之核心 ⇒ 默认只取★最近 max_ledger 条；
     #   件名信息量低且量大（1,389 项 ≈0.082 元）⇒ 默认★不取，须 --with-names 方取
     if len(items) > max_ledger: items = items[-max_ledger:]
