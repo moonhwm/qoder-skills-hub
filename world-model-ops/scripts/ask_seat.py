@@ -13,7 +13,7 @@ import argparse, hashlib, json, math, pathlib, re, sys, urllib.request
 
 SEAT = pathlib.Path(__file__).resolve().parent
 CACHE = SEAT/".cache"
-ARCH = SEAT.parent/"archive"/"docs"/"outline"
+ARCH_DEF = SEAT.parent/"archive"/"docs"/"outline"
 ENVF = pathlib.Path.home()/".zcode"/"workspace"/"default"/"a2a-bridge"/".env"
 PROXY = "http://127.0.0.1:10081"
 
@@ -64,20 +64,32 @@ def vec_of(text, run, budget):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--q", required=True); ap.add_argument("--k", type=int, default=5)
     ap.add_argument("--run", action="store_true"); ap.add_argument("--budget-max", type=float, default=0.0)
-    ap.add_argument("--json", default=""); a = ap.parse_args()
+    ap.add_argument("--json", default=""); ap.add_argument("--full", action="store_true")   # ★扩检索面：整节正文
+    ap.add_argument("--segment", action="store_true")  # ★分段检索（段级命中回溯到节）
+    ap.add_argument("--seg-len", type=int, default=250)
+    ap.add_argument("--seg-stride", type=int, default=200)
+    ap.add_argument("--doc", default="")   # ★2026-10-12 加：指定档（默认 outline）
+    a = ap.parse_args()
     def cos(x, y):
         s = sum(i*j for i, j in zip(x, y)); nx = math.sqrt(sum(i*i for i in x)); ny = math.sqrt(sum(j*j for j in y))
         return s/((nx*ny) or 1e-9)
     # ★库一：纲要 35 节
+    ARCH = (SEAT.parent/"archive"/"docs"/a.doc) if a.doc else ARCH_DEF
+    if not ARCH.exists():
+        print("   ★档不在：%s" % ARCH.name); return 2
     vs = sorted(ARCH.glob("v_*.md"), key=lambda f: f.name)
-    secs = []
+    secs = []; secs_raw = []
     if vs:
         txt = vs[-1].read_text(encoding="utf-8-sig", errors="replace")
         for p in re.split(r"\n(?=#{1,6}\s)", txt):
             m = re.match(r"#{1,6}\s*(.+)", p)
             if m:
-                nm = m.group(1).strip()[:60]; bd = re.sub(r"\s+", " ", p[m.end():])[:120]
-                if nm: secs.append((nm, nm + " " + bd))
+                nm = m.group(1).strip()[:60]
+                _lim = 800 if a.full else 120
+                bd = re.sub(r"\s+", " ", p[m.end():])[:_lim]
+                if nm:
+                    secs.append((nm, nm + " " + bd))
+                    secs_raw.append((nm, re.sub(r"\s+", " ", p[m.end():])))
     # ★库二：并集 435 档之档名
     docs = []
     IX = CACHE/"semantic_index_20261012.json"
@@ -116,6 +128,51 @@ def main():
                 print("   ★无凭据 ⇒ 节向量未嵌")
         else:
             print("   ★节向量缺 %d 条 ⇒ 须 --budget-max ≥ %.6f" % (len(miss), _est))
+    if a.segment:
+        # ★2026-10-12 加：分段检索 —— 节内切段（默认 250 字、步长 200）⇒ 段级余弦 ⇒ 每节取其最佳段
+        segs = []
+        for nm, body in secs_raw:
+            b = re.sub(r"\s+", " ", body)
+            if not b: continue
+            k2 = 0
+            while k2 < len(b):
+                chunk = (nm + " " + b[k2:k2+a.seg_len]).strip()
+                if len(chunk) > 12: segs.append((nm, chunk))
+                if k2 + a.seg_len >= len(b): break
+                k2 += a.seg_stride
+        miss = [tx for _nm, tx in segs if vec_of(tx, False, 0.0)[0] is None]
+        if miss and a.run:
+            _est = sum(len(x) for x in miss)/1.7/1000*0.0002
+            if a.budget_max >= _est:
+                import urllib.request as _ur
+                _k = key()
+                if _k:
+                    _op = _ur.build_opener(_ur.ProxyHandler({"http": PROXY, "https": PROXY}))
+                    for _i in range(0, len(miss), 8):
+                        _b = json.dumps({"model": "text-embedding-3-small", "input": miss[_i:_i+8]}, ensure_ascii=False).encode()
+                        _rq = _ur.Request("https://api.302ai.cn/v1/embeddings", data=_b,
+                                          headers={"Authorization": "Bearer " + _k, "Content-Type": "application/json"})
+                        with _op.open(_rq, timeout=180) as _resp:
+                            _j = json.loads(_resp.read().decode("utf-8", "replace"))
+                        for _t2, _d2 in zip(miss[_i:_i+8], _j.get("data", [])):
+                            _v2 = _d2["embedding"]; _h2 = hashlib.sha1(str(_t2).encode("utf-8")).hexdigest()[:20]
+                            (CACHE/("e302s_"+_h2+".json")).write_text(json.dumps(
+                                {"v": _v2, "text_sha1_20": _h2, "text_head": str(_t2)[:80], "n_chars": len(str(_t2)),
+                                 "dim": len(_v2), "model": "text-embedding-3-small", "src": "ask_seat_seg", "ts": "2026-10-12"},
+                                ensure_ascii=False), encoding="utf-8", newline="\n")
+                    print("   ★段向量已批量嵌 %d 条（≈%.6f 元；此后零调用）" % (len(miss), _est))
+        best = {}
+        for nm, tx in segs:
+            v = vec_of(tx, False, 0.0)[0]
+            if v is None: continue
+            c = cos(qv, v)
+            if nm not in best or c > best[nm][0]: best[nm] = (c, tx[:60])
+        srows = sorted(best.items(), key=lambda kv: -kv[1][0])
+        print("   ── ★分段检索 top-%d（该节之最佳段余弦）──" % a.k)
+        for nm, (c, seg) in srows[:a.k]:
+            print("      %-36s ｜ ★%.4f ｜ 段首：%s" % (nm[:36], c, seg[:34]))
+        print("   ★段总数 %d ｜ 覆盖节 %d" % (len(segs), len(best)))
+
     rows = []
     for nm, txt in secs:
         v = vec_of(txt, False, 0.0)[0]
