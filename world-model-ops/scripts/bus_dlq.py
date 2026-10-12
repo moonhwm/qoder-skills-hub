@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """bus_dlq.py —— 总线死信队列与重试（应令条⑥：「在事件总线中引入死信队列与重试策略…自动触发回滚并记录审计日志」）
 用法：
   python bus_dlq.py emit --path <件> [--kind artifact] [--seat a2a-node-local] [--tries 3]
@@ -132,12 +132,54 @@ def audit(tail=20):
     for l in rows[-tail:]: print("     " + l[:150])
 
 
+def cnt_pend(path):
+    """★计"仍待办"之数（2026-10-12）：pending 且★未被 reclass 改标者"""
+    rm = _reclass_map()
+    n = 0
+    try:
+        for l in path.read_text(encoding="utf-8", errors="replace").splitlines():
+            if not l.strip(): continue
+            r = json.loads(l)
+            if r.get("event") == "dlq_reclass": continue
+            if r.get("status") == "pending" and r.get("ts") not in rm: n += 1
+    except Exception:
+        pass
+    return n
+
+
+def _reclass_map():
+    """★读 dlq_reclass 类型之 supersede 行（2026-10-12 加）：返回 {target_ts: new_status}"""
+    m = {}
+    try:
+        for l in DLQ.read_text(encoding="utf-8", errors="replace").splitlines():
+            if not l.strip(): continue
+            r = json.loads(l)
+            if r.get("event") == "dlq_reclass" and r.get("target_ts"):
+                m[r["target_ts"]] = r.get("new_status") or "closed_reclass"
+    except Exception:
+        pass
+    return m
+
+
+def reclass(target_ts, to, reason):
+    """★改标（只增不改）：追加一行 supersede 记录；★原行不动"""
+    rm = _reclass_map()
+    if target_ts in rm:
+        print("  · 该条已被改标为 %s（幂等，跳过）" % rm[target_ts]); return 0
+    with open(DLQ, "a", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "event": "dlq_reclass",
+            "target_ts": target_ts, "new_status": to, "reason": reason,
+            "note": "★只增不改：原行保留，本行仅为改标（supersede）"}, ensure_ascii=False) + "\n")
+    print("  ✓ 已改标 %s ⇒ %s（★原行保留）" % (target_ts, to))
+    return 0
+
+
 def status():
     def cnt(p, pred=lambda r: True):
         if not p.exists(): return 0
         return sum(1 for l in p.read_text(encoding="utf-8", errors="replace").splitlines() if l.strip() and pred(json.loads(l)))
     print("   死信队列 %s ⇒ 总 %d ｜ 待办 %d ｜ 已解 %d" % (DLQ.name, cnt(DLQ),
-          cnt(DLQ, lambda r: r.get("status") == "pending"), cnt(DLQ, lambda r: r.get("status") == "resolved")))
+          cnt_pend(DLQ), cnt(DLQ, lambda r: r.get("status") == "resolved")))
     print("   审计日志 %s ⇒ 总 %d" % (AUDIT.name, cnt(AUDIT)))
 
 
@@ -157,10 +199,13 @@ if __name__ == "__main__":
     p2 = sub.add_parser("retry"); p2.add_argument("--tries", type=int, default=3)
     p3 = sub.add_parser("audit"); p3.add_argument("--tail", type=int, default=20)
     sub.add_parser("status"); sub.add_parser("selftest")
+    p6 = sub.add_parser("reclass"); p6.add_argument("--target-ts", required=True)
+    p6.add_argument("--to", default="closed_negative_test"); p6.add_argument("--reason", default="")
     a = ap.parse_args()
     if a.cmd == "emit": emit(a.path, a.kind, a.seat, a.tries)
     elif a.cmd == "retry": retry(a.tries)
     elif a.cmd == "audit": audit(a.tail)
     elif a.cmd == "status": status()
     elif a.cmd == "selftest": selftest()
+    elif a.cmd == "reclass": reclass(a.target_ts, a.to, a.reason)
     else: ap.print_help()
