@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """pub_safe.py —— 出件安全驱动（把戒三十七做进流程）
 ★硬性顺序（不可倒序）：打钟 → 术语闸 → 署签 → 复核（署名复算＋七项自检）→ 投递三处 → 总线 emit → 台账
 ★每一步皆"带重试 ＋ 写后复核"（WPS 云盘同步会短暂占用文件，属环境常态）
@@ -38,18 +38,31 @@ def precheck_ledger(led):
     print("   ✓ 台账条目键齐备（%s）" % "、".join(need)); return True
 
 def main():
+    # ★2026-10-12 立（口径章一）：出件前必读「运行口径」—— 本夜 19 处自纠之总闸
+    print("   ★出件前必读：cairn/mem/运行口径_20261012.md（出件/时标/度量/裁决/写入/造器诸口径）")
     ap = argparse.ArgumentParser(); ap.add_argument("--file", required=True)
-    ap.add_argument("--note", default=""); ap.add_argument("--ledger", default="")
+    ap.add_argument("--note", default=""); ap.add_argument("--evidence", default="")
+    ap.add_argument("--ledger", default="")
     ap.add_argument("--dry", action="store_true")
     a = ap.parse_args(); f = pathlib.Path(a.file)
     if a.dry:
         print("  ═══ 预演（不写任何文件）═══")
         print("   件：%s（%.1f KB）" % (f.name, f.stat().st_size/1024))
-        print("   顺序：打钟 → 术语闸 → 署签 → 复核 → 投递三处 → 总线 emit → 台账")
+        print("   顺序：打钟 → 术语闸 → 署签 → 复核 → 投递三处 → 总线 emit → 台账 → ★刷快照")
         print("   ⇒ 判：驱动就绪（本轮不落笔）"); return 0
     seat = SEAT
-    if a.ledger and not precheck_ledger(a.ledger):
-        return 2
+    if a.ledger:
+        # ★--evidence 由命令行注入（免我反复漏该键）
+        if a.evidence:
+            import pathlib as _pl
+            _ledf = _pl.Path(a.ledger)          # ★勿用 f（会遮蔽"件"之路径，曾致误署误投）
+            if _ledf.exists():
+                txt = _ledf.read_text(encoding="utf-8", errors="replace")
+                if "evidence:" not in txt:
+                    txt = txt.replace("seal_files:", "evidence: " + a.evidence + "\nseal_files:")
+                    _ledf.write_text(txt, encoding="utf-8", newline="\n"); print("   ✓ 已由 --evidence 注入该键（未动件路径）")
+        if not precheck_ledger(a.ledger):
+            return 2
     run([str(seat/"exp"/"stamp_time.py"), str(f)], need="已打钟", label="打钟")
     run([str(seat/"exp"/"termtable.py"), "check", "--paths", str(f)], label="术语闸")
     run([str(seat/"exp"/"sig_block.py"), "--file", str(f), "--append", "--note", a.note], need="逐位相符", label="署签")
@@ -71,6 +84,9 @@ def main():
         j = a.ledger[:-4] + ".json" if a.ledger.endswith(".led") else a.ledger
         run([str(seat/"ledger"/"cairn_ledger.py"), "append", j], need="已追加", label="写入台账")
         out = run([str(seat/"ledger"/"cairn_ledger.py"), "verify"], need="PASS", label="台账复核")
+        # ★2026-10-12 加（-1293 之训）：写台账后★刷新版本闸快照
+        #   否则下次 ledger_gate check 必报"不一致"而误拦（我昨夜即在 pub_safe 后忘刷而致误报）
+        run([str(seat/"exp"/"ledger_gate.py"), "snapshot"], need="已记快照", label="刷新版本闸快照")
         if out: print("   " + [l.strip() for l in out.splitlines() if "条目数" in l][-1][:60])
     print("   ⇒ 判：驱动完成（若未传 --ledger，则台账仍须托管者补）"); return 0
 
