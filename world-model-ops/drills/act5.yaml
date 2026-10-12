@@ -1,0 +1,7 @@
+﻿name: 第五幕 注入拒绝
+owner: a2a-node-local
+clause: 跨生态方案「异常事件按撞墙即停原则处置」＋ 墙纪律（零重试）
+criteria:
+  - 墙／永久／瞬态三类判读正确
+  - 判据失败即红（本脚本）
+red_on_fail: true

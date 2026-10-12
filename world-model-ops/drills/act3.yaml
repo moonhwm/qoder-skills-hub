@@ -1,0 +1,8 @@
+﻿name: 第三幕 断链零丢失
+owner: a2a-node-local
+clause: 正主量化目标「挂账零静默丢弃」＋ 令条⑥ 死信队列与重试
+criteria:
+  - 失败件入死信队列（不静默丢弃）
+  - 死信含 last_error 原文
+  - 可续传（retry 子命令存在）
+red_on_fail: true
