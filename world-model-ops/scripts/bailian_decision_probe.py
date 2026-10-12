@@ -54,6 +54,8 @@ def main():
     ap.add_argument("--url", default=COMPAT); ap.add_argument("--probe-only", action="store_true")
     ap.add_argument("--suite", default=""); ap.add_argument("--run", action="store_true")
     ap.add_argument("--budget-max", type=float, default=0.0); ap.add_argument("--json", default="")
+    ap.add_argument("--shots", action="store_true")
+    ap.add_argument("--ev-file", default="")   # ★2026-10-12 加（-1358 之请）：接入外部事实源（台账证据）   # ★2026-10-12 加（-1357 之坍塌诊断）：4 例 few-shot ＋ 明令不得一律判否
     a = ap.parse_args()
     e = env(); k = e.get("DASHSCOPE_API_KEY") or e.get("DASHSCOPE_WS_KEY")
     base = e.get("DASHSCOPE_WS_BASE") or ""
@@ -78,7 +80,82 @@ def main():
     for kk, vv in crit.items(): print("   %s ⇒ %s" % (kk, "✓" if vv else "✗"))
     res = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "model": a.model, "url_host": a.url.split("/")[2],
            "probe_http": st, "probe_usage": j.get("usage"), "probe_reply_head": str(txt)[:60], "criteria": crit}
-    if a.probe_only or not a.suite:
+    if a.suite and st == 200:
+        # ★2026-10-12 加（-1355 之果）：以指定提供商跑决策基准 —— 契约五项 ＋ ★平衡准确率 ＋ 多数类基线
+        sp = pathlib.Path(a.suite)
+        if not sp.exists():
+            print("   ★基准不在：%s" % sp.name)
+        else:
+            sj = json.loads(sp.read_text(encoding="utf-8-sig"))
+            items = sj if isinstance(sj, list) else (sj.get("items") or sj.get("suite") or [])
+            est = len(items) * (300/1.7/1000*0.0008 + 40/1.7/1000*0.002)
+            print("   ★基准 %s ｜ 项 %d ｜ ★成本上界估 ≈%.6f 元" % (sp.name, len(items), est))
+            if not a.run or a.budget_max < est:
+                print("   ⇒ 判：★须 --run --budget-max ≥ %.6f（宁停不超）" % est)
+                res["suite"] = {"plan": len(items), "est": round(est, 6), "ran": False}
+            else:
+                EV = {}
+                if a.ev_file:
+                    _ej = json.loads(pathlib.Path(a.ev_file).read_text(encoding="utf-8-sig"))
+                    for _r in (_ej.get("items") or []):
+                        EV[str(_r.get("stmt") or "")] = _r.get("ev") or []
+                    print("   ★外部事实源：%s（%d 条陈述带证据）" % (pathlib.Path(a.ev_file).name, len(EV)))
+                SYS = ("你是严格的判定器。只输出一个 JSON，形如 {\\\"label\\\":\\\"是\\\",\\\"p_yes\\\":0.0,\\\"score\\\":0}；"
+                       "label 只能是「是」或「否」；p_yes 为 0–1；score 为 0–10。不得输出任何其它文字。")
+
+                if a.shots:
+                    SYS += (" 注意：本席确有若干器物与能力，判「是」与判「否」同样常见；★不得因不确定即一律判否。")
+                    SHOTS = [("本席有语义索引器", "是"), ("本席有语音转写器", "否"),
+                             ("本席有台账链校验器", "是"), ("本席有视频生成器", "否")]
+                else:
+                    SHOTS = []
+                ok = 0; tp = tn = fp = fn = 0; us = 0; rows = []
+                for idx, it in enumerate(items, 1):
+                    q = str(it.get("q") or it.get("stmt") or ""); tr = bool(it.get("truth"))
+                    msgs = [{"role": "system", "content": SYS}]
+                    for _sq, _sa in SHOTS:
+                        msgs.append({"role": "user", "content": _sq})
+                        msgs.append({"role": "assistant",
+                                     "content": json.dumps({"label": _sa, "p_yes": (0.9 if _sa == "是" else 0.1),
+                                                            "score": (8 if _sa == "是" else 2)}, ensure_ascii=False)})
+                    _evs = EV.get(q) or []
+                    if _evs:
+                        _et = "\n".join("- " + str(e.get("text") or "") for e in _evs[:3])
+                        msgs.append({"role": "user", "content": "【本席台账之相关条目（外部事实源）】\n" + _et +
+                                     "\n\n请据上列事实，判定以下陈述是否合于本席事实：" + q})
+                    else:
+                        msgs.append({"role": "user", "content": q})
+                    st2, j2, dt2 = call(k, a.url, a.model, msgs, 120, 60)
+                    try:
+                        u = j2.get("usage") or {}
+                        us += int(u.get("total_tokens") or 0)
+                        raw = j2["choices"][0]["message"]["content"]
+                        o = json.loads(raw[raw.find("{"):raw.rfind("}")+1])
+                        lab = str(o.get("label")); py_ = float(o.get("p_yes")); sc = float(o.get("score"))
+                        cok = (lab in ("是", "否")) and (0.0 <= py_ <= 1.0) and (0.0 <= sc <= 10.0)
+                        pred = (lab == "是")
+                        if cok: ok += 1
+                        if tr and pred: tp += 1
+                        elif (not tr) and (not pred): tn += 1
+                        elif (not tr) and pred: fp += 1
+                        else: fn += 1
+                        rows.append({"q": q[:40], "truth": tr, "label": lab, "p_yes": py_, "score": sc, "contract": cok})
+                    except Exception as ex:
+                        rows.append({"q": q[:40], "truth": tr, "err": str(ex)[:60], "contract": False})
+                    if idx % 4 == 0: print("      …已 %d／%d" % (idx, len(items)))
+                n = len(items)
+                tpr = tp/max(1, tp+fn); tnr = tn/max(1, tn+fp)
+                base = max((tp+fn)/max(1, n), (tn+fp)/max(1, n))
+                print("   ── ★决策基准之结果（%s）──" % a.model)
+                print("   ★契约合规 %d／%d ｜ 混淆：TP %d ｜ TN %d ｜ FP %d ｜ FN %d" % (ok, n, tp, tn, fp, fn))
+                print("   ★准确率 %.3f ｜ ★平衡准确率 %.3f（真 %.3f／假 %.3f）｜ ★多数类基线 %.3f"
+                      % ((tp+tn)/max(1, n), (tpr+tnr)/2, tpr, tnr, base))
+                print("   ★用量合计 %d tokens" % us)
+                res["suite"] = {"file": sp.name, "n": n, "contract_ok": ok, "tp": tp, "tn": tn, "fp": fp, "fn": fn,
+                                "acc": round((tp+tn)/max(1, n), 4), "balanced_acc": round((tpr+tnr)/2, 4),
+                                "tpr": round(tpr, 4), "tnr": round(tnr, 4), "baseline": round(base, 4),
+                                "tokens": us, "ran": True, "rows": rows}
+    if a.probe_only and not a.suite:
         print("   ⇒ 判：★探针毕（未跑基准）")
     if a.json:
         pathlib.Path(a.json).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
