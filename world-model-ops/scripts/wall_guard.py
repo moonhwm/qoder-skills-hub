@@ -83,7 +83,7 @@ def scan(root=None, maxfiles=4000, hint_only=True):
                 key = (c, re.sub(r"\W", "", line)[:40])
                 if key in seen: continue
                 seen.add(key)
-                if not hint_only: record(line, source=str(p.relative_to(root))[:70], channel=p.suffix.lstrip("."))
+                if not hint_only: record(line, source=str(p.relative_to(root))[:70], channel=p.suffix.lstrip("."), origin="scan")
                 hits += 1
     return hits, len(pats)
 
