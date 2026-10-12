@@ -84,15 +84,34 @@ def main():
         for x in d[:12]:
             print("   ★%s ｜ 前：%s ⇒ 后：%s" % (x["field"], json.dumps(x["before"], ensure_ascii=False)[:56],
                                               json.dumps(x["after"], ensure_ascii=False)[:56]))
-        if d:
+        # ★变更集指纹（2026-10-12 加）：同一变更集若已记过则跳过（第二道闸，防同集重复）
+        chg_sha = hashlib.sha3_256(json.dumps(d, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:16]
+        seen_chg = set()
+        if CHG.exists():
+            for _l in CHG.read_text(encoding="utf-8", errors="replace").splitlines():
+                if _l.strip():
+                    try: seen_chg.add(json.loads(_l).get("change_sha16"))
+                    except Exception: pass
+        dup = chg_sha in seen_chg
+        print("   ★变更集指纹 %s%s" % (chg_sha, "（★同集已记 ⇒ 跳过追加）" if dup else ""))
+        if d and not dup:
             with open(CHG, "a", encoding="utf-8", newline="\n") as f:
-                f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "changes": d}, ensure_ascii=False) + "\n")
+                f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "change_sha16": chg_sha, "changes": d}, ensure_ascii=False) + "\n")
     st.write_text(json.dumps(cur, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
     print("   记忆面读数：指针 %s ｜ 索引档 %d ｜ 台账 %s ｜ 登记表 %s ｜ 文档 %s ｜ 总线 %s" % (
         (cur.get("pointer") or {}).get("index") or "无",
         len(cur.get("indexes") or {}), (cur.get("ledger") or {}).get("n"), cur.get("registry_n"),
         json.dumps(cur.get("docs"), ensure_ascii=False)[:44], cur.get("bus_n")))
-    print("   ⇒ 判：%s" % ("✓ 基线已建（无变更可报）" if first else ("✓ 已记 %d 条变更" % len(d) if d else "✓ 无变更")))
+    # ★判语须与实情一致（2026-10-12 修）：跳过追加时不得打印"已记"
+    if first:
+        _verdict = "✓ 基线已建（无变更可报）"
+    elif not d:
+        _verdict = "✓ 无变更"
+    elif "dup" in dir() and dup:
+        _verdict = "✓ %d 条变更（★同集已记 ⇒ 跳过追加）" % len(d)
+    else:
+        _verdict = "✓ 已记 %d 条变更" % len(d)
+    print("   ⇒ 判：%s" % _verdict)
     return 0
 
 if __name__ == "__main__":
