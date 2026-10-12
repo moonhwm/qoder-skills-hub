@@ -43,7 +43,7 @@ def bbox(j):
 
 SEAT = pathlib.Path.home()/"WPSDrive"/"29969771"/"WPS云盘"/"月之暗面的Plasma游乐场"/"A2A新席_石敢当Cairn_20260928"
 TARGETS = []
-for pat in ("*LOD*_v2_20261011.glb", "*avatar*.glb"):
+for pat in ("*LOD*_v2_20261011.glb", "*avatar*.glb", "*uvtex*.glb", "*LOD*uvtex*.glb"):
     TARGETS += sorted(SEAT.rglob(pat))
 TARGETS = list(dict.fromkeys(TARGETS))
 print("  ═══ 本席 GLB 资产（%d 件）═══" % len(TARGETS))
