@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""cooc_expand_eval.py —— 本地共现扩展（零成本攻"零重叠"）（2026-10-12 立）
+"""cooc_expand_eval.py —— 本地共现扩展（零成本攻「零重叠」）（2026-10-12 立）
 问题：释义查询之 52% 与目标档"零词面重叠"⇒ 词面法近随机（-1241）。
-本器（零外呼）：★用语料自身之档级共现作"同义词典"——对查询词，取其"在同一档内共现频次最高"之扩展词，
+本器（零外呼）：★用语料自身之档级共现作「同义词典」——对查询词，取其「在同一档内共现频次最高」之扩展词，
     以原词权重 1.0／扩展词权重 w 重跑 BM25 ⇒ 看★"零重叠"组是否改善。
 判据（可失败）：①共现表已建；②两组之别已给出；③★"零重叠"组之 ΔMRR 已给出（正负皆如实）
 用法：python cooc_expand_eval.py --index <并集索引> --set <档级集> [--w 0.3] [--topn 8] [--json out]
@@ -31,7 +31,7 @@ def main():
     tf = [s.get("tf") or {} for s in secs]; dl = [sum(t.values()) or 1 for t in tfs if True] if False else [sum(t.values()) or 1 for t in tf]
     pairs = json.loads(pathlib.Path(a.set).read_text(encoding="utf-8-sig"))["pairs"]
     # ★档级词集与共现
-    # ★每档只取"最高频 CAP 词"建共现（免二次爆炸；也更聚焦信号）
+    # ★每档只取「最高频 CAP 词」建共现（免二次爆炸；也更聚焦信号）
     CAP = 150
     doc_terms = collections.defaultdict(set)
     for i, s in enumerate(secs):
