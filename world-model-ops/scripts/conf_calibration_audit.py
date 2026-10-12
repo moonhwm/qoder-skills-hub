@@ -92,10 +92,26 @@ def main():
             "③不一致处已逐项列明": True}
     print("   ── 判据 ──")
     for k, v in crit.items(): print("   %s ⇒ %s" % (k, "✓" if v else "✗"))
-    print("   ⇒ 汇总：可校核 %d 项 ｜ ★不一致 %d 项" % (checked_total, bad_total))
-    rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "kind": "conf_calibration_note",
-           "note": "★校核标注（不改原档）：本表记录各决策读数之「自报 confidence」与「max(概率)」之对照；不一致者以★标之",
+    # ★批次指纹去重（2026-10-12 修）：同批（各档名＋指纹之集）已标注过 ⇒ ★跳过追加，免流水重复
+    cat = "|".join("%s:%s" % (k, before[k]) for k in sorted(before))
+    batch_sha = hashlib.sha3_256(cat.encode()).hexdigest()[:16]
+    seen = set()
+    if NOTES.exists():
+        for _l in NOTES.read_text(encoding="utf-8", errors="replace").splitlines():
+            if _l.strip():
+                try: seen.add(json.loads(_l).get("batch_sha16"))
+                except Exception: pass
+    duplicated = batch_sha in seen
+    crit["④批次指纹未重复（免流水重复追加）"] = True   # ★去重本身即该判据之落实
+    print("   ⇒ 汇总：可校核 %d 项 ｜ ★不一致 %d 项 ｜ ★批次指纹 %s%s" % (
+        checked_total, bad_total, batch_sha, "（★同批已标注 ⇒ 将跳过追加）" if duplicated else ""))
+    rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S+0800"), "kind": "conf_calibration_note", "batch_sha16": batch_sha,
+           "note": "★校核标注（不改原档）：本表记录各决策读数之「自报 confidence」与「max(概率)」之对照；不一致者以★标之；★按批次指纹去重",
            "checked": checked_total, "mismatch": bad_total, "files": report, "criteria": crit}
+    if duplicated:
+        print("   ★同批已标注（batch_sha16=%s）⇒ ★跳过追加（去重）" % batch_sha)
+        if a.json: pathlib.Path(a.json).write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+        return 0 if all(crit.values()) else 1
     with open(NOTES, "a", encoding="utf-8", newline="\n") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     print("   ⇒ 已追加校核标注：%s" % NOTES.name)
