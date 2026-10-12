@@ -137,18 +137,25 @@ def main() -> int:
         import re as _re, datetime as _dt
         _now = _dt.datetime.now()
         _blob = str(obj.get("subject") or "") + " " + str(obj.get("detail") or "")
-        _hits = _re.findall(r"(\d{1,2}):(\d{2})", _blob)
-        _bad = []
-        for _h, _m in _hits:
+        # ★2026-10-12 精化（-1334 之辨）：识别"前瞻语境"（约／下次／届时／预计／T+／将）⇒ 不计偏差
+        _FWD = ("约", "下次", "届时", "预计", "T+", "将", "随后", "其后", "翌", "次日")
+        _hits = []
+        for _m2 in _re.finditer(r"(\d{1,2}):(\d{2})", _blob):
+            _pre = _blob[max(0, _m2.start()-14):_m2.start()]
+            _fwd = any(f in _pre for f in _FWD)
+            _hits.append((_m2.group(1), _m2.group(2), _fwd))
+        _bad = []; _fwd_n = 0
+        for _h, _m, _fwd in _hits:
             _hh, _mm = int(_h), int(_m)
             if not (0 <= _hh <= 23 and 0 <= _mm <= 59): continue
+            if _fwd: _fwd_n += 1; continue       # ★前瞻语境 ⇒ 不计
             _t = _now.replace(hour=_hh, minute=_mm, second=0, microsecond=0)
             _d = abs((_t - _now).total_seconds())/60.0
             _d = min(_d, 1440 - _d)          # ★跨零点取近者
             if _d > 5: _bad.append("%s（差 %.0f min）" % ("%02d:%02d" % (_hh, _mm), _d))
-        print("   ★真实钟核对：现 %s ｜ 文中时间样 %d 处 ｜ %s"
-              % (_now.strftime("%Y-%m-%d %H:%M:%S"),
-                 len(_hits), ("★不符 " + "；".join(_bad[:4])) if _bad else "一致（≤5 min）"))
+        print("   ★真实钟核对：现 %s ｜ 时间样 %d 处（★前瞻语境 %d 处已免计）｜ %s"
+              % (_now.strftime("%Y-%m-%d %H:%M:%S"), len(_hits), _fwd_n,
+                 ("★不符 " + "；".join(_bad[:4])) if _bad else "一致（≤5 min 或皆前瞻）"))
         if _bad:
             print("      ★告警：批号／件名与真实钟不符 ⇒ 请改取真实钟（训见 -1331）")
     except Exception as _e:
