@@ -28,6 +28,9 @@ CLI = HOME/".kimi-work"/"bin"/"kdocs-cli.exe"
 DOCS = [
     {"key": "outline", "link_id": "ci2ybbMcccFi", "title": "OpenPlanLink全局声明与Agent-to-Agent网络建设纲要"},
     {"key": "polish", "link_id": "cubofOPoRdSw", "title": "2026-9-25-OpenPlanLink 润色-1 (3)"},
+    # ★2026-10-12 加（应 -1307 之果）：Re0 之两件经 drive list-latest-items 反查所得
+    #   ★润色-1 之 .otl 形态（205 节，粒度更细）；★其与 polish（.docx 版）为同一文档之两形态（归一后差 4.4%）
+    {"key": "polish_otl", "link_id": "csiE4H0dSPh9", "title": "2026-9-25-OpenPlanLink 润色-1 (3).otl（Re0 指向）"},
 ]
 
 
