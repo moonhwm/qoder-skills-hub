@@ -1,0 +1,324 @@
+[
+ {
+  "surname": "王",
+  "pinyin": "wang2",
+  "tone": 2
+ },
+ {
+  "surname": "李",
+  "pinyin": "li3",
+  "tone": 3
+ },
+ {
+  "surname": "张",
+  "pinyin": "zhang1",
+  "tone": 1
+ },
+ {
+  "surname": "刘",
+  "pinyin": "liu2",
+  "tone": 2
+ },
+ {
+  "surname": "陈",
+  "pinyin": "chen2",
+  "tone": 2
+ },
+ {
+  "surname": "杨",
+  "pinyin": "yang2",
+  "tone": 2
+ },
+ {
+  "surname": "黄",
+  "pinyin": "huang2",
+  "tone": 2
+ },
+ {
+  "surname": "赵",
+  "pinyin": "zhao4",
+  "tone": 4
+ },
+ {
+  "surname": "周",
+  "pinyin": "zhou1",
+  "tone": 1
+ },
+ {
+  "surname": "吴",
+  "pinyin": "wu2",
+  "tone": 2
+ },
+ {
+  "surname": "徐",
+  "pinyin": "xu2",
+  "tone": 2
+ },
+ {
+  "surname": "孙",
+  "pinyin": "sun1",
+  "tone": 1
+ },
+ {
+  "surname": "马",
+  "pinyin": "ma3",
+  "tone": 3
+ },
+ {
+  "surname": "朱",
+  "pinyin": "zhu1",
+  "tone": 1
+ },
+ {
+  "surname": "胡",
+  "pinyin": "hu2",
+  "tone": 2
+ },
+ {
+  "surname": "郭",
+  "pinyin": "guo1",
+  "tone": 1
+ },
+ {
+  "surname": "何",
+  "pinyin": "he2",
+  "tone": 2
+ },
+ {
+  "surname": "高",
+  "pinyin": "gao1",
+  "tone": 1
+ },
+ {
+  "surname": "林",
+  "pinyin": "lin2",
+  "tone": 2
+ },
+ {
+  "surname": "罗",
+  "pinyin": "luo2",
+  "tone": 2
+ },
+ {
+  "surname": "郑",
+  "pinyin": "zheng4",
+  "tone": 4
+ },
+ {
+  "surname": "梁",
+  "pinyin": "liang2",
+  "tone": 2
+ },
+ {
+  "surname": "谢",
+  "pinyin": "xie4",
+  "tone": 4
+ },
+ {
+  "surname": "宋",
+  "pinyin": "song4",
+  "tone": 4
+ },
+ {
+  "surname": "唐",
+  "pinyin": "tang2",
+  "tone": 2
+ },
+ {
+  "surname": "许",
+  "pinyin": "xu3",
+  "tone": 3
+ },
+ {
+  "surname": "韩",
+  "pinyin": "han2",
+  "tone": 2
+ },
+ {
+  "surname": "冯",
+  "pinyin": "feng2",
+  "tone": 2
+ },
+ {
+  "surname": "邓",
+  "pinyin": "deng4",
+  "tone": 4
+ },
+ {
+  "surname": "曹",
+  "pinyin": "cao2",
+  "tone": 2
+ },
+ {
+  "surname": "彭",
+  "pinyin": "peng2",
+  "tone": 2
+ },
+ {
+  "surname": "曾",
+  "pinyin": "zeng1",
+  "tone": 1,
+  "note": "作姓定读 zēng"
+ },
+ {
+  "surname": "肖",
+  "pinyin": "xiao1",
+  "tone": 1
+ },
+ {
+  "surname": "田",
+  "pinyin": "tian2",
+  "tone": 2
+ },
+ {
+  "surname": "董",
+  "pinyin": "dong3",
+  "tone": 3
+ },
+ {
+  "surname": "袁",
+  "pinyin": "yuan2",
+  "tone": 2
+ },
+ {
+  "surname": "潘",
+  "pinyin": "pan1",
+  "tone": 1
+ },
+ {
+  "surname": "蒋",
+  "pinyin": "jiang3",
+  "tone": 3
+ },
+ {
+  "surname": "蔡",
+  "pinyin": "cai4",
+  "tone": 4
+ },
+ {
+  "surname": "余",
+  "pinyin": "yu2",
+  "tone": 2
+ },
+ {
+  "surname": "杜",
+  "pinyin": "du4",
+  "tone": 4
+ },
+ {
+  "surname": "叶",
+  "pinyin": "ye4",
+  "tone": 4
+ },
+ {
+  "surname": "程",
+  "pinyin": "cheng2",
+  "tone": 2
+ },
+ {
+  "surname": "苏",
+  "pinyin": "su1",
+  "tone": 1
+ },
+ {
+  "surname": "魏",
+  "pinyin": "wei4",
+  "tone": 4
+ },
+ {
+  "surname": "吕",
+  "pinyin": "lü3",
+  "tone": 3
+ },
+ {
+  "surname": "丁",
+  "pinyin": "ding1",
+  "tone": 1
+ },
+ {
+  "surname": "任",
+  "pinyin": "ren2",
+  "tone": 2,
+  "note": "作姓定读 rén"
+ },
+ {
+  "surname": "沈",
+  "pinyin": "shen3",
+  "tone": 3
+ },
+ {
+  "surname": "姚",
+  "pinyin": "yao2",
+  "tone": 2
+ },
+ {
+  "surname": "卢",
+  "pinyin": "lu2",
+  "tone": 2
+ },
+ {
+  "surname": "姜",
+  "pinyin": "jiang1",
+  "tone": 1
+ },
+ {
+  "surname": "崔",
+  "pinyin": "cui1",
+  "tone": 1
+ },
+ {
+  "surname": "钟",
+  "pinyin": "zhong1",
+  "tone": 1
+ },
+ {
+  "surname": "谭",
+  "pinyin": "tan2",
+  "tone": 2
+ },
+ {
+  "surname": "陆",
+  "pinyin": "lu4",
+  "tone": 4
+ },
+ {
+  "surname": "汪",
+  "pinyin": "wang1",
+  "tone": 1
+ },
+ {
+  "surname": "范",
+  "pinyin": "fan4",
+  "tone": 4
+ },
+ {
+  "surname": "金",
+  "pinyin": "jin1",
+  "tone": 1
+ },
+ {
+  "surname": "石",
+  "pinyin": "shi2",
+  "tone": 2
+ },
+ {
+  "surname": "覃",
+  "pinyin": "qin2"
+ },
+ {
+  "surname": "单",
+  "pinyin": "shan4"
+ },
+ {
+  "surname": "解",
+  "pinyin": "xie4"
+ },
+ {
+  "surname": "查",
+  "pinyin": "zha1"
+ },
+ {
+  "surname": "盖",
+  "pinyin": "ge3"
+ }
+]

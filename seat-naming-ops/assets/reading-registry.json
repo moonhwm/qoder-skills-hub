@@ -1,0 +1,198 @@
+{
+ "version": "2026-09-16",
+ "scope_note": "机读定读表：语境绑定读法（字+词→定读），供 verify_bank ⑧ 与 canon-seed/bank 逐条对账；人文说明版见 references/canon-pool.md §4，两版同步责任在锻造线。 预备姓（覃/单/解/查/盖）于扩池入姓时按 SKILL §8.9 逐姓谐音审查后转正式对账（verify⑧ pre8 单列机制在卷）。",
+ "readings": [
+  {
+   "char": "任",
+   "context": "姓",
+   "reading": "ren2",
+   "source": "作姓定读"
+  },
+  {
+   "char": "曾",
+   "context": "姓",
+   "reading": "zeng1",
+   "source": "作姓定读"
+  },
+  {
+   "char": "覃",
+   "context": "姓",
+   "reading": "qin2",
+   "source": "作姓定读"
+  },
+  {
+   "char": "单",
+   "context": "姓",
+   "reading": "shan4",
+   "source": "作姓定读"
+  },
+  {
+   "char": "解",
+   "context": "姓",
+   "reading": "xie4",
+   "source": "作姓定读"
+  },
+  {
+   "char": "查",
+   "context": "姓",
+   "reading": "zha1",
+   "source": "作姓定读"
+  },
+  {
+   "char": "盖",
+   "context": "姓",
+   "reading": "ge3",
+   "source": "作姓定读"
+  },
+  {
+   "char": "尉",
+   "context": "尉迟",
+   "reading": "yu4",
+   "source": "复姓尉迟定读（非 wèi）"
+  },
+  {
+   "char": "令",
+   "context": "令狐",
+   "reading": "ling2",
+   "source": "复姓令狐定读——líng 仅存于此等专名"
+  },
+  {
+   "char": "令",
+   "context": "令仪/令德/令闻/令望",
+   "reading": "ling4",
+   "source": "善也，现汉善义归 lìng（2026-09-16 B6/C6 合指从正）"
+  },
+  {
+   "char": "绸",
+   "context": "绸缪",
+   "reading": "chou2",
+   "source": "连绵词定读"
+  },
+  {
+   "char": "缪",
+   "context": "绸缪",
+   "reading": "mou2",
+   "source": "连绵词定读"
+  },
+  {
+   "char": "景",
+   "context": "景行",
+   "reading": "jing3",
+   "source": "定读 jǐng xíng"
+  },
+  {
+   "char": "行",
+   "context": "景行/行谨/行健",
+   "reading": "xing2",
+   "source": "定读 xíng（非 háng）"
+  },
+  {
+   "char": "朝",
+   "context": "朝宗",
+   "reading": "chao2",
+   "source": "朝宗 cháo zōng"
+  },
+  {
+   "char": "乐",
+   "context": "乐只",
+   "reading": "le4",
+   "source": "乐只 lè zhǐ"
+  },
+  {
+   "char": "只",
+   "context": "乐只",
+   "reading": "zhi3",
+   "source": "语助，之氏反（B6 主张 zhī 经核驳回）"
+  },
+  {
+   "char": "长",
+   "context": "长祥",
+   "reading": "chang2",
+   "source": "长祥 cháng xiáng"
+  },
+  {
+   "char": "华",
+   "context": "灼华/棣华",
+   "reading": "hua1",
+   "source": "华=花从集传（光华义 huá 本池不取）"
+  },
+  {
+   "char": "齐",
+   "context": "思齐",
+   "reading": "zhai1",
+   "source": "齐=庄通斋，释文侧皆反（今读 qí 在案存异）"
+  },
+  {
+   "char": "渐",
+   "context": "鸿渐",
+   "reading": "jian4",
+   "source": "渐=进（一说 jiān 渍也存疑）"
+  },
+  {
+   "char": "强",
+   "context": "自强",
+   "reading": "qiang2",
+   "source": "定读 qiáng"
+  },
+  {
+   "char": "宁",
+   "context": "以宁",
+   "reading": "ning2",
+   "source": "宁=安"
+  },
+  {
+   "char": "兴",
+   "context": "夙兴",
+   "reading": "xing1",
+   "source": "夙兴 xīng"
+  },
+  {
+   "char": "说",
+   "context": "星言条字注",
+   "reading": "shui4",
+   "source": "集传音税，不入名层"
+  },
+  {
+   "char": "棣",
+   "context": "棣华",
+   "reading": "di4",
+   "source": "定读"
+  },
+  {
+   "char": "韡",
+   "context": "韡韡",
+   "reading": "wei3",
+   "source": "定读"
+  },
+  {
+   "char": "濬",
+   "context": "濬哲",
+   "reading": "jun4",
+   "source": "同浚"
+  },
+  {
+   "char": "丕",
+   "context": "丕显",
+   "reading": "pi1",
+   "source": "定读"
+  },
+  {
+   "char": "崧",
+   "context": "崧高",
+   "reading": "song1",
+   "source": "定读"
+  },
+  {
+   "char": "聿",
+   "context": "聿修",
+   "reading": "yu4",
+   "source": "定读"
+  },
+  {
+   "char": "臧",
+   "context": "思臧",
+   "reading": "zang1",
+   "source": "定读"
+  }
+ ]
+}

@@ -1,0 +1,622 @@
+[
+ {
+  "ming": "如琢",
+  "zi": "如磋",
+  "ming_pinyin": "ru2 zhuo2",
+  "zi_pinyin": "ru2 cuo1",
+  "poem": "卫风·淇奥",
+  "pair_rule": "同训",
+  "source_verse": "卫风·淇奥「有匪君子，如切如磋，如琢如磨」",
+  "chapters": "一章（淇奥「有匪君子，如切如磋，如琢如磨」一章明载）"
+ },
+ {
+  "ming": "飞翰",
+  "zi": "江汉",
+  "ming_pinyin": "fei1 han4",
+  "zi_pinyin": "jiang1 han4",
+  "poem": "大雅·常武",
+  "pair_rule": "连类",
+  "source_verse": "大雅·常武「王旅啴啴，如飞如翰，如江如汉」",
+  "chapters": "五章（常武五章「王旅啴啴，如飞如翰，如江如汉」；翰/汉元部相押，章序：雷霆三章、虎臣四章、王旅五章、还归六章）"
+ },
+ {
+  "ming": "秉文",
+  "zi": "缉熙",
+  "ming_pinyin": "bing3 wen2",
+  "zi_pinyin": "ji1 xi1",
+  "poem": "周颂·清庙／大雅·文王",
+  "pair_rule": "连类",
+  "source_verse": "周颂·清庙「济济多士，秉文之德」／大雅·文王「穆穆文王，於缉熙敬止」",
+  "chapters": "清庙一章（名出「秉文之德」）／文王四章（字出「缉熙敬止」——跨篇合壁）"
+ },
+ {
+  "ming": "行谨",
+  "zi": "言信",
+  "ming_pinyin": "xing2 jin3",
+  "zi_pinyin": "yan2 xin4",
+  "poem": "易·乾·文言",
+  "pair_rule": "对文",
+  "source_verse": "易·乾·文言「庸言之信，庸行之谨」",
+  "chapters": "乾卦·文言"
+ },
+ {
+  "ming": "夙兴",
+  "zi": "无忝",
+  "ming_pinyin": "su4 xing1",
+  "zi_pinyin": "wu2 tian3",
+  "poem": "小雅·小宛",
+  "pair_rule": "连类",
+  "source_verse": "小雅·小宛「夙兴夜寐，毋忝尔所生」（毋通无，通作例）",
+  "chapters": "四章（韵脚：鸣/征/生 耕部相押；章序复核在卷）"
+ },
+ {
+  "ming": "他山",
+  "zi": "攻玉",
+  "ming_pinyin": "ta1 shan1",
+  "zi_pinyin": "gong1 yu4",
+  "poem": "小雅·鹤鸣",
+  "pair_rule": "指实",
+  "source_verse": "小雅·鹤鸣「他山之石，可以攻玉」",
+  "chapters": "二章（鹤鸣二章末「他山之石，可以攻玉」）"
+ },
+ {
+  "ming": "绸缪",
+  "zi": "未雨",
+  "ming_pinyin": "chou2 mou2",
+  "zi_pinyin": "wei4 yu3",
+  "poem": "豳风·鸱鸮",
+  "pair_rule": "连类",
+  "source_verse": "豳风·鸱鸮「迨天之未阴雨，彻彼桑土，绸缪牖户」",
+  "chapters": "二章（鸱鸮二章；韵脚章序复核在卷）"
+ },
+ {
+  "ming": "同袍",
+  "zi": "偕行",
+  "ming_pinyin": "tong2 pao2",
+  "zi_pinyin": "xie2 xing2",
+  "poem": "秦风·无衣",
+  "pair_rule": "连类",
+  "source_verse": "秦风·无衣「岂曰无衣，与子同袍」／秦风·无衣「修我甲兵，与子偕行」",
+  "chapters": "一章／三章（无衣）"
+ },
+ {
+  "ming": "景行",
+  "zi": "仰止",
+  "ming_pinyin": "jing3 xing2",
+  "zi_pinyin": "yang3 zhi3",
+  "poem": "小雅·车舝",
+  "pair_rule": "连类",
+  "source_verse": "小雅·车舝「高山仰止，景行行止」（定读 jǐng xíng）",
+  "chapters": "五章（车舝末章「高山仰止，景行行止」）"
+ },
+ {
+  "ming": "在公",
+  "zi": "宵征",
+  "ming_pinyin": "zai4 gong1",
+  "zi_pinyin": "xiao1 zheng1",
+  "poem": "召南·小星",
+  "pair_rule": "连类",
+  "source_verse": "召南·小星「肃肃宵征，夙夜在公」",
+  "chapters": "一章（小星一章「肃肃宵征，夙夜在公」同章）"
+ },
+ {
+  "ming": "思成",
+  "zi": "有作",
+  "ming_pinyin": "si1 cheng2",
+  "zi_pinyin": "you3 zuo4",
+  "poem": "商颂·那",
+  "pair_rule": "连类",
+  "source_verse": "商颂·那「汤孙奏假，绥我思成」「自古在昔，先民有作」",
+  "chapters": "一章（商颂·那，颂一章）"
+ },
+ {
+  "ming": "麟趾",
+  "zi": "振振",
+  "ming_pinyin": "lin2 zhi3",
+  "zi_pinyin": "zhen4 zhen4",
+  "poem": "周南·麟之趾",
+  "pair_rule": "连类",
+  "source_verse": "周南·麟之趾「麟之趾，振振公子」",
+  "chapters": "一章（麟之趾一章）"
+ },
+ {
+  "ming": "灼华",
+  "zi": "宜家",
+  "ming_pinyin": "zhuo2 hua1",
+  "zi_pinyin": "yi2 jia1",
+  "poem": "周南·桃夭",
+  "pair_rule": "连类",
+  "source_verse": "周南·桃夭「灼灼其华」「宜其室家」",
+  "chapters": "一章（桃夭一章「灼灼其华／宜其室家」同章）"
+ },
+ {
+  "ming": "嘉宾",
+  "zi": "德音",
+  "ming_pinyin": "jia1 bin1",
+  "zi_pinyin": "de2 yin1",
+  "poem": "小雅·鹿鸣",
+  "pair_rule": "连类",
+  "source_verse": "小雅·鹿鸣「我有嘉宾，鼓瑟吹笙」「德音孔昭」",
+  "chapters": "一章（名出「我有嘉宾」）／二章（字出「德音孔昭」）"
+ },
+ {
+  "ming": "如恒",
+  "zi": "日升",
+  "ming_pinyin": "ru2 heng2",
+  "zi_pinyin": "ri4 sheng1",
+  "poem": "小雅·天保",
+  "pair_rule": "对文",
+  "source_verse": "小雅·天保「如月之恒，如日之升」",
+  "chapters": "六章（天保末章「如月之恒，如日之升」）"
+ },
+ {
+  "ming": "南山",
+  "zi": "松柏",
+  "ming_pinyin": "nan2 shan1",
+  "zi_pinyin": "song1 bai3",
+  "poem": "小雅·天保",
+  "pair_rule": "对文",
+  "source_verse": "小雅·天保「如南山之寿」「如松柏之茂」",
+  "chapters": "六章（天保末章「如南山之寿／如松柏之茂」）"
+ },
+ {
+  "ming": "松茂",
+  "zi": "竹苞",
+  "ming_pinyin": "song1 mao4",
+  "zi_pinyin": "zhu2 bao1",
+  "poem": "小雅·斯干",
+  "pair_rule": "对文",
+  "source_verse": "小雅·斯干「如竹苞矣，如松茂矣」",
+  "chapters": "一章（斯干一章「如竹苞矣，如松茂矣」）"
+ },
+ {
+  "ming": "朝宗",
+  "zi": "于海",
+  "ming_pinyin": "chao2 zong1",
+  "zi_pinyin": "yu2 hai3",
+  "poem": "小雅·沔水",
+  "pair_rule": "指实",
+  "source_verse": "小雅·沔水「沔彼流水，朝宗于海」（朝定读 cháo）",
+  "chapters": "一章（沔水一章「沔彼流水，朝宗于海」）"
+ },
+ {
+  "ming": "令仪",
+  "zi": "显允",
+  "ming_pinyin": "ling4 yi2",
+  "zi_pinyin": "xian3 yun3",
+  "poem": "小雅·湛露",
+  "pair_rule": "连类",
+  "source_verse": "小雅·湛露「莫不令仪」「显允君子」",
+  "chapters": "四章（名出「莫不令仪」；字显允出三章，同篇异章——韵证勘正：椅/离/仪歌部相押）"
+ },
+ {
+  "ming": "令德",
+  "zi": "令闻",
+  "ming_pinyin": "ling4 de2",
+  "zi_pinyin": "ling4 wen2",
+  "poem": "小雅·湛露／大雅·卷阿",
+  "pair_rule": "连类",
+  "source_verse": "小雅·湛露「莫不令德」／大雅·卷阿「令闻令望」",
+  "chapters": "三章（名出「莫不令德」——韵证勘正：棘/德职部相押）"
+ },
+ {
+  "ming": "令闻",
+  "zi": "令望",
+  "ming_pinyin": "ling4 wen2",
+  "zi_pinyin": "ling4 wang4",
+  "poem": "大雅·卷阿",
+  "pair_rule": "对文",
+  "source_verse": "大雅·卷阿「如圭如璋，令闻令望」",
+  "chapters": "六章（卷阿六章；字令望同章——2026-09-16 B14 勘正：原误标首章）"
+ },
+ {
+  "ming": "圭璋",
+  "zi": "令望",
+  "ming_pinyin": "gui1 zhang1",
+  "zi_pinyin": "ling4 wang4",
+  "poem": "大雅·卷阿",
+  "pair_rule": "指实",
+  "source_verse": "大雅·卷阿「如圭如璋，令闻令望」",
+  "chapters": "六章（卷阿六章——B14 勘正同）"
+ },
+ {
+  "ming": "于飞",
+  "zi": "鸣冈",
+  "ming_pinyin": "yu2 fei1",
+  "zi_pinyin": "ming2 gang1",
+  "poem": "大雅·卷阿",
+  "pair_rule": "连类",
+  "source_verse": "大雅·卷阿「凤凰于飞，翙翙其羽」「凤凰鸣矣，于彼高冈」",
+  "chapters": "七章（名出「凤凰于飞」）／九章（字出「凤凰鸣矣，于彼高冈」——B14 勘正链确立章序）"
+ },
+ {
+  "ming": "明哲",
+  "zi": "柔嘉",
+  "ming_pinyin": "ming2 zhe2",
+  "zi_pinyin": "rou2 jia1",
+  "poem": "大雅·烝民",
+  "pair_rule": "连类",
+  "source_verse": "大雅·烝民「既明且哲」「柔嘉维则」",
+  "chapters": "四章（烝民四章；2026-09-16 C18 佐证四章，与章序结构复核一致）"
+ },
+ {
+  "ming": "柔嘉",
+  "zi": "维则",
+  "ming_pinyin": "rou2 jia1",
+  "zi_pinyin": "wei2 ze2",
+  "poem": "大雅·烝民",
+  "pair_rule": "连类",
+  "source_verse": "大雅·烝民「仲山甫之德，柔嘉维则」",
+  "chapters": "二章（烝民二章「仲山甫之德，柔嘉维则」；则/力职部相押）"
+ },
+ {
+  "ming": "以宁",
+  "zi": "修德",
+  "ming_pinyin": "yi3 ning2",
+  "zi_pinyin": "xiu1 de2",
+  "poem": "大雅·文王",
+  "pair_rule": "连类",
+  "source_verse": "大雅·文王「文王以宁」「聿修厥德」",
+  "chapters": "三章（文王三章末；韵脚章序复核在卷）"
+ },
+ {
+  "ming": "聿修",
+  "zi": "配命",
+  "ming_pinyin": "yu4 xiu1",
+  "zi_pinyin": "pei4 ming4",
+  "poem": "大雅·文王",
+  "pair_rule": "连类",
+  "source_verse": "大雅·文王「聿修厥德，永言配命」",
+  "chapters": "六章（文王六章；韵脚章序复核在卷）"
+ },
+ {
+  "ming": "作孚",
+  "zi": "仪刑",
+  "ming_pinyin": "zuo4 fu2",
+  "zi_pinyin": "yi2 xing2",
+  "poem": "大雅·文王",
+  "pair_rule": "连类",
+  "source_verse": "大雅·文王「仪刑文王，万邦作孚」",
+  "chapters": "七章（文王末章「仪刑文王，万邦作孚」）"
+ },
+ {
+  "ming": "云汉",
+  "zi": "为章",
+  "ming_pinyin": "yun2 han4",
+  "zi_pinyin": "wei2 zhang1",
+  "poem": "大雅·棫朴",
+  "pair_rule": "指实",
+  "source_verse": "大雅·棫朴「倬彼云汉，为章于天」",
+  "chapters": "四章（棫朴四章「倬彼云汉，为章于天」）"
+ },
+ {
+  "ming": "思齐",
+  "zi": "惠宗",
+  "ming_pinyin": "si1 zhai1",
+  "zi_pinyin": "hui4 zong1",
+  "poem": "大雅·思齐",
+  "pair_rule": "连类",
+  "source_verse": "大雅·思齐「思齐大任，文王之母」「惠于宗公」",
+  "chapters": "一章（名出「思齐大任」）／二章（字出「惠于宗公」）"
+ },
+ {
+  "ming": "绳武",
+  "zi": "孝思",
+  "ming_pinyin": "sheng2 wu3",
+  "zi_pinyin": "xiao4 si1",
+  "poem": "大雅·下武",
+  "pair_rule": "连类",
+  "source_verse": "大雅·下武「绳其祖武」「永言孝思」",
+  "chapters": "五章（名出「绳其祖武」）／三章（字出「永言孝思」）"
+ },
+ {
+  "ming": "成命",
+  "zi": "昊天",
+  "ming_pinyin": "cheng2 ming4",
+  "zi_pinyin": "hao4 tian1",
+  "poem": "周颂·昊天有成命",
+  "pair_rule": "连类",
+  "source_verse": "周颂·昊天有成命「昊天有成命，二后受之」",
+  "chapters": "一章（周颂·昊天有成命，颂一章）"
+ },
+ {
+  "ming": "思臧",
+  "zi": "无疆",
+  "ming_pinyin": "si1 zang1",
+  "zi_pinyin": "wu2 jiang1",
+  "poem": "鲁颂·駉",
+  "pair_rule": "连类",
+  "source_verse": "鲁颂·駉「思无疆，思马斯臧」（臧 zāng）",
+  "chapters": "一章（駉首章末「思无疆，思马斯臧」）"
+ },
+ {
+  "ming": "濬哲",
+  "zi": "长祥",
+  "ming_pinyin": "jun4 zhe2",
+  "zi_pinyin": "chang2 xiang2",
+  "poem": "商颂·长发",
+  "pair_rule": "连类",
+  "source_verse": "商颂·长发「濬哲维商，长发其祥」（濬 jùn 同浚）",
+  "chapters": "一章（长发首章「濬哲维商，长发其祥」）"
+ },
+ {
+  "ming": "穆清",
+  "zi": "肃雍",
+  "ming_pinyin": "mu4 qing1",
+  "zi_pinyin": "su4 yong1",
+  "poem": "周颂·清庙",
+  "pair_rule": "连类",
+  "source_verse": "周颂·清庙「於穆清庙，肃雍显相」",
+  "chapters": "一章（周颂·清庙，颂一章）"
+ },
+ {
+  "ming": "时迈",
+  "zi": "明昭",
+  "ming_pinyin": "shi2 mai4",
+  "zi_pinyin": "ming2 zhao1",
+  "poem": "周颂·时迈",
+  "pair_rule": "连类",
+  "source_verse": "周颂·时迈「时迈其邦」「明昭有周」",
+  "chapters": "一章（周颂·时迈，颂一章）"
+ },
+ {
+  "ming": "丕显",
+  "zi": "成康",
+  "ming_pinyin": "pi1 xian3",
+  "zi_pinyin": "cheng2 kang1",
+  "poem": "周颂·执竞",
+  "pair_rule": "连类",
+  "source_verse": "周颂·执竞「丕显成康，上帝是皇」（丕 pī）",
+  "chapters": "一章（周颂·执竞，颂一章）"
+ },
+ {
+  "ming": "高山",
+  "zi": "夷行",
+  "ming_pinyin": "gao1 shan1",
+  "zi_pinyin": "yi2 xing2",
+  "poem": "周颂·天作",
+  "pair_rule": "连类",
+  "source_verse": "周颂·天作「天作高山，大王荒之」「有夷之行」",
+  "chapters": "一章（周颂·天作，颂一章）"
+ },
+ {
+  "ming": "烈文",
+  "zi": "祉福",
+  "ming_pinyin": "lie4 wen2",
+  "zi_pinyin": "zhi3 fu2",
+  "poem": "周颂·烈文",
+  "pair_rule": "连类",
+  "source_verse": "周颂·烈文「烈文辟公，锡兹祉福」",
+  "chapters": "一章（周颂·烈文，颂一章）"
+ },
+ {
+  "ming": "未央",
+  "zi": "庭燎",
+  "ming_pinyin": "wei4 yang1",
+  "zi_pinyin": "ting2 liao2",
+  "poem": "小雅·庭燎",
+  "pair_rule": "指实",
+  "source_verse": "小雅·庭燎「夜未央，庭燎之光」",
+  "chapters": "一章（庭燎首章「夜未央，庭燎之光」）"
+ },
+ {
+  "ming": "鹤鸣",
+  "zi": "九皋",
+  "ming_pinyin": "he4 ming2",
+  "zi_pinyin": "jiu3 gao1",
+  "poem": "小雅·鹤鸣",
+  "pair_rule": "指实",
+  "source_verse": "小雅·鹤鸣「鹤鸣于九皋，声闻于野」",
+  "chapters": "一章（鹤鸣一章首「鹤鸣于九皋，声闻于野」）"
+ },
+ {
+  "ming": "嘤鸣",
+  "zi": "乔木",
+  "ming_pinyin": "ying1 ming2",
+  "zi_pinyin": "qiao2 mu4",
+  "poem": "小雅·伐木",
+  "pair_rule": "连类",
+  "source_verse": "小雅·伐木「嘤其鸣矣，求其友声」「迁于乔木」",
+  "chapters": "一章（伐木一章；名与字同章）"
+ },
+ {
+  "ming": "棣华",
+  "zi": "韡韡",
+  "ming_pinyin": "di4 hua1",
+  "zi_pinyin": "wei3 wei3",
+  "poem": "小雅·常棣",
+  "pair_rule": "连类",
+  "source_verse": "小雅·常棣「常棣之华，鄂不韡韡」（棣 dì，韡 wěi）",
+  "chapters": "一章（常棣一章「常棣之华，鄂不韡韡」）"
+ },
+ {
+  "ming": "宜民",
+  "zi": "天禄",
+  "ming_pinyin": "yi2 min2",
+  "zi_pinyin": "tian1 lu4",
+  "poem": "大雅·假乐",
+  "pair_rule": "连类",
+  "source_verse": "大雅·假乐「宜民宜人，受禄于天」",
+  "chapters": "一章（假乐首章「宜民宜人，受禄于天」）"
+ },
+ {
+  "ming": "崧高",
+  "zi": "维岳",
+  "ming_pinyin": "song1 gao1",
+  "zi_pinyin": "wei2 yue4",
+  "poem": "大雅·崧高",
+  "pair_rule": "指实",
+  "source_verse": "大雅·崧高「崧高维岳，骏极于天」（崧 sōng）",
+  "chapters": "一章（崧高首章「崧高维岳，骏极于天」）"
+ },
+ {
+  "ming": "维翰",
+  "zi": "攸同",
+  "ming_pinyin": "wei2 han4",
+  "zi_pinyin": "you1 tong2",
+  "poem": "大雅·文王有声",
+  "pair_rule": "连类",
+  "source_verse": "大雅·文王有声「四方攸同，王后维翰」",
+  "chapters": "四章（韵脚：垣/翰 元部相押；章序复核在卷）"
+ },
+ {
+  "ming": "自强",
+  "zi": "行健",
+  "ming_pinyin": "zi4 qiang2",
+  "zi_pinyin": "xing2 jian4",
+  "poem": "易·乾·象",
+  "pair_rule": "连类",
+  "source_verse": "易·乾·象「天行健，君子以自强不息」",
+  "chapters": "乾卦·象传"
+ },
+ {
+  "ming": "厚德",
+  "zi": "载物",
+  "ming_pinyin": "hou4 de2",
+  "zi_pinyin": "zai4 wu4",
+  "poem": "易·坤·象",
+  "pair_rule": "连类",
+  "source_verse": "易·坤·象「地势坤，君子以厚德载物」",
+  "chapters": "坤卦·象传"
+ },
+ {
+  "ming": "含章",
+  "zi": "可贞",
+  "ming_pinyin": "han2 zhang1",
+  "zi_pinyin": "ke3 zhen1",
+  "poem": "易·坤·六三",
+  "pair_rule": "连类",
+  "source_verse": "易·坤·六三「含章可贞，或从王事，无成有终」",
+  "chapters": "坤卦·六三"
+ },
+ {
+  "ming": "笃实",
+  "zi": "日新",
+  "ming_pinyin": "du3 shi2",
+  "zi_pinyin": "ri4 xin1",
+  "poem": "易·大畜·彖",
+  "pair_rule": "连类",
+  "source_verse": "易·大畜·彖「刚健笃实，辉光日新」",
+  "chapters": "大畜卦·彖传"
+ },
+ {
+  "ming": "鸣谦",
+  "zi": "有终",
+  "ming_pinyin": "ming2 qian1",
+  "zi_pinyin": "you3 zhong1",
+  "poem": "易·谦",
+  "pair_rule": "连类",
+  "source_verse": "易·谦「鸣谦贞吉」「劳谦，君子有终」",
+  "chapters": "六二（名出「鸣谦贞吉」）／九三（字出「劳谦，君子有终」）"
+ },
+ {
+  "ming": "化成",
+  "zi": "人文",
+  "ming_pinyin": "hua4 cheng2",
+  "zi_pinyin": "ren2 wen2",
+  "poem": "易·贲·彖",
+  "pair_rule": "连类",
+  "source_verse": "易·贲·彖「观乎人文，以化成天下」",
+  "chapters": "贲卦·彖传"
+ },
+ {
+  "ming": "迁善",
+  "zi": "改过",
+  "ming_pinyin": "qian1 shan4",
+  "zi_pinyin": "gai3 guo4",
+  "poem": "易·益·象",
+  "pair_rule": "对文",
+  "source_verse": "易·益·象「见善则迁，有过则改」",
+  "chapters": "益卦·象传"
+ },
+ {
+  "ming": "有恒",
+  "zi": "言物",
+  "ming_pinyin": "you3 heng2",
+  "zi_pinyin": "yan2 wu4",
+  "poem": "易·家人·象",
+  "pair_rule": "对文",
+  "source_verse": "易·家人·象「言有物而行有恒」",
+  "chapters": "家人卦·象传"
+ },
+ {
+  "ming": "明德",
+  "zi": "昭德",
+  "ming_pinyin": "ming2 de2",
+  "zi_pinyin": "zhao1 de2",
+  "poem": "易·晋·象",
+  "pair_rule": "同训",
+  "source_verse": "易·晋·象「君子以自昭明德」",
+  "chapters": "晋卦·象传"
+ },
+ {
+  "ming": "鸿渐",
+  "zi": "羽仪",
+  "ming_pinyin": "hong2 jian4",
+  "zi_pinyin": "yu3 yi2",
+  "poem": "易·渐",
+  "pair_rule": "连类",
+  "source_verse": "易·渐「鸿渐于干」「其羽可用为仪」",
+  "chapters": "初六／上九（渐卦）"
+ },
+ {
+  "ming": "修辞",
+  "zi": "立诚",
+  "ming_pinyin": "xiu1 ci2",
+  "zi_pinyin": "li4 cheng2",
+  "poem": "易·乾·文言",
+  "pair_rule": "连类",
+  "source_verse": "易·乾·文言「修辞立其诚」",
+  "chapters": "乾卦·文言"
+ },
+ {
+  "ming": "进德",
+  "zi": "修业",
+  "ming_pinyin": "jin4 de2",
+  "zi_pinyin": "xiu1 ye4",
+  "poem": "易·乾·文言",
+  "pair_rule": "对文",
+  "source_verse": "易·乾·文言「君子进德修业」",
+  "chapters": "乾卦·文言"
+ },
+ {
+  "ming": "有仪",
+  "zi": "乐只",
+  "ming_pinyin": "you3 yi2",
+  "zi_pinyin": "le4 zhi3",
+  "poem": "小雅·菁菁者莪／周南·樛木",
+  "pair_rule": "连类",
+  "source_verse": "小雅·菁菁者莪「既见君子，乐且有仪」／周南·樛木「乐只君子」",
+  "chapters": "一章（菁菁者莪首章「既见君子，乐且有仪」）"
+ },
+ {
+  "ming": "福履",
+  "zi": "绥之",
+  "ming_pinyin": "fu2 lü3",
+  "zi_pinyin": "sui1 zhi1",
+  "poem": "周南·樛木",
+  "pair_rule": "连类",
+  "source_verse": "周南·樛木「乐只君子，福履绥之」",
+  "chapters": "一章（樛木一章「乐只君子，福履绥之」）"
+ },
+ {
+  "ming": "秉心",
+  "zi": "塞渊",
+  "ming_pinyin": "bing3 xin1",
+  "zi_pinyin": "se4 yuan1",
+  "poem": "鄘风·定之方中",
+  "pair_rule": "连类",
+  "source_verse": "鄘风·定之方中「秉心塞渊，騋牝三千」",
+  "chapters": "三章（定之方中末章「秉心塞渊，騋牝三千」）"
+ },
+ {
+  "ming": "星言",
+  "zi": "夙驾",
+  "ming_pinyin": "xing1 yan2",
+  "zi_pinyin": "su4 jia4",
+  "poem": "鄘风·定之方中",
+  "pair_rule": "连类",
+  "source_verse": "鄘风·定之方中「星言夙驾，说于桑田」（说定读 shuì，集传音税；一说 yuè 存疑在案）",
+  "chapters": "三章（定之方中末章「星言夙驾，说于桑田」）"
+ }
+]

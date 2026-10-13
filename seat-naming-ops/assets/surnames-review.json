@@ -1,0 +1,46 @@
+{
+ "version": "2026-09-16",
+ "rule": "SKILL §8.9：扩姓氏池逐姓登记谐音与负面联想核查",
+ "reviews": [
+  {
+   "surname": "覃",
+   "reading": "qin2",
+   "homophone_check": "秦/勤同音无负面联想",
+   "polyphone_risk": "误读 tán 风险（池外义），定读档已载",
+   "verdict": "通过",
+   "机检落点": "定读档（reading-registry）"
+  },
+  {
+   "surname": "单",
+   "reading": "shan4",
+   "homophone_check": "善/赡同音无负面联想",
+   "polyphone_risk": "误读 dān（单薄）负面风险——定读档已载，交付通报须带定读",
+   "verdict": "通过",
+   "机检落点": "定读档（reading-registry）"
+  },
+  {
+   "surname": "解",
+   "reading": "xie4",
+   "homophone_check": "谢同音无负面联想",
+   "polyphone_risk": "误读 jiě/jiè 风险，定读档已载",
+   "verdict": "通过",
+   "机检落点": "定读档（reading-registry）"
+  },
+  {
+   "surname": "查",
+   "reading": "zha1",
+   "homophone_check": "渣近音联想：定读 zhā 与「渣 zhā」同音——联想弱负面，登记在卷不否决（曹操《短歌行》无涉，纯音近）",
+   "polyphone_risk": "误读 chá 风险，定读档已载",
+   "verdict": "通过（弱联想登记）",
+   "机检落点": "W2 警示姓（collision-blocklist surname_watch）"
+  },
+  {
+   "surname": "盖",
+   "reading": "ge3",
+   "homophone_check": "无负面谐音",
+   "polyphone_risk": "误读 gài 风险，定读档已载",
+   "verdict": "通过",
+   "机检落点": "定读档（reading-registry）"
+  }
+ ]
+}
